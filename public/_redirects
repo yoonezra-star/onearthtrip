@@ -1,0 +1,11 @@
+https://onearthtrip.pages.dev/* https://www.onearthtrip.com/:splat 301
+http://www.onearthtrip.com/* https://www.onearthtrip.com/:splat 301
+http://onearthtrip.com/* https://www.onearthtrip.com/:splat 301
+/life/ /life.html 301
+/culture/ /culture.html 301
+/past-present-future/ /past-present-future.html 301
+/memory/ /memory.html 301
+/about/ /about.html 301
+/contact/ /contact.html 301
+/privacy/ /privacy.html 301
+/terms/ /terms.html 301

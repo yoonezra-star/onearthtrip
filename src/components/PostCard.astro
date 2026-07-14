@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatDate, getCategoryPath } from "../utils/posts";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+const href = post.data.permalink;
+---
+
+<article class="post-card">
+  {post.data.heroImage && (
+    <a href={href} aria-label={`${post.data.title} 읽기`}>
+      <img src={post.data.heroImage} alt="" loading="lazy" />
+    </a>
+  )}
+  <div class="post-card-body">
+    <div class="meta">
+      <a class="pill" href={getCategoryPath(post.data.category)}>{post.data.category}</a>
+      <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+    </div>
+    <h3><a href={href}>{post.data.title}</a></h3>
+    <p>{post.data.description}</p>
+  </div>
+</article>

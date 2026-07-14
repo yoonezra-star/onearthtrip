@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { getPosts } from "../utils/posts";
+
+const posts = (await getPosts()).filter((post) => post.data.category === "나의 UAE 추억");
+---
+
+<BaseLayout title="나의 UAE 추억 | On Earth Trip" description="아부다비와 UAE에서 오래 남은 순간, 감정, 장소의 기억을 담은 개인 기록입니다.">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">UAE MEMORY</p>
+      <h1>나의 UAE 추억</h1>
+      <p class="lead">정보보다 오래 남는 것은 한 장면입니다. 그 장면들을 천천히 기록합니다.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container post-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

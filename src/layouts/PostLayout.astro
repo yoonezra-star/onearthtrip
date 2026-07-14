@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import { formatDate, getCategoryPath } from "../utils/posts";
+import { site } from "../data/site";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+const title = `${post.data.title} | ${site.name}`;
+const canonical = post.data.permalink;
+const articleJson = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.data.title,
+  description: post.data.description,
+  image: post.data.heroImage,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  author: {
+    "@type": "Person",
+    name: post.data.author
+  },
+  publisher: {
+    "@type": "Organization",
+    name: site.name,
+    url: site.url
+  },
+  mainEntityOfPage: new URL(post.data.permalink, site.url).toString(),
+  inLanguage: site.locale
+};
+---
+
+<BaseLayout
+  title={title}
+  description={post.data.description}
+  image={post.data.heroImage}
+  canonical={canonical}
+>
+  <article class="article">
+    <header class="article-header">
+      <div class="meta">
+        <a class="pill" href={getCategoryPath(post.data.category)}>{post.data.category}</a>
+        <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+        {post.data.updatedDate && (
+          <span>수정 {formatDate(post.data.updatedDate)}</span>
+        )}
+      </div>
+      <h1 class="article-title">{post.data.title}</h1>
+      <p class="lead">{post.data.description}</p>
+      {post.data.heroImage && (
+        <div class="article-image">
+          <img src={post.data.heroImage} alt="" />
+        </div>
+      )}
+    </header>
+    <div class="article-body">
+      <slot />
+    </div>
+    {post.data.tags.length > 0 && (
+      <div class="tag-list" aria-label="태그">
+        {post.data.tags.map((tag) => <span>#{tag}</span>)}
+      </div>
+    )}
+    <script type="application/ld+json" set:html={JSON.stringify(articleJson)} />
+  </article>
+</BaseLayout>

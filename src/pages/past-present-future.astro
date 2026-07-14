@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { getPosts } from "../utils/posts";
+
+const posts = (await getPosts()).filter((post) => post.data.category === "과거·현재·미래");
+---
+
+<BaseLayout title="UAE 과거·현재·미래 | On Earth Trip" description="아랍에미리트의 역사, 현재의 도시 풍경, 미래 비전을 함께 읽는 기록입니다.">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">PAST PRESENT FUTURE</p>
+      <h1>UAE의 과거·현재·미래</h1>
+      <p class="lead">진주와 무역의 물길에서 초현대 도시, 그리고 2071년을 향한 국가 비전까지.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container post-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

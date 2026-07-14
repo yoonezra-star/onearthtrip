@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { site } from "../data/site";
+import { getPosts } from "../utils/posts";
+
+const posts = await getPosts();
+const featured = posts.slice(0, 6);
+---
+
+<BaseLayout title={site.title} description={site.description}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">UAE LIFE ARCHIVE</p>
+        <h1>아부다비에서 살아보니 보이는 UAE</h1>
+        <p class="lead">
+          여행자의 체크리스트를 넘어, 오래 머문 사람이 기억하는 아랍에미리트의
+          문화와 장소, 생활의 감각을 기록합니다.
+        </p>
+      </div>
+      <aside class="hero-panel">
+        <p>
+          사막의 과거, 도시의 현재, 2071년을 향한 미래, 그리고 그 사이에 남은
+          개인의 추억을 한곳에 모읍니다.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">SITE MAP</p>
+          <h2>읽기 좋은 네 갈래</h2>
+        </div>
+        <p>경험담과 공식 자료를 분리해 신뢰를 높이고, 관련 글은 내부 링크로 이어갑니다.</p>
+      </div>
+      <div class="feature-list">
+        <a class="feature" href="/life.html">
+          <h3>아부다비 생활</h3>
+          <p>교통, 날씨, 일상, 계절, 현지에서 오래 지내며 알게 되는 감각.</p>
+        </a>
+        <a class="feature" href="/culture.html">
+          <h3>UAE 문화</h3>
+          <p>라마단, 마즐리스, 대추야자, 오우드, 카락티처럼 생활 속 문화.</p>
+        </a>
+        <a class="feature" href="/past-present-future.html">
+          <h3>과거·현재·미래</h3>
+          <p>진주와 무역의 역사부터 루브르, 2071 비전까지 이어지는 변화.</p>
+        </a>
+        <a class="feature" href="/memory.html">
+          <h3>나의 UAE 추억</h3>
+          <p>장소보다 오래 남는 순간들, 타지에서 마주한 감정의 기록.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">LATEST STORIES</p>
+          <h2>최근 기록</h2>
+        </div>
+        <p>기존 Blogger 글을 새 구조에 맞춰 옮기고, 앞으로의 글도 같은 방식으로 쌓습니다.</p>
+      </div>
+      <div class="post-grid">
+        {featured.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { getPosts } from "../utils/posts";
+
+const posts = (await getPosts()).filter((post) => post.data.category === "UAE 문화");
+---
+
+<BaseLayout title="UAE 문화 | On Earth Trip" description="라마단, 마즐리스, 대추야자, 향, 차 문화처럼 UAE 생활 속 문화를 경험 중심으로 정리합니다.">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">UAE CULTURE</p>
+      <h1>UAE 문화</h1>
+      <p class="lead">사람을 대하는 방식, 환대의 언어, 계절의 냄새처럼 문화가 생활이 되는 순간들.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container post-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>
