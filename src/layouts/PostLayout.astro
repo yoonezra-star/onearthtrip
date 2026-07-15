@@ -71,6 +71,18 @@ const articleJson = {
         {post.data.tags.map((tag) => <span>#{tag}</span>)}
       </div>
     )}
+    <aside class="author-box" aria-label="작성자와 편집 기준">
+      <div class="author-avatar" aria-hidden="true">AB</div>
+      <div>
+        <p class="author-label">WRITTEN BY</p>
+        <h2>{post.data.author}</h2>
+        <p>
+          아부다비 생활 경험을 바탕으로 UAE의 장소, 문화, 일상, 여행 기억을 기록합니다.
+          개인 경험은 경험으로, 바뀔 수 있는 정보는 방문 전 확인이 필요한 정보로 구분해 씁니다.
+        </p>
+        <a href="/about">운영 원칙 보기</a>
+      </div>
+    </aside>
     <script type="application/ld+json" set:html={JSON.stringify(articleJson)} />
   </article>
   {relatedPosts.length > 0 && (
