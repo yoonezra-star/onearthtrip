@@ -7,13 +7,12 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["글로벌빌리지","국기","정체성","문화탐험","자존감회복","겨울여행","테마파크","특산품","이색체험","나를찾아서"]
 permalink: "/2026/04/global-village.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsgsnH7OrUlhBdFhGM5UF9Lml9ReyJJFfE6d-0TICr8szFBMZcIupGJDtN_YZfzjTT7WX3FXo6tgE6exrgfymyCD5V7WBCJOOu66H4wvyba1-49kP_OotkF22cpbG-AQn3xD4vRwEf9peK8RfJ8WN83pvTRgyJSI9WNVj8ghYVGUTZXXWVqahZ8Q6-Y3cw/w1600/ff3ff0b3-c112-438d-890f-76d53746284b.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/global-village.html"
+heroImage: "/images/posts/global-village-img-001.webp"
 ---
 
 겨울이 찾아오면 두바이의 공기는 사뭇 달라집니다. 뜨겁던 열기가 가시고 기분 좋은 바람이 불기 시작하는 10월부터 이듬해 4월까지, 도시 한쪽에는 세계 최대 규모의 야외 테마파크인 '글로벌 빌리지(Global Village)'가 그 화려한 문을 엽니다. 수많은 국가의 국기가 바람에 펄럭이는 이곳은 단순한 놀이공원을 넘어, 지구촌의 모든 문화가 한자리에 모이는 거대한 용광로 같은 곳이죠.
 
-[![글로벌 빌리지(Global Village)의 수많은 국기 사이에서 찾은 나의 정체성](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsgsnH7OrUlhBdFhGM5UF9Lml9ReyJJFfE6d-0TICr8szFBMZcIupGJDtN_YZfzjTT7WX3FXo6tgE6exrgfymyCD5V7WBCJOOu66H4wvyba1-49kP_OotkF22cpbG-AQn3xD4vRwEf9peK8RfJ8WN83pvTRgyJSI9WNVj8ghYVGUTZXXWVqahZ8Q6-Y3cw/w320-h320-rw/ff3ff0b3-c112-438d-890f-76d53746284b.webp "글로벌 빌리지(Global Village)의 수많은 국기 사이에서 찾은 나의 정체성")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsgsnH7OrUlhBdFhGM5UF9Lml9ReyJJFfE6d-0TICr8szFBMZcIupGJDtN_YZfzjTT7WX3FXo6tgE6exrgfymyCD5V7WBCJOOu66H4wvyba1-49kP_OotkF22cpbG-AQn3xD4vRwEf9peK8RfJ8WN83pvTRgyJSI9WNVj8ghYVGUTZXXWVqahZ8Q6-Y3cw/s1024/ff3ff0b3-c112-438d-890f-76d53746284b.webp)
+[![글로벌 빌리지(Global Village)의 수많은 국기 사이에서 찾은 나의 정체성](/images/posts/global-village-img-002.webp "글로벌 빌리지(Global Village)의 수많은 국기 사이에서 찾은 나의 정체성")](/images/posts/global-village-img-003.webp)
 
 마치 하룻밤 사이에 세계 일주를 떠난 듯한 착각을 불러일으키는 이곳에서, 저는 예상치 못한 감정을 마주했습니다. 수많은 이방인 틈에서 오히려 '한국인으로서의 나'를 더욱 선명하게 인식하게 된 것이죠. 다채로운 문화의 향연 속에서 제 안의 정체성을 재확인하고, 긍정적인 자존감을 회복했던 특별한 기록을 공유해봅니다.
 

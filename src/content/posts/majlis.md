@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: []
 permalink: "/2026/04/majlis.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPAIf2jeM603weQnUCDUXzRVZ4XJJRpzpVGxE7bCt3CleqgtA_aEk_XrthlW3P4GQKJnRBvYFDHkcGiaETec2tvWpmyyz82b9k8zrKsz0SqEQg1kQ6A4JqWEDwDDObLJUU-_-ewenVbLUfSavkENXkxsNPLe0mcTtJFyEADKsGc_DEK0mPfe2mW1wGZYzV/w1600/d3b763a2-0b0d-4e6e-83ea-af1cecb40ce0.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/majlis.html"
+heroImage: "/images/posts/majlis-img-001.webp"
 ---
 
 오랜만에 친구와 약속을 잡았는데, 만나서 무슨 얘기를 해야 할지 막막했던 경험, 다들 있으시죠? 향긋한 커피 향이 감돌고 낮은 쿠션에 몸을 기대어 오직 서로의 목소리에만 집중하는 풍경을 상상해 보세요. 차가운 도시의 소음 대신 따뜻한 환대가 흐르는 공간, 바로 아랍의 마즐리스입니다.
 
 매번 '효율'과 '결론'만 따지다 보니, 때로는 과정 그 자체를 즐기는 여유가 그리워지기도 하더라고요. 오늘은 그런 갈증을 채워줄 특별한 문화 공간, '마즐리스(Majlis)'에 대해 이야기해 보려고 해요. 단순히 장소를 넘어 마음을 나누는 이 고유한 문화는 우리에게 어떤 의미를 줄까요?
 
-[![금요일 오후의 마즐리스(Majlis), 환대와 대화가 있는 아랍의 거실](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPAIf2jeM603weQnUCDUXzRVZ4XJJRpzpVGxE7bCt3CleqgtA_aEk_XrthlW3P4GQKJnRBvYFDHkcGiaETec2tvWpmyyz82b9k8zrKsz0SqEQg1kQ6A4JqWEDwDDObLJUU-_-ewenVbLUfSavkENXkxsNPLe0mcTtJFyEADKsGc_DEK0mPfe2mW1wGZYzV/w320-h179-rw/d3b763a2-0b0d-4e6e-83ea-af1cecb40ce0.webp "금요일 오후의 마즐리스(Majlis), 환대와 대화가 있는 아랍의 거실")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPAIf2jeM603weQnUCDUXzRVZ4XJJRpzpVGxE7bCt3CleqgtA_aEk_XrthlW3P4GQKJnRBvYFDHkcGiaETec2tvWpmyyz82b9k8zrKsz0SqEQg1kQ6A4JqWEDwDDObLJUU-_-ewenVbLUfSavkENXkxsNPLe0mcTtJFyEADKsGc_DEK0mPfe2mW1wGZYzV/s1024/d3b763a2-0b0d-4e6e-83ea-af1cecb40ce0.webp)
+[![금요일 오후의 마즐리스(Majlis), 환대와 대화가 있는 아랍의 거실](/images/posts/majlis-img-002.webp "금요일 오후의 마즐리스(Majlis), 환대와 대화가 있는 아랍의 거실")](/images/posts/majlis-img-003.webp)
 
 -   [01\. 마즐리스: 공간을 넘어선 공동체의 심장](#meaning)
 -   [02\. 환대의 미학, 결론보다 깊은 대화의 가치](#hospitality)

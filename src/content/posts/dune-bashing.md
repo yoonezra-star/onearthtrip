@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["사막사파리","듄베이싱","사막여행","별빛감상","두바이사막","휴식과회복","사막의밤","여행에세이","심리적회복","사막체험"]
 permalink: "/2026/05/dune-bashing.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgS9v2ahLjQZEzzXDxUsdxAY2FXYpjp3YpgEtigLGeuHaSyq9agFN_rrmWthwRGc-gq_Z7y7yT_hwCHZPzQiCOInJjJrpvXvSnKS1y8cByT5z6XO-tnuL8xQ-r925g7eAEfLdWjxrbdRkw3hi8GltRCikJXmHVJECf2pMynKuiFtZrmMGW17SoGIYJaNzKx/w1600/5a645e58-eb1d-4783-a957-d0eacd1efe23.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/05/dune-bashing.html"
+heroImage: "/images/posts/dune-bashing-img-001.webp"
 ---
 
 광활한 붉은 모래 언덕 위를 질주하는 4륜 구동 차량의 엔진 소리가 멈추면, 사막은 기다렸다는 듯이 믿기지 않는 고요를 선물합니다. 도시에서는 단 한 번도 느껴보지 못한, 귀가 먹먹할 정도의 적막함이죠. 모래 언덕을 오르내리며 아드레날린을 쏟아냈던 직후에 마주하는 이 고요함은, 우리 삶에서 소란과 침묵이 얼마나 가까이 맞닿아 있는지를 새삼 깨닫게 해줍니다.
 
 사막 사파리는 흔히 짜릿한 모험으로 기억되지만, 막상 현장에서 오래 머물다 보면 마음속에 남는 것은 결국 그 깊은 침묵과 밤하늘의 별빛인 경우가 많더군요. 소란스러운 질주 뒤에 찾아오는 이 역설적인 평온함은 바쁜 일상을 살아가는 우리에게 꼭 필요한 휴식의 본질을 보여주는 듯합니다.
 
-[![사막 사파리, 듄 베이싱(Dune Bashing)의 짜릿함 뒤에 찾아오는 별빛의 적막](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgS9v2ahLjQZEzzXDxUsdxAY2FXYpjp3YpgEtigLGeuHaSyq9agFN_rrmWthwRGc-gq_Z7y7yT_hwCHZPzQiCOInJjJrpvXvSnKS1y8cByT5z6XO-tnuL8xQ-r925g7eAEfLdWjxrbdRkw3hi8GltRCikJXmHVJECf2pMynKuiFtZrmMGW17SoGIYJaNzKx/w320-h175-rw/5a645e58-eb1d-4783-a957-d0eacd1efe23.webp "사막 사파리, 듄 베이싱(Dune Bashing)의 짜릿함 뒤에 찾아오는 별빛의 적막")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgS9v2ahLjQZEzzXDxUsdxAY2FXYpjp3YpgEtigLGeuHaSyq9agFN_rrmWthwRGc-gq_Z7y7yT_hwCHZPzQiCOInJjJrpvXvSnKS1y8cByT5z6XO-tnuL8xQ-r925g7eAEfLdWjxrbdRkw3hi8GltRCikJXmHVJECf2pMynKuiFtZrmMGW17SoGIYJaNzKx/s1024/5a645e58-eb1d-4783-a957-d0eacd1efe23.webp)
+[![사막 사파리, 듄 베이싱(Dune Bashing)의 짜릿함 뒤에 찾아오는 별빛의 적막](/images/posts/dune-bashing-img-002.webp "사막 사파리, 듄 베이싱(Dune Bashing)의 짜릿함 뒤에 찾아오는 별빛의 적막")](/images/posts/dune-bashing-img-003.webp)
 
   
 

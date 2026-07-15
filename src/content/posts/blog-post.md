@@ -7,13 +7,12 @@ author: "아부라이프"
 category: "아부다비 생활"
 tags: ["르와이스","UAE생활","ADNOC","해외현장","사막도시","아부다비","해외거주","주거단지","해외취업","일상기록"]
 permalink: "/2026/04/blog-post.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_n2vkuJl0KFjcbH7VOwERcVBNM5p9j0BQqbpd68SKw8NRYB6fEmHQgCGngk6ZspgzaCOl4xYQWer0XrNY5bElZPUsgsuEeGcJ50XOzaPX4DjxVxY85ZH-1wwRCR0Usabctezp4ufCSGqSBDeR-cKGFltJZUx2R3GOOtrBgzDjzdVfeoZ_lRL0Dpp-Kg0k/w1600/20260407_200139.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/blog-post.html"
+heroImage: "/images/posts/blog-post-img-001.webp"
 ---
 
 사막의 지평선 끝에 걸린 붉은 노을을 보며 퇴근길을 서두르다 보면, 문득 이곳이 세상의 끝자락처럼 느껴질 때가 있습니다. 아랍에미리트 아부다비에서 서쪽으로 한참을 달려야 닿는 곳, ADNOC의 심장부라 불리는 르와이스(Ruwais)에서의 일상은 그렇게 시작되곤 하죠. 처음 이곳에 발을 들였을 때는 끝없이 펼쳐진 모래 언덕과 제한된 환경에 숨이 턱 막히는 기분이 들기도 했습니다. 사실 처음 적응기에는 산소가 모자라서 졸리다고 하는 사람들도 많이 있었습니다. 하지만 시간이 흐르고 이곳의 리듬에 몸을 맡기다 보니, 그토록 답답했던 고립감이 의외의 안락함으로 변해가는 과정을 경험하게 되더군요.
 
-[![르와이스에서의 삶, 고립된 도시가 오히려 편안했던 이유](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_n2vkuJl0KFjcbH7VOwERcVBNM5p9j0BQqbpd68SKw8NRYB6fEmHQgCGngk6ZspgzaCOl4xYQWer0XrNY5bElZPUsgsuEeGcJ50XOzaPX4DjxVxY85ZH-1wwRCR0Usabctezp4ufCSGqSBDeR-cKGFltJZUx2R3GOOtrBgzDjzdVfeoZ_lRL0Dpp-Kg0k/w318-h320-rw/20260407_200139.webp "르와이스에서의 삶, 고립된 도시가 오히려 편안했던 이유")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_n2vkuJl0KFjcbH7VOwERcVBNM5p9j0BQqbpd68SKw8NRYB6fEmHQgCGngk6ZspgzaCOl4xYQWer0XrNY5bElZPUsgsuEeGcJ50XOzaPX4DjxVxY85ZH-1wwRCR0Usabctezp4ufCSGqSBDeR-cKGFltJZUx2R3GOOtrBgzDjzdVfeoZ_lRL0Dpp-Kg0k/s714/20260407_200139.webp)
+[![르와이스에서의 삶, 고립된 도시가 오히려 편안했던 이유](/images/posts/blog-post-img-002.webp "르와이스에서의 삶, 고립된 도시가 오히려 편안했던 이유")](/images/posts/blog-post-img-003.webp)
 
 도시의 소음과 복잡한 인간관계에서 벗어나 오로지 나만의 루틴에 집중할 수 있는 환경은, 바쁘게만 살아온 우리에게는 낯설지만 달콤한 휴식 같은 기회를 제공합니다. 르와이스라는 공간이 주는 특유의 정적과 그 안에서 피어나는 소소한 생활의 기록들을 정리해보고자 합니다. 해외 현장이라는 거친 이름 뒤에 숨겨진, 생각보다 다정하고 정갈한 이곳의 삶에 대한 이야기입니다. 이 글이 독자에게도, 그리고 나에게도 유익한 글이 되길 바래봅니다!
 
@@ -33,7 +32,7 @@ sourceUrl: "https://www.onearthtrip.com/2026/04/blog-post.html"
 
 특히 한국 식재료가 새로 입고되는 날이면 단지 내 한국인들 사이에 조용히 정보가 돕니다. "오늘 배추가 싱싱하더라" 혹은 "참기름이 들어왔다"는 짧은 소식에 마트로 향하는 발걸음이 가벼워지죠. 보통 배추는 chinese cabbage 입니다. **이런 소소한 성취감들이 모여 타지 생활의 외로움을 상쇄해 줍니다.** 으리으리한 백화점 쇼핑보다, 오늘 저녁 식탁에 올릴 신선한 채소를 구했다는 안도감이 더 크게 다가오는 곳, 그것이 르와이스식 행복의 문법일지도 모르겠습니다. 한국 배추보다는 너무 작아서 한국 김장철의 배추가 그립기도 합니다.
 
-[![루와이스 시내 어딘가](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSz9lTKW915JQv2Yv45Zo93EP-MgwrgMAo-Aj3c6Oug8Q78RhpJq-I4R1Pf9jpm9iM6Fd-wmpjWBeeeC44Ig6LetFhjzysu_3lqUDiweEx0GnBtpD99EQTMw4VOyeqprk7nfh-SY6P-NA_6TE2cU42dEypVL-2s1RKKKtSFqQN199mRHX7Uw_a5P58AaEc/w320-h237-rw/20260407_200454.jpg "루와이스 시내 어딘가")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSz9lTKW915JQv2Yv45Zo93EP-MgwrgMAo-Aj3c6Oug8Q78RhpJq-I4R1Pf9jpm9iM6Fd-wmpjWBeeeC44Ig6LetFhjzysu_3lqUDiweEx0GnBtpD99EQTMw4VOyeqprk7nfh-SY6P-NA_6TE2cU42dEypVL-2s1RKKKtSFqQN199mRHX7Uw_a5P58AaEc/s1107/20260407_200454.jpg)
+[![루와이스 시내 어딘가](/images/posts/blog-post-img-004.jpg "루와이스 시내 어딘가")](/images/posts/blog-post-img-005.jpg)
 
 ## 사막의 공기 속을 걷는 시간, 저녁 산책의 미학
 
@@ -53,7 +52,7 @@ sourceUrl: "https://www.onearthtrip.com/2026/04/blog-post.html"
 
 르와이스를 떠난 뒤에도 가끔 그 건조한 바람과 정적을 떠올립니다. 아마도 그곳에서의 삶이 제 인생에서 가장 밀도 높은 시간이었기 때문일 것입니다. 혹시라도 해외 현장이나 낯선 환경에서의 고립된 생활을 앞두고 두려움을 느끼는 분들이 있다면 말씀드리고 싶습니다. 그 시간은 당신의 영혼을 더 단단하고 깊게 만들어줄 소중한 기회가 될 것이라고 말이죠. 고요함 속에 머무는 법을 알게 될 때, 우리는 비로소 진정한 평온에 닿을 수 있습니다.
 
-[![루와이스 구 아파트 어딘가](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWuJ4cYMJg0r2UmBTKeyR9LqQ0p8Mn9EqDKJyFw-gQR0zQBQK-YyDUEEA4KjPuID4UW_WHZHVO4FSo2JQqQQax4JUNux7ALIQ32HLjFEBu8FP416DyOb7vLSL79W1B9jqPzeAlsKxx8edmgHLPvoG-GwQVKE3igNGkYpVqvG1Oek-HVczfCKkCnOFuY-4F/w320-h199-rw/20260407_200355.jpg "루와이스 구 아파트 어딘가")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWuJ4cYMJg0r2UmBTKeyR9LqQ0p8Mn9EqDKJyFw-gQR0zQBQK-YyDUEEA4KjPuID4UW_WHZHVO4FSo2JQqQQax4JUNux7ALIQ32HLjFEBu8FP416DyOb7vLSL79W1B9jqPzeAlsKxx8edmgHLPvoG-GwQVKE3igNGkYpVqvG1Oek-HVczfCKkCnOFuY-4F/s1095/20260407_200355.jpg)
+[![루와이스 구 아파트 어딘가](/images/posts/blog-post-img-006.jpg "루와이스 구 아파트 어딘가")](/images/posts/blog-post-img-007.jpg)
 
 ## 자주 묻는 질문
 

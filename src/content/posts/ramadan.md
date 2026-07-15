@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: ["라마단","2026라마단","이슬람문화","금식","이프타르","정신성찰","중동생활","문화체험","인내와감사","내면성장"]
 permalink: "/2026/04/ramadan.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgwzoqeU2IoI5narp9rc2dV_QTiw9A4-57ar3hNA5cjthP-c6lUWluRuA_-q4QoMO0n7HIcZclIJaz3AxQPZJRMOvaF1tI2mMD16XsvNFDe6BOqBLRg55j-OQ_KfNa7QeMgR1o43N8fmcU6aHrg5pksxi5srErMRxM4rRPImXCKt3wDzyB7YaCtzNgUybu/w1600/20260407_230334.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/ramadan.html"
+heroImage: "/images/posts/ramadan-img-001.webp"
 ---
 
 이미 지나온 시간을 되돌아보는 일은 언제나 묘한 여운을 남깁니다. 지난 2026년 2월 18일부터 3월 20일까지 이어졌던 라마단 기간을 중동 현지에서 보내며, 저는 이슬람의 금식 문화가 단순히 음식을 끊는 행위 그 이상임을 몸소 체험했습니다. 처음에는 물 한 모금 마시지 못하는 환경이 그저 가혹하게만 느껴졌지만, 막상 그 리듬에 몸을 맡겨보니 텅 빈 위장이 오히려 마음을 더 선명하게 채워주는 신기한 경험을 하게 되더군요.
 
 평소 당연하게 여겼던 일상의 모든 감각이 예민하게 살아나고, 나 자신을 깊이 들여다보게 했던 그 고요하고도 뜨거웠던 한 달간의 기록을 정리해 보려 합니다. 혹시 내년의 라마단을 준비하거나 중동 문화가 궁금한 분들께 제 작은 관찰이 의미 있는 시각이 되기를 바랍니다.
 
-[![라마단(Ramadan) 기간의 인내: 텅 빈 위장이 채워준 정신의 풍요](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgwzoqeU2IoI5narp9rc2dV_QTiw9A4-57ar3hNA5cjthP-c6lUWluRuA_-q4QoMO0n7HIcZclIJaz3AxQPZJRMOvaF1tI2mMD16XsvNFDe6BOqBLRg55j-OQ_KfNa7QeMgR1o43N8fmcU6aHrg5pksxi5srErMRxM4rRPImXCKt3wDzyB7YaCtzNgUybu/w320-h319-rw/20260407_230334.webp "라마단(Ramadan) 기간의 인내: 텅 빈 위장이 채워준 정신의 풍요")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgwzoqeU2IoI5narp9rc2dV_QTiw9A4-57ar3hNA5cjthP-c6lUWluRuA_-q4QoMO0n7HIcZclIJaz3AxQPZJRMOvaF1tI2mMD16XsvNFDe6BOqBLRg55j-OQ_KfNa7QeMgR1o43N8fmcU6aHrg5pksxi5srErMRxM4rRPImXCKt3wDzyB7YaCtzNgUybu/s716/20260407_230334.webp)
+[![라마단(Ramadan) 기간의 인내: 텅 빈 위장이 채워준 정신의 풍요](/images/posts/ramadan-img-002.webp "라마단(Ramadan) 기간의 인내: 텅 빈 위장이 채워준 정신의 풍요")](/images/posts/ramadan-img-003.webp)
 
 ## 비움의 시작, 텅 빈 위장이 가져다준 정신의 풍요
 

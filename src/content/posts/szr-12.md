@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "아부다비 생활"
 tags: ["셰이크자이드로드","SZR","두바이","교통체증","기다림","인내","수용","일상의깨달음","여행경험","두바이일상"]
 permalink: "/2026/04/szr-12.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpoZpZnqVyE1xXH_jT0Vj9OQ6hJZCzoGpdWmYNOEPuCtvo6u0wkLLNTrDr5yJau3JdLLzQOXUcQHWK-JHbpeJnNAxacdGRWJ9d0cKBhYAHXGp8-DMIlF557GtCZP8MZtICUGihMrMYZEAMcLbkTfiCIjbIm7wppVlfpR2UOrrQfL9spGQox0XmVjS380bj/w1600/4a519ac0-7190-479b-9b01-cb40a41b7e08.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/szr-12.html"
+heroImage: "/images/posts/szr-12-img-001.webp"
 ---
 
 두바이의 심장부를 관통하는 셰이크 자이드 로드(SZR)를 달리다 보면, 거대한 마천루 사이로 쏟아지는 화려한 도시의 속도감에 압도되곤 합니다. 하지만 2026년 4월의 그날, 12차선이라는 광활한 도로가 마치 거대한 톱니바퀴가 멈춘 듯 정지해버린 순간은 제게 전혀 다른 감각을 일깨워주었습니다.
 
 수많은 차량이 꼼짝없이 갇혀버린 풍경은 낯설다 못해 경이롭기까지 했죠. 12차선 고속도로가 마비된 상황은 단순히 이동 시간을 지연시키는 불편함을 넘어, 인간의 통제력을 완전히 벗어난 상황 그 자체를 마주하게 했습니다. 조급함이 아무런 해결책이 되지 못한다는 진리를 몸소 체험한 기록을 남겨봅니다.
 
-[![셰이크 자이드 로드(SZR)의 12차선 정체 속에서 배운 기다림](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpoZpZnqVyE1xXH_jT0Vj9OQ6hJZCzoGpdWmYNOEPuCtvo6u0wkLLNTrDr5yJau3JdLLzQOXUcQHWK-JHbpeJnNAxacdGRWJ9d0cKBhYAHXGp8-DMIlF557GtCZP8MZtICUGihMrMYZEAMcLbkTfiCIjbIm7wppVlfpR2UOrrQfL9spGQox0XmVjS380bj/w320-h320-rw/4a519ac0-7190-479b-9b01-cb40a41b7e08.webp "셰이크 자이드 로드(SZR)의 12차선 정체 속에서 배운 기다림")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpoZpZnqVyE1xXH_jT0Vj9OQ6hJZCzoGpdWmYNOEPuCtvo6u0wkLLNTrDr5yJau3JdLLzQOXUcQHWK-JHbpeJnNAxacdGRWJ9d0cKBhYAHXGp8-DMIlF557GtCZP8MZtICUGihMrMYZEAMcLbkTfiCIjbIm7wppVlfpR2UOrrQfL9spGQox0XmVjS380bj/s1024/4a519ac0-7190-479b-9b01-cb40a41b7e08.webp)
+[![셰이크 자이드 로드(SZR)의 12차선 정체 속에서 배운 기다림](/images/posts/szr-12-img-002.webp "셰이크 자이드 로드(SZR)의 12차선 정체 속에서 배운 기다림")](/images/posts/szr-12-img-003.webp)
 
 ## 멈춰버린 12차선, 혼란 속에서 마주한 정지 화면
 

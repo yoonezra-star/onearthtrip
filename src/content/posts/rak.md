@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["라스알카이마","알자지라알함라","유령마을","UAE역사","진주채취","비움","회복","중동여행","산호석가옥","헤리티지빌리지"]
 permalink: "/2026/04/rak.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSp6Qk-B-I-o27mw_EPBBXljdxzd5-IBERMjO2DGILMr_EIiCK_NE8vVNf0O67RyYUWoaZOcmH7nxTqwdNA-ssNnmj2ySzPVYkz1Ss1pnPBi0aXeuoCOXGyqFxg5Ully33rFVbb5JM-THEYUdVqeu_s3-nqhCZWyoFECsiJHfdnB9g3TYoe6g-rGtqE3Na/w1600/20260407_203227.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/rak.html"
+heroImage: "/images/posts/rak-img-001.webp"
 ---
 
 라스알카이마(Ras Al Khaimah)의 붉은 사막을 지나 해안가로 접어들면, 현대적인 리조트들 사이로 시간이 멈춰버린 듯한 기묘한 풍경이 나타납니다. 바로 '알 자지라 알 함라(Al Jazirah Al Hamra)'입니다. 한때는 에미리트 전역에서 손꼽히는 진주 채취의 중심지로 번성했지만, 지금은 주민들이 떠나고 남겨진 폐허가 되어 '유령 마을'이라는 이름으로 불리고 있지요.
 
 마을 입구에 들어서면 가장 먼저 느껴지는 것은 압도적인 적막입니다. 2026년 1월의 선선한 바람이 무너진 담장 사이를 지날 때마다 낮게 휘파람 소리를 내는데, 그 소리가 꼭 옛사람들이 주고받던 낮은 속삭임처럼 들리기도 합니다. 화려한 고층 빌딩이 즐비한 UAE에서 이토록 처연하고도 아름다운 폐허를 마주한다는 건 참으로 묘한 경험입니다.
 
-[![라스알카이마(RAK) '알 자지라 알 함라', 폐허가 된 유령 마을에서의 비움](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSp6Qk-B-I-o27mw_EPBBXljdxzd5-IBERMjO2DGILMr_EIiCK_NE8vVNf0O67RyYUWoaZOcmH7nxTqwdNA-ssNnmj2ySzPVYkz1Ss1pnPBi0aXeuoCOXGyqFxg5Ully33rFVbb5JM-THEYUdVqeu_s3-nqhCZWyoFECsiJHfdnB9g3TYoe6g-rGtqE3Na/w320-h319-rw/20260407_203227.webp "라스알카이마(RAK) '알 자지라 알 함라', 폐허가 된 유령 마을에서의 비움")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSp6Qk-B-I-o27mw_EPBBXljdxzd5-IBERMjO2DGILMr_EIiCK_NE8vVNf0O67RyYUWoaZOcmH7nxTqwdNA-ssNnmj2ySzPVYkz1Ss1pnPBi0aXeuoCOXGyqFxg5Ully33rFVbb5JM-THEYUdVqeu_s3-nqhCZWyoFECsiJHfdnB9g3TYoe6g-rGtqE3Na/s820/20260407_203227.webp)
+[![라스알카이마(RAK) '알 자지라 알 함라', 폐허가 된 유령 마을에서의 비움](/images/posts/rak-img-002.webp "라스알카이마(RAK) '알 자지라 알 함라', 폐허가 된 유령 마을에서의 비움")](/images/posts/rak-img-003.webp)
 
 ## 진주 채취의 영광 뒤에 남겨진 고요한 잔해
 
@@ -25,7 +24,7 @@ sourceUrl: "https://www.onearthtrip.com/2026/04/rak.html"
 
 현장 PM으로 중동의 거대한 프로젝트들을 지켜보다 보면, 무언가를 새로 짓는 일에만 몰두하게 될 때가 많습니다. 그런데 이곳에 서서 무너진 벽면을 가만히 쓸어보면, '완성'보다 중요한 것은 그 공간에 머물렀던 사람들의 '삶'이었다는 사실을 새삼 깨닫게 됩니다. 기록되지 못한 수많은 인생이 이 산호석 틈새마다 깃들어 있는 기분이 듭니다.
 
-[![알 자지라 알 함라: 위키피디아](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcrYWQ0mv-6LR2erjvA9vmtqvQr8iYZaL2Rr2d4PNrrFYgbcg1IklnhvBEoAlJz_inWuFXel1aSKeUwFYoOuk2YE1JJQUdSrWJsN-6Tdn656SqexUDiezrPrQuOCr00x4t4KMDOqOZYkNe0qnbx0H18MFHjUS8QFh2e0wvaMIXdtCpYjnTn7I2bJLQD_0j/w320-h243-rw/20260407_202538.jpg "알 자지라 알 함라: 위키피디아")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcrYWQ0mv-6LR2erjvA9vmtqvQr8iYZaL2Rr2d4PNrrFYgbcg1IklnhvBEoAlJz_inWuFXel1aSKeUwFYoOuk2YE1JJQUdSrWJsN-6Tdn656SqexUDiezrPrQuOCr00x4t4KMDOqOZYkNe0qnbx0H18MFHjUS8QFh2e0wvaMIXdtCpYjnTn7I2bJLQD_0j/s1037/20260407_202538.jpg)
+[![알 자지라 알 함라: 위키피디아](/images/posts/rak-img-004.jpg "알 자지라 알 함라: 위키피디아")](/images/posts/rak-img-005.jpg)
 
 ## 산호석 가옥이 들려주는 시간의 층위
 
@@ -35,7 +34,7 @@ sourceUrl: "https://www.onearthtrip.com/2026/04/rak.html"
 
 **과거의 영광과 현재의 적막, 그리고 미래의 예술이 한데 뒤섞인 이 풍경은 방문객들에게 깊은 울림을 줍니다.** 특히 저녁 무렵, 산호석 벽면이 노을빛에 붉게 물들 때면 이곳이 왜 '붉은 섬(Al Jazirah Al Hamra)'이라 불렸는지 단번에 이해하게 됩니다. 그 빛깔은 마치 마을이 간직한 오래된 온기처럼 느껴지기도 하거든요.
 
-[![알 자지라 알 함라 요새, 2026년 1월: 위키피디아](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmrHoRsU0Vby6fPzJOD_yGE8yzqzunV-DSFzj9WUlvf4XY2vRLYlBRQakYjpeUzD68aK3rgEGzU4XOOIa8JVEnm2EoHJ9-GG5F4-QbVNAIq7UD0XRc91pnJkcVnGgTnWs1uuAlgzZO2WmkSUJhlcOl_Rzz7HhDpYx2Nh5bdZWyBgr-H9TJPDv59HjJZIiG/w260-h320-rw/20260407_202611.jpg "알 자지라 알 함라 요새, 2026년 1월: 위키피디아")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmrHoRsU0Vby6fPzJOD_yGE8yzqzunV-DSFzj9WUlvf4XY2vRLYlBRQakYjpeUzD68aK3rgEGzU4XOOIa8JVEnm2EoHJ9-GG5F4-QbVNAIq7UD0XRc91pnJkcVnGgTnWs1uuAlgzZO2WmkSUJhlcOl_Rzz7HhDpYx2Nh5bdZWyBgr-H9TJPDv59HjJZIiG/s716/20260407_202611.jpg)
+[![알 자지라 알 함라 요새, 2026년 1월: 위키피디아](/images/posts/rak-img-006.jpg "알 자지라 알 함라 요새, 2026년 1월: 위키피디아")](/images/posts/rak-img-007.jpg)
 
   
 

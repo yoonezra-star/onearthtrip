@@ -7,17 +7,16 @@ author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["아부다비그랜드모스크","셰이크자이드모스크","아부다비여행","모스크복장","세계최대카펫","중동여행","그랜드모스크예약","순백의미학","내면의평화","2026여행지추천"]
 permalink: "/2026/04/blog-post_11.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghwHuMcnktkT0F9-g-J8ZSoC7Ss0wU2XfLsVsBlcPfy-mDkRw5o_b6Kew5ob-RxsjiPSPTnZtwJXWFPADI0lnlWsXOdIbsYfs08mO2vFPEwaUjbohdB9zH2Q8oo2vUoDJ7nEbIelKcylsdkdQeMJDMQ6uaGeT0N0OCLoXLWmF0SR_el4qm_MXo1o0O5Sms/w1600/4ff24500-ea46-4a4d-8d95-04c40511c6d8.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/blog-post_11.html"
+heroImage: "/images/posts/blog-post_11-img-001.webp"
 ---
 
 아부다비의 지평선 위로 솟아오른 순백의 돔들을 처음 마주했을 때의 그 이질적인 감각을 잊을 수가 없습니다. 사막의 누런 모래바람과 대비되는 결점 없는 흰색은 마치 다른 세상으로 들어가는 입구처럼 보였거든요. 셰이크 자이드 그랜드 모스크는 단순히 아부다비의 랜드마크를 넘어, 보는 것만으로도 마음의 소란을 잠재우는 묘한 힘을 지니고 있었습니다.
 
-[![아부다비 그랜드 모스크의 흰 대리석, 순백이 주는 정화의 시간](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghwHuMcnktkT0F9-g-J8ZSoC7Ss0wU2XfLsVsBlcPfy-mDkRw5o_b6Kew5ob-RxsjiPSPTnZtwJXWFPADI0lnlWsXOdIbsYfs08mO2vFPEwaUjbohdB9zH2Q8oo2vUoDJ7nEbIelKcylsdkdQeMJDMQ6uaGeT0N0OCLoXLWmF0SR_el4qm_MXo1o0O5Sms/w320-h320-rw/4ff24500-ea46-4a4d-8d95-04c40511c6d8.webp "아부다비 그랜드 모스크의 흰 대리석, 순백이 주는 정화의 시간")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghwHuMcnktkT0F9-g-J8ZSoC7Ss0wU2XfLsVsBlcPfy-mDkRw5o_b6Kew5ob-RxsjiPSPTnZtwJXWFPADI0lnlWsXOdIbsYfs08mO2vFPEwaUjbohdB9zH2Q8oo2vUoDJ7nEbIelKcylsdkdQeMJDMQ6uaGeT0N0OCLoXLWmF0SR_el4qm_MXo1o0O5Sms/s1024/4ff24500-ea46-4a4d-8d95-04c40511c6d8.webp)
+[![아부다비 그랜드 모스크의 흰 대리석, 순백이 주는 정화의 시간](/images/posts/blog-post_11-img-002.webp "아부다비 그랜드 모스크의 흰 대리석, 순백이 주는 정화의 시간")](/images/posts/blog-post_11-img-003.webp)
 
 2026년 3월, 여전히 많은 여행객이 이곳을 찾는 이유는 아마도 그 압도적인 규모 속에 깃든 정교한 아름다움 때문일 것입니다. 뜨거운 햇살 아래 차갑게 빛나는 대리석 바닥을 밟으며 느꼈던 그 서늘하고도 경건한 기운을 문장으로 옮겨보려 합니다. 화려함의 극치이면서도 동시에 가장 낮은 마음을 갖게 만드는 이곳의 매력을 함께 나누고 싶습니다.
 
-[![아부다비 그랜드 모스크](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFDgo4vtEU_gZQUuOcL3Uq_5_ma1mtvJC4fs66qZ-CzYtm2QxdI9MLSVVl4V-xzKrA76xSGpCZJfHkte76U7hSUCJXzks7gTOZX0fBg0_1Y7U_uLusrQlVL-WRdNXraZM2BeMq7LI4e2nx72rmJqJv54twYUjecvVlVEhFQkUEGm6hlpSNxiqkVDJUTnF1/w320-h233-rw/20260408_214500.webp "아부다비 그랜드 모스크")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFDgo4vtEU_gZQUuOcL3Uq_5_ma1mtvJC4fs66qZ-CzYtm2QxdI9MLSVVl4V-xzKrA76xSGpCZJfHkte76U7hSUCJXzks7gTOZX0fBg0_1Y7U_uLusrQlVL-WRdNXraZM2BeMq7LI4e2nx72rmJqJv54twYUjecvVlVEhFQkUEGm6hlpSNxiqkVDJUTnF1/s1065/20260408_214500.webp)
+[![아부다비 그랜드 모스크](/images/posts/blog-post_11-img-004.webp "아부다비 그랜드 모스크")](/images/posts/blog-post_11-img-005.webp)
 
 ## 01\. 순백의 대리석이 선사하는 경이로움과 정화의 시간
 
@@ -35,7 +34,7 @@ sourceUrl: "https://www.onearthtrip.com/2026/04/blog-post_11.html"
 
 벽면에 새겨진 섬세한 꽃 조각들을 하나하나 눈에 담으며 걷다 보면, 이곳이 단순한 종교 시설을 넘어 인류가 도달할 수 있는 건축 미학의 정점을 보여주고 있다는 생각이 듭니다. 거대한 돔 아래에서 느끼는 공기의 흐름과 그 안을 채운 침묵은, 세상의 속도에서 벗어나 잠시 멈춰 서서 삶의 아름다움을 응시하게 하는 귀한 시간을 선물해주었습니다.
 
-[![아부다비 그랜드 모스크 야경](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNsV0cYMgTh2zPLzijWthnkowRs73QG-Om_S153DjRULxomHNtzaqunZ35pqRU-NG-JDdjy9zjTDyrfEPtJOHzMlsM-Gn9JJMPT_s0hX6TMlPNrI2HzEU1ZeLgT8v_ib0Y1Rc6laLUpYn7ns9kuacDC9hOdGHA-ZmWOwHqY3e917PyKDNP8ULGu3oZjWP9/w320-h207-rw/20260408_214438.webp "아부다비 그랜드 모스크 야경")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNsV0cYMgTh2zPLzijWthnkowRs73QG-Om_S153DjRULxomHNtzaqunZ35pqRU-NG-JDdjy9zjTDyrfEPtJOHzMlsM-Gn9JJMPT_s0hX6TMlPNrI2HzEU1ZeLgT8v_ib0Y1Rc6laLUpYn7ns9kuacDC9hOdGHA-ZmWOwHqY3e917PyKDNP8ULGu3oZjWP9/s1039/20260408_214438.webp)
+[![아부다비 그랜드 모스크 야경](/images/posts/blog-post_11-img-006.webp "아부다비 그랜드 모스크 야경")](/images/posts/blog-post_11-img-007.webp)
 
   
 
@@ -49,7 +48,7 @@ sourceUrl: "https://www.onearthtrip.com/2026/04/blog-post_11.html"
 
 2026년 3월의 어느 날, 이곳에서 보낸 시간은 현실이라기엔 너무나 비현실적으로 아름다웠습니다. 여행 중 마주하는 수많은 명소 중에서도, 이곳만큼 자기 자신을 돌아보게 만드는 장소는 드물 것입니다. 화려한 샹들리에 아래에서, 그리고 부드러운 카펫 위에서 얻은 위로는 아부다비를 떠난 뒤에도 오랫동안 제 마음속에 하얀 대리석처럼 단단히 자리 잡을 것 같습니다.
 
-[![아부다비 그랜드 모스크 전경](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrwCPGVwW0nZRbxlxSdE93D9oe1XbdKNHHo2Y-SrB4UWaM2b_12rGC4RXK0dLDxpiE6TB3gsCsHS9Xt4e1zZJns8IXG5i-KcbcCL0yD5qe9xVqGC1kPyym9-7E2zbVKOBgdE-XWemxj1sObflM_S6anAGUHN4q6jEYpblS06evljUmCOArjQJpkIwaMAjR/w320-h191-rw/20260408_214519.webp "아부다비 그랜드 모스크 전경")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrwCPGVwW0nZRbxlxSdE93D9oe1XbdKNHHo2Y-SrB4UWaM2b_12rGC4RXK0dLDxpiE6TB3gsCsHS9Xt4e1zZJns8IXG5i-KcbcCL0yD5qe9xVqGC1kPyym9-7E2zbVKOBgdE-XWemxj1sObflM_S6anAGUHN4q6jEYpblS06evljUmCOArjQJpkIwaMAjR/s602/20260408_214519.webp)
+[![아부다비 그랜드 모스크 전경](/images/posts/blog-post_11-img-008.webp "아부다비 그랜드 모스크 전경")](/images/posts/blog-post_11-img-009.webp)
 
 ## 자주 묻는 질문
 

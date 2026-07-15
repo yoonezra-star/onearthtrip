@@ -7,13 +7,12 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: ["대추야자","Dates","중동간식","천연당분","피로회복","건강간식","에너지보충","사막의선물","슈퍼푸드","건강관리"]
 permalink: "/2026/04/dates.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvlxV2XXlZlwt00SrbZTEY1iIS_2jDVFcBE9OhFNyEatVkMeRiTjcm7LRyBV5G0jcjlEtnBweWBZw4gAcP7wCx1CZh8ro7Hbt1L7HESY7LAqYPidBTQix8Lri6XPHrpYCHhx6c2rktQlOKmzlqPFNQa3Bxry1lXm7FYlYts6J8zgoBog5gWBjHNDsg8yGS/w1600/f8744b48-ee76-4737-a6aa-465acf9930d7.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/dates.html"
+heroImage: "/images/posts/dates-img-001.webp"
 ---
 
 마트 진열대에서 흔히 볼 수 있는, 때로는 고급스러운 포장으로 시선을 사로잡는 대추야자. 그 작은 열매 하나가 사막의 뜨거운 태양 아래서 수천 년간 사람들의 삶을 지탱해온 귀한 에너지원이라는 사실을 알고 계셨나요? 처음 중동의 대추야자를 접했을 때, 그저 아주 단 건포도 같은 느낌 아닐까 생각했지만 막상 한 입 베어 물고 나면 입안 가득 퍼지는 깊은 풍미에 금방 생각이 바뀌게 됩니다.
 
-[![중동의 대추야자(Dates) 한 알, 지친 몸을 깨우는 가장 달콤한 응원](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvlxV2XXlZlwt00SrbZTEY1iIS_2jDVFcBE9OhFNyEatVkMeRiTjcm7LRyBV5G0jcjlEtnBweWBZw4gAcP7wCx1CZh8ro7Hbt1L7HESY7LAqYPidBTQix8Lri6XPHrpYCHhx6c2rktQlOKmzlqPFNQa3Bxry1lXm7FYlYts6J8zgoBog5gWBjHNDsg8yGS/w320-h320-rw/f8744b48-ee76-4737-a6aa-465acf9930d7.webp "중동의 대추야자(Dates) 한 알, 지친 몸을 깨우는 가장 달콤한 응원")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvlxV2XXlZlwt00SrbZTEY1iIS_2jDVFcBE9OhFNyEatVkMeRiTjcm7LRyBV5G0jcjlEtnBweWBZw4gAcP7wCx1CZh8ro7Hbt1L7HESY7LAqYPidBTQix8Lri6XPHrpYCHhx6c2rktQlOKmzlqPFNQa3Bxry1lXm7FYlYts6J8zgoBog5gWBjHNDsg8yGS/s1024/f8744b48-ee76-4737-a6aa-465acf9930d7.webp)
+[![중동의 대추야자(Dates) 한 알, 지친 몸을 깨우는 가장 달콤한 응원](/images/posts/dates-img-002.webp "중동의 대추야자(Dates) 한 알, 지친 몸을 깨우는 가장 달콤한 응원")](/images/posts/dates-img-003.webp)
 
 단순한 간식을 넘어, 정제된 설탕과는 차원이 다른 묵직한 단맛과 속을 채운 견과류의 고소함까지 더해진 대추야자는 지친 몸과 마음에 즉각적인 활력을 불어넣는 마법 같은 존재입니다. 무기력하고 당이 떨어져 유난히 몸이 무거운 날, 나를 다시 일으켜 세우는 사소하지만 강력한 기쁨을 대추야자와 함께 찾아보는 건 어떨까요.
 

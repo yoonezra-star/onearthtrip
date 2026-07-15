@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: ["모래폭풍","샤말","중동생활","사막도시","내면의평화","오렌지빛하늘","자연의위엄","일상기록","사색","중동풍경"]
 permalink: "/2026/04/shamal.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlnDtY1pPU-Y1FmNDMAgamLoAfZFnDZ6BfE10YvogdkjLH7NPVQ1dwGl-RhgZdq0c9EOdQ_WaVQuwmKRt21PvNsOnZ-v3MPzKto6eHAx_4EWpJX37OfnzYgm7eqtCTr8kW8g1G0cgvtARNgiWG2z1CoNWePMYBc-ntCr7GIc6vrgXEveT09FqlcEW7odVY/w1600/b64ec4f1-a68c-4e60-90b1-50fe2cba4189.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/shamal.html"
+heroImage: "/images/posts/shamal-img-001.webp"
 ---
 
 얼마 전, 사막에서 불어온 모래 폭풍 '샤말' 때문에 온 도시가 오렌지빛으로 물들었습니다. 전에 르와이스 현장 주변 사우디 방향 아부다비 국제도로를 타고 가던 중 합샨 주변에서 만났던 그 모래 폭풍을 또 다시 마주하리라고는 상상을 못했습니다. 그때는 앞이 안보여 도저히 운전이 불가능해서 옆 안전한 길가에 차를 정차하고 1시간 정도 기다렸던 기억이 떠오릅니다. 이번에도 역시 창밖은 말 그대로 압도적인 혼돈이었습니다. 그런데 그 안에서 오히려 묘한 정적을 느꼈던 기억이 납니다. 이런 강력한 자연 현상 앞에서 우리는 분명 평소에는 잊고 지내던 많은 것들을 배우게 되는 것 같습니다.
 
 이번 글에서는 사막 도시에서 마주한 샤말의 강렬한 인상과 그 소란스러운 풍경 너머에서 발견한 내면의 고요함에 대해 기록해 보려 합니다. 거대한 모래 장벽이 도시를 집어삼킬 듯 다가올 때, 집 안이라는 작은 안식처에서 느꼈던 감각들을 차분히 정리했습니다.
 
-[![모래 폭풍 '샤말(Shamal)'이 불어오는 날, 창밖의 혼돈 속 정적](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlnDtY1pPU-Y1FmNDMAgamLoAfZFnDZ6BfE10YvogdkjLH7NPVQ1dwGl-RhgZdq0c9EOdQ_WaVQuwmKRt21PvNsOnZ-v3MPzKto6eHAx_4EWpJX37OfnzYgm7eqtCTr8kW8g1G0cgvtARNgiWG2z1CoNWePMYBc-ntCr7GIc6vrgXEveT09FqlcEW7odVY/w320-h320-rw/b64ec4f1-a68c-4e60-90b1-50fe2cba4189.webp "모래 폭풍 '샤말(Shamal)'이 불어오는 날, 창밖의 혼돈 속 정적")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlnDtY1pPU-Y1FmNDMAgamLoAfZFnDZ6BfE10YvogdkjLH7NPVQ1dwGl-RhgZdq0c9EOdQ_WaVQuwmKRt21PvNsOnZ-v3MPzKto6eHAx_4EWpJX37OfnzYgm7eqtCTr8kW8g1G0cgvtARNgiWG2z1CoNWePMYBc-ntCr7GIc6vrgXEveT09FqlcEW7odVY/s1024/b64ec4f1-a68c-4e60-90b1-50fe2cba4189.webp)
+[![모래 폭풍 '샤말(Shamal)'이 불어오는 날, 창밖의 혼돈 속 정적](/images/posts/shamal-img-002.webp "모래 폭풍 '샤말(Shamal)'이 불어오는 날, 창밖의 혼돈 속 정적")](/images/posts/shamal-img-003.webp)
 
 ## 01\. 샤말이 선사한 오렌지빛 도시와 외부의 정적
 

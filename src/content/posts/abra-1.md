@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: []
 permalink: "/2026/04/abra-1.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCXMSwo7VxeEEvmOpKG4oLENnZD4zg7-RWcX7tjKTAoKKvYjqxdrXob7VD-pajAUVmZetX8iswBww6xS6qah64UpbxxjjZD1j4w_Dc2m_rEtO9MxN4HBIeGguTAteROIWkyyiW84aRlJKpNXgS5kqj_mkHu_RjhqCrTKrEkCdHUEDzfyLgtYvgqHp1dvy5/w1600/5220f17f-eab3-486a-b783-1b14da5aa539.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/abra-1.html"
+heroImage: "/images/posts/abra-1-img-001.webp"
 ---
 
 두바이 크릭은 단순히 도시를 가로지르는 수로가 아니라, 초현대적인 마천루 뒤에 숨겨진 이 도시의 진정한 심장박동이 느껴지는 곳입니다. 1디르함, 한화로 약 400원 남짓한 이 작은 동전 하나는 우리를 화려한 금빛 도시에서 땀 냄새 나는 삶의 현장으로 순식간에 이동시켜 주는 마법의 입장권과 같습니다. 저는 이곳에서 낡은 목선 아브라(Abra)를 타고 건너편으로 향하며, 비로소 이방인이 아닌 도시의 일원이 된 듯한 기분을 느꼈습니다.
 
 화려한 스카이라인에 가려진 두바이의 진짜 얼굴은 어떤 모습일까요? 낡은 엔진의 덜덜거리는 진동과 코 끝을 스치는 은은한 기름 냄새는 우리가 흔히 알던 럭셔리한 두바이와는 전혀 다른 감각을 선사합니다. 이번 글에서는 전통 수상택시 아브라를 통해 마주한 삶의 풍경과 2026년 최신 이용 정보, 그리고 그 너머의 통찰을 깊이 있게 다루어 보겠습니다.
 
-[![두바이 크릭의 아브라(Abra), 1디르함의 배 위에서 바라본 이방인](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCXMSwo7VxeEEvmOpKG4oLENnZD4zg7-RWcX7tjKTAoKKvYjqxdrXob7VD-pajAUVmZetX8iswBww6xS6qah64UpbxxjjZD1j4w_Dc2m_rEtO9MxN4HBIeGguTAteROIWkyyiW84aRlJKpNXgS5kqj_mkHu_RjhqCrTKrEkCdHUEDzfyLgtYvgqHp1dvy5/w320-h179-rw/5220f17f-eab3-486a-b783-1b14da5aa539.webp "두바이 크릭의 아브라(Abra), 1디르함의 배 위에서 바라본 이방인")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCXMSwo7VxeEEvmOpKG4oLENnZD4zg7-RWcX7tjKTAoKKvYjqxdrXob7VD-pajAUVmZetX8iswBww6xS6qah64UpbxxjjZD1j4w_Dc2m_rEtO9MxN4HBIeGguTAteROIWkyyiW84aRlJKpNXgS5kqj_mkHu_RjhqCrTKrEkCdHUEDzfyLgtYvgqHp1dvy5/s1024/5220f17f-eab3-486a-b783-1b14da5aa539.webp)
+[![두바이 크릭의 아브라(Abra), 1디르함의 배 위에서 바라본 이방인](/images/posts/abra-1-img-002.webp "두바이 크릭의 아브라(Abra), 1디르함의 배 위에서 바라본 이방인")](/images/posts/abra-1-img-003.webp)
 
 -   [두바이 크릭과 아브라: 전통이 흐르는 물길](#identity)
 -   [땀과 삶이 녹아든 풍경, 1디르함의 가치](#real-life)

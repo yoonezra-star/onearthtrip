@@ -5,7 +5,7 @@ export const site = {
     "아부다비와 아랍에미리트 생활 경험을 바탕으로 UAE의 과거, 현재, 미래, 문화와 일상의 기억을 기록합니다.",
   url: "https://www.onearthtrip.com",
   author: "아부라이프",
-  email: "hello@onearthtrip.com",
+  email: "choigugga0203@gmail.com",
   locale: "ko-KR"
 };
 

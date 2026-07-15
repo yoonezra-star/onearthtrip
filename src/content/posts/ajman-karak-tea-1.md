@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: ["아즈만","카라크티","UAE생활","아즈만코니쉬","1디르함의행복","중동문화","현지인맛집","이방인의위로","해변산책","카다멈티"]
 permalink: "/2026/04/ajman-karak-tea-1.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilSDe7iSdUuBqKJSGagxR7KmTpK1FJAoUHmL8oLeZjbIHhKqQdS8_vuWWaJArmaAbccK1SM8yI7qXgC8FhTAMoMkcIDXvgQHw70rnSEbFvVV7a86DEZDqjsTSRAwD32zs5NHyianatW02bwSacvIUiYmdJNBgWJ2DQHBi6HXRYxvfJNd_RubtQjXYLAS0F/w1600/20260407_222830.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/ajman-karak-tea-1.html"
+heroImage: "/images/posts/ajman-karak-tea-1-img-001.webp"
 ---
 
 해 질 녘 아즈만 코니쉬(Ajman Corniche)를 걷다 보면, 기분 좋은 금속음이 들려오곤 합니다. 찻잔을 받친 쟁반이 차창에 부딪히는 소리, 그리고 짧게 울리는 자동차 경적 소리죠. 아랍에미리트(UAE)에서 가장 작은 토후국인 아즈만의 해변 도로는 저녁마다 거대한 노천 카페로 변신합니다. 그 중심에는 단돈 1디르함, 우리 돈으로 약 300원 남짓한 '카라크 티(Karak Tea)' 한 잔이 자리 잡고 있습니다.
 
 2026년 4월 현재도 이 가격은 여전히 고집스럽게 유지되고 있습니다. 물가가 치솟는 세상이라지만, 적어도 아즈만 해변에서만큼은 누구나 주머니 속 동전 한 닢으로 따뜻한 위로를 살 수 있다는 뜻이죠. 진한 홍차와 우유, 그리고 알싸한 카다멈 향이 어우러진 이 작은 종이컵 속에는 타지 생활의 고단함을 녹여내는 묘한 힘이 숨어 있습니다.
 
-[![아즈만(Ajman) 코니쉬의 카라크 티(Karak Tea), 1디르함의 따뜻한 연대](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilSDe7iSdUuBqKJSGagxR7KmTpK1FJAoUHmL8oLeZjbIHhKqQdS8_vuWWaJArmaAbccK1SM8yI7qXgC8FhTAMoMkcIDXvgQHw70rnSEbFvVV7a86DEZDqjsTSRAwD32zs5NHyianatW02bwSacvIUiYmdJNBgWJ2DQHBi6HXRYxvfJNd_RubtQjXYLAS0F/w318-h320-rw/20260407_222830.webp "아즈만(Ajman) 코니쉬의 카라크 티(Karak Tea), 1디르함의 따뜻한 연대")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilSDe7iSdUuBqKJSGagxR7KmTpK1FJAoUHmL8oLeZjbIHhKqQdS8_vuWWaJArmaAbccK1SM8yI7qXgC8FhTAMoMkcIDXvgQHw70rnSEbFvVV7a86DEZDqjsTSRAwD32zs5NHyianatW02bwSacvIUiYmdJNBgWJ2DQHBi6HXRYxvfJNd_RubtQjXYLAS0F/s823/20260407_222830.webp)
+[![아즈만(Ajman) 코니쉬의 카라크 티(Karak Tea), 1디르함의 따뜻한 연대](/images/posts/ajman-karak-tea-1-img-002.webp "아즈만(Ajman) 코니쉬의 카라크 티(Karak Tea), 1디르함의 따뜻한 연대")](/images/posts/ajman-karak-tea-1-img-003.webp)
 
 ## 경적 소리와 함께 배달되는 아즈만의 낭만
 

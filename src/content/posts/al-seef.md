@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["두바이알세프","AlSeef","두바이여행","두바이명소","두바이야경","알세프스타벅스","두바이크릭","중동여행","해외생활기","두바이감성여행"]
 permalink: "/2026/04/al-seef.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNM6E5wB9XTw1cT2JR8LlNc9k2qcPrQJzuxRpmzDnc3WV2UEBM-l7seTaFTQPag2WPEOEynlmvDDenO_BRL2RTnMMDmdeXHTbkDm088VR_hoUrYI8qGNB6tKdVV9WUsMEzpMUUh0noQUnRON1br16HfEKyDMT8Rph4UA8Jw-xmHiqrRbOxJaPRcBnknZ_9/w1600/3f31b1d0-b4d1-4d07-8c37-5301a9f9bc40.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/al-seef.html"
+heroImage: "/images/posts/al-seef-img-001.webp"
 ---
 
 두바이를 떠올리면 흔히 하늘을 찌를 듯한 마천루나 화려한 분수 쇼를 먼저 생각하게 됩니다. 저 역시 처음에는 그 화려함에 매료되었지만, 시간이 흐를수록 마음이 머무는 곳은 조금 다른 결을 가진 장소들이더군요. 그중에서도 두바이 크릭(Dubai Creek)을 따라 길게 이어진 '알 세프(Al Seef)'의 밤거리는 제게 아주 특별한 기억으로 남아 있습니다.
 
 낮 동안의 뜨거운 열기가 가라앉고 선선한 강바람이 불어올 때쯤, 알 세프는 비로소 본연의 얼굴을 드러냅니다. 현대적인 세련미와 과거의 투박함이 교차하는 이 길을 걷다 보면, 어지러운 도시의 소음은 어느덧 멀어지고 묘한 평온함이 찾아옵니다. 화려한 네온사인 대신 흙벽을 타고 흐르는 은은한 노란 조명들이 마음을 참 차분하게 만들어주거든요.
 
-[![두바이 알 세프(Al Seef)의 밤거리: 과거의 향수와 현대의 위로](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNM6E5wB9XTw1cT2JR8LlNc9k2qcPrQJzuxRpmzDnc3WV2UEBM-l7seTaFTQPag2WPEOEynlmvDDenO_BRL2RTnMMDmdeXHTbkDm088VR_hoUrYI8qGNB6tKdVV9WUsMEzpMUUh0noQUnRON1br16HfEKyDMT8Rph4UA8Jw-xmHiqrRbOxJaPRcBnknZ_9/w320-h320-rw/3f31b1d0-b4d1-4d07-8c37-5301a9f9bc40.webp "두바이 알 세프(Al Seef)의 밤거리: 과거의 향수와 현대의 위로")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNM6E5wB9XTw1cT2JR8LlNc9k2qcPrQJzuxRpmzDnc3WV2UEBM-l7seTaFTQPag2WPEOEynlmvDDenO_BRL2RTnMMDmdeXHTbkDm088VR_hoUrYI8qGNB6tKdVV9WUsMEzpMUUh0noQUnRON1br16HfEKyDMT8Rph4UA8Jw-xmHiqrRbOxJaPRcBnknZ_9/s1024/3f31b1d0-b4d1-4d07-8c37-5301a9f9bc40.webp)
+[![두바이 알 세프(Al Seef)의 밤거리: 과거의 향수와 현대의 위로](/images/posts/al-seef-img-002.webp "두바이 알 세프(Al Seef)의 밤거리: 과거의 향수와 현대의 위로")](/images/posts/al-seef-img-003.webp)
 
   
 

@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["푸자이라","비디야모스크","UAE가장오래된모스크","중동여행","인도양","역사탐방","아랍에미리트","힐링스팟","전통건축","사색여행"]
 permalink: "/2026/04/fujairah-uae.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeZN4r5GB8YPQ4vVLfqwE6h13-I5sMh52vB1sPGQC166wbX_uHuwSVNMnXCL35JKhoourhuXT7rGk2hCrYVdUQUAklen4nL6vV5Xf-PAg6eQ-mdFHoHG3lRufOspi5KMBcJ8YR37uc-0DipJECEoJs8ScSeqSNSwQRn1R-bV8AClp7zGFb4OsmQUcHUsZs/w1600/20260407_203950.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/fujairah-uae.html"
+heroImage: "/images/posts/fujairah-uae-img-001.webp"
 ---
 
 아랍에미리트(UAE)를 떠올리면 보통 하늘을 찌를 듯한 마천루와 화려한 금빛 장식들이 먼저 생각나곤 합니다. 하지만 동쪽 끝, 오만만을 마주하고 있는 푸자이라(Fujairah)로 향하면 전혀 다른 결의 풍경을 마주하게 됩니다. 그 중심에는 1446년에 지어져 무려 500년 넘는 세월을 버텨온, UAE에서 가장 오래된 '알 비디야 모스크(Al Bidyah Mosque)'가 자리 잡고 있습니다.
 
 2026년 4월의 나른한 오후, 이곳의 투박한 돌벽 앞에 서면 현대적인 빌딩 숲이 주는 피로감이 씻은 듯 사라지는 기분이 듭니다. 시드니 대학교와 푸자이라 고고학팀의 조사로 밝혀진 이 모스크의 나이는 단순한 숫자를 넘어, 이 땅이 거쳐온 굴곡진 시간을 묵묵히 증명하고 있습니다. 거창한 수식어 없이도 존재 자체로 압도적인 아우라를 풍기는 곳이지요.
 
-[![푸자이라(Fujairah) 비디야 모스크, UAE에서 가장 오래된 돌벽에 기댄 오후](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeZN4r5GB8YPQ4vVLfqwE6h13-I5sMh52vB1sPGQC166wbX_uHuwSVNMnXCL35JKhoourhuXT7rGk2hCrYVdUQUAklen4nL6vV5Xf-PAg6eQ-mdFHoHG3lRufOspi5KMBcJ8YR37uc-0DipJECEoJs8ScSeqSNSwQRn1R-bV8AClp7zGFb4OsmQUcHUsZs/w313-h320-rw/20260407_203950.webp "푸자이라(Fujairah) 비디야 모스크, UAE에서 가장 오래된 돌벽에 기댄 오후")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeZN4r5GB8YPQ4vVLfqwE6h13-I5sMh52vB1sPGQC166wbX_uHuwSVNMnXCL35JKhoourhuXT7rGk2hCrYVdUQUAklen4nL6vV5Xf-PAg6eQ-mdFHoHG3lRufOspi5KMBcJ8YR37uc-0DipJECEoJs8ScSeqSNSwQRn1R-bV8AClp7zGFb4OsmQUcHUsZs/s715/20260407_203950.webp)
+[![푸자이라(Fujairah) 비디야 모스크, UAE에서 가장 오래된 돌벽에 기댄 오후](/images/posts/fujairah-uae-img-002.webp "푸자이라(Fujairah) 비디야 모스크, UAE에서 가장 오래된 돌벽에 기댄 오후")](/images/posts/fujairah-uae-img-003.webp)
 
 ## 진흙과 돌이 빚어낸 500년의 기다림
 
@@ -25,7 +24,7 @@ sourceUrl: "https://www.onearthtrip.com/2026/04/fujairah-uae.html"
 
 중동 현장에서 PM으로 근무하며 수많은 최첨단 건축물을 봐왔지만, 때로는 이런 투박한 돌벽 하나가 주는 울림이 훨씬 클 때가 있습니다. 2025년 말에도 수많은 여행객이 이곳을 필수 코스로 꼽은 이유는, 아마도 인위적인 기술이 흉내 낼 수 없는 '시간의 결' 때문이 아닐까 싶습니다.
 
-[![푸자이라 토후국 북부의 비디야 모스크](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgX1i3r6wuHK0G-tY080bgZYMNHM-ocF0rdkfmnOzmXhw3ZkyI0Ddq3H1FgxsDBkZ08VPKDEOHqiNQ8cPACNpy8hBoHDj3ln4PnpE6JatQuXO0r4NFNB4X31BDY2njrO-QlGgZwtUJaS_J_qji3wz3g8EPZlu_BzWNKjl2NJiwtiuo8AIKTBsNPf1lJ58OT/w320-h208-rw/20260407_203621.webp "푸자이라 토후국 북부의 비디야 모스크")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgX1i3r6wuHK0G-tY080bgZYMNHM-ocF0rdkfmnOzmXhw3ZkyI0Ddq3H1FgxsDBkZ08VPKDEOHqiNQ8cPACNpy8hBoHDj3ln4PnpE6JatQuXO0r4NFNB4X31BDY2njrO-QlGgZwtUJaS_J_qji3wz3g8EPZlu_BzWNKjl2NJiwtiuo8AIKTBsNPf1lJ58OT/s777/20260407_203621.webp)
+[![푸자이라 토후국 북부의 비디야 모스크](/images/posts/fujairah-uae-img-004.webp "푸자이라 토후국 북부의 비디야 모스크")](/images/posts/fujairah-uae-img-005.webp)
 
 ## 언덕 위에서 마주하는 인도양의 푸른 위로
 
@@ -35,7 +34,7 @@ sourceUrl: "https://www.onearthtrip.com/2026/04/fujairah-uae.html"
 
 언덕 위에서 내려다보는 풍경은 마치 한 폭의 세밀화 같습니다. 대단한 장치는 없지만, 오랜 세월을 견딘 돌과 변함없이 넘실대는 바다의 조합은 그 자체로 완벽한 휴식을 선사합니다. **잠시 바위에 걸터앉아 바다를 바라보는 것만으로도, 마음속에 쌓였던 먼지들이 바람에 날려가는 듯한 정화의 시간을 가질 수 있습니다.**
 
-[![푸자이라 성채](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8qVkeN0BMCKkcZLkJMCvyLY_gabgs5hztuYYRh7TppDYOJbTz8rqOiIKWT47rACtg1BUUJHP-XFgBDNguMSrQrVie8r84-hlvJ2w7eE7E555qc_IDBLwtlb6eRGCN7Gghhzr4DNRsJM6Rx0SmLMG1t8e64XRVosj1wyOGUbDFvSV24m3ikYTElk50E1UD/w320-h210-rw/20260407_203606.webp "푸자이라 성채")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8qVkeN0BMCKkcZLkJMCvyLY_gabgs5hztuYYRh7TppDYOJbTz8rqOiIKWT47rACtg1BUUJHP-XFgBDNguMSrQrVie8r84-hlvJ2w7eE7E555qc_IDBLwtlb6eRGCN7Gghhzr4DNRsJM6Rx0SmLMG1t8e64XRVosj1wyOGUbDFvSV24m3ikYTElk50E1UD/s990/20260407_203606.webp)
+[![푸자이라 성채](/images/posts/fujairah-uae-img-006.webp "푸자이라 성채")](/images/posts/fujairah-uae-img-007.webp)
 
 ## 작고 단단한 신념이 건네는 삶의 위로
 

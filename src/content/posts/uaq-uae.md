@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["UAE생활","맹그로브","사막생활","해외현장","중동일상","생존력","마음챙김","아부다비","르와이스","직장인에세이"]
 permalink: "/2026/04/uaq-uae.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3Vc_DSVJFOns_hxBixifbmlkNUIqDZ7hnGUFslHvRGaog2OmRBClPVjVCmSGT0cs19SR7doLoRFrFnWp_3eh6J3E8S6y5UvpbT7Y04rrQUJwRz1N66GEJsd6PLRTQ163pXNHuRPq-dhj6LMmQ1BZhmjQ0PDwdbylxxYnAf4p267We_2E2D5_j63h3oycI/w1600/20260407_201447.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/uaq-uae.html"
+heroImage: "/images/posts/uaq-uae-img-001.webp"
 ---
 
 뜨거운 태양 아래 끝없이 펼쳐진 모래 언덕을 지나다 보면, 어느 순간 거짓말처럼 푸른 숲이 나타날 때가 있습니다. 아랍에미리트(UAE)의 해안가를 따라 걷다 마주하게 되는 맹그로브 숲은 이 척박한 땅에서 만날 수 있는 가장 이질적이면서도 경이로운 장면 중 하나죠. 2026년 4월의 공기는 이미 한낮의 열기를 머금고 있지만, 물가에 뿌리를 내린 이 나무들 곁에 서면 잠시나마 숨통이 트이는 기분이 듭니다.
 
 처음 이곳에 왔을 때 제가 본 맹그로브는 우리가 흔히 아는 울창한 숲의 이미지와는 조금 달랐습니다. 찰랑이는 바닷물 속에 발을 담그고, 가느다란 뿌리를 수면 위로 치켜든 모습이 마치 무언가를 간절히 붙잡고 있는 것처럼 보였거든요. 소금기 가득한 바닷물 속에서, 그리고 타는 듯한 사막의 열기 속에서 살아남기 위해 선택한 그들만의 생존 방식이겠죠. 가만히 보고 있으면 그 모습이 어딘가 모르게 낯설지 않게 다가옵니다.
 
-[![움 알 쿠웨인(UAQ) 맹그로브 비치, UAE에서 가장 조용한 바다가 건넨 위로](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3Vc_DSVJFOns_hxBixifbmlkNUIqDZ7hnGUFslHvRGaog2OmRBClPVjVCmSGT0cs19SR7doLoRFrFnWp_3eh6J3E8S6y5UvpbT7Y04rrQUJwRz1N66GEJsd6PLRTQ163pXNHuRPq-dhj6LMmQ1BZhmjQ0PDwdbylxxYnAf4p267We_2E2D5_j63h3oycI/w318-h320-rw/20260407_201447.webp "움 알 쿠웨인(UAQ) 맹그로브 비치, UAE에서 가장 조용한 바다가 건넨 위로")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3Vc_DSVJFOns_hxBixifbmlkNUIqDZ7hnGUFslHvRGaog2OmRBClPVjVCmSGT0cs19SR7doLoRFrFnWp_3eh6J3E8S6y5UvpbT7Y04rrQUJwRz1N66GEJsd6PLRTQ163pXNHuRPq-dhj6LMmQ1BZhmjQ0PDwdbylxxYnAf4p267We_2E2D5_j63h3oycI/s819/20260407_201447.webp)
+[![움 알 쿠웨인(UAQ) 맹그로브 비치, UAE에서 가장 조용한 바다가 건넨 위로](/images/posts/uaq-uae-img-002.webp "움 알 쿠웨인(UAQ) 맹그로브 비치, UAE에서 가장 조용한 바다가 건넨 위로")](/images/posts/uaq-uae-img-003.webp)
 
 ## 척박한 환경을 견디는 맹그로브의 생존법
 

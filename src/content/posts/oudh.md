@@ -7,15 +7,14 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: ["오드","Oudh","중동향수","향기테라피","불안감진정","심신안정","아로마테라피","바코오르","침향","이국적인향기"]
 permalink: "/2026/04/oudh.html"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZwFw6dQWjxY__KyqFJtnMbgYEGWmDOZGWLouUB9HXDwSr6sZ799ZVSluJe-7C2uharJFiCEn65Un3q0cLiIBgaGkHCbFT2N93QT2obDFZOEd6neilRwbDWXGNntjKJyElUpJmQMWAE1vB_aRx7v1k4_mW_nN5Xs6OcyChKYvTai9cRYzlGc7xkeIM2gF-/w1600/9832c2eb-d2f4-4aef-abc3-4446952ffc7d.webp"
-sourceUrl: "https://www.onearthtrip.com/2026/04/oudh.html"
+heroImage: "/images/posts/oudh-img-001.webp"
 ---
 
 중동의 낯선 수크(Souq) 골목을 걷다 보면, 공기 중에 묵직하게 가라앉은 신비로운 향기를 마주하게 됩니다. 처음 그 향을 맡았을 때의 느낌이 아직도 선명해요. 이방인으로서 느꼈던 막연한 긴장감과 불안이 그 묵직한 나무 향기에 실려 조금씩 흩어지는 기분이었거든요. 나중에야 알게 된 그 향기의 정체는 바로 '오드(Oudh)'였습니다. 보통 한국에서 제사를 지낼 때난 장례식에서 향을 피울 때 나는 냄새, 분위기와는 많이 달랐습니다.
 
 단순히 이국적인 냄새라고 치부하기엔 그 깊이가 남달랐습니다. 마치 그 지역의 오랜 역사와 정체성이 향기라는 형태로 발현된 것 같았죠. 낯선 환경이 주는 압박감 속에서 오드 향은 저에게 아로마테라피 같은 역할을 해주었습니다. 오늘은 중동 여행 중 제 마음을 다독여주었던 이 특별한 향기, 오드에 대한 기록을 남겨보려 합니다.
 
-[![중동의 향기 '오드(Oudh)'가 불안한 마음을 진정시키는 방식](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZwFw6dQWjxY__KyqFJtnMbgYEGWmDOZGWLouUB9HXDwSr6sZ799ZVSluJe-7C2uharJFiCEn65Un3q0cLiIBgaGkHCbFT2N93QT2obDFZOEd6neilRwbDWXGNntjKJyElUpJmQMWAE1vB_aRx7v1k4_mW_nN5Xs6OcyChKYvTai9cRYzlGc7xkeIM2gF-/w320-h320-rw/9832c2eb-d2f4-4aef-abc3-4446952ffc7d.webp "중동의 향기 '오드(Oudh)'가 불안한 마음을 진정시키는 방식")](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZwFw6dQWjxY__KyqFJtnMbgYEGWmDOZGWLouUB9HXDwSr6sZ799ZVSluJe-7C2uharJFiCEn65Un3q0cLiIBgaGkHCbFT2N93QT2obDFZOEd6neilRwbDWXGNntjKJyElUpJmQMWAE1vB_aRx7v1k4_mW_nN5Xs6OcyChKYvTai9cRYzlGc7xkeIM2gF-/s1024/9832c2eb-d2f4-4aef-abc3-4446952ffc7d.webp)
+[![중동의 향기 '오드(Oudh)'가 불안한 마음을 진정시키는 방식](/images/posts/oudh-img-002.webp "중동의 향기 '오드(Oudh)'가 불안한 마음을 진정시키는 방식")](/images/posts/oudh-img-003.webp)
 
 ## 오드(Oudh)가 가진 묵직한 매력과 문화적 깊이
 
