@@ -22,6 +22,17 @@ export function getPublicPath(path: string) {
   return path.replace(/\.html$/, "");
 }
 
+export function getReadingTime(text: string) {
+  const words = text
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+
+  return Math.max(1, Math.ceil(words.length / 260));
+}
+
 export function formatDate(date: Date) {
   return new Intl.DateTimeFormat("ko-KR", {
     year: "numeric",

@@ -1,7 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
-import { formatDate, getCategoryPath, getPublicPath } from "../utils/posts";
+import PostCard from "../components/PostCard.astro";
+import { getPosts } from "../utils/posts";
+import { formatDate, getCategoryPath, getPublicPath, getReadingTime } from "../utils/posts";
 import { site } from "../data/site";
 
 type Props = {
@@ -11,6 +13,10 @@ type Props = {
 const { post } = Astro.props;
 const title = `${post.data.title} | ${site.name}`;
 const canonical = getPublicPath(post.data.permalink);
+const readingTime = getReadingTime(post.body ?? "");
+const relatedPosts = (await getPosts())
+  .filter((item) => item.id !== post.id && item.data.category === post.data.category)
+  .slice(0, 3);
 const articleJson = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -47,6 +53,7 @@ const articleJson = {
         {post.data.updatedDate && (
           <span>수정 {formatDate(post.data.updatedDate)}</span>
         )}
+        <span>{readingTime}분 읽기</span>
       </div>
       <h1 class="article-title">{post.data.title}</h1>
       <p class="lead">{post.data.description}</p>
@@ -66,4 +73,20 @@ const articleJson = {
     )}
     <script type="application/ld+json" set:html={JSON.stringify(articleJson)} />
   </article>
+  {relatedPosts.length > 0 && (
+    <section class="section related-section" aria-labelledby="related-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">KEEP READING</p>
+            <h2 id="related-title">같이 읽기 좋은 글</h2>
+          </div>
+          <p>{post.data.category} 주제의 다른 기록을 이어서 볼 수 있습니다.</p>
+        </div>
+        <div class="post-grid compact-grid">
+          {relatedPosts.map((item) => <PostCard post={item} />)}
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>
