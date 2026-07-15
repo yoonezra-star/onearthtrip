@@ -16,10 +16,16 @@ const {
   canonical = Astro.url.pathname
 } = Astro.props;
 
-const canonicalUrl = new URL(canonical, site.url).toString();
+const canonicalPath = canonical
+  .replace(/\/index\.html$/, "/")
+  .replace(/\.html$/, "");
+const canonicalUrl = new URL(canonicalPath, site.url).toString();
 const imageUrl = image ? new URL(image, site.url).toString() : undefined;
 const currentPath = Astro.url.pathname;
-const normalizedCurrentPath = currentPath.replace(/\/$/, "") || "/";
+const normalizedCurrentPath = currentPath
+  .replace(/\/index\.html$/, "/")
+  .replace(/\.html$/, "")
+  .replace(/\/$/, "") || "/";
 ---
 
 <!doctype html>
