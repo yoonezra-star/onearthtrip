@@ -1,13 +1,13 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { formatDate, getCategoryPath } from "../utils/posts";
+import { formatDate, getCategoryPath, getPublicPath } from "../utils/posts";
 
 type Props = {
   post: CollectionEntry<"posts">;
 };
 
 const { post } = Astro.props;
-const href = post.data.permalink;
+const href = getPublicPath(post.data.permalink);
 ---
 
 <article class="post-card">
