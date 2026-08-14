@@ -59,7 +59,7 @@ const articleJson = {
       <p class="lead">{post.data.description}</p>
       {post.data.heroImage && (
         <div class="article-image">
-          <img src={post.data.heroImage} alt="" />
+          <img src={post.data.heroImage} alt={post.data.title} />
         </div>
       )}
     </header>

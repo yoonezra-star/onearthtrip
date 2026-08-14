@@ -77,3 +77,7 @@ Q. 샤르자 방문 시 복장 규정이 따로 있나요? A. 샤르자는 UAE �
 ## 관련 태그
 
 #샤르자 #블루수크 #Sharjah #CentralMarket #이슬람건축 #기하학문양 #중동여행 #카펫쇼핑 #금시장 #마음의질서
+
+## 방문 전 공식 확인과 기록 기준
+
+수크를 걷고 물건을 고른 감각은 개인 경험입니다. 상점 운영 시간, 입점 구성과 현장 규정은 달라질 수 있으므로 [Visit Sharjah의 Central Souk 안내](https://www.visitsharjah.com/activities/shopping/central-souk-blue-souk/)와 [Visit Sharjah 공식 홈페이지](https://www.visitsharjah.com/)를 확인해 주세요. 이 글의 장소 정보는 2026년 8월에 확인했습니다.

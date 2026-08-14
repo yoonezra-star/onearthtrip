@@ -69,3 +69,7 @@ UAE의 현재를 설명할 때 초고층 빌딩이나 미래 비전만 이야기
 ## 관련 태그
 
 #글로벌빌리지 #국기 #정체성 #문화탐험 #자존감회복 #겨울여행 #테마파크 #특산품 #이색체험 #나를찾아서
+
+## 방문 전 공식 확인과 기록 기준
+
+이 글의 감상과 동선은 제가 현장에서 보고 느낀 경험입니다. 다만 운영 시즌, 입장권, 공연과 휴무일은 매년 달라질 수 있어 출발 전 [Visit Dubai의 Global Village 안내](https://www.visitdubai.com/en/places-to-visit/global-village)와 [Global Village 공식 홈페이지](https://www.globalvillage.ae/)를 함께 확인하는 편이 좋습니다. 이 글의 장소 정보는 2026년 8월에 다시 확인했습니다.
