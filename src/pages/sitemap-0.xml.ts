@@ -8,7 +8,9 @@ const staticPages = [
   "/past-present-future",
   "/memory",
   "/about",
+  "/author",
   "/editorial-policy",
+  "/trip-checklist",
   "/contact",
   "/privacy",
   "/terms"

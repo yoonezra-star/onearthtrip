@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+import { getPosts } from "../utils/posts";
+
+const posts = await getPosts();
+const profileJson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.author,
+  url: new URL("/author", site.url).toString(),
+  email: site.email,
+  jobTitle: "UAE 생활·여행 기록 운영자",
+  knowsAbout: ["Abu Dhabi", "United Arab Emirates", "UAE travel planning", "UAE culture"]
+};
+---
+
+<BaseLayout title={`운영자 | ${site.name}`} description="On Earth Trip 운영자와 콘텐츠 작성·수정 기준을 소개합니다.">
+  <section class="article">
+    <header class="article-header author-profile-header">
+      <div class="author-avatar author-avatar-large" aria-hidden="true">AB</div>
+      <div>
+        <p class="eyebrow">AUTHOR</p>
+        <h1 class="article-title">{site.author}</h1>
+        <p class="lead">아부다비와 UAE를 한국어로 기록하는 On Earth Trip의 운영자입니다.</p>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>이 사이트에서 맡는 일</h2>
+      <p>
+        주제 선정, 글 작성과 수정, 외부 출처 확인, 이미지 권리 점검, 오류 제보 처리를 직접 관리합니다.
+        현재 공개 글은 개인 경험을 대신해 단정하지 않도록, 여행자가 스스로 최신 조건을 확인할 수 있는
+        실용 가이드 중심으로 구성했습니다.
+      </p>
+
+      <h2>기록을 구분하는 기준</h2>
+      <p>
+        장소에서 직접 보고 겪은 내용은 방문 날짜와 맥락을 함께 남기는 개인 기록으로 씁니다. 교통·날씨·입장
+        조건처럼 바뀔 수 있는 정보는 공식 기관 또는 시설 운영 주체의 페이지를 확인한 뒤, 글 끝에 출처와
+        기준 날짜를 표시합니다. 현재 공개된 {posts.length}편은 이 기준을 적용해 검토했습니다.
+      </p>
+
+      <h2>오류와 권리 요청</h2>
+      <p>
+        정보 변경, 잘못된 설명, 이미지·인용 관련 요청은 <a href={`mailto:${site.email}`}>{site.email}</a>로
+        받을 수 있습니다. 확인 가능한 자료가 포함된 제보는 우선 검토하며, 수정 결과는 글의 수정일에 반영합니다.
+      </p>
+
+      <h2>광고와 제휴</h2>
+      <p>
+        광고가 게재되더라도 글의 주제와 결론은 광고주가 정하지 않습니다. 대가성 협업이나 제휴 링크가 생길
+        경우에는 해당 글 안에 분명히 표시합니다. 자세한 기준은 <a href="/editorial-policy">작성·수정 원칙</a>에서 확인할 수 있습니다.
+      </p>
+    </div>
+    <script type="application/ld+json" set:html={JSON.stringify(profileJson)} />
+  </section>
+</BaseLayout>

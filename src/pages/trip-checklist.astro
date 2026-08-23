@@ -1,0 +1,195 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const groups = [
+  {
+    title: "출발 전",
+    items: [
+      {
+        label: "여권, 입국 자격, 체류 조건을 UAE 정부 공식 안내에서 확인했다.",
+        href: "https://u.ae/en/information-and-services/visiting-and-exploring-the-uae"
+      },
+      {
+        label: "항공편, 숙소 체크인, 공항에서 숙소까지의 이동 방법을 한 화면에 저장했다."
+      },
+      {
+        label: "여행 날짜의 날씨와 기상 공지를 확인할 공식 채널을 저장했다.",
+        href: "https://www.ncm.gov.ae/"
+      },
+      {
+        label: "개인 보험, 처방약, 건강상 주의가 필요한 사항을 별도로 확인했다."
+      }
+    ]
+  },
+  {
+    title: "도착 직후",
+    items: [
+      {
+        label: "숙소 주소를 건물명과 입구 위치까지 확인하고 지도에 저장했다."
+      },
+      {
+        label: "가까운 식료품점, 약국, 숙소 연락처를 지도에 저장했다."
+      },
+      {
+        label: "아부다비에서 이용할 이동 수단과 공식 안내를 확인했다.",
+        href: "https://visitabudhabi.ae/en/plan-your-trip/getting-around-abu-dhabi"
+      },
+      {
+        label: "통신, 결제, 신분증 사본 요청은 공식 앱 또는 공식 도메인에서만 확인하기로 했다."
+      }
+    ]
+  },
+  {
+    title: "일정 전날",
+    items: [
+      {
+        label: "방문 장소의 공식 운영 시간, 예약, 취소 규정을 다시 확인했다."
+      },
+      {
+        label: "날씨에 맞춰 야외 한 가지와 실내 한 가지로 일정을 조정했다."
+      },
+      {
+        label: "모스크·문화 공간의 복장과 촬영 안내를 운영 주체 페이지에서 확인했다.",
+        href: "https://www.szgmc.gov.ae/en/"
+      },
+      {
+        label: "라마단·공휴일·행사 기간이라면 지역별 최신 공지를 확인했다.",
+        href: "https://u.ae/en/information-and-services/public-holidays-and-religious-affairs"
+      }
+    ]
+  },
+  {
+    title: "기록으로 남기기",
+    items: [
+      {
+        label: "방문 날짜, 시간대, 이동 수단, 실제 소요 시간을 짧게 기록했다."
+      },
+      {
+        label: "직접 촬영한 사진에는 장소와 촬영 시점을 함께 정리했다."
+      },
+      {
+        label: "공식 안내와 달랐던 현장 정보는 출처를 확인한 뒤 메모했다."
+      },
+      {
+        label: "다음 여행자에게 알려줄 한 가지와, 다시 확인해야 할 한 가지를 남겼다."
+      }
+    ]
+  }
+];
+
+const itemCount = groups.reduce((count, group) => count + group.items.length, 0);
+---
+
+<BaseLayout
+  title="UAE 여행 준비 체크리스트 | On Earth Trip"
+  description="UAE와 아부다비 여행 전, 도착 후, 일정 전날에 확인할 항목을 저장하며 준비하는 체크리스트입니다."
+>
+  <section class="tool-hero">
+    <div class="container tool-hero-inner">
+      <p class="eyebrow">TRIP PLANNER</p>
+      <h1>UAE 여행 준비 체크리스트</h1>
+      <p class="lead">바뀌는 정보는 공식 채널에서 확인하고, 내 일정에 맞는 준비만 남기는 도구입니다.</p>
+      <div class="tool-progress" aria-live="polite">
+        <strong id="checked-count">0</strong>
+        <span> / {itemCount}개 확인</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section checklist-section">
+    <div class="container checklist-layout">
+      <div class="checklist-intro">
+        <p>
+          체크 상태는 이 브라우저에만 저장됩니다. 입국 조건, 운영 시간, 교통, 날씨는 저장된 메모보다
+          방문 직전의 공식 안내가 우선입니다.
+        </p>
+        <button class="reset-button" type="button" id="reset-checklist">선택 초기화</button>
+      </div>
+      <div class="checklist-groups">
+        {groups.map((group, groupIndex) => (
+          <section class="checklist-group" aria-labelledby={`checklist-group-${groupIndex}`}>
+            <h2 id={`checklist-group-${groupIndex}`}>{group.title}</h2>
+            <ul>
+              {group.items.map((item, itemIndex) => {
+                const id = `check-${groupIndex}-${itemIndex}`;
+                return (
+                  <li>
+                    <input id={id} type="checkbox" data-check-item />
+                    <label for={id}>
+                      <span>{item.label}</span>
+                    </label>
+                    {item.href && <a class="check-source-link" href={item.href} target="_blank" rel="noopener noreferrer">공식 확인</a>}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">CHECKED SOURCES</p>
+        <h2>이 도구의 확인 기준</h2>
+      </div>
+      <p>
+        이 체크리스트는 2026년 8월 24일에 확인한 UAE 정부·기상 기관·아부다비 공식 관광 기관 자료를
+        기준으로 만들었습니다. 실제 이용 전에는 아래 원문을 다시 확인하세요.
+      </p>
+      <div class="source-links">
+        <a href="https://u.ae/en/information-and-services/visiting-and-exploring-the-uae" target="_blank" rel="noopener noreferrer">UAE 정부 방문 안내</a>
+        <a href="https://www.ncm.gov.ae/" target="_blank" rel="noopener noreferrer">UAE 기상청</a>
+        <a href="https://visitabudhabi.ae/en/plan-your-trip/getting-around-abu-dhabi" target="_blank" rel="noopener noreferrer">아부다비 이동 안내</a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    const storageKey = "onearthtrip-trip-checklist";
+    const checkboxes = Array.from(document.querySelectorAll("[data-check-item]"));
+    const count = document.querySelector("#checked-count");
+    const reset = document.querySelector("#reset-checklist");
+
+    const updateCount = () => {
+      const checked = checkboxes.filter((checkbox) => checkbox.checked).length;
+      if (count) count.textContent = String(checked);
+    };
+
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey) || "[]");
+      checkboxes.forEach((checkbox, index) => {
+        checkbox.checked = Boolean(saved[index]);
+      });
+    } catch {
+      localStorage.removeItem(storageKey);
+    }
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(checkboxes.map((item) => item.checked)));
+        } catch {
+          // The checklist remains usable even when browser storage is unavailable.
+        }
+        updateCount();
+      });
+    });
+
+    reset?.addEventListener("click", () => {
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+      try {
+        localStorage.removeItem(storageKey);
+      } catch {
+        // No saved state needs to be cleared when storage is unavailable.
+      }
+      updateCount();
+    });
+
+    updateCount();
+  </script>
+</BaseLayout>
