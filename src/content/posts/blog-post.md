@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "아부다비 생활"
 tags: ["르와이스","UAE생활","ADNOC","해외현장","사막도시","아부다비","해외거주","주거단지","해외취업","일상기록"]
 permalink: "/2026/04/blog-post.html"
+draft: true
 heroImage: "/images/posts/blog-post-img-001.webp"
 ---
 

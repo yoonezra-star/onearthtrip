@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["라스알카이마","알자지라알함라","유령마을","UAE역사","진주채취","비움","회복","중동여행","산호석가옥","헤리티지빌리지"]
 permalink: "/2026/04/rak.html"
+draft: true
 heroImage: "/images/posts/rak-img-001.webp"
 ---
 

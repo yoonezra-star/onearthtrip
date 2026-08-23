@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["아부다비그랜드모스크","셰이크자이드모스크","아부다비여행","모스크복장","세계최대카펫","중동여행","그랜드모스크예약","순백의미학","내면의평화","2026여행지추천"]
 permalink: "/2026/04/blog-post_11.html"
+draft: true
 heroImage: "/images/posts/blog-post_11-img-001.webp"
 ---
 

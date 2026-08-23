@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "아부다비 생활"
 tags: ["셰이크자이드로드","SZR","두바이","교통체증","기다림","인내","수용","일상의깨달음","여행경험","두바이일상"]
 permalink: "/2026/04/szr-12.html"
+draft: true
 heroImage: "/images/posts/szr-12-img-001.webp"
 ---
 

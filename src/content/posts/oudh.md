@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: ["오드","Oudh","중동향수","향기테라피","불안감진정","심신안정","아로마테라피","바코오르","침향","이국적인향기"]
 permalink: "/2026/04/oudh.html"
+draft: true
 heroImage: "/images/posts/oudh-img-001.webp"
 ---
 

@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: ["아즈만","카라크티","UAE생활","아즈만코니쉬","1디르함의행복","중동문화","현지인맛집","이방인의위로","해변산책","카다멈티"]
 permalink: "/2026/04/ajman-karak-tea-1.html"
+draft: true
 heroImage: "/images/posts/ajman-karak-tea-1-img-001.webp"
 ---
 

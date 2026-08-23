@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: ["대추야자","Dates","중동간식","천연당분","피로회복","건강간식","에너지보충","사막의선물","슈퍼푸드","건강관리"]
 permalink: "/2026/04/dates.html"
+draft: true
 heroImage: "/images/posts/dates-img-001.webp"
 ---
 

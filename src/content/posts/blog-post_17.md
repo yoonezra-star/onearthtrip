@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["푸자이라","스누피아일랜드","인도양잠수","해양생태계","스노클링명소","바다거북","수중명상","아랍에미리트","해양스포츠","여행추천"]
 permalink: "/2026/04/blog-post_17.html"
+draft: true
 heroImage: "/images/posts/blog-post_17-img-001.jpg"
 ---
 

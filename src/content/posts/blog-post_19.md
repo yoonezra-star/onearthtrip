@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["아부다비루브르박물관","빛의비","장누벨","아부다비여행","문화예술","햇살의축복","치유의공간","해외별관","아랍에미리트","건축디자인"]
 permalink: "/2026/04/blog-post_19.html"
+draft: true
 heroImage: "/images/posts/blog-post_19-img-001.jpg"
 ---
 

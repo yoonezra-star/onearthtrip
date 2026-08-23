@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["라스알카이마","자발자이스","JebelJais","UAE최고봉","아랍에미리트여행","자이스피크짚라인","사막의산","라스알카이마여행","두바이근교여행","힐링여행"]
 permalink: "/2026/04/jebel-jais-uae.html"
+draft: true
 heroImage: "/images/posts/jebel-jais-uae-img-001.webp"
 ---
 

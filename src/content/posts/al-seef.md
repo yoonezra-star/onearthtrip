@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["두바이알세프","AlSeef","두바이여행","두바이명소","두바이야경","알세프스타벅스","두바이크릭","중동여행","해외생활기","두바이감성여행"]
 permalink: "/2026/04/al-seef.html"
+draft: true
 heroImage: "/images/posts/al-seef-img-001.webp"
 ---
 

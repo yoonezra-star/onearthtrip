@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: []
 permalink: "/2026/04/majlis.html"
+draft: true
 heroImage: "/images/posts/majlis-img-001.webp"
 ---
 

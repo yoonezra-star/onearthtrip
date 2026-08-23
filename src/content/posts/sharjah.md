@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["샤르자","블루수크","Sharjah","CentralMarket","이슬람건축","기하학문양","중동여행","카펫쇼핑","금시장","마음의질서"]
 permalink: "/2026/04/sharjah.html"
+draft: true
 heroImage: "/images/posts/sharjah-img-001.webp"
 ---
 

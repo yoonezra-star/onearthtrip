@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["푸자이라","비디야모스크","UAE가장오래된모스크","중동여행","인도양","역사탐방","아랍에미리트","힐링스팟","전통건축","사색여행"]
 permalink: "/2026/04/fujairah-uae.html"
+draft: true
 heroImage: "/images/posts/fujairah-uae-img-001.webp"
 ---
 

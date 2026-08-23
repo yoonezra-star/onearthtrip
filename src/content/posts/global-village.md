@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["글로벌빌리지","국기","정체성","문화탐험","자존감회복","겨울여행","테마파크","특산품","이색체험","나를찾아서"]
 permalink: "/2026/04/global-village.html"
+draft: true
 heroImage: "/images/posts/global-village-img-001.webp"
 ---
 

@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: []
 permalink: "/2026/04/abra-1.html"
+draft: true
 heroImage: "/images/posts/abra-1-img-001.webp"
 ---
 

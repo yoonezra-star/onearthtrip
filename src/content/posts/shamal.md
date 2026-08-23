@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "UAE 문화"
 tags: ["모래폭풍","샤말","중동생활","사막도시","내면의평화","오렌지빛하늘","자연의위엄","일상기록","사색","중동풍경"]
 permalink: "/2026/04/shamal.html"
+draft: true
 heroImage: "/images/posts/shamal-img-001.webp"
 ---
 

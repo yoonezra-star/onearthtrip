@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["UAE생활","맹그로브","사막생활","해외현장","중동일상","생존력","마음챙김","아부다비","르와이스","직장인에세이"]
 permalink: "/2026/04/uaq-uae.html"
+draft: true
 heroImage: "/images/posts/uaq-uae-img-001.webp"
 ---
 

@@ -7,6 +7,7 @@ author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["사막사파리","듄베이싱","사막여행","별빛감상","두바이사막","휴식과회복","사막의밤","여행에세이","심리적회복","사막체험"]
 permalink: "/2026/05/dune-bashing.html"
+draft: true
 heroImage: "/images/posts/dune-bashing-img-001.webp"
 ---
 
