@@ -4,8 +4,8 @@ description: "아부다비에 처음 도착한 여행자와 새 거주자를 위
 pubDate: "2026-08-14T09:30:00+09:00"
 updatedDate: "2026-08-24T10:00:00+09:00"
 author: "아부라이프"
-category: "아부다비 생활"
-tags: ["아부다비", "UAE 생활", "아부다비 초보", "여행 준비"]
+category: "아부다비 한인 생활"
+tags: ["아부다비", "한인 생활", "UAE 생활", "아부다비 초보", "여행 준비"]
 permalink: "/2026/08/abu-dhabi-first-30-days.html"
 ---
 

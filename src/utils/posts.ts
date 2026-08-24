@@ -10,6 +10,7 @@ export async function getPosts() {
 export function getCategoryPath(category: string) {
   const map: Record<string, string> = {
     "아부다비 생활": "/life",
+    "아부다비 한인 생활": "/life",
     "UAE 문화": "/culture",
     "과거·현재·미래": "/past-present-future",
     "나의 UAE 추억": "/memory"

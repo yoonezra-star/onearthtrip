@@ -4,8 +4,8 @@ description: "아부다비와 두바이를 오가는 날에 이동 시간, 공�
 pubDate: "2026-08-11T10:00:00+09:00"
 updatedDate: "2026-08-24T10:40:00+09:00"
 author: "아부라이프"
-category: "아부다비 생활"
-tags: ["아부다비", "두바이", "UAE 이동", "주말 여행"]
+category: "아부다비 한인 생활"
+tags: ["아부다비", "두바이", "한인 생활", "UAE 이동", "주말 여행"]
 permalink: "/2026/08/abu-dhabi-dubai-weekend-rhythm.html"
 ---
 

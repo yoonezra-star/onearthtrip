@@ -10,9 +10,9 @@ const heroPost = posts.find((post) => post.data.heroImage) ?? posts[0];
 const latestPosts = posts.slice(0, 6);
 const categories = [
   {
-    label: "아부다비 생활",
+    label: "아부다비 한인 생활",
     href: "/life",
-    description: "날씨, 교통, 루틴, 현지 생활의 실제 감각",
+    description: "한국에서 온 뒤 마주하는 날씨, 이동, 생활 적응의 기록",
     accent: "teal"
   },
   {
@@ -92,7 +92,7 @@ const categories = [
           <p class="eyebrow">EXPLORE</p>
           <h2>읽기 좋은 네 갈래</h2>
         </div>
-        <p>아부다비 생활감, UAE 문화, 시간의 흐름, 개인의 기억을 분리해 필요한 글로 바로 이동할 수 있습니다.</p>
+        <p>한인 생활 적응, UAE 문화, 시간의 흐름, 개인의 기억을 분리해 필요한 글로 바로 이동할 수 있습니다.</p>
       </div>
       <div class="category-grid">
         {categories.map((category) => (

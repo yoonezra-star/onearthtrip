@@ -4,8 +4,8 @@ description: "아부다비와 UAE 여행에서 여름 일정의 부담을 줄이
 pubDate: "2026-07-15T13:30:00+09:00"
 updatedDate: "2026-08-24T10:10:00+09:00"
 author: "아부라이프"
-category: "아부다비 생활"
-tags: ["UAE 여름", "아부다비 날씨", "여행 준비", "아부다비 생활"]
+category: "아부다비 한인 생활"
+tags: ["UAE 여름", "아부다비 날씨", "한인 생활", "여행 준비", "아부다비 생활"]
 permalink: "/2026/07/abu-dhabi-summer-routine.html"
 ---
 

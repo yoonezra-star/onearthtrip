@@ -11,7 +11,7 @@ export const site = {
 
 export const nav = [
   { href: "/", label: "홈" },
-  { href: "/life", label: "아부다비 생활" },
+  { href: "/life", label: "한인 생활" },
   { href: "/culture", label: "UAE 문화" },
   { href: "/past-present-future", label: "과거·현재·미래" },
   { href: "/memory", label: "나의 UAE 추억" },

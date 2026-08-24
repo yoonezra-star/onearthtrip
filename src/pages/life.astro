@@ -3,16 +3,29 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import { getPosts } from "../utils/posts";
 
-const posts = (await getPosts()).filter((post) => post.data.category === "아부다비 생활");
+const posts = (await getPosts()).filter((post) => post.data.category === "아부다비 한인 생활");
 ---
 
-<BaseLayout title="아부다비 생활 | On Earth Trip" description="아부다비와 UAE에서 살아보며 알게 된 일상, 교통, 계절, 생활 감각을 기록합니다.">
+<BaseLayout title="아부다비 한인 생활 | On Earth Trip" description="한국에서 아부다비로 온 뒤 마주하는 이동, 계절, 생활 적응의 선택을 기록합니다.">
   <section class="page-hero">
     <div class="container page-hero-inner">
-      <p class="eyebrow">ABU DHABI LIFE</p>
-      <h1>아부다비 생활</h1>
-      <p class="lead">여행 정보만으로는 알기 어려운 타지 생활의 리듬과 실제 경험을 모았습니다.</p>
-      <p class="page-summary">{posts.length}개의 생활 기록을 모았습니다.</p>
+      <p class="eyebrow">KOREAN LIFE IN ABU DHABI</p>
+      <h1>아부다비 한인 생활</h1>
+      <p class="lead">한국에서 온 뒤 아부다비에서 마주하는 이동, 더위, 생활 리듬과 적응의 선택을 기록합니다.</p>
+      <p class="page-summary">{posts.length}개의 생활 적응 가이드를 모았습니다.</p>
+    </div>
+  </section>
+  <section class="section section-muted">
+    <div class="container note-panel">
+      <p class="eyebrow">SCOPE</p>
+      <h2>이 범주에서 다루는 것</h2>
+      <p>
+        장보기와 식사, 계절별 생활 리듬, 이동, 가족 방문객을 맞이하는 동선처럼 한국에서 온 사람이 실제로
+        선택하게 되는 생활의 장면을 다룹니다. 개인 기록은 개인 기록으로 쓰며, 비자·교육·의료·주거처럼
+        조건이 크게 달라지는 정보는 공식 안내와 함께 확인합니다.
+      </p>
+      <a class="secondary-link" href="/trip-checklist">여행 준비 체크</a>
+      <a class="secondary-link" href="/editorial-policy">작성·수정 원칙</a>
     </div>
   </section>
   <section class="section">
