@@ -28,6 +28,11 @@ const cityPause = posts.filter((post) =>
     "/2012/09/abu-dhabi-evening-beach-2012.html"
   ].includes(post.data.permalink)
 );
+const communityAndPeople = posts.filter((post) =>
+  [
+    "/2015/03/abu-dhabi-korean-community-space-2015.html"
+  ].includes(post.data.permalink)
+);
 ---
 
 <BaseLayout title="아부다비 한인 생활 | On Earth Trip" description="한국에서 아부다비로 온 뒤 마주하는 이동, 계절, 생활 적응의 선택을 기록합니다.">
@@ -77,6 +82,11 @@ const cityPause = posts.filter((post) =>
           <h2>도시의 일과 쉼</h2>
           <p>호텔, 공원과 해변에서 아부다비의 업무와 생활 속도를 다시 바라본 기록입니다.</p>
         </a>
+        <a class="guide-path-card accent-teal" href="#community-and-people">
+          <span>04</span>
+          <h2>공동체와 관계</h2>
+          <p>익숙한 언어를 나누고 생활 정보를 검증하며 관계를 만들어 간 시간을 읽습니다.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -119,6 +129,20 @@ const cityPause = posts.filter((post) =>
       </div>
       <div class="post-grid">
         {cityPause.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+  <section class="section" id="community-and-people">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">04. COMMUNITY &amp; PEOPLE</p>
+          <h2>사람을 만나 생활권을 만드는 시간</h2>
+        </div>
+        <p>한인 공동체의 한 장면을 현재의 공식 정보처럼 포장하지 않고, 관계가 생활에 준 역할과 참여할 때의 기준을 기록합니다.</p>
+      </div>
+      <div class="post-grid">
+        {communityAndPeople.map((post) => <PostCard post={post} />)}
       </div>
     </div>
   </section>
