@@ -13,6 +13,11 @@ const posts = defineCollection({
     tags: z.array(z.string()).default([]),
     permalink: z.string(),
     heroImage: z.string().optional(),
+    contentType: z.enum(["guide", "field-note"]).default("guide"),
+    fieldNote: z.object({
+      label: z.string(),
+      disclaimer: z.string()
+    }).optional(),
     draft: z.boolean().default(false)
   })
 });

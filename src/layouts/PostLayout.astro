@@ -49,6 +49,7 @@ const articleJson = {
     <header class="article-header">
       <div class="meta">
         <a class="pill" href={getCategoryPath(post.data.category)}>{post.data.category}</a>
+        {post.data.contentType === "field-note" && <span class="record-type">현장 기록</span>}
         <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
         {post.data.updatedDate && (
           <span>수정 {formatDate(post.data.updatedDate)}</span>
@@ -63,6 +64,12 @@ const articleJson = {
         </div>
       )}
     </header>
+    {post.data.fieldNote && (
+      <aside class="field-note-meta" aria-label="기록 범위">
+        <strong>{post.data.fieldNote.label}</strong>
+        <span>{post.data.fieldNote.disclaimer}</span>
+      </aside>
+    )}
     <div class="article-body">
       <slot />
     </div>
