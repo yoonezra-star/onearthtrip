@@ -11,6 +11,7 @@ const staticPages = [
   "/author",
   "/editorial-policy",
   "/reading-guide",
+  "/field-notes",
   "/trip-checklist",
   "/contact",
   "/privacy",
