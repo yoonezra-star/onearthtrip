@@ -5,7 +5,11 @@ import { getPosts } from "../utils/posts";
 
 const posts = (await getPosts()).filter((post) => post.data.category === "아부다비 한인 생활");
 const firstSteps = posts.filter((post) =>
-  ["/2026/08/abu-dhabi-first-30-days.html", "/2026/04/blog-post.html"].includes(post.data.permalink)
+  [
+    "/2026/08/abu-dhabi-first-30-days.html",
+    "/2026/04/blog-post.html",
+    "/2014/09/abu-dhabi-water-delivery-2014.html"
+  ].includes(post.data.permalink)
 );
 const weatherAndMovement = posts.filter((post) =>
   [
@@ -16,7 +20,11 @@ const weatherAndMovement = posts.filter((post) =>
   ].includes(post.data.permalink)
 );
 const cityPause = posts.filter((post) =>
-  ["/2026/05/300.html", "/2021/05/abu-dhabi-flame-tree-street.html"].includes(post.data.permalink)
+  [
+    "/2026/05/300.html",
+    "/2021/05/abu-dhabi-flame-tree-street.html",
+    "/2012/09/abu-dhabi-evening-beach-2012.html"
+  ].includes(post.data.permalink)
 );
 ---
 
