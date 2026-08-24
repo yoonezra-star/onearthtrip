@@ -7,13 +7,15 @@ type Props = {
   description?: string;
   image?: string;
   canonical?: string;
+  pageType?: "website" | "article";
 };
 
 const {
   title = site.title,
   description = site.description,
   image,
-  canonical = Astro.url.pathname
+  canonical = Astro.url.pathname,
+  pageType = "website"
 } = Astro.props;
 
 const canonicalPath = canonical
@@ -38,7 +40,7 @@ const normalizedCurrentPath = currentPath
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:locale" content="ko_KR" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={pageType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
@@ -56,7 +58,16 @@ const normalizedCurrentPath = currentPath
       name: site.name,
       url: site.url,
       inLanguage: site.locale,
-      description: site.description
+      description: site.description,
+      publisher: { "@id": `${site.url}#organization` }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": `${site.url}#organization`,
+      name: site.name,
+      url: site.url,
+      email: site.email
     })} />
   </head>
   <body>
@@ -96,6 +107,7 @@ const normalizedCurrentPath = currentPath
       <div class="container footer-inner">
         <p>© {new Date().getFullYear()} {site.name}. 개인 기록과 확인 가능한 공개 자료를 구분해 작성합니다.</p>
         <div class="footer-links">
+          <a href="/reading-guide">읽기 길잡이</a>
           <a href="/trip-checklist">여행 준비 체크</a>
           <a href="/author">운영자</a>
           <a href="/privacy">개인정보처리방침</a>

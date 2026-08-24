@@ -721,6 +721,68 @@ h3 {
   font-weight: 900;
 }
 
+.guide-path-section {
+  padding-top: 42px;
+}
+
+.guide-path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.guide-path-card {
+  display: grid;
+  min-height: 220px;
+  align-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.guide-path-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.guide-path-card span {
+  color: var(--soft);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.guide-path-card h2 {
+  margin-top: 26px;
+  font-size: 1.42rem;
+}
+
+.guide-path-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.not-found {
+  display: grid;
+  min-height: min(680px, calc(100vh - 180px));
+  place-items: center;
+  padding: 72px 0;
+  background: var(--surface);
+}
+
+.not-found-inner {
+  display: grid;
+  max-width: 780px;
+  gap: 18px;
+  text-align: center;
+}
+
+.not-found-inner .hero-actions {
+  justify-content: center;
+}
+
 .article {
   width: min(860px, calc(100% - 40px));
   margin: 0 auto;
@@ -966,7 +1028,8 @@ h3 {
 
   .category-grid,
   .post-grid,
-  .compact-grid {
+  .compact-grid,
+  .guide-path-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1063,7 +1126,8 @@ h3 {
 
   .category-grid,
   .post-grid,
-  .compact-grid {
+  .compact-grid,
+  .guide-path-grid {
     grid-template-columns: 1fr;
   }
 

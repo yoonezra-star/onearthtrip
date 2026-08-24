@@ -10,6 +10,7 @@ const staticPages = [
   "/about",
   "/author",
   "/editorial-policy",
+  "/reading-guide",
   "/trip-checklist",
   "/contact",
   "/privacy",
