@@ -15,7 +15,9 @@ const weatherAndMovement = posts.filter((post) =>
     "/2026/08/abu-dhabi-dubai-weekend-rhythm.html"
   ].includes(post.data.permalink)
 );
-const cityPause = posts.filter((post) => post.data.permalink === "/2026/05/300.html");
+const cityPause = posts.filter((post) =>
+  ["/2026/05/300.html", "/2021/05/abu-dhabi-flame-tree-street.html"].includes(post.data.permalink)
+);
 ---
 
 <BaseLayout title="아부다비 한인 생활 | On Earth Trip" description="한국에서 아부다비로 온 뒤 마주하는 이동, 계절, 생활 적응의 선택을 기록합니다.">
