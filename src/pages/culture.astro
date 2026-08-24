@@ -15,8 +15,33 @@ const posts = (await getPosts()).filter((post) => post.data.category === "UAE �
       <p class="page-summary">{posts.length}개의 문화 기록을 모았습니다.</p>
     </div>
   </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">HOW WE RECORD CULTURE</p>
+        <h2>한 번의 경험을 모두의 문화로 단정하지 않습니다</h2>
+      </div>
+      <p>
+        개인이 경험한 자리와 오래된 사진은 시기·장소·관찰 범위를 함께 밝힙니다. 문화적 의미는 확인 가능한
+        자료와 구분하고, 복장·촬영·입장처럼 달라질 수 있는 규정은 현재 운영 주체의 안내를 우선합니다.
+      </p>
+      <div class="source-links">
+        <a href="/field-notes">촬영 연도별 현장 기록</a>
+        <a href="/2026/08/uae-culture-etiquette-first-visit">문화 공간 방문 준비</a>
+        <a href="/editorial-policy">작성·수정 원칙</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">CULTURE RECORDS</p>
+          <h2>생활과 현장에서 만난 문화 기록</h2>
+        </div>
+      </div>
       <div class="post-grid">
         {posts.map((post) => <PostCard post={post} />)}
       </div>
