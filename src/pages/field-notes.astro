@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { getPosts, getPublicPath } from "../utils/posts";
+import { site } from "../data/site";
+
+const fieldNotes = (await getPosts()).filter((post) => post.data.contentType === "field-note");
+const years = [...new Set(fieldNotes.map((post) => post.data.pubDate.getFullYear()))];
+const groups = years.map((year) => ({
+  year,
+  posts: fieldNotes.filter((post) => post.data.pubDate.getFullYear() === year)
+}));
+const photoRecords = fieldNotes.filter((post) => post.data.heroImage).length;
+const videoRecords = fieldNotes.filter((post) => (post.body ?? "").includes("<video")).length;
+const listJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "UAE 현장 기록 아카이브",
+  numberOfItems: fieldNotes.length,
+  itemListElement: fieldNotes.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString(),
+    name: post.data.title
+  }))
+};
+---
+
+<BaseLayout
+  title="UAE 현장 기록 아카이브 | On Earth Trip"
+  description="아부다비와 UAE에서 직접 보고 촬영한 생활·문화·여행 기록을 촬영 연도별로 모은 사진·영상 아카이브입니다."
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">FIELD NOTE ARCHIVE</p>
+      <h1>UAE 현장 기록 아카이브</h1>
+      <p class="lead">
+        직접 경험한 장소와 생활 장면을 촬영 연도별로 모았습니다. 오래된 기록은 현재 정보처럼 포장하지 않고,
+        당시의 날짜와 경험 범위를 함께 표시합니다.
+      </p>
+      <div class="archive-summary" aria-label="아카이브 현황">
+        <span><strong>{fieldNotes.length}</strong>개 현장 기록</span>
+        <span><strong>{photoRecords}</strong>개 대표 사진 기록</span>
+        <span><strong>{videoRecords}</strong>개 영상 기록</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section archive-intro-section">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">HOW TO READ</p>
+        <h2>사진의 날짜와 현재 정보를 구분합니다</h2>
+      </div>
+      <p>
+        각 글의 ‘기록 범위’는 작성자가 실제로 확인한 시기와 장면을 뜻합니다. 운영 시간·가격·연락처처럼 바뀔 수
+        있는 정보는 현재 이용 안내로 간주하지 않으며, 필요한 경우 공식 출처를 별도로 확인합니다.
+      </p>
+      <div class="source-links">
+        <a href="/editorial-policy">사진·영상 사용 원칙</a>
+        <a href="/reading-guide">정보 글과 현장 기록 구분법</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container archive-timeline">
+      {groups.map((group) => (
+        <section class="archive-year" aria-labelledby={`archive-${group.year}`}>
+          <header class="archive-year-head">
+            <p class="eyebrow">CAPTURED IN</p>
+            <h2 id={`archive-${group.year}`}>{group.year}년</h2>
+            <p>{group.posts.length}개의 기록</p>
+          </header>
+          <div class="post-grid">
+            {group.posts.map((post) => <PostCard post={post} />)}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+  <script type="application/ld+json" set:html={JSON.stringify(listJson)} />
+</BaseLayout>
