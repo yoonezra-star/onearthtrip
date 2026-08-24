@@ -4,6 +4,18 @@ import PostCard from "../components/PostCard.astro";
 import { getPosts } from "../utils/posts";
 
 const posts = (await getPosts()).filter((post) => post.data.category === "아부다비 한인 생활");
+const firstSteps = posts.filter((post) =>
+  ["/2026/08/abu-dhabi-first-30-days.html", "/2026/04/blog-post.html"].includes(post.data.permalink)
+);
+const weatherAndMovement = posts.filter((post) =>
+  [
+    "/2026/07/abu-dhabi-summer-routine.html",
+    "/2026/04/50.html",
+    "/2026/04/shamal.html",
+    "/2026/08/abu-dhabi-dubai-weekend-rhythm.html"
+  ].includes(post.data.permalink)
+);
+const cityPause = posts.filter((post) => post.data.permalink === "/2026/05/300.html");
 ---
 
 <BaseLayout title="아부다비 한인 생활 | On Earth Trip" description="한국에서 아부다비로 온 뒤 마주하는 이동, 계절, 생활 적응의 선택을 기록합니다.">
@@ -12,7 +24,7 @@ const posts = (await getPosts()).filter((post) => post.data.category === "아부
       <p class="eyebrow">KOREAN LIFE IN ABU DHABI</p>
       <h1>아부다비 한인 생활</h1>
       <p class="lead">한국에서 온 뒤 아부다비에서 마주하는 이동, 더위, 생활 리듬과 적응의 선택을 기록합니다.</p>
-      <p class="page-summary">{posts.length}개의 생활 적응 가이드를 모았습니다.</p>
+      <p class="page-summary">{posts.length}개의 가이드와 개인 현장 기록을 모았습니다.</p>
     </div>
   </section>
   <section class="section section-muted">
@@ -28,10 +40,73 @@ const posts = (await getPosts()).filter((post) => post.data.category === "아부
       <a class="secondary-link" href="/editorial-policy">작성·수정 원칙</a>
     </div>
   </section>
-  <section class="section">
+  <section class="section guide-path-section">
     <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">READING PATH</p>
+          <h2>생활 기록 읽는 순서</h2>
+        </div>
+        <p>처음 적응할 때부터 계절을 지나 일상에 여유를 만드는 순간까지, 실제 생활 장면을 따라 읽을 수 있습니다.</p>
+      </div>
+      <div class="guide-path-grid">
+        <a class="guide-path-card accent-teal" href="#first-steps">
+          <span>01</span>
+          <h2>도착과 장보기</h2>
+          <p>첫 며칠의 동선과 르와이스에서 가족의 저녁을 준비하던 기록을 읽습니다.</p>
+        </a>
+        <a class="guide-path-card accent-date" href="#weather-and-movement">
+          <span>02</span>
+          <h2>계절과 이동</h2>
+          <p>더위와 모래바람, 아부다비와 두바이 사이의 이동을 개인 경험과 함께 봅니다.</p>
+        </a>
+        <a class="guide-path-card accent-clay" href="#city-pause">
+          <span>03</span>
+          <h2>도시에서 쉬는 시간</h2>
+          <p>바쁜 생활 중에도 아부다비를 다시 바라보게 한 작은 휴식의 기록입니다.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section section-muted" id="first-steps">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">01. FIRST STEPS</p>
+          <h2>도착과 장보기</h2>
+        </div>
+        <p>체류 초반에 필요한 확인 항목과, 가족의 식탁을 준비하며 생긴 생활 감각을 함께 읽습니다.</p>
+      </div>
       <div class="post-grid">
-        {posts.map((post) => <PostCard post={post} />)}
+        {firstSteps.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+  <section class="section" id="weather-and-movement">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02. WEATHER &amp; MOVEMENT</p>
+          <h2>계절과 이동</h2>
+        </div>
+        <p>날씨와 도로 조건은 매일 달라집니다. 기록의 경험 범위와 글 안의 공식 확인 경로를 함께 봐주세요.</p>
+      </div>
+      <div class="post-grid">
+        {weatherAndMovement.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+  <section class="section section-muted" id="city-pause">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">03. CITY PAUSE</p>
+          <h2>도시에서 쉬는 시간</h2>
+        </div>
+        <p>일정표에서 한 발 물러났을 때 보인 아부다비의 풍경과 생활의 속도를 기록합니다.</p>
+      </div>
+      <div class="post-grid">
+        {cityPause.map((post) => <PostCard post={post} />)}
       </div>
     </div>
   </section>
