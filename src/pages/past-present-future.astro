@@ -15,8 +15,61 @@ const posts = (await getPosts()).filter((post) => post.data.category === "과거
       <p class="page-summary">{posts.length}개의 시간 기록을 모았습니다.</p>
     </div>
   </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">HOW TO READ TIME</p>
+        <h2>세 종류의 시간을 같은 사실처럼 다루지 않습니다</h2>
+      </div>
+      <p>
+        오래된 사진은 촬영 당시의 기록이고, 현재 생활 정보는 확인한 날짜까지 유효하며, 미래 비전은 발표된
+        목표입니다. 각 글에서 관찰 범위와 출처를 밝혀 이미 일어난 일과 앞으로의 계획이 섞이지 않도록 합니다.
+      </p>
+      <div class="source-links">
+        <a href="/field-notes">촬영 연도별 현장 기록</a>
+        <a href="/reading-guide">콘텐츠 읽는 방법</a>
+        <a href="/editorial-policy">작성·수정 원칙</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section" aria-labelledby="time-lens-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">THREE TIME LENSES</p>
+          <h2 id="time-lens-title">시간에 따라 확인 방법도 달라집니다</h2>
+        </div>
+      </div>
+      <div class="guide-path-grid">
+        <a class="guide-path-card accent-clay" href="/field-notes">
+          <span>PAST · 촬영일과 기억의 범위</span>
+          <h2>과거 기록</h2>
+          <p>직접 찍은 사진과 경험을 당시의 날짜에 묶어 읽습니다. 오래된 장면을 현재 운영 정보로 사용하지 않습니다.</p>
+        </a>
+        <a class="guide-path-card accent-teal" href="/trip-checklist">
+          <span>PRESENT · 확인일과 공식 출처</span>
+          <h2>현재 정보</h2>
+          <p>가격, 시간, 절차처럼 바뀌는 정보는 확인 날짜와 공식 안내를 함께 살펴 실제 준비에 활용합니다.</p>
+        </a>
+        <a class="guide-path-card accent-date" href="/editorial-policy">
+          <span>FUTURE · 발표와 완성의 구분</span>
+          <h2>미래 전망</h2>
+          <p>국가 비전과 개발 계획은 발표된 목표로 표기하고, 이미 완성된 시설이나 확정된 사실처럼 단정하지 않습니다.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">TIME RECORDS</p>
+          <h2>시간을 따라 읽는 UAE 기록</h2>
+        </div>
+      </div>
       <div class="post-grid">
         {posts.map((post) => <PostCard post={post} />)}
       </div>
