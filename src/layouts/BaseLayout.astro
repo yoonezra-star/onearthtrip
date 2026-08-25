@@ -124,10 +124,24 @@ const normalizedCurrentPath = getPublicPath(Astro.url.pathname);
             );
           })}
         </nav>
-        <a class="header-contact" href="/contact">
-          문의
-          <span aria-hidden="true">→</span>
-        </a>
+        <div class="header-actions">
+          <form class="header-search-form" role="search" action="/search" method="get">
+            <label class="sr-only" for="header-search-input">사이트 검색</label>
+            <input
+              id="header-search-input"
+              name="q"
+              type="search"
+              inputmode="search"
+              autocomplete="off"
+              placeholder="글 검색"
+            />
+            <button type="submit">검색</button>
+          </form>
+          <a class="header-contact" href="/contact">
+            문의
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
     </header>
     <main id="content">
@@ -137,6 +151,7 @@ const normalizedCurrentPath = getPublicPath(Astro.url.pathname);
       <div class="container footer-inner">
         <p>© {new Date().getFullYear()} {site.name}. 개인 기록과 확인 가능한 공개 자료를 구분해 작성합니다.</p>
         <div class="footer-links">
+          <a href="/search">사이트 검색</a>
           <a href="/reading-guide">읽기 길잡이</a>
           <a href="/field-notes">현장 기록 아카이브</a>
           <a href="/trip-checklist">여행 준비 체크</a>
