@@ -38,7 +38,7 @@ Corniche는 하루의 메인 관광지라기보다 도심 문화시설 사이를
 - Qasr Al Hosn → Corniche → Heritage Village
 - 오후 실내 일정 → 일몰 무렵 Corniche 산책
 
-아부다비 3일 일정에서는 [3일 여행 일정](/2026/08/abu-dhabi-3-day-itinerary)과 연결해 전체 동선을 볼 수 있습니다.
+각 장소의 위치와 성격을 먼저 비교하려면 [아부다비 도심 관광지 허브](/downtown-attractions)를 보면 좋습니다. 아부다비 3일 일정에서는 [3일 여행 일정](/2026/08/abu-dhabi-3-day-itinerary)과 연결해 전체 동선을 볼 수 있습니다.
 
 ## 이동 수단
 
