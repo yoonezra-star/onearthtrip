@@ -2,13 +2,13 @@
 title: "UAE 개인 사진 아카이브: 2012~2022 직접 촬영 기록을 연도별로 보는 법"
 description: "2012년부터 2022년까지 아부다비와 두바이 등에서 직접 촬영한 사진·영상 기록을 연도별로 모아, 확인 가능한 사실과 기억의 범위를 구분해 읽을 수 있도록 정리한 개인 아카이브입니다."
 pubDate: "2026-08-25T11:00:00+09:00"
-updatedDate: "2026-08-25T11:01:00+09:00"
+updatedDate: "2026-08-25T11:13:00+09:00"
 author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["UAE 사진", "아부다비 사진", "두바이 사진", "개인 사진 아카이브", "현장 기록", "UAE 생활"]
 permalink: "/2026/08/uae-personal-photo-archive.html"
 heroImage: "/images/actual/abu-dhabi-evening-beach-2012.webp"
-contentType: "field-note"
+contentType: "guide"
 fieldNote:
   label: "기록 범위: 2012~2022년 UAE에서 작성자가 직접 촬영한 사진·영상과 이를 바탕으로 작성한 현장 기록의 연도별 색인"
   disclaimer: "과거 사진은 촬영 당시의 장면만 보여 줍니다. 확인되지 않는 시설명·행사명·동물 종을 추정하지 않으며, 현재 운영·입장·교통·안전 정보는 별도의 최신 공식 자료를 확인해야 합니다."
