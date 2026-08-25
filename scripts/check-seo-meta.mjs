@@ -41,8 +41,8 @@ const descriptions = seoPermalinks.map((permalink) => coreStorySeoMeta[permalink
 if (new Set(titles).size !== titles.length) errors.push("SEO titles must be unique");
 if (new Set(descriptions).size !== descriptions.length) errors.push("SEO descriptions must be unique");
 
-if (corePermalinks.length !== 10) {
-  errors.push(`Expected 10 core stories, found ${corePermalinks.length}`);
+if (corePermalinks.length !== 15) {
+  errors.push(`Expected 15 core stories, found ${corePermalinks.length}`);
 }
 
 if (errors.length > 0) {
