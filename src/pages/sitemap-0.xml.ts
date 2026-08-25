@@ -20,6 +20,7 @@ const staticPages = [
   "/food-guide",
   "/money-guide",
   "/shopping-guide",
+  "/connectivity-guide",
   "/contact",
   "/privacy",
   "/terms"
