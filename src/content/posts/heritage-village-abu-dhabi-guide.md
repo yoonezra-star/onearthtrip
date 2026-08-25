@@ -32,6 +32,8 @@ Heritage Village는 Corniche 맞은편 Breakwater 쪽이라 Corniche 해변·산
 
 또는 West Corniche 쪽에서 Qasr Al Watan, Emirates Palace를 본 뒤 Heritage Village로 이동해 해질 무렵 도시 전경을 보는 방식도 가능합니다.
 
+Qasr Al Hosn·Qasr Al Watan·Emirates Palace·Corniche와 함께 비교하려면 [아부다비 도심 관광지 허브](/downtown-attractions)를 먼저 확인하세요.
+
 ## 가족여행에 잘 맞나
 
 아이에게 UAE의 전통 생활을 설명하기에는 비교적 직관적인 공간입니다. 다만 실내 대형 박물관처럼 냉방된 전시관만 이어지는 장소는 아니므로 더운 계절에는 한낮 야외 체류시간을 짧게 잡는 편이 좋습니다.
