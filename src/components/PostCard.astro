@@ -24,6 +24,7 @@ const href = getPublicPath(post.data.permalink);
   <div class="post-card-body">
     <div class="meta">
       <a class="pill" href={getCategoryPath(post.data.category)}>{post.data.category}</a>
+      {post.data.contentType === "field-note" && <span class="record-type">현장 기록</span>}
       <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
     </div>
     <h3><a href={href}>{post.data.title}</a></h3>
