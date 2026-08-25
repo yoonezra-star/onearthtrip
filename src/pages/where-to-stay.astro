@@ -1,0 +1,126 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { stayStoryPermalinks } from "../data/stayStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const stayPosts = stayStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageName = "아부다비 숙소 지역 가이드";
+const pageDescription = "Corniche·도심, Yas Island, Saadiyat Island, Al Raha·공항권을 여행 목적과 이동 동선별로 비교하는 아부다비 숙소 지역 허브입니다.";
+const pageUrl = new URL("/where-to-stay", site.url).toString();
+const listId = `${pageUrl}#item-list`;
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": listId,
+  name: "아부다비 숙소 지역 선택 가이드",
+  numberOfItems: stayPosts.length,
+  itemListElement: stayPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Thing", name: "아부다비 숙소" },
+    { "@type": "Thing", name: "Abu Dhabi Corniche" },
+    { "@type": "Thing", name: "Yas Island" },
+    { "@type": "Thing", name: "Saadiyat Island" },
+    { "@type": "Thing", name: "Zayed International Airport" }
+  ]
+};
+---
+
+<BaseLayout
+  title="아부다비 숙소 지역 가이드 | Corniche·Yas·Saadiyat | On Earth Trip"
+  description={pageDescription}
+  canonical="/where-to-stay"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">WHERE TO STAY</p>
+      <h1>아부다비 숙소, 호텔보다 지역부터 고릅니다</h1>
+      <p class="lead">도심 관광, 테마파크, 해변·박물관, 공항 접근성 중 무엇이 중요한지에 따라 숙소 지역을 먼저 나눕니다.</p>
+      <p class="page-summary">{stayPosts.length}개 숙소 지역 선택 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/abu-dhabi-where-to-stay-area-guide">전체 지역 비교</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-3-day-itinerary">3일 일정과 연결</a>
+        <a class="secondary-link" href="/attractions">관광지 먼저 고르기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section">
+    <div class="container guide-path-grid">
+      <a class="guide-path-card accent-teal" href="/2026/08/corniche-downtown-where-to-stay-guide">
+        <span>01</span>
+        <h2>Corniche·도심</h2>
+        <p>첫 방문, 역사·도심 관광, 해안 산책을 중심으로 할 때 비교합니다.</p>
+      </a>
+      <a class="guide-path-card accent-clay" href="/2026/08/yas-island-where-to-stay-guide">
+        <span>02</span>
+        <h2>Yas Island</h2>
+        <p>테마파크, 가족여행, 공연·이벤트와 공항 접근성을 우선할 때 봅니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/2026/08/saadiyat-island-where-to-stay-guide">
+        <span>03</span>
+        <h2>Saadiyat Island</h2>
+        <p>해변 리조트와 박물관·문화시설을 한 지역에서 연결합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/zayed-airport-nearby-where-to-stay-guide">
+        <span>04</span>
+        <h2>공항·Al Raha 권역</h2>
+        <p>늦은 도착, 이른 출발, 짧은 체류에 맞는 지역을 비교합니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">HOW TO CHOOSE</p>
+        <h2>숙소 가격보다 이동시간을 먼저 계산합니다</h2>
+      </div>
+      <p>도심·Saadiyat·Yas는 같은 아부다비 안에서도 여행 목적이 다릅니다. 하루에 가장 오래 머물 관광권과 공항 이동 시간을 먼저 정한 뒤 호텔을 비교하는 편이 효율적입니다.</p>
+      <div class="source-links">
+        <a href="/downtown-attractions">도심 관광지</a>
+        <a href="/2026/08/saadiyat-downtown-planning-guide">Saadiyat 일정</a>
+        <a href="/2026/08/yas-island-planning-guide">Yas 일정</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="stay-guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">STAY CLUSTER</p>
+          <h2>숙소 지역별로 자세히 보기</h2>
+        </div>
+        <p>특정 호텔 순위보다 각 지역의 이동 동선, 관광 목적과 실제 예약 전에 확인할 조건을 정리했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {stayPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
+</BaseLayout>
