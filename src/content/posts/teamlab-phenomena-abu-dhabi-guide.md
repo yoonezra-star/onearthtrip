@@ -55,7 +55,7 @@ teamLab만 방문해도 1.5~3시간을 잡아야 하므로 같은 날 박물관�
 - 자연사 + 몰입형 예술: 자연사박물관 + teamLab
 - UAE 역사 + 몰입형 예술: 자이드 국립박물관 + teamLab
 
-전체 이동은 [Saadiyat Island와 아부다비 도심 이동 계획](/2026/08/saadiyat-island-downtown-abu-dhabi-guide)을 참고할 수 있습니다.
+전체 이동은 [Saadiyat Island와 아부다비 도심 이동 계획](/2026/08/saadiyat-downtown-planning-guide)을 참고할 수 있습니다.
 
 여름 가족여행이라면 [아부다비 가족여행·여름 실내 일정](/2026/08/abu-dhabi-family-summer-indoor-itinerary)과 연결해 보는 것도 좋습니다.
 
