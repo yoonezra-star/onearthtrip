@@ -1,0 +1,135 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDate, getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const searchItems = posts.map((post) => ({
+  title: post.data.title,
+  description: post.data.description,
+  category: post.data.category,
+  tags: post.data.tags ?? [],
+  url: getPublicPath(post.data.permalink),
+  date: formatDate(post.data.updatedDate ?? post.data.pubDate),
+  searchText: [
+    post.data.title,
+    post.data.description,
+    post.data.category,
+    ...(post.data.tags ?? [])
+  ].join(" ")
+}));
+---
+
+<BaseLayout
+  title="사이트 검색 | On Earth Trip"
+  description="On Earth Trip의 UAE 여행·생활·문화 글을 제목, 설명, 카테고리와 태그로 검색합니다."
+  canonical="/search"
+  robots="noindex,follow"
+>
+  <section class="page-hero search-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">SITE SEARCH</p>
+      <h1>On Earth Trip 글 검색</h1>
+      <p class="lead">제목·설명·카테고리·태그에서 검색합니다. 여러 단어를 입력하면 모든 단어가 포함된 글을 찾습니다.</p>
+      <form id="site-search-form" class="search-form" role="search" action="/search" method="get">
+        <label class="sr-only" for="site-search-input">사이트 검색어</label>
+        <input
+          id="site-search-input"
+          name="q"
+          type="search"
+          inputmode="search"
+          autocomplete="off"
+          placeholder="예: 알아인, eSIM, 렌터카, VAT"
+        />
+        <button type="submit">검색</button>
+      </form>
+      <p id="search-status" class="search-status" aria-live="polite">{searchItems.length}개 글에서 검색할 수 있습니다.</p>
+    </div>
+  </section>
+
+  <section class="section search-results-section">
+    <div class="container">
+      <div id="search-results" class="search-results" aria-label="검색 결과">
+        {searchItems.map((item) => (
+          <a
+            class="search-result-card"
+            href={item.url}
+            data-search-text={item.searchText}
+            hidden
+          >
+            <div class="search-result-meta">
+              <span>{item.category}</span>
+              <span>{item.date}</span>
+            </div>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            {item.tags.length > 0 && (
+              <div class="search-result-tags" aria-label="태그">
+                {item.tags.slice(0, 5).map((tag) => <span>{tag}</span>)}
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
+      <noscript>
+        <p class="search-noscript">브라우저에서 JavaScript를 켜면 검색 결과를 바로 필터링할 수 있습니다.</p>
+      </noscript>
+    </div>
+  </section>
+
+  <script>
+    const form = document.querySelector("#site-search-form");
+    const input = document.querySelector("#site-search-input");
+    const status = document.querySelector("#search-status");
+    const cards = Array.from(document.querySelectorAll(".search-result-card"));
+
+    const normalize = (value) =>
+      String(value ?? "")
+        .normalize("NFKC")
+        .toLocaleLowerCase("ko-KR")
+        .trim()
+        .replace(/\s+/g, " ");
+
+    const updateUrl = (query) => {
+      const url = new URL(window.location.href);
+      if (query) url.searchParams.set("q", query);
+      else url.searchParams.delete("q");
+      window.history.replaceState({}, "", `${url.pathname}${url.search}`);
+    };
+
+    const runSearch = (rawQuery, syncUrl = false) => {
+      const query = normalize(rawQuery);
+      const terms = query ? query.split(" ").filter(Boolean) : [];
+      let count = 0;
+
+      for (const card of cards) {
+        const text = normalize(card.dataset.searchText);
+        const match = terms.length > 0 && terms.every((term) => text.includes(term));
+        card.hidden = !match;
+        if (match) count += 1;
+      }
+
+      if (status) {
+        status.textContent = terms.length === 0
+          ? `${cards.length}개 글에서 검색할 수 있습니다.`
+          : count > 0
+            ? `“${rawQuery.trim()}” 검색 결과 ${count}개`
+            : `“${rawQuery.trim()}” 검색 결과가 없습니다.`;
+      }
+
+      if (syncUrl) updateUrl(rawQuery.trim());
+    };
+
+    if (input instanceof HTMLInputElement) {
+      const initialQuery = new URLSearchParams(window.location.search).get("q") ?? "";
+      input.value = initialQuery;
+      runSearch(initialQuery);
+
+      input.addEventListener("input", () => runSearch(input.value, true));
+    }
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (input instanceof HTMLInputElement) runSearch(input.value, true);
+    });
+  </script>
+</BaseLayout>
