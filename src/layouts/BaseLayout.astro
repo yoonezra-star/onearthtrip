@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { nav, site } from "../data/site";
+import { getPublicPath } from "../utils/posts";
 
 type Props = {
   title?: string;
@@ -28,18 +29,12 @@ const {
   tags = []
 } = Astro.props;
 
-const canonicalPath = canonical
-  .replace(/\/index\.html$/, "/")
-  .replace(/\.html$/, "");
+const canonicalPath = getPublicPath(canonical);
 const canonicalUrl = new URL(canonicalPath, site.url).toString();
 const imageUrl = image ? new URL(image, site.url).toString() : undefined;
 const publishedTimeIso = publishedTime?.toISOString();
 const modifiedTimeIso = modifiedTime?.toISOString();
-const currentPath = Astro.url.pathname;
-const normalizedCurrentPath = currentPath
-  .replace(/\/index\.html$/, "/")
-  .replace(/\.html$/, "")
-  .replace(/\/$/, "") || "/";
+const normalizedCurrentPath = getPublicPath(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -115,7 +110,7 @@ const normalizedCurrentPath = currentPath
         </a>
         <nav class="nav" aria-label="주요 메뉴">
           {nav.map((item) => {
-            const itemPath = item.href.replace(/\/$/, "") || "/";
+            const itemPath = getPublicPath(item.href);
             return (
               <a
                 href={item.href}
