@@ -4,6 +4,7 @@ import { extname, join, relative, sep } from "node:path";
 const root = process.cwd();
 const pagesDir = join(root, "src", "pages");
 const sitemapPath = join(pagesDir, "sitemap-0.xml.ts");
+const sitemapExcludedRoutes = new Set(["/search"]);
 
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -37,6 +38,14 @@ const staticRoutes = pageFiles
   .map(pageFileToRoute)
   .filter(Boolean)
   .sort();
+const indexableStaticRoutes = staticRoutes.filter((route) => !sitemapExcludedRoutes.has(route));
+
+const invalidExclusions = [...sitemapExcludedRoutes].filter((route) => !staticRoutes.includes(route));
+if (invalidExclusions.length) {
+  console.error("Static sitemap validation failed: excluded route has no static Astro page.");
+  for (const route of invalidExclusions) console.error(`- invalid exclusion: ${route}`);
+  process.exit(1);
+}
 
 const sitemapText = await readFile(sitemapPath, "utf8");
 const staticPagesBlock = sitemapText.match(/const staticPages = \[([\s\S]*?)\];/);
@@ -51,15 +60,17 @@ const sitemapRoutes = [...staticPagesBlock[1].matchAll(/["'](\/[^"']*)["']/g)]
   .sort();
 
 const sitemapSet = new Set(sitemapRoutes);
-const staticSet = new Set(staticRoutes);
-const missing = staticRoutes.filter((route) => !sitemapSet.has(route));
+const staticSet = new Set(indexableStaticRoutes);
+const missing = indexableStaticRoutes.filter((route) => !sitemapSet.has(route));
 const stale = sitemapRoutes.filter((route) => !staticSet.has(route));
 
 if (missing.length || stale.length) {
   console.error("Static sitemap validation failed:");
   for (const route of missing) console.error(`- missing from sitemap: ${route}`);
-  for (const route of stale) console.error(`- sitemap route has no static Astro page: ${route}`);
+  for (const route of stale) console.error(`- sitemap route has no indexable static Astro page: ${route}`);
   process.exit(1);
 }
 
-console.log(`Static sitemap validation passed: ${staticRoutes.length} static Astro routes checked.`);
+console.log(
+  `Static sitemap validation passed: ${indexableStaticRoutes.length} indexable static Astro routes checked; ${sitemapExcludedRoutes.size} noindex route excluded.`
+);
