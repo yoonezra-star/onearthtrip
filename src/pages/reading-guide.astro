@@ -6,6 +6,7 @@ import { planningStoryPermalinks } from "../data/planningStories";
 import { attractionStoryPermalinks } from "../data/attractionStories";
 import { downtownStoryPermalinks } from "../data/downtownStories";
 import { stayStoryPermalinks } from "../data/stayStories";
+import { costStoryPermalinks } from "../data/costStories";
 import { getPosts } from "../utils/posts";
 
 const posts = await getPosts();
@@ -24,6 +25,9 @@ const downtownPosts = downtownStoryPermalinks
 const stayPosts = stayStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const costPosts = costStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const attractionCount = attractionPosts.length + downtownPosts.length;
 const guides = corePosts.filter((post) => post.data.contentType !== "field-note");
 const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-note");
@@ -31,14 +35,14 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
 
 <BaseLayout
   title="UAE 여행 준비·현장 기록 읽기 길잡이 | On Earth Trip"
-  description="UAE 입국, 아부다비 공항·대중교통, 숙소 지역, 3일·5일 일정, Downtown·Saadiyat·Yas 관광지와 직접 촬영 현장 기록까지 목적별로 정리한 시작 페이지입니다."
+  description="UAE 입국, 아부다비 숙소·교통비·여행예산, 3일·5일 일정, Downtown·Saadiyat·Yas 관광지와 직접 촬영 현장 기록까지 목적별로 정리한 시작 페이지입니다."
 >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">START HERE</p>
       <h1>UAE 여행·생활 읽기 길잡이</h1>
-      <p class="lead">검색으로 처음 들어온 독자도 여행 준비, 숙소, 일정, 관광지 선택과 실제 사진·영상 기록을 구분해 필요한 글부터 읽을 수 있습니다.</p>
-      <p class="page-summary">{guides.length}개 핵심 가이드 · {stayPosts.length}개 숙소 지역 가이드 · {planningPosts.length}개 여행 일정 · {attractionCount}개 관광지 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
+      <p class="lead">검색으로 처음 들어온 독자도 여행 준비, 숙소, 비용, 일정, 관광지 선택과 실제 사진·영상 기록을 구분해 필요한 글부터 읽을 수 있습니다.</p>
+      <p class="page-summary">{guides.length}개 핵심 가이드 · {stayPosts.length}개 숙소 지역 가이드 · {costPosts.length}개 비용 가이드 · {planningPosts.length}개 여행 일정 · {attractionCount}개 관광지 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
     </div>
   </section>
 
@@ -54,28 +58,33 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
         <h2>아부다비 숙소 지역 고르기</h2>
         <p>Corniche·도심, Yas, Saadiyat, 공항권을 여행 목적과 이동시간으로 비교합니다.</p>
       </a>
-      <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-3-day-itinerary">
+      <a class="guide-path-card accent-teal" href="/travel-costs">
         <span>03</span>
+        <h2>교통비·여행예산 계산</h2>
+        <p>공항·Yas·Saadiyat 이동비와 3일·5일 현지예산을 공식 요금 기준으로 계산합니다.</p>
+      </a>
+      <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-3-day-itinerary">
+        <span>04</span>
         <h2>아부다비 일정 짜기</h2>
         <p>3일·5일 일정과 도심·Saadiyat·Yas·가족여행을 여행 기간과 목적에 맞춰 고릅니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/attractions">
-        <span>04</span>
+        <span>05</span>
         <h2>아부다비 관광지 고르기</h2>
         <p>Downtown의 역사·궁전·해안, Saadiyat 박물관, Yas Island 테마파크를 지역별로 비교합니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/culture">
-        <span>05</span>
+        <span>06</span>
         <h2>UAE 문화 이해</h2>
         <p>라마단, 공휴일, 모스크 방문과 현지 문화 공간의 맥락을 읽습니다.</p>
       </a>
       <a class="guide-path-card accent-clay" href="/field-notes">
-        <span>06</span>
+        <span>07</span>
         <h2>직접 촬영 현장 기록</h2>
         <p>작성자가 직접 경험하고 촬영한 장소와 생활 장면을 실제 기록 시점 기준으로 읽습니다.</p>
       </a>
       <a class="guide-path-card" href="/2026/08/uae-personal-photo-archive">
-        <span>07</span>
+        <span>08</span>
         <h2>2012~2022 개인 사진 아카이브</h2>
         <p>아부다비와 두바이 등에서 직접 촬영한 사진·영상 기록을 연도별 색인으로 봅니다.</p>
       </a>
@@ -105,8 +114,28 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     <div class="container">
       <div class="section-head">
         <div>
+          <p class="eyebrow">TRAVEL COST CLUSTER</p>
+          <h2>숙소와 일정을 정하기 전 이동비부터 계산하기</h2>
+        </div>
+        <p>공항→도심, 도심↔Yas·Saadiyat 교통비와 3일·5일 예산을 현재 공식 버스·택시 요금으로 계산합니다.</p>
+      </div>
+      <div class="post-grid">
+        {costPosts.map((post) => <PostCard post={post} />)}
+      </div>
+      <div class="hero-actions">
+        <a class="primary-link" href="/travel-costs">교통비·여행예산 허브 보기</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-3-day-travel-budget">3일 예산 계산</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-5-day-travel-budget">5일 예산 계산</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container">
+      <div class="section-head">
+        <div>
           <p class="eyebrow">TRAVEL PLANNING CLUSTER</p>
-          <h2>아부다비 일정부터 먼저 고르기</h2>
+          <h2>아부다비 일정부터 고르기</h2>
         </div>
         <p>3일·5일 전체 일정과 Yas Island, Saadiyat, 가족·여름 실내여행을 서로 겹치지 않게 나눈 여행 계획 클러스터입니다.</p>
       </div>
@@ -116,7 +145,7 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     </div>
   </section>
 
-  <section class="section section-muted" id="downtown-attractions">
+  <section class="section" id="downtown-attractions">
     <div class="container">
       <div class="section-head">
         <div>
@@ -135,7 +164,7 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     </div>
   </section>
 
-  <section class="section" id="attractions">
+  <section class="section section-muted" id="attractions">
     <div class="container">
       <div class="section-head">
         <div>
@@ -155,7 +184,7 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     </div>
   </section>
 
-  <section class="section section-muted">
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <div>
@@ -170,7 +199,7 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-muted">
     <div class="container">
       <div class="section-head">
         <div>
