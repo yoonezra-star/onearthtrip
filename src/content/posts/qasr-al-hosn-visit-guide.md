@@ -7,6 +7,10 @@ category: "UAE 문화"
 tags: ["Qasr Al Hosn", "아부다비 역사", "House of Artisans", "아부다비 관광지"]
 permalink: "/2026/08/qasr-al-hosn-visit-guide.html"
 contentType: "guide"
+map:
+  title: "Qasr Al Hosn"
+  query: "Qasr Al Hosn, Abu Dhabi, United Arab Emirates"
+  address: "Al Hosn, Abu Dhabi, United Arab Emirates"
 ---
 Qasr Al Hosn은 아부다비 섬에서 가장 오래된 건축물로 소개되는 역사 공간입니다. UAE의 현대적인 이미지보다 **아부다비가 진주 채취 정착지에서 도시로 변해 온 과정**을 먼저 보고 싶다면 좋은 출발점입니다.
 
