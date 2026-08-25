@@ -2,7 +2,7 @@
 title: "UAE 7개 토후국 여행 계획: 한 번에 다 보려 하지 않고 지역별로 고르는 법"
 description: "아부다비·두바이부터 산과 동해안까지, UAE의 7개 토후국을 여행 목적과 이동 여건에 맞춰 나누어 살피는 계획 가이드입니다."
 pubDate: "2026-08-13T10:00:00+09:00"
-updatedDate: "2026-08-25T11:03:00+09:00"
+updatedDate: "2026-08-25T11:04:00+09:00"
 author: "아부라이프"
 category: "과거·현재·미래"
 tags: ["UAE", "7개 토후국", "아랍에미리트 여행", "여행 계획"]
@@ -56,7 +56,7 @@ UAE 일정은 아래 네 가지 중 가장 중요한 하나를 먼저 고르면 
 
 ## 이 글의 확인 기준과 갱신 원칙
 
-이 글은 2026년 8월 25일 기준 공식 방문 정보를 다시 확인해 작성 구조를 갱신했습니다. 비자, 운행 시간, 날씨, 시설 규정은 여행 직전에 재확인해야 합니다. 수정이 필요한 정보는 [문의 페이지](/contact)로 알려주세요.
+이 글에 연결된 공식 방문 정보의 확인 기준일은 2026년 8월 24일입니다. 2026년 8월 25일에는 본문의 사진 아카이브 연결 구조만 갱신했으며, 비자, 운행 시간, 날씨, 시설 규정은 여행 직전에 공식 채널에서 다시 확인해야 합니다. 수정이 필요한 정보는 [문의 페이지](/contact)로 알려주세요.
 
 - [UAE Government Portal - Visiting and Exploring](https://u.ae/en/information-and-services/visiting-and-exploring-the-uae)
 - [Visit Abu Dhabi - Essential Information](https://visitabudhabi.ae/en/plan-your-trip/essential-info)
