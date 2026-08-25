@@ -13,6 +13,9 @@ const staticPages = [
   "/reading-guide",
   "/field-notes",
   "/trip-checklist",
+  "/attractions",
+  "/downtown-attractions",
+  "/where-to-stay",
   "/contact",
   "/privacy",
   "/terms"
