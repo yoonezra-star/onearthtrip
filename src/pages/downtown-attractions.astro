@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { downtownStoryPermalinks } from "../data/downtownStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const downtownPosts = downtownStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageUrl = new URL("/downtown-attractions", site.url).toString();
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${pageUrl}#downtown-attractions`,
+  name: "아부다비 도심 관광지 가이드",
+  numberOfItems: downtownPosts.length,
+  itemListElement: downtownPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+---
+
+<BaseLayout
+  title="아부다비 도심 관광지 가이드 | Qasr Al Watan·Corniche | On Earth Trip"
+  description="Qasr Al Watan, Qasr Al Hosn, Corniche, Emirates Palace, Heritage Village를 같은 도심권 안에서 고르는 아부다비 관광지 허브입니다."
+  canonical="/downtown-attractions"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">DOWNTOWN ABU DHABI</p>
+      <h1>아부다비 도심 관광지, 역사·궁전·해안으로 나눠 봅니다</h1>
+      <p class="lead">Qasr Al Hosn에서 도시의 시작을 보고, Qasr Al Watan과 Emirates Palace를 거쳐 Corniche까지 이어지는 도심 동선을 한 번에 정리합니다.</p>
+      <p class="page-summary">{downtownPosts.length}개 도심 관광지 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/abu-dhabi-3-day-itinerary">3일 일정과 연결</a>
+        <a class="secondary-link" href="/attractions">전체 관광지 보기</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-public-transport-guide">대중교통 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">DOWNTOWN ROUTE</p>
+        <h2>한날에 전부 넣기보다 서쪽·중앙을 나눕니다</h2>
+      </div>
+      <p>Qasr Al Hosn은 중앙 도심, Qasr Al Watan·Emirates Palace는 West Corniche 쪽입니다. Heritage Village는 Breakwater에 있어 이동거리를 고려해 반나절 단위로 묶는 편이 좋습니다.</p>
+      <div class="source-links">
+        <a href="/2026/08/qasr-al-hosn-visit-guide">도시의 시작부터 보기</a>
+        <a href="/2026/08/qasr-al-watan-visit-guide">대통령궁 보기</a>
+        <a href="/2026/08/abu-dhabi-corniche-guide">저녁 Corniche 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">CURRENT DOWNTOWN GUIDES</p>
+          <h2>현재 방문 기준으로 정리한 도심 관광지</h2>
+        </div>
+        <p>운영시간·공개 구역·복장·행사처럼 바뀔 수 있는 정보는 공식 운영 주체와 Experience Abu Dhabi 안내를 기준으로 확인했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {downtownPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+</BaseLayout>
