@@ -1,0 +1,36 @@
+name: Upgrade Astro
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Upgrade Astro
+        run: npm install astro@7.2.4 --save-exact
+
+      - name: Commit dependency update
+        run: |
+          if git diff --quiet -- package.json package-lock.json; then
+            echo "Astro dependency is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          git commit -m "Upgrade Astro to 7.2.4"
+          git push
