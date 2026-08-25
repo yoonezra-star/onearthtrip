@@ -47,7 +47,7 @@ contentType: "guide"
 - UAE 역사 + 지구·생명사: 자이드 국립박물관 + 자연사박물관
 - UAE 역사 + 몰입형 예술: 자이드 국립박물관 + teamLab Phenomena
 
-전체 동선은 [Saadiyat Island와 아부다비 도심 이동 계획](/2026/08/saadiyat-island-downtown-abu-dhabi-guide)을 함께 보면 좋습니다.
+전체 동선은 [Saadiyat Island와 아부다비 도심 이동 계획](/2026/08/saadiyat-downtown-planning-guide)을 함께 보면 좋습니다.
 
 ## Museums Pass도 비교해 볼 만하다
 
