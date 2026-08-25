@@ -24,5 +24,8 @@ jobs:
       - name: Check internal links
         run: npm run check:links
 
+      - name: Check images
+        run: npm run check:images
+
       - name: Build Astro site
         run: npm run build
