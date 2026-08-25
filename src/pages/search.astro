@@ -17,6 +17,12 @@ const searchItems = posts.map((post) => ({
     ...(post.data.tags ?? [])
   ].join(" ")
 }));
+
+const categories = [...new Set(searchItems.map((item) => item.category))].sort((a, b) =>
+  a.localeCompare(b, "ko-KR")
+);
+
+const popularSearches = ["아부다비", "eSIM", "렌터카", "VAT", "알아인", "Liwa", "Sir Bani Yas"];
 ---
 
 <BaseLayout
@@ -42,6 +48,26 @@ const searchItems = posts.map((post) => ({
         />
         <button type="submit">검색</button>
       </form>
+
+      <div class="search-discovery" aria-label="검색 도우미">
+        <div class="popular-searches">
+          <span class="search-helper-label">인기 검색</span>
+          <div class="search-chip-row">
+            {popularSearches.map((query) => (
+              <button class="search-chip" type="button" data-search-query={query}>{query}</button>
+            ))}
+          </div>
+        </div>
+
+        <div class="category-filter">
+          <label for="search-category">카테고리</label>
+          <select id="search-category" name="category">
+            <option value="">전체 카테고리</option>
+            {categories.map((category) => <option value={category}>{category}</option>)}
+          </select>
+        </div>
+      </div>
+
       <p id="search-status" class="search-status" aria-live="polite">{searchItems.length}개 글에서 검색할 수 있습니다.</p>
     </div>
   </section>
@@ -54,22 +80,44 @@ const searchItems = posts.map((post) => ({
             class="search-result-card"
             href={item.url}
             data-search-text={item.searchText}
+            data-category={item.category}
             hidden
           >
             <div class="search-result-meta">
               <span>{item.category}</span>
               <span>{item.date}</span>
             </div>
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
+            <h2 data-highlight-source={item.title}>{item.title}</h2>
+            <p data-highlight-source={item.description}>{item.description}</p>
             {item.tags.length > 0 && (
               <div class="search-result-tags" aria-label="태그">
-                {item.tags.slice(0, 5).map((tag) => <span>{tag}</span>)}
+                {item.tags.slice(0, 5).map((tag) => (
+                  <span data-highlight-source={tag}>{tag}</span>
+                ))}
               </div>
             )}
           </a>
         ))}
       </div>
+
+      <div id="search-empty" class="search-empty" hidden>
+        <p class="eyebrow">NO RESULTS</p>
+        <h2>검색 결과가 없어요. 주제 허브에서 다시 찾아보세요.</h2>
+        <p>검색어를 짧게 줄이거나 카테고리를 전체로 바꿔 보세요. 아래 시작 페이지에서도 필요한 주제를 빠르게 찾을 수 있습니다.</p>
+        <div class="search-empty-links">
+          <a href="/reading-guide">읽기 길잡이</a>
+          <a href="/trip-checklist">여행 준비</a>
+          <a href="/attractions">아부다비 관광지</a>
+          <a href="/intercity-guide">도시 간 이동</a>
+          <a href="/liwa-guide">Liwa·Al Dhafra</a>
+          <a href="/sir-bani-yas-guide">Sir Bani Yas</a>
+        </div>
+      </div>
+
+      <div id="search-start" class="search-start">
+        <p>검색어를 입력하거나 인기 검색어·카테고리를 선택하면 결과가 표시됩니다.</p>
+      </div>
+
       <noscript>
         <p class="search-noscript">브라우저에서 JavaScript를 켜면 검색 결과를 바로 필터링할 수 있습니다.</p>
       </noscript>
@@ -79,8 +127,12 @@ const searchItems = posts.map((post) => ({
   <script>
     const form = document.querySelector("#site-search-form");
     const input = document.querySelector("#site-search-input");
+    const categorySelect = document.querySelector("#search-category");
     const status = document.querySelector("#search-status");
+    const emptyState = document.querySelector("#search-empty");
+    const startState = document.querySelector("#search-start");
     const cards = Array.from(document.querySelectorAll(".search-result-card"));
+    const popularButtons = Array.from(document.querySelectorAll("[data-search-query]"));
 
     const normalize = (value) =>
       String(value ?? "")
@@ -89,53 +141,140 @@ const searchItems = posts.map((post) => ({
         .trim()
         .replace(/\s+/g, " ");
 
-    const updateUrl = (query) => {
+    const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+    const setHighlightedText = (element, source, rawTerms) => {
+      if (!(element instanceof HTMLElement)) return;
+      element.replaceChildren();
+
+      const terms = rawTerms
+        .map((term) => term.trim())
+        .filter(Boolean)
+        .sort((a, b) => b.length - a.length);
+
+      if (terms.length === 0) {
+        element.textContent = source;
+        return;
+      }
+
+      const pattern = new RegExp(`(${terms.map(escapeRegExp).join("|")})`, "gi");
+      const parts = source.split(pattern);
+      const normalizedTerms = new Set(terms.map(normalize));
+
+      for (const part of parts) {
+        if (!part) continue;
+        if (normalizedTerms.has(normalize(part))) {
+          const mark = document.createElement("mark");
+          mark.textContent = part;
+          element.append(mark);
+        } else {
+          element.append(document.createTextNode(part));
+        }
+      }
+    };
+
+    const updateHighlights = (card, rawTerms) => {
+      for (const element of card.querySelectorAll("[data-highlight-source]")) {
+        if (!(element instanceof HTMLElement)) continue;
+        setHighlightedText(element, element.dataset.highlightSource ?? "", rawTerms);
+      }
+    };
+
+    const updateUrl = (query, category) => {
       const url = new URL(window.location.href);
       if (query) url.searchParams.set("q", query);
       else url.searchParams.delete("q");
+      if (category) url.searchParams.set("category", category);
+      else url.searchParams.delete("category");
       window.history.replaceState({}, "", `${url.pathname}${url.search}`);
     };
 
-    const runSearch = (rawQuery, syncUrl = false) => {
+    const runSearch = (rawQuery, category, syncUrl = false) => {
       const query = normalize(rawQuery);
       const terms = query ? query.split(" ").filter(Boolean) : [];
+      const rawTerms = String(rawQuery ?? "").trim().split(/\s+/).filter(Boolean);
+      const normalizedCategory = normalize(category);
+      const hasFilter = terms.length > 0 || normalizedCategory.length > 0;
       let count = 0;
 
       for (const card of cards) {
         const text = normalize(card.dataset.searchText);
-        const match = terms.length > 0 && terms.every((term) => text.includes(term));
+        const cardCategory = normalize(card.dataset.category);
+        const queryMatch = terms.length === 0 || terms.every((term) => text.includes(term));
+        const categoryMatch = !normalizedCategory || cardCategory === normalizedCategory;
+        const match = hasFilter && queryMatch && categoryMatch;
+
         card.hidden = !match;
+        updateHighlights(card, match ? rawTerms : []);
         if (match) count += 1;
       }
 
+      if (startState instanceof HTMLElement) startState.hidden = hasFilter;
+      if (emptyState instanceof HTMLElement) emptyState.hidden = !hasFilter || count > 0;
+
       if (status) {
-        status.textContent = terms.length === 0
-          ? `${cards.length}개 글에서 검색할 수 있습니다.`
-          : count > 0
-            ? `“${rawQuery.trim()}” 검색 결과 ${count}개`
-            : `“${rawQuery.trim()}” 검색 결과가 없습니다.`;
+        if (!hasFilter) {
+          status.textContent = `${cards.length}개 글에서 검색할 수 있습니다.`;
+        } else if (count > 0) {
+          const queryLabel = rawQuery.trim() ? `“${rawQuery.trim()}”` : "선택한 카테고리";
+          status.textContent = `${queryLabel} 검색 결과 ${count}개`;
+        } else {
+          status.textContent = rawQuery.trim()
+            ? `“${rawQuery.trim()}” 검색 결과가 없습니다.`
+            : "선택한 카테고리에 표시할 글이 없습니다.";
+        }
       }
 
-      if (syncUrl) updateUrl(rawQuery.trim());
+      for (const button of popularButtons) {
+        if (!(button instanceof HTMLButtonElement)) continue;
+        button.setAttribute("aria-pressed", normalize(button.dataset.searchQuery) === query ? "true" : "false");
+      }
+
+      if (syncUrl) updateUrl(rawQuery.trim(), category);
     };
 
+    const currentCategory = () =>
+      categorySelect instanceof HTMLSelectElement ? categorySelect.value : "";
+
     if (input instanceof HTMLInputElement) {
-      const initialQuery = new URLSearchParams(window.location.search).get("q") ?? "";
+      const params = new URLSearchParams(window.location.search);
+      const initialQuery = params.get("q") ?? "";
+      const initialCategory = params.get("category") ?? "";
       input.value = initialQuery;
-      runSearch(initialQuery);
-      input.addEventListener("input", () => runSearch(input.value, true));
+
+      if (categorySelect instanceof HTMLSelectElement) {
+        const optionExists = Array.from(categorySelect.options).some((option) => option.value === initialCategory);
+        if (optionExists) categorySelect.value = initialCategory;
+      }
+
+      runSearch(initialQuery, currentCategory());
+      input.addEventListener("input", () => runSearch(input.value, currentCategory(), true));
+    }
+
+    categorySelect?.addEventListener("change", () => {
+      const query = input instanceof HTMLInputElement ? input.value : "";
+      runSearch(query, currentCategory(), true);
+    });
+
+    for (const button of popularButtons) {
+      button.addEventListener("click", () => {
+        if (!(input instanceof HTMLInputElement) || !(button instanceof HTMLButtonElement)) return;
+        input.value = button.dataset.searchQuery ?? "";
+        runSearch(input.value, currentCategory(), true);
+        input.focus();
+      });
     }
 
     form?.addEventListener("submit", (event) => {
       event.preventDefault();
-      if (input instanceof HTMLInputElement) runSearch(input.value, true);
+      if (input instanceof HTMLInputElement) runSearch(input.value, currentCategory(), true);
     });
   </script>
 </BaseLayout>
 
 <style>
   .search-hero .page-hero-inner {
-    max-width: 900px;
+    max-width: 940px;
   }
 
   .search-form {
@@ -180,6 +319,66 @@ const searchItems = posts.map((post) => ({
     cursor: pointer;
     font: inherit;
     font-weight: 900;
+  }
+
+  .search-discovery {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 16px 28px;
+    align-items: end;
+    max-width: 900px;
+    margin-top: 6px;
+  }
+
+  .popular-searches,
+  .category-filter {
+    display: grid;
+    gap: 8px;
+  }
+
+  .search-helper-label,
+  .category-filter label {
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 900;
+  }
+
+  .search-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .search-chip {
+    min-height: 34px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0 11px;
+    background: var(--surface);
+    color: var(--accent-strong);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 850;
+  }
+
+  .search-chip:hover,
+  .search-chip[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: var(--surface-muted);
+  }
+
+  .category-filter select {
+    min-height: 38px;
+    min-width: 190px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0 34px 0 10px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 750;
   }
 
   .search-status {
@@ -228,6 +427,13 @@ const searchItems = posts.map((post) => ({
     color: var(--muted);
   }
 
+  .search-result-card mark {
+    border-radius: 3px;
+    padding: 0 2px;
+    background: #fff1a8;
+    color: inherit;
+  }
+
   .search-result-meta,
   .search-result-tags {
     display: flex;
@@ -250,10 +456,57 @@ const searchItems = posts.map((post) => ({
     font-weight: 800;
   }
 
+  .search-empty,
+  .search-start {
+    max-width: 920px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px;
+    background: var(--surface);
+  }
+
+  .search-empty h2 {
+    max-width: 680px;
+    font-size: 1.6rem;
+  }
+
+  .search-empty > p:not(.eyebrow),
+  .search-start p {
+    margin: 10px 0 0;
+    color: var(--muted);
+  }
+
+  .search-empty-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 18px;
+  }
+
+  .search-empty-links a {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: var(--surface-muted);
+    color: var(--accent-strong);
+    font-size: 0.88rem;
+    font-weight: 850;
+  }
+
   .search-noscript {
     max-width: 760px;
-    margin: 0;
+    margin: 18px 0 0;
     color: var(--muted);
+  }
+
+  @media (max-width: 720px) {
+    .search-discovery {
+      grid-template-columns: 1fr;
+    }
+
+    .category-filter select {
+      width: 100%;
+    }
   }
 
   @media (max-width: 640px) {
@@ -267,7 +520,9 @@ const searchItems = posts.map((post) => ({
       padding-inline: 12px;
     }
 
-    .search-result-card {
+    .search-result-card,
+    .search-empty,
+    .search-start {
       padding: 18px;
     }
   }
