@@ -61,10 +61,10 @@ const rows = files.map((file) => {
 const guides = rows.filter((row) => row.contentType !== "field-note");
 const fieldNotes = rows.filter((row) => row.contentType === "field-note");
 const thinCandidates = guides
-  .filter((row) => row.chars < 2200 || row.h2 < 3 || (row.externalLinks === 0 && row.internalLinks < 2))
+  .filter((row) => row.chars < 2200 || row.h2 < 3 || (row.externalLinks === 0 && row.internalLinks < 2 && row.media === 0))
   .sort((a, b) => a.chars - b.chars);
 const weakSourceCandidates = guides
-  .filter((row) => row.externalLinks === 0)
+  .filter((row) => row.externalLinks === 0 && row.media === 0)
   .sort((a, b) => a.chars - b.chars);
 const weakNavigationCandidates = guides
   .filter((row) => row.internalLinks < 2)
@@ -75,7 +75,7 @@ console.log("\n=== AdSense readiness content audit ===");
 console.log(`Posts: ${rows.length} total / ${guides.length} guides / ${fieldNotes.length} field notes`);
 console.log(`Posts with first-party or embedded media markup: ${mediaRich}`);
 console.log(`Potential thin/structure candidates: ${thinCandidates.length}`);
-console.log(`Guides with no external HTTPS reference: ${weakSourceCandidates.length}`);
+console.log(`Guides with no external HTTPS reference and no media evidence: ${weakSourceCandidates.length}`);
 console.log(`Guides with fewer than 2 internal links: ${weakNavigationCandidates.length}`);
 
 function printCandidates(label, items, limit = 20) {
@@ -93,7 +93,7 @@ function printCandidates(label, items, limit = 20) {
 }
 
 printCandidates("Thin/structure review queue (first 20)", thinCandidates);
-printCandidates("No external reference queue (first 15)", weakSourceCandidates, 15);
+printCandidates("No external reference / no media evidence queue (first 15)", weakSourceCandidates, 15);
 printCandidates("Weak internal-navigation queue (first 15)", weakNavigationCandidates, 15);
 
-console.log("\nAudit is advisory only. Review candidates manually before merging, noindexing, redirecting, or deleting content.\n");
+console.log("\nAudit is advisory only. First-party media can be valid evidence without an external source. Review candidates manually before merging, noindexing, redirecting, or deleting content.\n");
