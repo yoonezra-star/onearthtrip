@@ -4,6 +4,7 @@ import PostCard from "../components/PostCard.astro";
 import { coreStoryPermalinks } from "../data/coreStories";
 import { planningStoryPermalinks } from "../data/planningStories";
 import { attractionStoryPermalinks } from "../data/attractionStories";
+import { downtownStoryPermalinks } from "../data/downtownStories";
 import { getPosts } from "../utils/posts";
 
 const posts = await getPosts();
@@ -16,20 +17,24 @@ const planningPosts = planningStoryPermalinks
 const attractionPosts = attractionStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const downtownPosts = downtownStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const attractionCount = attractionPosts.length + downtownPosts.length;
 const guides = corePosts.filter((post) => post.data.contentType !== "field-note");
 const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-note");
 ---
 
 <BaseLayout
   title="UAE 여행 준비·현장 기록 읽기 길잡이 | On Earth Trip"
-  description="UAE 입국, 아부다비 공항·대중교통, 3일·5일 일정, Saadiyat·Yas 관광지와 직접 촬영 현장 기록까지 목적별로 정리한 시작 페이지입니다."
+  description="UAE 입국, 아부다비 공항·대중교통, 3일·5일 일정, Downtown·Saadiyat·Yas 관광지와 직접 촬영 현장 기록까지 목적별로 정리한 시작 페이지입니다."
 >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">START HERE</p>
       <h1>UAE 여행·생활 읽기 길잡이</h1>
       <p class="lead">검색으로 처음 들어온 독자도 여행 준비, 일정, 관광지 선택과 실제 사진·영상 기록을 구분해 필요한 글부터 읽을 수 있습니다.</p>
-      <p class="page-summary">{guides.length}개 핵심 가이드 · {planningPosts.length}개 여행 일정 · {attractionPosts.length}개 관광지 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
+      <p class="page-summary">{guides.length}개 핵심 가이드 · {planningPosts.length}개 여행 일정 · {attractionCount}개 관광지 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
     </div>
   </section>
 
@@ -43,12 +48,12 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
       <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-3-day-itinerary">
         <span>02</span>
         <h2>아부다비 일정 짜기</h2>
-        <p>3일·5일 일정과 Yas·Saadiyat·가족여행을 여행 기간과 목적에 맞춰 고릅니다.</p>
+        <p>3일·5일 일정과 도심·Saadiyat·Yas·가족여행을 여행 기간과 목적에 맞춰 고릅니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/attractions">
         <span>03</span>
         <h2>아부다비 관광지 고르기</h2>
-        <p>Saadiyat 박물관과 Yas Island 테마파크를 관심사와 동행자에 맞춰 비교합니다.</p>
+        <p>Downtown의 역사·궁전·해안, Saadiyat 박물관, Yas Island 테마파크를 지역별로 비교합니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/culture">
         <span>04</span>
@@ -83,12 +88,31 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     </div>
   </section>
 
-  <section class="section" id="attractions">
+  <section class="section" id="downtown-attractions">
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">ATTRACTION GUIDE CLUSTER</p>
-          <h2>관광지를 정한 뒤 운영시간과 동선을 확인하기</h2>
+          <p class="eyebrow">DOWNTOWN ATTRACTION CLUSTER</p>
+          <h2>도심 관광지는 역사·궁전·해안으로 나눠 보기</h2>
+        </div>
+        <p>Qasr Al Hosn, Qasr Al Watan, Emirates Palace, Corniche, Heritage Village를 같은 도심권 안에서 묶어 이동 부담을 줄입니다.</p>
+      </div>
+      <div class="post-grid">
+        {downtownPosts.map((post) => <PostCard post={post} />)}
+      </div>
+      <div class="hero-actions">
+        <a class="primary-link" href="/downtown-attractions">도심 관광지 허브 보기</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-3-day-itinerary">3일 일정에 넣기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted" id="attractions">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">SAADIYAT &amp; YAS ATTRACTION CLUSTER</p>
+          <h2>박물관과 테마파크는 운영시간·입장 조건부터 확인하기</h2>
         </div>
         <p>루브르 아부다비, 자이드 국립박물관, 자연사박물관, teamLab Phenomena와 Yas Island 테마파크를 현재 공식 정보 기준으로 나눠 정리했습니다.</p>
       </div>
@@ -96,12 +120,14 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
         {attractionPosts.map((post) => <PostCard post={post} />)}
       </div>
       <div class="hero-actions">
-        <a class="primary-link" href="/attractions">아부다비 관광지 허브 보기</a>
+        <a class="primary-link" href="/attractions">아부다비 관광지 전체 허브</a>
+        <a class="secondary-link" href="/2026/08/saadiyat-downtown-planning-guide">Saadiyat 일정</a>
+        <a class="secondary-link" href="/2026/08/yas-island-planning-guide">Yas Island 일정</a>
       </div>
     </div>
   </section>
 
-  <section class="section section-muted">
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <div>
@@ -116,7 +142,7 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-muted">
     <div class="container">
       <div class="section-head">
         <div>
