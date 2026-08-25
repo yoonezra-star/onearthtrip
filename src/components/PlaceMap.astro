@@ -9,9 +9,10 @@ const { title, query, address } = Astro.props;
 const encodedQuery = encodeURIComponent(query);
 const embedUrl = `https://www.google.com/maps?q=${encodedQuery}&output=embed`;
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}&utm_source=onearthtrip.com&utm_campaign=place_details_search`;
+const mapId = `place-map-${encodedQuery.replace(/%/g, "").replace(/[^a-zA-Z0-9]/g, "").slice(0, 44)}`;
 ---
 
-<section class="place-map" aria-label={`${title} 위치 지도`}>
+<section id={mapId} class="place-map" aria-label={`${title} 위치 지도`}>
   <div class="place-map-head">
     <div>
       <p class="eyebrow">LOCATION</p>
@@ -21,19 +22,41 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}
     <a href={mapsUrl} target="_blank" rel="noopener noreferrer">Google Maps에서 열기 ↗</a>
   </div>
   <div class="place-map-frame">
+    <button class="place-map-load" type="button" data-map-load>
+      <span aria-hidden="true">⌖</span>
+      <strong>Google 지도 보기</strong>
+      <small>버튼을 누르면 Google Maps 지도가 로드됩니다.</small>
+    </button>
     <iframe
       title={`${title} Google Maps`}
-      src={embedUrl}
+      data-map-frame
+      data-src={embedUrl}
       width="100%"
       height="360"
       style="border:0"
       loading="lazy"
       allowfullscreen
       referrerpolicy="strict-origin-when-cross-origin"
+      hidden
     ></iframe>
   </div>
   <p class="place-map-note">지도 표시는 위치 이해를 돕기 위한 참고용입니다. 운영시간·입구·주차·도로 상황은 방문 당일 공식 안내와 현장 표지를 우선하세요.</p>
 </section>
+
+<script is:inline define:vars={{ mapId }}>
+  const root = document.getElementById(mapId);
+  if (root) {
+    const button = root.querySelector("[data-map-load]");
+    const frame = root.querySelector("[data-map-frame]");
+    button?.addEventListener("click", () => {
+      if (frame instanceof HTMLIFrameElement && frame.dataset.src) {
+        frame.src = frame.dataset.src;
+        frame.hidden = false;
+        if (button instanceof HTMLElement) button.hidden = true;
+      }
+    }, { once: true });
+  }
+</script>
 
 <style>
   .place-map {
@@ -74,6 +97,7 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}
 
   .place-map-frame {
     overflow: hidden;
+    min-height: 300px;
     border: 1px solid var(--line);
     border-radius: 10px;
     background: var(--surface-muted);
@@ -82,6 +106,41 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}
   .place-map-frame iframe {
     display: block;
     min-height: 300px;
+  }
+
+  .place-map-load {
+    display: grid;
+    width: 100%;
+    min-height: 300px;
+    place-content: center;
+    place-items: center;
+    gap: 6px;
+    border: 0;
+    padding: 28px;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    text-align: center;
+    font: inherit;
+  }
+
+  .place-map-load:hover,
+  .place-map-load:focus-visible {
+    background: rgba(15, 118, 110, 0.06);
+  }
+
+  .place-map-load > span {
+    font-size: 2rem;
+    color: var(--accent-strong);
+  }
+
+  .place-map-load strong {
+    font-size: 1rem;
+  }
+
+  .place-map-load small {
+    color: var(--muted);
+    font-size: 0.82rem;
   }
 
   .place-map-note {
@@ -101,6 +160,12 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}
       align-items: start;
       flex-direction: column;
       gap: 8px;
+    }
+
+    .place-map-frame,
+    .place-map-frame iframe,
+    .place-map-load {
+      min-height: 280px;
     }
 
     .place-map-frame iframe {
