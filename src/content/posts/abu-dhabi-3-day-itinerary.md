@@ -2,7 +2,7 @@
 title: "아부다비 3일 여행 일정: 도심·Saadiyat·Yas를 하루씩 나누는 법"
 description: "아부다비 3일 여행을 도심, Saadiyat 문화 지구, Yas Island 세 축으로 나눠 이동 부담을 줄이는 실용 일정 가이드입니다."
 pubDate: "2026-08-25T14:50:00+09:00"
-updatedDate: "2026-08-25T16:44:00+09:00"
+updatedDate: "2026-08-25T18:42:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["아부다비 3일 여행", "아부다비 일정", "Saadiyat Island", "Yas Island", "아부다비 여행"]
@@ -82,6 +82,8 @@ Yas Island 공식 안내에 따르면 섬 안에서는 Yas Express 등 이동 �
 5. 마지막 일정은 취소해도 괜찮은 항목으로 둡니다.
 
 공항에서 도심으로 들어오는 날이라면 [자이드 국제공항에서 아부다비 도심 이동](/2026/08/zayed-international-airport-to-abu-dhabi-city)도 함께 확인하세요.
+
+일정의 지역 구성이 정해졌다면 [아부다비 3일 여행 예산](/2026/08/abu-dhabi-3-day-travel-budget)에서 Hafilat·택시·공항 이동비를 먼저 계산하고, 선택한 관광지의 실제 티켓 가격을 더하면 됩니다. 구간별 교통비는 [교통비·여행예산 허브](/travel-costs)에 모았습니다.
 
 ## 3일보다 여유가 있다면
 
