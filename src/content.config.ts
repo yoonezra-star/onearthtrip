@@ -18,6 +18,11 @@ const posts = defineCollection({
       label: z.string(),
       disclaimer: z.string()
     }).optional(),
+    map: z.object({
+      title: z.string(),
+      query: z.string(),
+      address: z.string().optional()
+    }).optional(),
     draft: z.boolean().default(false)
   })
 });
