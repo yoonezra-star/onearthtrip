@@ -7,9 +7,29 @@ export const coreStorySeoMeta = {
     title: "아부다비 두바이 이동: 출발 전 확인할 6가지",
     description: "아부다비와 두바이를 오갈 때 이동 시간, 공식 교통 안내, 예약, 마지막 1km, 휴식 시간을 함께 점검하는 실용 계획표입니다."
   },
+  "/2026/08/uae-entry-checklist-before-travel.html": {
+    title: "UAE 입국 전 체크리스트: 비자·여권·반입 제한 확인",
+    description: "UAE 여행 전에 비자 필요 여부, 여권과 항공편 정보, 세관·반입 제한, 도착 후 이동 준비를 공식 채널 중심으로 확인하는 순서입니다."
+  },
+  "/2026/08/zayed-international-airport-to-abu-dhabi-city.html": {
+    title: "아부다비 공항에서 도심 이동: 택시·Uber·공항버스",
+    description: "자이드 국제공항 도착 후 아부다비 도심으로 갈 때 공식 공항 택시, Uber·Careem, A계열 버스와 Hafilat 이용 기준을 정리했습니다."
+  },
+  "/2026/08/abu-dhabi-public-transport-guide.html": {
+    title: "아부다비 대중교통: 버스·Hafilat·택시 이용법",
+    description: "아부다비 공공버스와 Hafilat 카드, 택시를 처음 이용할 때 필요한 요금 구조, 환승 기준, 노선 확인 방법을 공식 안내로 정리했습니다."
+  },
   "/2026/08/uae-culture-etiquette-first-visit.html": {
     title: "UAE 문화 공간 방문: 복장·촬영·라마단 확인법",
     description: "UAE 모스크와 문화 공간 방문 전 확인할 복장, 촬영, 입장 시간, 라마단 관련 안내를 공식 정보 중심으로 정리했습니다."
+  },
+  "/2026/08/sheikh-zayed-grand-mosque-visit-guide.html": {
+    title: "셰이크 자이드 그랜드 모스크 방문: 예약·시간·복장",
+    description: "아부다비 셰이크 자이드 그랜드 모스크 방문 전 Access Pass 예약, 현재 방문 시간, 복장 규정과 현장 예절 확인 순서를 정리했습니다."
+  },
+  "/2026/08/uae-public-holidays-ramadan-travel-planning.html": {
+    title: "UAE 공휴일·라마단 여행: 운영 시간 확인하는 법",
+    description: "UAE 공휴일과 라마단 기간에 관광지, 교통, 식당, 문화 공간 운영 시간이 달라질 수 있어 여행 전 확인할 순서를 정리했습니다."
   },
   "/2026/08/uae-seven-emirates-slow-travel.html": {
     title: "UAE 7개 토후국 여행 계획: 지역별로 고르는 법",
