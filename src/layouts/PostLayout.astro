@@ -15,33 +15,48 @@ const title = `${post.data.title} | ${site.name}`;
 const canonical = getPublicPath(post.data.permalink);
 const readingTime = getReadingTime(post.body ?? "");
 const canonicalUrl = new URL(canonical, site.url).toString();
+const heroImageUrl = post.data.heroImage
+  ? new URL(post.data.heroImage, site.url).toString()
+  : undefined;
+const authorUrl = new URL("/author", site.url).toString();
+const authorId = `${authorUrl}#person`;
 const relatedPosts = (await getPosts())
   .filter((item) => item.id !== post.id && item.data.category === post.data.category)
   .slice(0, 3);
 const articleJson = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "@id": `${canonicalUrl}#article`,
   url: canonicalUrl,
   headline: post.data.title,
   description: post.data.description,
-  image: post.data.heroImage,
+  image: heroImageUrl,
+  thumbnailUrl: heroImageUrl,
   datePublished: post.data.pubDate.toISOString(),
   dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
   author: {
     "@type": "Person",
+    "@id": authorId,
     name: post.data.author,
-    url: new URL("/author", site.url).toString()
+    url: authorUrl
   },
   publisher: {
     "@type": "Organization",
     "@id": `${site.url}#organization`,
     name: site.name
   },
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": `${site.url}#website`,
+    name: site.name,
+    url: site.url
+  },
   mainEntityOfPage: canonicalUrl,
   inLanguage: site.locale,
   isAccessibleForFree: true,
-  articleSection: post.data.category
+  articleSection: post.data.category,
+  genre: post.data.contentType === "field-note" ? "현장 기록" : "가이드",
+  keywords: post.data.tags
 };
 const breadcrumbJson = {
   "@context": "https://schema.org",
@@ -65,6 +80,11 @@ const breadcrumbJson = {
   image={post.data.heroImage}
   canonical={canonical}
   pageType="article"
+  publishedTime={post.data.pubDate}
+  modifiedTime={post.data.updatedDate ?? post.data.pubDate}
+  authorUrl={authorUrl}
+  section={post.data.category}
+  tags={post.data.tags}
 >
   <article class="article">
     <header class="article-header">
