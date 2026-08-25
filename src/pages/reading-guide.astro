@@ -1,22 +1,27 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
+import { coreStoryPermalinks } from "../data/coreStories";
 import { getPosts } from "../utils/posts";
 
 const posts = await getPosts();
-const guides = posts.filter((post) => post.data.contentType === "guide").slice(0, 3);
-const fieldNotes = posts.filter((post) => post.data.contentType === "field-note").slice(0, 6);
+const corePosts = coreStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const guides = corePosts.filter((post) => post.data.contentType !== "field-note");
+const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-note");
 ---
 
 <BaseLayout
   title="UAE 여행 준비·현장 기록 읽기 길잡이 | On Earth Trip"
-  description="UAE 여행 준비, 문화 이해, 직접 촬영 현장 기록과 개인 사진 아카이브를 목적별로 읽을 수 있도록 정리한 시작 페이지입니다."
+  description="UAE 여행 준비, 문화 이해, 직접 촬영 현장 기록과 개인 사진 아카이브를 목적별 핵심 글 10개로 정리한 시작 페이지입니다."
 >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">START HERE</p>
       <h1>UAE 여행·생활 읽기 길잡이</h1>
-      <p class="lead">준비할 때 필요한 정보와, 실제 장소에서 남은 사진·영상 기록을 분리해 읽을 수 있습니다.</p>
+      <p class="lead">검색으로 처음 들어온 독자도 여행 준비 글과 실제 사진·영상 기록을 구분해 핵심 글부터 읽을 수 있습니다.</p>
+      <p class="page-summary">{guides.length}개 핵심 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
     </div>
   </section>
 
@@ -49,10 +54,10 @@ const fieldNotes = posts.filter((post) => post.data.contentType === "field-note"
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">PRACTICAL GUIDES</p>
-          <h2>처음 준비할 때 읽을 글</h2>
+          <p class="eyebrow">CORE PRACTICAL GUIDES</p>
+          <h2>검색으로 먼저 연결할 핵심 가이드</h2>
         </div>
-        <p>운영 시간·날씨·이동처럼 바뀔 수 있는 내용은 글 안의 공식 출처와 수정일을 함께 확인합니다.</p>
+        <p>처음 도착, 도시 간 이동, 문화 공간 방문, 7개 토후국 일정, 개인 사진 아카이브까지 사이트의 핵심 주제를 대표하는 글입니다.</p>
       </div>
       <div class="post-grid">
         {guides.map((post) => <PostCard post={post} />)}
@@ -64,13 +69,17 @@ const fieldNotes = posts.filter((post) => post.data.contentType === "field-note"
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">FIELD NOTES</p>
-          <h2>장소에서 남은 기록</h2>
+          <p class="eyebrow">CORE FIELD NOTES</p>
+          <h2>직접 경험을 증명하는 대표 현장 기록</h2>
         </div>
-        <p>현장 기록 표시는 작성자의 경험 범위를 뜻하며, 일반적인 규정이나 최신 조건은 별도로 확인해야 합니다.</p>
+        <p>그랜드 모스크, 부르즈 할리파, 사막 사파리, 시르바니야스, 아부다비 국립 아쿠아리움의 직접 촬영 기록입니다.</p>
       </div>
       <div class="post-grid">
         {fieldNotes.map((post) => <PostCard post={post} />)}
+      </div>
+      <div class="hero-actions">
+        <a class="primary-link" href="/field-notes">전체 현장 기록 보기</a>
+        <a class="secondary-link" href="/2026/08/uae-personal-photo-archive">연도별 개인 사진 색인</a>
       </div>
     </div>
   </section>
