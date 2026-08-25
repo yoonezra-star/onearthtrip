@@ -1,7 +1,12 @@
 export const coreStoryPermalinks = [
   "/2026/08/abu-dhabi-first-30-days.html",
   "/2026/08/abu-dhabi-dubai-weekend-rhythm.html",
+  "/2026/08/uae-entry-checklist-before-travel.html",
+  "/2026/08/zayed-international-airport-to-abu-dhabi-city.html",
+  "/2026/08/abu-dhabi-public-transport-guide.html",
   "/2026/08/uae-culture-etiquette-first-visit.html",
+  "/2026/08/sheikh-zayed-grand-mosque-visit-guide.html",
+  "/2026/08/uae-public-holidays-ramadan-travel-planning.html",
   "/2026/08/uae-seven-emirates-slow-travel.html",
   "/2026/08/uae-personal-photo-archive.html",
   "/2026/04/blog-post_11.html",
