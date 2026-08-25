@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { drivingStoryPermalinks } from "../data/drivingStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const drivingPosts = drivingStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageName = "아부다비 렌터카·운전·주차 가이드";
+const pageDescription = "국제운전면허·렌터카 준비, 자이드 국제공항 렌터카, Darb 통행료, MAWAQiF 주차, ADNOC 주유를 한곳에서 연결한 아부다비 운전 허브입니다.";
+const pageUrl = new URL("/driving-guide", site.url).toString();
+const listId = `${pageUrl}#item-list`;
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": listId,
+  name: "아부다비 렌터카·운전 가이드",
+  numberOfItems: drivingPosts.length,
+  itemListElement: drivingPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Thing", name: "Abu Dhabi car rental" },
+    { "@type": "Thing", name: "International Driving Permit" },
+    { "@type": "Thing", name: "Darb toll" },
+    { "@type": "Thing", name: "MAWAQiF parking" },
+    { "@type": "Thing", name: "ADNOC fuel" }
+  ]
+};
+---
+
+<BaseLayout
+  title="아부다비 렌터카·운전·주차 가이드 | On Earth Trip"
+  description={pageDescription}
+  canonical="/driving-guide"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">DRIVING &amp; CAR RENTAL</p>
+      <h1>아부다비에서 렌터카, 차값보다 운전 조건부터 봅니다</h1>
+      <p class="lead">면허와 보험, 공항 인수, 통행료, 주차, 주유까지 실제 운전 순서대로 확인합니다.</p>
+      <p class="page-summary">{drivingPosts.length}개 렌터카·운전 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/abu-dhabi-driving-rental-car-guide">면허·렌터카 준비</a>
+        <a class="secondary-link" href="/2026/08/zayed-airport-car-rental-guide">공항 렌터카</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-darb-toll-guide">Darb 통행료</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section">
+    <div class="container guide-path-grid">
+      <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-driving-rental-car-guide">
+        <span>01</span>
+        <h2>면허·보험 준비</h2>
+        <p>원본 운전면허증, 국제운전면허증, 여권·카드와 보험 조건을 확인합니다.</p>
+      </a>
+      <a class="guide-path-card accent-clay" href="/2026/08/zayed-airport-car-rental-guide">
+        <span>02</span>
+        <h2>공항 렌터카</h2>
+        <p>Terminal A 렌터카 센터 위치와 공식 파트너, 인수 전 체크사항을 봅니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/2026/08/abu-dhabi-darb-toll-guide">
+        <span>03</span>
+        <h2>Darb 통행료</h2>
+        <p>일반 피크시간 요금과 Al Qurm·Ghantoot 24시간 게이트를 구분합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/abu-dhabi-mawaqif-parking-guide">
+        <span>04</span>
+        <h2>MAWAQiF 주차</h2>
+        <p>Premium·Standard 색상, 시간당 요금과 거주자 전용 시간을 확인합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/abu-dhabi-adnoc-fueling-guide">
+        <span>05</span>
+        <h2>ADNOC 주유</h2>
+        <p>91·95·98 연료를 차량 지시에 맞춰 고르고 반납 전 주유를 준비합니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">DRIVE OR NOT</p>
+        <h2>렌터카가 필요한 일정인지 교통비와 함께 비교합니다</h2>
+      </div>
+      <p>짧은 도심 여행이라면 택시·버스가 단순할 수 있고, 여러 토후국이나 외곽 이동이 많다면 렌터카의 장점이 커집니다. Darb·주차·연료까지 포함한 총비용으로 판단하세요.</p>
+      <div class="source-links">
+        <a href="/travel-apps-guide">여행 앱·지도</a>
+        <a href="/travel-costs">교통비·여행예산</a>
+        <a href="/where-to-stay">숙소 지역 선택</a>
+        <a href="/2026/08/zayed-international-airport-to-abu-dhabi-city">공항→도심 이동</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="driving-guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">DRIVING CLUSTER</p>
+          <h2>렌터카와 운전 정보를 단계별로 보기</h2>
+        </div>
+        <p>렌터카 가격 순위보다 UAE 정부, Abu Dhabi Mobility, 자이드 국제공항, ADNOC Distribution의 현재 공식 안내를 중심으로 구성했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {drivingPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
+</BaseLayout>
