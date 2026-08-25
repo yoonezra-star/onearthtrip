@@ -42,6 +42,8 @@ Qasr Al Watan은 West Corniche 쪽에 있어 Emirates Palace와 가까운 편입
 - 오후: Emirates Palace + Qasr Al Watan
 - 저녁: Corniche 또는 Palace in Motion
 
+Qasr Al Hosn·Emirates Palace·Corniche·Heritage Village와 위치를 비교하려면 [아부다비 도심 관광지 허브](/downtown-attractions)를 먼저 보면 동선을 잡기 쉽습니다.
+
 아부다비 전체 3일 일정은 [아부다비 3일 여행 일정](/2026/08/abu-dhabi-3-day-itinerary)에서 확인할 수 있습니다.
 
 ## 방문 전 체크리스트
