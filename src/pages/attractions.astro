@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import { attractionStoryPermalinks } from "../data/attractionStories";
+import { downtownStoryPermalinks } from "../data/downtownStories";
 import { site } from "../data/site";
 import { getPosts, getPublicPath } from "../utils/posts";
 
@@ -9,6 +10,10 @@ const posts = await getPosts();
 const attractionPosts = attractionStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const downtownPosts = downtownStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const allAttractions = [...downtownPosts, ...attractionPosts];
 
 const pageUrl = new URL("/attractions", site.url).toString();
 const itemListJson = {
@@ -16,8 +21,8 @@ const itemListJson = {
   "@type": "ItemList",
   "@id": `${pageUrl}#attractions`,
   name: "아부다비 관광지 방문 가이드",
-  numberOfItems: attractionPosts.length,
-  itemListElement: attractionPosts.map((post, index) => ({
+  numberOfItems: allAttractions.length,
+  itemListElement: allAttractions.map((post, index) => ({
     "@type": "ListItem",
     position: index + 1,
     name: post.data.title,
@@ -27,35 +32,55 @@ const itemListJson = {
 ---
 
 <BaseLayout
-  title="아부다비 관광지 가이드 | Saadiyat·Yas Island | On Earth Trip"
-  description="루브르 아부다비, 자이드 국립박물관, 자연사박물관, teamLab Phenomena와 Yas Island 테마파크를 현재 공식 정보 기준으로 고르는 관광지 허브입니다."
+  title="아부다비 관광지 가이드 | Downtown·Saadiyat·Yas | On Earth Trip"
+  description="아부다비 도심의 Qasr Al Watan·Corniche, Saadiyat 박물관, Yas Island 테마파크를 지역과 여행 목적별로 고르는 관광지 허브입니다."
   canonical="/attractions"
 >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">ABU DHABI ATTRACTIONS</p>
-      <h1>아부다비 관광지, 지역과 목적부터 고릅니다</h1>
-      <p class="lead">Saadiyat의 박물관·문화 공간과 Yas Island의 테마파크를 한 목록에 섞지 않고, 무엇을 보고 싶은지에 따라 나눠 선택합니다.</p>
-      <p class="page-summary">{attractionPosts.length}개 현재형 관광지 가이드</p>
+      <h1>아부다비 관광지, 지역부터 나누면 일정이 쉬워집니다</h1>
+      <p class="lead">도심의 역사·궁전·해안, Saadiyat의 박물관, Yas Island의 테마파크를 한 목록에 섞지 않고 지역별로 선택합니다.</p>
+      <p class="page-summary">{allAttractions.length}개 현재형 관광지 가이드</p>
       <div class="hero-actions">
-        <a class="primary-link" href="/2026/08/abu-dhabi-3-day-itinerary">3일 일정과 연결</a>
-        <a class="secondary-link" href="/2026/08/saadiyat-downtown-planning-guide">Saadiyat 이동 보기</a>
-        <a class="secondary-link" href="/2026/08/yas-island-planning-guide">Yas 하루 일정</a>
+        <a class="primary-link" href="/downtown-attractions">도심 관광지</a>
+        <a class="secondary-link" href="/2026/08/saadiyat-downtown-planning-guide">Saadiyat 일정</a>
+        <a class="secondary-link" href="/2026/08/yas-island-planning-guide">Yas Island 일정</a>
       </div>
     </div>
   </section>
 
+  <section class="section guide-path-section">
+    <div class="container guide-path-grid">
+      <a class="guide-path-card accent-teal" href="/downtown-attractions">
+        <span>01</span>
+        <h2>Downtown Abu Dhabi</h2>
+        <p>Qasr Al Hosn, Qasr Al Watan, Emirates Palace, Corniche와 Heritage Village를 묶습니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/2026/08/saadiyat-downtown-planning-guide">
+        <span>02</span>
+        <h2>Saadiyat Cultural District</h2>
+        <p>루브르, 자이드 국립박물관, 자연사박물관과 teamLab을 고릅니다.</p>
+      </a>
+      <a class="guide-path-card accent-clay" href="/2026/08/yas-island-planning-guide">
+        <span>03</span>
+        <h2>Yas Island</h2>
+        <p>Ferrari World, Warner Bros., SeaWorld, Yas Waterworld 중 목적에 맞게 선택합니다.</p>
+      </a>
+    </div>
+  </section>
+
   <section class="section section-muted">
-    <div class="container source-band">
-      <div>
-        <p class="eyebrow">HOW TO CHOOSE</p>
-        <h2>Saadiyat와 Yas는 같은 날 억지로 섞지 않습니다</h2>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">DOWNTOWN CLUSTER</p>
+          <h2>아부다비 도심 관광지</h2>
+        </div>
+        <p>역사 건축물과 대통령궁, 호텔 건축, 해안 산책을 같은 도심권에서 연결합니다.</p>
       </div>
-      <p>Saadiyat는 박물관과 문화 공간을 천천히 보는 날, Yas Island는 테마파크와 가족 체험을 중심으로 잡는 날로 분리하면 이동과 체력 소모를 줄이기 쉽습니다.</p>
-      <div class="source-links">
-        <a href="/2026/08/abu-dhabi-5-day-itinerary">5일 일정 보기</a>
-        <a href="/2026/08/abu-dhabi-family-summer-indoor-itinerary">가족·여름 실내 일정</a>
-        <a href="/reading-guide">전체 읽기 길잡이</a>
+      <div class="post-grid">
+        {downtownPosts.map((post) => <PostCard post={post} />)}
       </div>
     </div>
   </section>
@@ -64,13 +89,18 @@ const itemListJson = {
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">CURRENT VISIT GUIDES</p>
-          <h2>현재 공식 정보로 확인한 관광지</h2>
+          <p class="eyebrow">SAADIYAT &amp; YAS</p>
+          <h2>박물관과 테마파크 관광지</h2>
         </div>
-        <p>운영시간·티켓·입장 조건처럼 바뀔 수 있는 내용은 각 운영 주체의 공식 페이지를 기준으로 확인하고, 방문 직전 재확인할 항목을 글마다 표시했습니다.</p>
+        <p>Saadiyat 문화시설과 Yas Island 테마파크는 운영시간·티켓·입장 조건을 공식 페이지 기준으로 확인합니다.</p>
       </div>
       <div class="post-grid">
         {attractionPosts.map((post) => <PostCard post={post} />)}
+      </div>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/abu-dhabi-3-day-itinerary">3일 일정 보기</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-5-day-itinerary">5일 일정 보기</a>
+        <a class="secondary-link" href="/reading-guide">전체 읽기 길잡이</a>
       </div>
     </div>
   </section>
