@@ -27,6 +27,7 @@ const staticPages = [
   "/al-ain-guide",
   "/liwa-guide",
   "/sir-bani-yas-guide",
+  "/al-wathba-guide",
   "/contact",
   "/privacy",
   "/terms"
