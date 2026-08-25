@@ -2,10 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import { coreStoryPermalinks } from "../data/coreStories";
+import { planningStoryPermalinks } from "../data/planningStories";
 import { getPosts } from "../utils/posts";
 
 const posts = await getPosts();
 const corePosts = coreStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const planningPosts = planningStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const guides = corePosts.filter((post) => post.data.contentType !== "field-note");
@@ -14,14 +18,14 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
 
 <BaseLayout
   title="UAE 여행 준비·현장 기록 읽기 길잡이 | On Earth Trip"
-  description="UAE 입국, 아부다비 공항·대중교통, 문화 공간, 7개 토후국 여행과 직접 촬영 현장 기록까지 목적별 핵심 글 15개로 정리한 시작 페이지입니다."
+  description="UAE 입국, 아부다비 공항·대중교통, 3일·5일 일정, Yas·Saadiyat 여행과 직접 촬영 현장 기록까지 목적별로 정리한 시작 페이지입니다."
 >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">START HERE</p>
       <h1>UAE 여행·생활 읽기 길잡이</h1>
       <p class="lead">검색으로 처음 들어온 독자도 여행 준비 글과 실제 사진·영상 기록을 구분해 핵심 글부터 읽을 수 있습니다.</p>
-      <p class="page-summary">{guides.length}개 핵심 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
+      <p class="page-summary">{guides.length}개 핵심 가이드 · {planningPosts.length}개 여행 일정 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
     </div>
   </section>
 
@@ -32,10 +36,10 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
         <h2>UAE 입국·여행 준비</h2>
         <p>비자·여권·반입 제한부터 공항 도착 이후 첫 이동까지 순서대로 확인합니다.</p>
       </a>
-      <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-public-transport-guide">
+      <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-3-day-itinerary">
         <span>02</span>
-        <h2>아부다비 이동</h2>
-        <p>공항 이동, 버스, Hafilat, 택시와 두바이 이동 계획을 연결해 봅니다.</p>
+        <h2>아부다비 일정 짜기</h2>
+        <p>3일·5일 일정과 Yas·Saadiyat·가족여행을 여행 기간과 목적에 맞춰 고릅니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/culture">
         <span>03</span>
@@ -59,6 +63,21 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     <div class="container">
       <div class="section-head">
         <div>
+          <p class="eyebrow">TRAVEL PLANNING CLUSTER</p>
+          <h2>아부다비 일정부터 먼저 고르기</h2>
+        </div>
+        <p>3일·5일 전체 일정과 Yas Island, Saadiyat, 가족·여름 실내여행을 서로 겹치지 않게 나눠 만든 두 번째 여행 계획 클러스터입니다.</p>
+      </div>
+      <div class="post-grid">
+        {planningPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
           <p class="eyebrow">CORE PRACTICAL GUIDES</p>
           <h2>검색으로 먼저 연결할 핵심 가이드</h2>
         </div>
@@ -70,7 +89,7 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-muted">
     <div class="container">
       <div class="section-head">
         <div>
