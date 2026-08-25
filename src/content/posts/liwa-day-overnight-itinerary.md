@@ -2,6 +2,7 @@
 title: "Liwa 당일치기 vs 1박 일정: 오아시스·Tel Moreeb·일몰 동선"
 description: "아부다비에서 Liwa를 당일치기로 갈지 1박할지, 이동시간·Liwa Oasis·Tel Moreeb·일몰과 귀가 피로를 기준으로 비교했습니다."
 pubDate: "2026-08-25T22:22:00+09:00"
+updatedDate: "2026-08-25T23:08:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Liwa itinerary", "Liwa day trip", "Liwa overnight", "Tel Moreeb", "Al Dhafra 여행"]
@@ -82,4 +83,10 @@ Experience Abu Dhabi는 사막 야외활동은 선선한 11월~3월이 편하고
 - [Al Dhafra·Liwa 여행 허브](/liwa-guide)
 - [아부다비 렌터카·운전 허브](/driving-guide)
 
-Liwa는 멀리 있는 만큼 '얼마나 많이 보느냐'보다 **돌아오는 시간과 피로를 어떻게 줄이느냐**가 일정 만족도를 크게 좌우합니다.
+## 2026년 8월 25일 확인한 공식 자료
+
+- [Experience Abu Dhabi - Al Dhafra](https://visitabudhabi.ae/en/where-to-go/regions/al-dhafra)
+- [Abu Dhabi Mobility - Inter City Services](https://admobility.gov.ae/en/inter-city-services)
+- [Experience Abu Dhabi - Outdoor Adventures](https://visitabudhabi.ae/en/things-to-do/adventure/outdoors)
+
+Liwa는 멀리 있는 만큼 '얼마나 많이 보느냐'보다 **돌아오는 시간과 피로를 어떻게 줄이느냐**가 일정 만족도를 크게 좌우합니다. 시간표와 현장 운영은 바뀔 수 있으므로 출발 전 공식 페이지를 다시 확인하세요.
