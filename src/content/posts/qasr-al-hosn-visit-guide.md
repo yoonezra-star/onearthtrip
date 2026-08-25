@@ -47,6 +47,8 @@ Qasr Al Hosn은 도심 한가운데 있어 오전 일정으로 넣기 좋습니�
 
 금요일이라면 Qasr Al Hosn을 오후로 옮기고 Corniche나 다른 장소를 오전에 배치하는 편이 낫습니다.
 
+Qasr Al Watan·Emirates Palace·Corniche·Heritage Village와 묶는 방법은 [아부다비 도심 관광지 허브](/downtown-attractions)에서 한눈에 비교할 수 있습니다.
+
 ## 방문 전 체크리스트
 
 1. 금요일 운영시간을 따로 확인합니다.
