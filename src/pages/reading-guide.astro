@@ -8,6 +8,8 @@ import { downtownStoryPermalinks } from "../data/downtownStories";
 import { stayStoryPermalinks } from "../data/stayStories";
 import { costStoryPermalinks } from "../data/costStories";
 import { foodStoryPermalinks } from "../data/foodStories";
+import { moneyStoryPermalinks } from "../data/moneyStories";
+import { shoppingStoryPermalinks } from "../data/shoppingStories";
 import { getPosts } from "../utils/posts";
 
 const posts = await getPosts();
@@ -32,6 +34,12 @@ const costPosts = costStoryPermalinks
 const foodPosts = foodStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const moneyPosts = moneyStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const shoppingPosts = shoppingStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const attractionCount = attractionPosts.length + downtownPosts.length;
 const guides = corePosts.filter((post) => post.data.contentType !== "field-note");
 const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-note");
@@ -39,14 +47,14 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
 
 <BaseLayout
   title="UAE 여행 준비·현장 기록 읽기 길잡이 | On Earth Trip"
-  description="UAE 입국, 아부다비 숙소·교통비·식비, 3일·5일 일정, Downtown·Saadiyat·Yas 관광지와 직접 촬영 현장 기록까지 목적별로 정리한 시작 페이지입니다."
+  description="UAE 입국, 아부다비 숙소·교통비·환전·식비·쇼핑, 3일·5일 일정, Downtown·Saadiyat·Yas 관광지와 직접 촬영 현장 기록까지 목적별로 정리한 시작 페이지입니다."
 >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">START HERE</p>
       <h1>UAE 여행·생활 읽기 길잡이</h1>
-      <p class="lead">검색으로 처음 들어온 독자도 여행 준비, 숙소, 비용, 음식, 일정, 관광지 선택과 실제 사진·영상 기록을 구분해 필요한 글부터 읽을 수 있습니다.</p>
-      <p class="page-summary">{guides.length}개 핵심 가이드 · {stayPosts.length}개 숙소 지역 가이드 · {costPosts.length}개 비용 가이드 · {foodPosts.length}개 음식·식비 가이드 · {planningPosts.length}개 여행 일정 · {attractionCount}개 관광지 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
+      <p class="lead">검색으로 처음 들어온 독자도 여행 준비, 숙소, 비용, 결제, 음식, 쇼핑, 일정, 관광지 선택과 실제 사진·영상 기록을 구분해 필요한 글부터 읽을 수 있습니다.</p>
+      <p class="page-summary">{guides.length}개 핵심 가이드 · {stayPosts.length}개 숙소 지역 가이드 · {costPosts.length}개 비용 가이드 · {moneyPosts.length}개 환전·결제 가이드 · {foodPosts.length}개 음식·식비 가이드 · {shoppingPosts.length}개 쇼핑 가이드 · {planningPosts.length}개 여행 일정 · {attractionCount}개 관광지 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
     </div>
   </section>
 
@@ -67,33 +75,43 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
         <h2>교통비·여행예산 계산</h2>
         <p>공항·Yas·Saadiyat 이동비와 3일·5일 현지예산을 공식 요금 기준으로 계산합니다.</p>
       </a>
-      <a class="guide-path-card accent-date" href="/food-guide">
+      <a class="guide-path-card accent-teal" href="/money-guide">
         <span>04</span>
+        <h2>환전·결제 준비</h2>
+        <p>AED 환전, 카드, ATM, 팁과 서비스비를 실제 돈 사용 순서대로 확인합니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/food-guide">
+        <span>05</span>
         <h2>음식·식비 계획</h2>
         <p>하루 식비, Emirati 음식, 쇼핑몰 식사와 가족여행 끼니를 따로 계획합니다.</p>
       </a>
+      <a class="guide-path-card accent-date" href="/shopping-guide">
+        <span>06</span>
+        <h2>쇼핑·VAT 환급</h2>
+        <p>관광객 VAT 환급, 공항 절차, 쇼핑몰·기념품과 쇼핑 예산을 함께 봅니다.</p>
+      </a>
       <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-3-day-itinerary">
-        <span>05</span>
+        <span>07</span>
         <h2>아부다비 일정 짜기</h2>
         <p>3일·5일 일정과 도심·Saadiyat·Yas·가족여행을 여행 기간과 목적에 맞춰 고릅니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/attractions">
-        <span>06</span>
+        <span>08</span>
         <h2>아부다비 관광지 고르기</h2>
         <p>Downtown의 역사·궁전·해안, Saadiyat 박물관, Yas Island 테마파크를 지역별로 비교합니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/culture">
-        <span>07</span>
+        <span>09</span>
         <h2>UAE 문화 이해</h2>
         <p>라마단, 공휴일, 모스크 방문과 현지 문화 공간의 맥락을 읽습니다.</p>
       </a>
       <a class="guide-path-card accent-clay" href="/field-notes">
-        <span>08</span>
+        <span>10</span>
         <h2>직접 촬영 현장 기록</h2>
         <p>작성자가 직접 경험하고 촬영한 장소와 생활 장면을 실제 기록 시점 기준으로 읽습니다.</p>
       </a>
       <a class="guide-path-card" href="/2026/08/uae-personal-photo-archive">
-        <span>09</span>
+        <span>11</span>
         <h2>2012~2022 개인 사진 아카이브</h2>
         <p>아부다비와 두바이 등에서 직접 촬영한 사진·영상 기록을 연도별 색인으로 봅니다.</p>
       </a>
@@ -143,6 +161,26 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
     <div class="container">
       <div class="section-head">
         <div>
+          <p class="eyebrow">MONEY &amp; PAYMENT CLUSTER</p>
+          <h2>AED 환전과 결제수단을 미리 나누기</h2>
+        </div>
+        <p>현금·카드 비중, AED 환전, 공항 환전·ATM, 해외카드 출금, 팁·서비스비를 실제 여행 순서대로 정리했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {moneyPosts.map((post) => <PostCard post={post} />)}
+      </div>
+      <div class="hero-actions">
+        <a class="primary-link" href="/money-guide">환전·결제 허브 보기</a>
+        <a class="secondary-link" href="/2026/08/aed-exchange-guide">AED 환전 확인</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-cash-card-payment-guide">현금·카드 비중</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
           <p class="eyebrow">FOOD &amp; DINING CLUSTER</p>
           <h2>하루 식비와 현지 음식을 따로 계획하기</h2>
         </div>
@@ -155,6 +193,26 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
         <a class="primary-link" href="/food-guide">음식·식비 허브 보기</a>
         <a class="secondary-link" href="/2026/08/abu-dhabi-daily-food-budget">하루 식비 계산</a>
         <a class="secondary-link" href="/2026/08/emirati-food-first-timer-guide">UAE 현지 음식 입문</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">SHOPPING &amp; VAT CLUSTER</p>
+          <h2>쇼핑은 VAT 환급 가능 여부와 출국 절차까지 함께 보기</h2>
+        </div>
+        <p>관광객 VAT 환급, 자이드 국제공항 검증, 쇼핑몰 선택, 기념품과 쇼핑 예산을 한 클러스터로 연결했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {shoppingPosts.map((post) => <PostCard post={post} />)}
+      </div>
+      <div class="hero-actions">
+        <a class="primary-link" href="/shopping-guide">쇼핑·VAT 환급 허브 보기</a>
+        <a class="secondary-link" href="/2026/08/uae-tourist-vat-refund-guide">VAT 환급 조건</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-shopping-mall-comparison">쇼핑몰 비교</a>
       </div>
     </div>
   </section>
