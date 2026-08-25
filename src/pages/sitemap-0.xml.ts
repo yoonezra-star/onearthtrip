@@ -17,6 +17,7 @@ const staticPages = [
   "/downtown-attractions",
   "/where-to-stay",
   "/travel-costs",
+  "/food-guide",
   "/contact",
   "/privacy",
   "/terms"
