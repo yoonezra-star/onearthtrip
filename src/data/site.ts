@@ -10,7 +10,6 @@ export const site = {
 };
 
 export const nav = [
-  { href: "/", label: "홈" },
   { href: "/reading-guide", label: "여행 가이드" },
   { href: "/life", label: "아부다비 생활" },
   { href: "/culture", label: "UAE 문화" },
