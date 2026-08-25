@@ -48,3 +48,6 @@ jobs:
 
       - name: Check AdSense page boundaries
         run: npm run check:adsense-pages
+
+      - name: Check final AdSense approval readiness
+        run: npm run check:adsense-ready
