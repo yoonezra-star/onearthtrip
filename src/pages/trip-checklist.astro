@@ -25,6 +25,10 @@ const groups = [
     title: "도착 직후",
     items: [
       {
+        label: "공항 무료 Wi-Fi, 무료 관광객 eSIM, 로밍 백업 순서를 확인했다.",
+        href: "/connectivity-guide"
+      },
+      {
         label: "숙소 주소를 건물명과 입구 위치까지 확인하고 지도에 저장했다."
       },
       {
@@ -118,7 +122,11 @@ const itemCount = groups.reduce((count, group) => count + group.items.length, 0)
                     <label for={id}>
                       <span>{item.label}</span>
                     </label>
-                    {item.href && <a class="check-source-link" href={item.href} target="_blank" rel="noopener noreferrer">공식 확인</a>}
+                    {item.href && item.href.startsWith("/") ? (
+                      <a class="check-source-link" href={item.href}>가이드 보기</a>
+                    ) : item.href ? (
+                      <a class="check-source-link" href={item.href} target="_blank" rel="noopener noreferrer">공식 확인</a>
+                    ) : null}
                   </li>
                 );
               })}
@@ -136,13 +144,14 @@ const itemCount = groups.reduce((count, group) => count + group.items.length, 0)
         <h2>이 도구의 확인 기준</h2>
       </div>
       <p>
-        이 체크리스트는 2026년 8월 24일에 확인한 UAE 정부·기상 기관·아부다비 공식 관광 기관 자료를
+        이 체크리스트는 2026년 8월 25일에 확인한 UAE 정부·기상 기관·아부다비 공식 관광 기관·자이드 국제공항 자료를
         기준으로 만들었습니다. 실제 이용 전에는 아래 원문을 다시 확인하세요.
       </p>
       <div class="source-links">
         <a href="https://u.ae/en/information-and-services/visiting-and-exploring-the-uae" target="_blank" rel="noopener noreferrer">UAE 정부 방문 안내</a>
         <a href="https://www.ncm.gov.ae/" target="_blank" rel="noopener noreferrer">UAE 기상청</a>
         <a href="https://visitabudhabi.ae/en/plan-your-trip/getting-around-abu-dhabi" target="_blank" rel="noopener noreferrer">아부다비 이동 안내</a>
+        <a href="https://www.zayedinternationalairport.ae/general/wifi" target="_blank" rel="noopener noreferrer">자이드 국제공항 Wi-Fi</a>
       </div>
     </div>
   </section>
