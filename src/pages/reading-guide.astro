@@ -11,6 +11,7 @@ import { foodStoryPermalinks } from "../data/foodStories";
 import { moneyStoryPermalinks } from "../data/moneyStories";
 import { shoppingStoryPermalinks } from "../data/shoppingStories";
 import { connectivityStoryPermalinks } from "../data/connectivityStories";
+import { travelAppStoryPermalinks } from "../data/travelAppStories";
 import { getPosts } from "../utils/posts";
 
 const posts = await getPosts();
@@ -44,6 +45,9 @@ const shoppingPosts = shoppingStoryPermalinks
 const connectivityPosts = connectivityStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const appPosts = travelAppStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const attractionCount = attractionPosts.length + downtownPosts.length;
 const guides = corePosts.filter((post) => post.data.contentType !== "field-note");
 const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-note");
@@ -51,14 +55,14 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
 
 <BaseLayout
   title="UAE 여행 준비·현장 기록 읽기 길잡이 | On Earth Trip"
-  description="UAE 입국, 유심·eSIM, 아부다비 숙소·교통비·환전·식비·쇼핑, 3일·5일 일정, 관광지와 직접 촬영 현장 기록까지 목적별로 정리한 시작 페이지입니다."
+  description="UAE 입국, 유심·eSIM, 여행 앱, 아부다비 숙소·교통비·환전·식비·쇼핑, 일정, 관광지와 직접 촬영 현장 기록까지 목적별로 정리한 시작 페이지입니다."
 >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">START HERE</p>
       <h1>UAE 여행·생활 읽기 길잡이</h1>
-      <p class="lead">검색으로 처음 들어온 독자도 여행 준비, 인터넷 연결, 숙소, 비용, 결제, 음식, 쇼핑, 일정, 관광지 선택과 실제 사진·영상 기록을 구분해 필요한 글부터 읽을 수 있습니다.</p>
-      <p class="page-summary">{guides.length}개 핵심 가이드 · {connectivityPosts.length}개 유심·eSIM 가이드 · {stayPosts.length}개 숙소 지역 가이드 · {costPosts.length}개 비용 가이드 · {moneyPosts.length}개 환전·결제 가이드 · {foodPosts.length}개 음식·식비 가이드 · {shoppingPosts.length}개 쇼핑 가이드 · {planningPosts.length}개 여행 일정 · {attractionCount}개 관광지 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
+      <p class="lead">검색으로 처음 들어온 독자도 여행 준비, 인터넷 연결, 앱·지도, 숙소, 비용, 결제, 음식, 쇼핑, 일정, 관광지 선택과 실제 사진·영상 기록을 구분해 필요한 글부터 읽을 수 있습니다.</p>
+      <p class="page-summary">{guides.length}개 핵심 가이드 · {connectivityPosts.length}개 유심·eSIM 가이드 · {appPosts.length}개 여행 앱 가이드 · {stayPosts.length}개 숙소 지역 가이드 · {costPosts.length}개 비용 가이드 · {moneyPosts.length}개 환전·결제 가이드 · {foodPosts.length}개 음식·식비 가이드 · {shoppingPosts.length}개 쇼핑 가이드 · {planningPosts.length}개 여행 일정 · {attractionCount}개 관광지 가이드 · {fieldNotes.length}개 대표 현장 기록</p>
     </div>
   </section>
 
@@ -74,53 +78,58 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
         <h2>유심·eSIM·인터넷 연결</h2>
         <p>공항 무료 Wi-Fi, 무료 관광객 eSIM, e&amp;·du와 로밍을 도착 순서대로 확인합니다.</p>
       </a>
-      <a class="guide-path-card accent-teal" href="/where-to-stay">
+      <a class="guide-path-card accent-teal" href="/travel-apps-guide">
         <span>03</span>
+        <h2>여행 앱·디지털 도구</h2>
+        <p>Darbi·택시 호출·오프라인 지도·공항·번역·긴급연락 도구를 출국 전에 준비합니다.</p>
+      </a>
+      <a class="guide-path-card accent-teal" href="/where-to-stay">
+        <span>04</span>
         <h2>아부다비 숙소 지역 고르기</h2>
         <p>Corniche·도심, Yas, Saadiyat, 공항권을 여행 목적과 이동시간으로 비교합니다.</p>
       </a>
       <a class="guide-path-card accent-teal" href="/travel-costs">
-        <span>04</span>
+        <span>05</span>
         <h2>교통비·여행예산 계산</h2>
         <p>공항·Yas·Saadiyat 이동비와 3일·5일 현지예산을 공식 요금 기준으로 계산합니다.</p>
       </a>
       <a class="guide-path-card accent-teal" href="/money-guide">
-        <span>05</span>
+        <span>06</span>
         <h2>환전·결제 준비</h2>
         <p>AED 환전, 카드, ATM, 팁과 서비스비를 실제 돈 사용 순서대로 확인합니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/food-guide">
-        <span>06</span>
+        <span>07</span>
         <h2>음식·식비 계획</h2>
         <p>하루 식비, Emirati 음식, 쇼핑몰 식사와 가족여행 끼니를 따로 계획합니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/shopping-guide">
-        <span>07</span>
+        <span>08</span>
         <h2>쇼핑·VAT 환급</h2>
         <p>관광객 VAT 환급, 공항 절차, 쇼핑몰·기념품과 쇼핑 예산을 함께 봅니다.</p>
       </a>
       <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-3-day-itinerary">
-        <span>08</span>
+        <span>09</span>
         <h2>아부다비 일정 짜기</h2>
         <p>3일·5일 일정과 도심·Saadiyat·Yas·가족여행을 여행 기간과 목적에 맞춰 고릅니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/attractions">
-        <span>09</span>
+        <span>10</span>
         <h2>아부다비 관광지 고르기</h2>
         <p>Downtown의 역사·궁전·해안, Saadiyat 박물관, Yas Island 테마파크를 지역별로 비교합니다.</p>
       </a>
       <a class="guide-path-card accent-date" href="/culture">
-        <span>10</span>
+        <span>11</span>
         <h2>UAE 문화 이해</h2>
         <p>라마단, 공휴일, 모스크 방문과 현지 문화 공간의 맥락을 읽습니다.</p>
       </a>
       <a class="guide-path-card accent-clay" href="/field-notes">
-        <span>11</span>
+        <span>12</span>
         <h2>직접 촬영 현장 기록</h2>
         <p>작성자가 직접 경험하고 촬영한 장소와 생활 장면을 실제 기록 시점 기준으로 읽습니다.</p>
       </a>
       <a class="guide-path-card" href="/2026/08/uae-personal-photo-archive">
-        <span>12</span>
+        <span>13</span>
         <h2>2012~2022 개인 사진 아카이브</h2>
         <p>아부다비와 두바이 등에서 직접 촬영한 사진·영상 기록을 연도별 색인으로 봅니다.</p>
       </a>
@@ -143,6 +152,26 @@ const fieldNotes = corePosts.filter((post) => post.data.contentType === "field-n
         <a class="primary-link" href="/connectivity-guide">유심·eSIM 허브 보기</a>
         <a class="secondary-link" href="/2026/08/zayed-airport-tourist-sim-esim-guide">공항에서 바로 연결</a>
         <a class="secondary-link" href="/2026/08/etisalat-du-tourist-sim-comparison">e&amp; vs du 비교</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">TRAVEL APPS &amp; DIGITAL TOOLS</p>
+          <h2>인터넷 연결 다음에는 앱과 오프라인 백업을 준비하기</h2>
+        </div>
+        <p>Darbi·Abu Dhabi Taxi·Careem·Uber, 오프라인 지도, AUH Guest·Etihad, 오프라인 번역과 UAE 긴급연락을 다섯 가지 검색 의도로 나눴습니다.</p>
+      </div>
+      <div class="post-grid">
+        {appPosts.map((post) => <PostCard post={post} />)}
+      </div>
+      <div class="hero-actions">
+        <a class="primary-link" href="/travel-apps-guide">여행 앱 허브 보기</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-transport-apps-guide">교통 앱 정리</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-offline-map-navigation-guide">오프라인 지도</a>
       </div>
     </div>
   </section>
