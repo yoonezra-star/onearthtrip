@@ -43,6 +43,13 @@ const rows = files.map((file) => {
   const hasUpdatedDate = /^updatedDate:/m.test(frontmatter);
   const hasOfficialSection = /##\s+(확인한 공식 자료|공식 자료|출처|참고 자료)/i.test(body);
 
+  const riskSignals = [
+    text.length < 1200,
+    h2 < 3,
+    externalLinks === 0 && media === 0,
+    internalLinks < 2
+  ].filter(Boolean).length;
+
   return {
     file,
     title,
@@ -54,14 +61,18 @@ const rows = files.map((file) => {
     media,
     h2,
     hasUpdatedDate,
-    hasOfficialSection
+    hasOfficialSection,
+    riskSignals
   };
 });
 
 const guides = rows.filter((row) => row.contentType !== "field-note");
 const fieldNotes = rows.filter((row) => row.contentType === "field-note");
-const thinCandidates = guides
-  .filter((row) => row.chars < 2200 || row.h2 < 3 || (row.externalLinks === 0 && row.internalLinks < 2 && row.media === 0))
+const priorityCandidates = guides
+  .filter((row) => row.chars < 900 || row.riskSignals >= 2)
+  .sort((a, b) => b.riskSignals - a.riskSignals || a.chars - b.chars);
+const compactGuides = guides
+  .filter((row) => row.chars < 1600 && !priorityCandidates.includes(row))
   .sort((a, b) => a.chars - b.chars);
 const weakSourceCandidates = guides
   .filter((row) => row.externalLinks === 0 && row.media === 0)
@@ -74,7 +85,8 @@ const mediaRich = rows.filter((row) => row.media > 0).length;
 console.log("\n=== AdSense readiness content audit ===");
 console.log(`Posts: ${rows.length} total / ${guides.length} guides / ${fieldNotes.length} field notes`);
 console.log(`Posts with first-party or embedded media markup: ${mediaRich}`);
-console.log(`Potential thin/structure candidates: ${thinCandidates.length}`);
+console.log(`Priority multi-signal review candidates: ${priorityCandidates.length}`);
+console.log(`Compact guides under 1,600 chars (informational only): ${compactGuides.length}`);
 console.log(`Guides with no external HTTPS reference and no media evidence: ${weakSourceCandidates.length}`);
 console.log(`Guides with fewer than 2 internal links: ${weakNavigationCandidates.length}`);
 
@@ -86,14 +98,15 @@ function printCandidates(label, items, limit = 20) {
   }
   for (const row of items.slice(0, limit)) {
     console.log(
-      `- ${row.file} | chars=${row.chars} h2=${row.h2} internal=${row.internalLinks} external=${row.externalLinks} media=${row.media} | ${row.title}`
+      `- ${row.file} | risk=${row.riskSignals} chars=${row.chars} h2=${row.h2} internal=${row.internalLinks} external=${row.externalLinks} media=${row.media} | ${row.title}`
     );
   }
   if (items.length > limit) console.log(`- ...and ${items.length - limit} more`);
 }
 
-printCandidates("Thin/structure review queue (first 20)", thinCandidates);
-printCandidates("No external reference / no media evidence queue (first 15)", weakSourceCandidates, 15);
-printCandidates("Weak internal-navigation queue (first 15)", weakNavigationCandidates, 15);
+printCandidates("Priority review queue", priorityCandidates);
+printCandidates("Compact-guide watch list (first 15; not automatically a problem)", compactGuides, 15);
+printCandidates("No external reference / no media evidence queue", weakSourceCandidates, 15);
+printCandidates("Weak internal-navigation queue", weakNavigationCandidates, 15);
 
-console.log("\nAudit is advisory only. First-party media can be valid evidence without an external source. Review candidates manually before merging, noindexing, redirecting, or deleting content.\n");
+console.log("\nAudit is advisory only. Google does not publish a minimum word-count requirement. Short but focused pages with useful structure, sources, internal navigation, or first-party evidence should not be expanded mechanically.\n");
