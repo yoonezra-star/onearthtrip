@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { shoppingStoryPermalinks } from "../data/shoppingStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const shoppingPosts = shoppingStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageName = "아부다비 쇼핑·VAT 환급 가이드";
+const pageDescription = "UAE 관광객 VAT 환급, 자이드 국제공항 환급, 아부다비 쇼핑몰 비교, 기념품, 쇼핑 예산을 한곳에서 연결한 쇼핑 허브입니다.";
+const pageUrl = new URL("/shopping-guide", site.url).toString();
+const listId = `${pageUrl}#item-list`;
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": listId,
+  name: "아부다비 쇼핑·VAT 환급 가이드",
+  numberOfItems: shoppingPosts.length,
+  itemListElement: shoppingPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Thing", name: "UAE VAT refund" },
+    { "@type": "Thing", name: "아부다비 쇼핑" },
+    { "@type": "Thing", name: "Yas Mall" },
+    { "@type": "Thing", name: "아부다비 기념품" },
+    { "@type": "Thing", name: "아부다비 쇼핑 예산" }
+  ]
+};
+---
+
+<BaseLayout
+  title="아부다비 쇼핑·VAT 환급 가이드 | 쇼핑몰·기념품 | On Earth Trip"
+  description={pageDescription}
+  canonical="/shopping-guide"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">SHOPPING &amp; VAT REFUND</p>
+      <h1>아부다비 쇼핑, 무엇을 사고 VAT 환급은 어떻게 받을까</h1>
+      <p class="lead">관광객 VAT 환급부터 쇼핑몰 선택, 기념품과 쇼핑 예산까지 실제 구매 순서대로 확인합니다.</p>
+      <p class="page-summary">{shoppingPosts.length}개 쇼핑·VAT 환급 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/uae-tourist-vat-refund-guide">VAT 환급 조건</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-shopping-mall-comparison">쇼핑몰 비교</a>
+        <a class="secondary-link" href="/money-guide">환전·결제</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section">
+    <div class="container guide-path-grid">
+      <a class="guide-path-card accent-teal" href="/2026/08/uae-tourist-vat-refund-guide">
+        <span>01</span>
+        <h2>관광객 VAT 환급</h2>
+        <p>대상, 최소 구매금액, 90일 규칙과 현재 환급 수수료를 확인합니다.</p>
+      </a>
+      <a class="guide-path-card accent-clay" href="/2026/08/zayed-airport-vat-refund-guide">
+        <span>02</span>
+        <h2>공항 환급 절차</h2>
+        <p>자이드 국제공항에서 체크인 전에 검증하고 출국 후 환급받는 순서를 봅니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/2026/08/abu-dhabi-shopping-mall-comparison">
+        <span>03</span>
+        <h2>쇼핑몰 비교</h2>
+        <p>Yas Mall, The Galleria, Marina Mall을 여행 동선 기준으로 비교합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/abu-dhabi-souvenir-buying-guide">
+        <span>04</span>
+        <h2>기념품 고르기</h2>
+        <p>대추야자, oud, Gahwa 세트, Al Sadu 등 품목별 특징을 봅니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/abu-dhabi-shopping-budget-guide">
+        <span>05</span>
+        <h2>쇼핑 예산</h2>
+        <p>기념품·개인구매·고가품·VAT 환급 가능 구매를 따로 계산합니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">HOW TO SHOP</p>
+        <h2>구매 전에는 환급 가능 여부, 구매 후에는 출국 검증을 확인합니다</h2>
+      </div>
+      <p>관광객 VAT 환급은 매장 등록 여부와 거래금액, 출국 검증을 모두 충족해야 합니다. 쇼핑 예산은 환급 전 결제금액을 먼저 잡고 실제 환급 완료 후 차감하는 편이 안전합니다.</p>
+      <div class="source-links">
+        <a href="/money-guide">환전·결제</a>
+        <a href="/travel-costs">전체 여행예산</a>
+        <a href="/food-guide">음식·식비</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shopping-guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">SHOPPING CLUSTER</p>
+          <h2>쇼핑과 VAT 환급을 목적별로 보기</h2>
+        </div>
+        <p>특정 세일이나 매장 가격을 고정하지 않고 공식 환급 규정, 지역별 쇼핑 동선과 기념품 선택 기준을 중심으로 정리했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {shoppingPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
+</BaseLayout>
