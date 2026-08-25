@@ -1,11 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
-import { getPosts } from "../utils/posts";
+import { coreStoryPermalinks } from "../data/coreStories";
+import { getPosts, getPublicPath } from "../utils/posts";
 
 const posts = (await getPosts()).filter((post) => post.data.category === "아부다비 한인 생활");
 const fieldNotes = posts.filter((post) => post.data.contentType === "field-note");
 const guides = posts.filter((post) => post.data.contentType !== "field-note");
+const corePosts = coreStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const firstSteps = guides.filter((post) =>
   [
     "/2026/08/abu-dhabi-first-30-days.html",
@@ -51,6 +55,21 @@ const communityAndPeople = guides.filter((post) =>
       </div>
     </div>
   </section>
+
+  {corePosts.length > 0 && (
+    <section class="section">
+      <div class="container source-band">
+        <div>
+          <p class="eyebrow">CORE LIFE GUIDES</p>
+          <h2>아부다비 생활에서 먼저 읽을 핵심 글</h2>
+        </div>
+        <p>처음 도착했을 때의 생활 동선과 아부다비·두바이 사이 이동 계획처럼 검색 수요가 분명한 생활 가이드를 먼저 연결합니다.</p>
+        <div class="source-links">
+          {corePosts.map((post) => <a href={getPublicPath(post.data.permalink)}>{post.data.title}</a>)}
+        </div>
+      </div>
+    </section>
+  )}
 
   {fieldNotes.length > 0 && (
     <section class="section" id="field-notes">
