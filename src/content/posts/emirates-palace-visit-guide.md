@@ -18,11 +18,15 @@ Experience Abu Dhabi는 Emirates Palace의 일부 공개 구역은 무료로 들
 
 건물 내부를 더 깊게 보고 싶다면 공식 유료 투어나 day pass, 레스토랑·카페 예약 같은 방식으로 접근할 수 있습니다.
 
+숙박 지역 자체를 고르는 중이라면 호텔 한 곳만 보기보다 [Corniche·도심 숙소 지역 가이드](/2026/08/corniche-downtown-where-to-stay-guide)에서 주변 동선부터 비교하는 편이 좋습니다.
+
 ## 식음 이용으로 방문하는 방법
 
 호텔에는 여러 레스토랑과 라운지가 있고, 로비 라운지 `Episodes`도 운영됩니다. 2026년 8월 확인 기준 Episodes는 09:00~21:00 운영으로 표시되며 afternoon tea 같은 프로그램은 날짜별 이벤트로 제공됩니다.
 
 단순히 건물만 짧게 보는 것보다 카페나 식사 시간을 함께 잡으면 체류 목적이 명확해지고 일정도 편합니다. 다만 레스토랑별 복장 기준이 다를 수 있고 일부는 smart casual을 요구하므로 예약 화면을 확인하세요.
+
+아부다비에서 식사 비용과 쇼핑몰·호텔 식사를 어떻게 나눌지 고민한다면 [음식·식비 허브](/food-guide)를 함께 확인할 수 있습니다.
 
 ## Qasr Al Watan과 같이 볼 수 있나
 
@@ -31,6 +35,8 @@ Experience Abu Dhabi는 Emirates Palace의 일부 공개 구역은 무료로 들
 - Qasr Al Watan 관람
 - Emirates Palace 로비·카페 또는 식사
 - 저녁 Corniche 산책
+
+Qasr Al Watan의 입장·복장·보안검색은 [Qasr Al Watan 방문 가이드](/2026/08/qasr-al-watan-visit-guide), 저녁 해안 동선은 [아부다비 Corniche 가이드](/2026/08/abu-dhabi-corniche-guide)에서 따로 확인할 수 있습니다.
 
 Qasr Al Hosn·Heritage Village까지 포함한 전체 도심권 비교는 [아부다비 도심 관광지 허브](/downtown-attractions)에서 확인할 수 있습니다.
 
