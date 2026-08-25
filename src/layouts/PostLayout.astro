@@ -139,6 +139,19 @@ const breadcrumbJson = {
         </div>
       )}
     </header>
+    <aside class="content-basis" aria-label="이 글의 작성 기준">
+      <strong>{post.data.contentType === "field-note" ? "직접 경험·기록 기반" : "공식 정보 확인형 가이드"}</strong>
+      <span>
+        {post.data.contentType === "field-note"
+          ? "작성자가 직접 방문하거나 촬영한 경험의 범위를 구분해 기록합니다. 현재 운영 정보와 오래된 경험은 섞지 않습니다."
+          : "정부·공식 관광기관·시설 운영 주체 등 확인 가능한 자료를 우선하고, 바뀔 수 있는 정보는 수정일과 출처를 함께 관리합니다."}
+      </span>
+      <span class="content-basis-links">
+        <a href="/author">운영자</a>
+        <span aria-hidden="true">·</span>
+        <a href="/editorial-policy">작성·수정 원칙</a>
+      </span>
+    </aside>
     {post.data.fieldNote && (
       <aside class="field-note-meta" aria-label="기록 범위">
         <strong>{post.data.fieldNote.label}</strong>
@@ -192,3 +205,33 @@ const breadcrumbJson = {
     </section>
   )}
 </BaseLayout>
+
+<style>
+  .content-basis {
+    display: grid;
+    gap: 5px;
+    margin: 0 0 24px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface-muted);
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .content-basis strong {
+    color: var(--text);
+  }
+
+  .content-basis-links {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    margin-top: 2px;
+  }
+
+  .content-basis-links a {
+    font-weight: 800;
+  }
+</style>
