@@ -15,11 +15,14 @@ const downtownPosts = downtownStoryPermalinks
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const allAttractions = [...downtownPosts, ...attractionPosts];
 
+const pageName = "아부다비 관광지 가이드";
+const pageDescription = "아부다비 도심의 Qasr Al Watan·Corniche, Saadiyat 박물관, Yas Island 테마파크를 지역과 여행 목적별로 고르는 관광지 허브입니다.";
 const pageUrl = new URL("/attractions", site.url).toString();
+const listId = `${pageUrl}#item-list`;
 const itemListJson = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "@id": `${pageUrl}#attractions`,
+  "@id": listId,
   name: "아부다비 관광지 방문 가이드",
   numberOfItems: allAttractions.length,
   itemListElement: allAttractions.map((post, index) => ({
@@ -29,11 +32,28 @@ const itemListJson = {
     url: new URL(getPublicPath(post.data.permalink), site.url).toString()
   }))
 };
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Thing", name: "아부다비 관광지" },
+    { "@type": "Thing", name: "Downtown Abu Dhabi" },
+    { "@type": "Thing", name: "Saadiyat Cultural District" },
+    { "@type": "Thing", name: "Yas Island" }
+  ]
+};
 ---
 
 <BaseLayout
   title="아부다비 관광지 가이드 | Downtown·Saadiyat·Yas | On Earth Trip"
-  description="아부다비 도심의 Qasr Al Watan·Corniche, Saadiyat 박물관, Yas Island 테마파크를 지역과 여행 목적별로 고르는 관광지 허브입니다."
+  description={pageDescription}
   canonical="/attractions"
 >
   <section class="page-hero">
@@ -105,5 +125,6 @@ const itemListJson = {
     </div>
   </section>
 
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
   <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
 </BaseLayout>
