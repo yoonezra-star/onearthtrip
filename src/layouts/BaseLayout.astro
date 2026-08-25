@@ -30,7 +30,7 @@ const {
   section,
   tags = [],
   robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
-  adsAllowed = true
+  adsAllowed: adsAllowedOverride
 } = Astro.props;
 
 const canonicalPath = getPublicPath(canonical);
@@ -39,6 +39,17 @@ const imageUrl = image ? new URL(image, site.url).toString() : undefined;
 const publishedTimeIso = publishedTime?.toISOString();
 const modifiedTimeIso = modifiedTime?.toISOString();
 const normalizedCurrentPath = getPublicPath(Astro.url.pathname);
+const adFreeUtilityPaths = new Set([
+  "/search",
+  "/404",
+  "/contact",
+  "/privacy",
+  "/terms",
+  "/about",
+  "/author",
+  "/editorial-policy"
+]);
+const adsAllowed = adsAllowedOverride ?? !adFreeUtilityPaths.has(normalizedCurrentPath);
 ---
 
 <!doctype html>
