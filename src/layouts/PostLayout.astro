@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
+import { getCoreStoryRank, isCoreStory } from "../data/coreStories";
 import { getPosts } from "../utils/posts";
 import { formatDate, getCategoryPath, getPublicPath, getReadingTime } from "../utils/posts";
 import { getHeroImageAlt, getPublicImageSize } from "../utils/images";
@@ -25,8 +26,24 @@ const heroImageAlt = post.data.heroImage
   : "";
 const authorUrl = new URL("/author", site.url).toString();
 const authorId = `${authorUrl}#person`;
-const relatedPosts = (await getPosts())
+const allPosts = await getPosts();
+const getRelatedScore = (item: CollectionEntry<"posts">) => {
+  const sharedTags = item.data.tags.filter((tag) => post.data.tags.includes(tag)).length;
+  const coreBoost = isCoreStory(item.data.permalink) ? 20 : 0;
+  const typeBridge = item.data.contentType !== post.data.contentType ? 1 : 0;
+  return coreBoost + sharedTags * 3 + typeBridge;
+};
+const relatedPosts = allPosts
   .filter((item) => item.id !== post.id && item.data.category === post.data.category)
+  .sort((a, b) => {
+    const scoreDifference = getRelatedScore(b) - getRelatedScore(a);
+    if (scoreDifference !== 0) return scoreDifference;
+
+    const rankDifference = getCoreStoryRank(a.data.permalink) - getCoreStoryRank(b.data.permalink);
+    if (rankDifference !== 0) return rankDifference;
+
+    return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+  })
   .slice(0, 3);
 const articleJson = {
   "@context": "https://schema.org",
@@ -155,7 +172,7 @@ const breadcrumbJson = {
             <p class="eyebrow">KEEP READING</p>
             <h2 id="related-title">같이 읽기 좋은 글</h2>
           </div>
-          <p>{post.data.category} 주제의 다른 기록을 이어서 볼 수 있습니다.</p>
+          <p>{post.data.category} 안에서 핵심 글과 태그가 가까운 기록을 우선해 이어서 보여 줍니다.</p>
         </div>
         <div class="post-grid compact-grid">
           {relatedPosts.map((item) => <PostCard post={item} />)}
