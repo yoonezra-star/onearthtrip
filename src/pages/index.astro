@@ -4,9 +4,14 @@ import PostCard from "../components/PostCard.astro";
 import { site } from "../data/site";
 import { formatDate, getPublicPath } from "../utils/posts";
 import { getPosts } from "../utils/posts";
+import { getHeroImageAlt, getPublicImageSize } from "../utils/images";
 
 const posts = await getPosts();
 const heroPost = posts.find((post) => post.data.heroImage) ?? posts[0];
+const heroImageSize = heroPost?.data.heroImage ? getPublicImageSize(heroPost.data.heroImage) : undefined;
+const heroImageAlt = heroPost?.data.heroImage
+  ? getHeroImageAlt(heroPost.body ?? "", heroPost.data.heroImage, heroPost.data.title)
+  : "";
 const latestPosts = posts.slice(0, 6);
 const fieldNotes = posts.filter((post) => post.data.contentType === "field-note");
 const featuredFieldNotes = fieldNotes.filter((post) => post.data.heroImage).slice(0, 3);
@@ -61,7 +66,15 @@ const categories = [
       {heroPost && (
         <a class="hero-feature" href={getPublicPath(heroPost.data.permalink)} aria-label={`${heroPost.data.title} 읽기`}>
           {heroPost.data.heroImage && (
-            <img src={heroPost.data.heroImage} alt="" loading="eager" decoding="async" />
+            <img
+              src={heroPost.data.heroImage}
+              alt={heroImageAlt}
+              width={heroImageSize?.width}
+              height={heroImageSize?.height}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
           )}
           <span class="hero-feature-label">FEATURED STORY</span>
           <strong>{heroPost.data.title}</strong>
