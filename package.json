@@ -14,6 +14,7 @@
     "check:sitemap": "node scripts/check-sitemap-static.mjs",
     "audit:adsense": "node scripts/audit-adsense-readiness.mjs",
     "check:adsense-pages": "node scripts/check-adsense-page-boundaries.mjs",
+    "check:adsense-ready": "node scripts/check-adsense-approval-readiness.mjs",
     "build": "astro build",
     "preview": "astro preview --host 127.0.0.1"
   },
