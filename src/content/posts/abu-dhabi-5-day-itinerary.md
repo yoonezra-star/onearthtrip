@@ -56,7 +56,7 @@ Saadiyat의 현재 이동과 시설 배치는 [Saadiyat·도심 이동 계획](/
 
 가족여행이나 여름이라면 [아부다비 가족·여름 실내 일정](/2026/08/abu-dhabi-family-summer-indoor-itinerary)이 마지막 날 대안을 고르는 데 도움이 됩니다.
 
-도심에서 놓친 곳이 있다면 `/downtown-attractions`, 박물관·테마파크를 추가하고 싶다면 [전체 관광지 허브](/attractions)로 돌아가 한 곳만 더 고르는 편이 일정이 안정적입니다.
+도심에서 놓친 곳이 있다면 [도심 관광지 허브](/downtown-attractions), 박물관·테마파크를 추가하고 싶다면 [전체 관광지 허브](/attractions)로 돌아가 한 곳만 더 고르는 편이 일정이 안정적입니다.
 
 ## 5일 일정 예시
 
