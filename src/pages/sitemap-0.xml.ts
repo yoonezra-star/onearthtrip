@@ -21,6 +21,7 @@ const staticPages = [
   "/money-guide",
   "/shopping-guide",
   "/connectivity-guide",
+  "/travel-apps-guide",
   "/contact",
   "/privacy",
   "/terms"
