@@ -40,5 +40,8 @@ jobs:
       - name: Check static sitemap coverage
         run: npm run check:sitemap
 
+      - name: Audit AdSense content readiness
+        run: npm run audit:adsense
+
       - name: Build Astro site
         run: npm run build
