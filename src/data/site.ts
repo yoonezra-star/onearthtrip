@@ -15,5 +15,6 @@ export const nav = [
   { href: "/culture", label: "UAE 문화" },
   { href: "/past-present-future", label: "과거·현재·미래" },
   { href: "/memory", label: "나의 UAE 추억" },
+  { href: "/field-notes", label: "현장 기록" },
   { href: "/about", label: "소개" }
 ];
