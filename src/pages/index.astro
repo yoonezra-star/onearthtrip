@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import { site } from "../data/site";
+import { coreStoryPermalinks } from "../data/coreStories";
 import { formatDate, getPublicPath } from "../utils/posts";
 import { getPosts } from "../utils/posts";
 import { getHeroImageAlt, getPublicImageSize } from "../utils/images";
@@ -15,6 +16,9 @@ const heroImageAlt = heroPost?.data.heroImage
 const latestPosts = posts.slice(0, 6);
 const fieldNotes = posts.filter((post) => post.data.contentType === "field-note");
 const featuredFieldNotes = fieldNotes.filter((post) => post.data.heroImage).slice(0, 3);
+const corePosts = coreStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const categories = [
   {
     label: "아부다비 한인 생활",
@@ -187,7 +191,28 @@ const hubListJson = {
     </div>
   </section>
 
-  <section class="section section-muted">
+  {corePosts.length > 0 && (
+    <section class="section section-muted" aria-labelledby="core-stories-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">CORE STORIES</p>
+            <h2 id="core-stories-title">먼저 읽을 UAE 핵심 글</h2>
+          </div>
+          <p>여행 준비와 생활 적응에 필요한 가이드부터, 이 사이트에서만 볼 수 있는 직접 촬영 기록까지 우선순위대로 묶었습니다.</p>
+        </div>
+        <div class="post-grid">
+          {corePosts.slice(0, 6).map((post) => <PostCard post={post} />)}
+        </div>
+        <div class="hero-actions">
+          <a class="primary-link" href="/reading-guide">핵심 글 전체 보기</a>
+          <a class="secondary-link" href="/field-notes">직접 촬영 기록만 보기</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <div>
