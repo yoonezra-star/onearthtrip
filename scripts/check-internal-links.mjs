@@ -1,8 +1,9 @@
 import { readFile, readdir } from "node:fs/promises";
-import { extname, join, relative } from "node:path";
+import { extname, join, relative, sep } from "node:path";
 
 const root = process.cwd();
 const srcDir = join(root, "src");
+const pagesDir = join(srcDir, "pages");
 const postsDir = join(srcDir, "content", "posts");
 const redirectsPath = join(root, "public", "_redirects");
 
@@ -58,6 +59,20 @@ async function walk(dir) {
   return files;
 }
 
+function getStaticAstroRoute(file) {
+  if (extname(file) !== ".astro") return null;
+
+  const pagePath = relative(pagesDir, file).split(sep).join("/");
+  if (pagePath.includes("[") || pagePath.includes("]")) return null;
+
+  const withoutExtension = pagePath.replace(/\.astro$/, "");
+  const route = withoutExtension === "index"
+    ? "/"
+    : `/${withoutExtension.replace(/\/index$/, "")}`;
+
+  return normalizePath(route);
+}
+
 function lineNumber(text, index) {
   return text.slice(0, index).split("\n").length;
 }
@@ -76,6 +91,12 @@ function collectLiteralLinks(text) {
   }
 
   return links;
+}
+
+const pageFiles = await walk(pagesDir);
+for (const file of pageFiles) {
+  const route = getStaticAstroRoute(file);
+  if (route) staticRoutes.add(route);
 }
 
 const postFiles = (await readdir(postsDir))
