@@ -1,15 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
-import { getPosts, getPublicPath } from "../utils/posts";
+import { getCategoryPath, getPosts, getPublicPath } from "../utils/posts";
 import { site } from "../data/site";
 
-const fieldNotes = (await getPosts()).filter((post) => post.data.contentType === "field-note");
-const years = [...new Set(fieldNotes.map((post) => post.data.pubDate.getFullYear()))];
+const fieldNotes = (await getPosts())
+  .filter((post) => post.data.contentType === "field-note")
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const years = [...new Set(fieldNotes.map((post) => post.data.pubDate.getFullYear()))]
+  .sort((a, b) => b - a);
 const groups = years.map((year) => ({
   year,
   posts: fieldNotes.filter((post) => post.data.pubDate.getFullYear() === year)
 }));
+const categoryGroups = [...new Set(fieldNotes.map((post) => post.data.category))]
+  .map((category) => ({
+    category,
+    href: getCategoryPath(category),
+    count: fieldNotes.filter((post) => post.data.category === category).length
+  }))
+  .sort((a, b) => b.count - a.count || a.category.localeCompare(b.category, "ko"));
 const photoRecords = fieldNotes.filter((post) => post.data.heroImage).length;
 const videoRecords = fieldNotes.filter((post) => (post.body ?? "").includes("<video")).length;
 const listJson = {
@@ -38,10 +48,14 @@ const listJson = {
         직접 경험한 장소와 생활 장면을 촬영 연도별로 모았습니다. 오래된 기록은 현재 정보처럼 포장하지 않고,
         당시의 날짜와 경험 범위를 함께 표시합니다.
       </p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/uae-personal-photo-archive">2012~2022 개인 사진 색인 보기</a>
+        <a class="secondary-link" href="/reading-guide">정보 글과 현장 기록 구분법</a>
+      </div>
       <div class="archive-summary" aria-label="아카이브 현황">
         <span><strong>{fieldNotes.length}</strong>개 현장 기록</span>
         <span><strong>{photoRecords}</strong>개 대표 사진 기록</span>
-        <span><strong>{videoRecords}</strong>개 영상 기록</span>
+        <span><strong>{videoRecords}</strong>개 영상 포함 기록</span>
       </div>
     </div>
   </section>
@@ -50,15 +64,39 @@ const listJson = {
     <div class="container source-band">
       <div>
         <p class="eyebrow">HOW TO READ</p>
-        <h2>사진의 날짜와 현재 정보를 구분합니다</h2>
+        <h2>게시 날짜보다 촬영·경험 시점을 기준으로 봅니다</h2>
       </div>
       <p>
         각 글의 ‘기록 범위’는 작성자가 실제로 확인한 시기와 장면을 뜻합니다. 운영 시간·가격·연락처처럼 바뀔 수
-        있는 정보는 현재 이용 안내로 간주하지 않으며, 필요한 경우 공식 출처를 별도로 확인합니다.
+        있는 정보는 현재 이용 안내로 간주하지 않으며, 필요한 경우 공식 출처를 별도로 확인합니다. 목록의 연도도
+        글을 다시 정리한 날짜가 아니라 해당 현장 기록의 날짜를 기준으로 묶습니다.
       </p>
       <div class="source-links">
         <a href="/editorial-policy">사진·영상 사용 원칙</a>
-        <a href="/reading-guide">정보 글과 현장 기록 구분법</a>
+        <a href="/2026/08/uae-personal-photo-archive">전체 개인 사진 색인</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">BROWSE BY THEME</p>
+          <h2>주제별 현장 기록 보기</h2>
+        </div>
+        <p>같은 연도 안에서도 생활·문화·추억의 성격이 다릅니다. 관심 있는 주제의 전체 글 목록으로 이동할 수 있습니다.</p>
+      </div>
+      <div class="guide-path-grid">
+        {categoryGroups.map((group) => (
+          <a class="guide-path-card" href={group.href}>
+            <span>{group.count} FIELD NOTES</span>
+            <div>
+              <h2>{group.category}</h2>
+              <p>{group.category}에 속한 현장 기록과 관련 가이드를 함께 봅니다.</p>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
