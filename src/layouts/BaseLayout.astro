@@ -165,3 +165,83 @@ const normalizedCurrentPath = getPublicPath(Astro.url.pathname);
     </footer>
   </body>
 </html>
+
+<style is:global>
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .header-actions {
+    display: flex;
+    min-width: max-content;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-search-form {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+
+  .header-search-form input {
+    width: 130px;
+    min-height: 40px;
+    border: 0;
+    padding: 0 10px;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.88rem;
+    outline: 0;
+  }
+
+  .header-search-form input::placeholder {
+    color: var(--soft);
+  }
+
+  .header-search-form:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+  }
+
+  .header-search-form button {
+    min-height: 40px;
+    border: 0;
+    border-left: 1px solid var(--line);
+    padding: 0 11px;
+    background: var(--surface-muted);
+    color: var(--accent-strong);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 900;
+  }
+
+  @media (max-width: 640px) {
+    .header-actions {
+      gap: 6px;
+    }
+
+    .header-search-form input {
+      width: 86px;
+      padding-inline: 8px;
+    }
+
+    .header-search-form button {
+      padding-inline: 8px;
+      font-size: 0.78rem;
+    }
+  }
+</style>
