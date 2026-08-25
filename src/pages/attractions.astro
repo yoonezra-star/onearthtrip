@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { attractionStoryPermalinks } from "../data/attractionStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const attractionPosts = attractionStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageUrl = new URL("/attractions", site.url).toString();
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${pageUrl}#attractions`,
+  name: "아부다비 관광지 방문 가이드",
+  numberOfItems: attractionPosts.length,
+  itemListElement: attractionPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+---
+
+<BaseLayout
+  title="아부다비 관광지 가이드 | Saadiyat·Yas Island | On Earth Trip"
+  description="루브르 아부다비, 자이드 국립박물관, 자연사박물관, teamLab Phenomena와 Yas Island 테마파크를 현재 공식 정보 기준으로 고르는 관광지 허브입니다."
+  canonical="/attractions"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">ABU DHABI ATTRACTIONS</p>
+      <h1>아부다비 관광지, 지역과 목적부터 고릅니다</h1>
+      <p class="lead">Saadiyat의 박물관·문화 공간과 Yas Island의 테마파크를 한 목록에 섞지 않고, 무엇을 보고 싶은지에 따라 나눠 선택합니다.</p>
+      <p class="page-summary">{attractionPosts.length}개 현재형 관광지 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/abu-dhabi-3-day-itinerary">3일 일정과 연결</a>
+        <a class="secondary-link" href="/2026/08/saadiyat-island-downtown-abu-dhabi-guide">Saadiyat 이동 보기</a>
+        <a class="secondary-link" href="/2026/08/yas-island-one-day-itinerary">Yas 하루 일정</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">HOW TO CHOOSE</p>
+        <h2>Saadiyat와 Yas는 같은 날 억지로 섞지 않습니다</h2>
+      </div>
+      <p>Saadiyat는 박물관과 문화 공간을 천천히 보는 날, Yas Island는 테마파크와 가족 체험을 중심으로 잡는 날로 분리하면 이동과 체력 소모를 줄이기 쉽습니다.</p>
+      <div class="source-links">
+        <a href="/2026/08/abu-dhabi-5-day-itinerary">5일 일정 보기</a>
+        <a href="/2026/08/abu-dhabi-family-summer-indoor-itinerary">가족·여름 실내 일정</a>
+        <a href="/reading-guide">전체 읽기 길잡이</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">CURRENT VISIT GUIDES</p>
+          <h2>현재 공식 정보로 확인한 관광지</h2>
+        </div>
+        <p>운영시간·티켓·입장 조건처럼 바뀔 수 있는 내용은 각 운영 주체의 공식 페이지를 기준으로 확인하고, 방문 직전 재확인할 항목을 글마다 표시했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {attractionPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+</BaseLayout>
