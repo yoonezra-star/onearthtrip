@@ -34,7 +34,7 @@ Saadiyat에서 여러 박물관을 함께 볼 계획이라면 2026년 3월부터
 
 다만 하루에 여러 장소를 묶는다면 이동시간보다 **박물관 내부 체류시간**이 더 큰 변수입니다. 처음 방문이라면 루브르 하나에 최소 2~3시간 정도를 확보하는 편이 여유롭습니다. 이는 공식 소요시간이 아니라 일정 계획을 위한 권장치입니다.
 
-Saadiyat 전체 이동은 [Saadiyat Island와 아부다비 도심 이동 계획](/2026/08/saadiyat-island-downtown-abu-dhabi-guide)에서 먼저 정리해 두었습니다.
+Saadiyat 전체 이동은 [Saadiyat Island와 아부다비 도심 이동 계획](/2026/08/saadiyat-downtown-planning-guide)에서 먼저 정리해 두었습니다.
 
 ## Saadiyat 하루 일정에는 어떻게 넣을까
 
