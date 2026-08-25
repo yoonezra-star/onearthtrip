@@ -67,7 +67,7 @@ Warner Bros. World와 SeaWorld처럼 실내 체류 비중이 큰 공원은 아�
 
 ## Yas Island 하루 일정과 연결하기
 
-테마파크 하나를 정했다면 이동과 식사를 포함한 하루 구조는 [Yas Island 하루 일정](/2026/08/yas-island-one-day-itinerary)에서 보는 편이 쉽습니다.
+테마파크 하나를 정했다면 이동과 식사를 포함한 하루 구조는 [Yas Island 하루 일정](/2026/08/yas-island-planning-guide)에서 보는 편이 쉽습니다.
 
 Yas Mall과 공원 사이 이동을 섞을 때는 공원 입장시간보다 **실제 체류시간을 먼저 확보**하는 것이 중요합니다. 공원 하나를 중심으로 두고 Yas Mall이나 저녁 식사를 보조 일정으로 붙이는 구조가 가장 단순합니다.
 
