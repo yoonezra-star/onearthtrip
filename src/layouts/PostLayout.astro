@@ -4,6 +4,7 @@ import BaseLayout from "./BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import { getPosts } from "../utils/posts";
 import { formatDate, getCategoryPath, getPublicPath, getReadingTime } from "../utils/posts";
+import { getHeroImageAlt, getPublicImageSize } from "../utils/images";
 import { site } from "../data/site";
 
 type Props = {
@@ -18,6 +19,10 @@ const canonicalUrl = new URL(canonical, site.url).toString();
 const heroImageUrl = post.data.heroImage
   ? new URL(post.data.heroImage, site.url).toString()
   : undefined;
+const heroImageSize = post.data.heroImage ? getPublicImageSize(post.data.heroImage) : undefined;
+const heroImageAlt = post.data.heroImage
+  ? getHeroImageAlt(post.body ?? "", post.data.heroImage, post.data.title)
+  : "";
 const authorUrl = new URL("/author", site.url).toString();
 const authorId = `${authorUrl}#person`;
 const relatedPosts = (await getPosts())
@@ -101,7 +106,15 @@ const breadcrumbJson = {
       <p class="lead">{post.data.description}</p>
       {post.data.heroImage && (
         <div class="article-image">
-          <img src={post.data.heroImage} alt={post.data.title} />
+          <img
+            src={post.data.heroImage}
+            alt={heroImageAlt}
+            width={heroImageSize?.width}
+            height={heroImageSize?.height}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
         </div>
       )}
     </header>
