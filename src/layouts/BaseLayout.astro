@@ -14,6 +14,7 @@ type Props = {
   authorUrl?: string;
   section?: string;
   tags?: string[];
+  robots?: string;
 };
 
 const {
@@ -26,7 +27,8 @@ const {
   modifiedTime,
   authorUrl,
   section,
-  tags = []
+  tags = [],
+  robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
 } = Astro.props;
 
 const canonicalPath = getPublicPath(canonical);
@@ -43,6 +45,7 @@ const normalizedCurrentPath = getPublicPath(Astro.url.pathname);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="yN4Gmu9yXbLAe6jaCfFthWamFuz0K0zUr0gVon5mwfI" />
+    <meta name="robots" content={robots} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
