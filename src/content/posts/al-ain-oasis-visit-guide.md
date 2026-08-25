@@ -8,6 +8,10 @@ category: "UAE 문화"
 tags: ["Al Ain Oasis", "알아인 오아시스", "UNESCO", "falaj", "UAE 문화"]
 permalink: "/2026/08/al-ain-oasis-visit-guide.html"
 contentType: "guide"
+map:
+  title: "Al Ain Oasis"
+  query: "Al Ain Oasis, Al Ain, Abu Dhabi, United Arab Emirates"
+  address: "Al Ain Oasis, Al Ain, Abu Dhabi, United Arab Emirates"
 ---
 
 Al Ain Oasis는 알아인 당일치기의 중심에 놓기 좋은 장소입니다. Experience Abu Dhabi는 이 오아시스를 약 **1,200헥타르 규모**, 약 **147,000그루의 대추야자나무**와 100종이 넘는 식생이 있는 공간으로 소개합니다. 무엇보다 전통적인 **falaj 관개 시스템**을 지금의 경관 안에서 이해할 수 있다는 점이 중요합니다.
