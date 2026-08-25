@@ -8,6 +8,8 @@ import { getPosts } from "../utils/posts";
 const posts = await getPosts();
 const heroPost = posts.find((post) => post.data.heroImage) ?? posts[0];
 const latestPosts = posts.slice(0, 6);
+const fieldNotes = posts.filter((post) => post.data.contentType === "field-note");
+const featuredFieldNotes = fieldNotes.filter((post) => post.data.heroImage).slice(0, 3);
 const categories = [
   {
     label: "아부다비 한인 생활",
@@ -51,6 +53,7 @@ const categories = [
         </p>
         <div class="hero-actions" aria-label="주요 이동">
           <a class="primary-link" href="#latest">최근 글 보기</a>
+          <a class="secondary-link" href="/field-notes">현장 기록 보기</a>
           <a class="secondary-link" href="/trip-checklist">여행 준비 체크</a>
         </div>
       </div>
@@ -75,8 +78,8 @@ const categories = [
         <span>개의 UAE 기록</span>
       </div>
       <div>
-        <strong>4</strong>
-        <span>개의 읽기 카테고리</span>
+        <strong>{fieldNotes.length}</strong>
+        <span>개의 직접 경험 현장 기록</span>
       </div>
       <div>
         <strong>경험 + 확인</strong>
@@ -106,7 +109,30 @@ const categories = [
     </div>
   </section>
 
-  <section class="section" id="latest">
+  {featuredFieldNotes.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">FIRST-HAND RECORDS</p>
+            <h2>직접 촬영한 UAE 현장 기록</h2>
+          </div>
+          <p>
+            직접 경험하고 촬영한 장소와 생활 장면입니다. 게시일과 촬영 시점이 다를 수 있어 각 글의 ‘기록 범위’를 함께 표시합니다.
+          </p>
+        </div>
+        <div class="post-grid">
+          {featuredFieldNotes.map((post) => <PostCard post={post} />)}
+        </div>
+        <div class="hero-actions" aria-label="현장 기록 더 보기">
+          <a class="primary-link" href="/field-notes">전체 현장 기록 보기</a>
+          <a class="secondary-link" href="/2026/08/uae-personal-photo-archive">2012~2022 개인 사진 색인</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section section-muted" id="latest">
     <div class="container">
       <div class="section-head">
         <div>
