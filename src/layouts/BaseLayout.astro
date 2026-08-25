@@ -15,6 +15,7 @@ type Props = {
   section?: string;
   tags?: string[];
   robots?: string;
+  adsAllowed?: boolean;
 };
 
 const {
@@ -28,7 +29,8 @@ const {
   authorUrl,
   section,
   tags = [],
-  robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+  robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+  adsAllowed = true
 } = Astro.props;
 
 const canonicalPath = getPublicPath(canonical);
@@ -75,12 +77,14 @@ const normalizedCurrentPath = getPublicPath(Astro.url.pathname);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     {imageUrl && <meta name="twitter:image" content={imageUrl} />}
-    <script
-      is:inline
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6918910185244897"
-      crossorigin="anonymous"
-    ></script>
+    {adsAllowed && (
+      <script
+        is:inline
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6918910185244897"
+        crossorigin="anonymous"
+      ></script>
+    )}
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
