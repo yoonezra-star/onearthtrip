@@ -53,7 +53,7 @@ Saadiyat 박물관 두 곳 이상을 같은 여행에서 방문한다면 개별 
 - 자연사 + UAE 역사: 자연사박물관 + 자이드 국립박물관
 - 자연사 + 몰입형 예술: 자연사박물관 + teamLab Phenomena
 
-Saadiyat 내부 이동과 도심을 같은 날 섞을지 고민된다면 [Saadiyat Island와 아부다비 도심 이동 계획](/2026/08/saadiyat-island-downtown-abu-dhabi-guide)을 먼저 보는 편이 좋습니다.
+Saadiyat 내부 이동과 도심을 같은 날 섞을지 고민된다면 [Saadiyat Island와 아부다비 도심 이동 계획](/2026/08/saadiyat-downtown-planning-guide)을 먼저 보는 편이 좋습니다.
 
 ## 방문 전 체크리스트
 
