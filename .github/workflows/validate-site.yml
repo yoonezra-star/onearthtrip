@@ -45,3 +45,6 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
+
+      - name: Check AdSense page boundaries
+        run: npm run check:adsense-pages
