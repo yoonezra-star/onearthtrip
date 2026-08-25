@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { connectivityStoryPermalinks } from "../data/connectivityStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const connectivityPosts = connectivityStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageName = "UAE 유심·eSIM·Wi-Fi·로밍 가이드";
+const pageDescription = "자이드 국제공항 유심·eSIM, UAE 무료 관광객 eSIM, e&·du 비교, 여행 데이터 용량, 공항 Wi-Fi와 로밍을 한곳에서 연결한 통신 가이드입니다.";
+const pageUrl = new URL("/connectivity-guide", site.url).toString();
+const listId = `${pageUrl}#item-list`;
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": listId,
+  name: "UAE 유심·eSIM·인터넷 가이드",
+  numberOfItems: connectivityPosts.length,
+  itemListElement: connectivityPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Thing", name: "UAE eSIM" },
+    { "@type": "Thing", name: "UAE tourist SIM" },
+    { "@type": "Thing", name: "e& UAE Visitor Line" },
+    { "@type": "Thing", name: "du Tourist eSIM" },
+    { "@type": "Thing", name: "Zayed International Airport Wi-Fi" }
+  ]
+};
+---
+
+<BaseLayout
+  title="UAE 유심·eSIM·Wi-Fi·로밍 가이드 | On Earth Trip"
+  description={pageDescription}
+  canonical="/connectivity-guide"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">CONNECTIVITY</p>
+      <h1>UAE 도착 후 인터넷, 무엇부터 연결할까</h1>
+      <p class="lead">공항 무료 Wi-Fi를 백업으로 두고 무료 관광객 eSIM, e&·du 유료 옵션, 로밍을 여행 기간에 맞춰 고릅니다.</p>
+      <p class="page-summary">{connectivityPosts.length}개 유심·eSIM·인터넷 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/zayed-airport-tourist-sim-esim-guide">공항에서 바로 연결</a>
+        <a class="secondary-link" href="/2026/08/uae-free-tourist-esim-guide">무료 eSIM 보기</a>
+        <a class="secondary-link" href="/2026/08/etisalat-du-tourist-sim-comparison">e&amp; vs du 비교</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section">
+    <div class="container guide-path-grid">
+      <a class="guide-path-card accent-teal" href="/2026/08/zayed-airport-tourist-sim-esim-guide">
+        <span>01</span>
+        <h2>공항 유심·eSIM</h2>
+        <p>자이드 국제공항 Wi-Fi를 연결하고 e&amp;·du 관광객 회선을 준비합니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/2026/08/uae-free-tourist-esim-guide">
+        <span>02</span>
+        <h2>무료 관광객 eSIM</h2>
+        <p>현재 e&amp;와 du의 10GB·24시간 무료 옵션을 확인합니다.</p>
+      </a>
+      <a class="guide-path-card accent-clay" href="/2026/08/etisalat-du-tourist-sim-comparison">
+        <span>03</span>
+        <h2>e&amp; vs du</h2>
+        <p>무료 데이터, 여행 기간, eSIM 지원, 유료 연장 조건을 비교합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/abu-dhabi-travel-data-usage-guide">
+        <span>04</span>
+        <h2>데이터 용량</h2>
+        <p>지도·SNS·영상·테더링 사용에 맞춰 필요한 GB를 정합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/abu-dhabi-airport-wifi-roaming-guide">
+        <span>05</span>
+        <h2>Wi-Fi·로밍 백업</h2>
+        <p>eSIM 개통이 안 될 때 공항 Wi-Fi와 기존 번호 로밍을 활용합니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">ARRIVAL ORDER</p>
+        <h2>무료 Wi-Fi → 무료 eSIM → 유료 연장 순으로 생각합니다</h2>
+      </div>
+      <p>도착 즉시 장기 요금제를 결제하기보다 공항 무료 Wi-Fi와 24시간 무료 관광객 데이터를 먼저 확보한 뒤 실제 사용량을 보고 유료 상품을 고르는 편이 합리적입니다.</p>
+      <div class="source-links">
+        <a href="/trip-checklist">UAE 여행 준비</a>
+        <a href="/2026/08/zayed-international-airport-to-abu-dhabi-city">공항→도심 이동</a>
+        <a href="/money-guide">환전·결제</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="connectivity-guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">CONNECTIVITY CLUSTER</p>
+          <h2>유심·eSIM·Wi-Fi를 상황별로 보기</h2>
+        </div>
+        <p>특정 비공식 eSIM 판매처 추천보다 UAE 통신사와 자이드 국제공항의 현재 공식 안내를 우선해 구성했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {connectivityPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
+</BaseLayout>
