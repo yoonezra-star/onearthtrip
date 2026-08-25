@@ -7,6 +7,10 @@ category: "UAE 문화"
 tags: ["Qasr Al Watan", "아부다비 대통령궁", "아부다비 관광지", "UAE 문화"]
 permalink: "/2026/08/qasr-al-watan-visit-guide.html"
 contentType: "guide"
+map:
+  title: "Qasr Al Watan"
+  query: "Qasr Al Watan, Abu Dhabi, United Arab Emirates"
+  address: "Qasr Al Watan, Abu Dhabi, United Arab Emirates"
 ---
 Qasr Al Watan은 아부다비의 대통령궁 단지 안에 있는 공개 문화 공간입니다. 단순히 화려한 건물을 보는 장소라기보다 **UAE의 통치, 지식, 외교와 건축을 함께 보는 곳**에 가깝습니다.
 
