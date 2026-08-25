@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import { coreStoryPermalinks } from "../data/coreStories";
+import { planningStoryPermalinks } from "../data/planningStories";
 import { getPosts, getPublicPath } from "../utils/posts";
 
 const posts = (await getPosts()).filter((post) => post.data.category === "아부다비 한인 생활");
@@ -10,48 +11,25 @@ const guides = posts.filter((post) => post.data.contentType !== "field-note");
 const corePosts = coreStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
-const firstSteps = guides.filter((post) =>
-  [
-    "/2026/08/abu-dhabi-first-30-days.html",
-    "/2026/04/blog-post.html",
-    "/2014/09/abu-dhabi-water-delivery-2014.html"
-  ].includes(post.data.permalink)
-);
-const weatherAndMovement = guides.filter((post) =>
-  [
-    "/2026/07/abu-dhabi-summer-routine.html",
-    "/2026/04/50.html",
-    "/2026/04/shamal.html",
-    "/2026/08/abu-dhabi-dubai-weekend-rhythm.html"
-  ].includes(post.data.permalink)
-);
-const cityPause = guides.filter((post) =>
-  [
-    "/2026/05/300.html",
-    "/2021/05/abu-dhabi-flame-tree-street.html",
-    "/2019/12/abu-dhabi-neighborhood-playground-2019.html",
-    "/2014/05/abu-dhabi-hotel-work-stay-2014.html",
-    "/2012/09/abu-dhabi-evening-beach-2012.html"
-  ].includes(post.data.permalink)
-);
-const communityAndPeople = guides.filter((post) =>
-  [
-    "/2015/03/abu-dhabi-korean-community-space-2015.html"
-  ].includes(post.data.permalink)
-);
+const planningPosts = planningStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 ---
 
-<BaseLayout title="아부다비 한인 생활 | On Earth Trip" description="한국에서 아부다비로 온 뒤 마주하는 이동, 계절, 생활 적응의 선택을 기록합니다.">
+<BaseLayout
+  title="아부다비 한인 생활·여행 준비 | On Earth Trip"
+  description="아부다비 도착, 공항·대중교통, 3일·5일 일정, Yas Island, 여름 가족여행과 현지 생활 기록을 가이드와 현장 기록으로 나눠 정리합니다."
+>
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">KOREAN LIFE IN ABU DHABI</p>
-      <h1>아부다비 한인 생활</h1>
-      <p class="lead">한국에서 온 뒤 아부다비에서 마주하는 이동, 더위, 생활 리듬과 적응의 선택을 기록합니다.</p>
-      <p class="page-summary">{fieldNotes.length}개 현장 기록 · {guides.length}개 생활 가이드</p>
+      <h1>아부다비 한인 생활·여행 준비</h1>
+      <p class="lead">한국에서 온 뒤 아부다비에서 마주하는 이동, 더위, 생활 리듬과 여행 동선을 실제 준비 순서에 맞춰 정리합니다.</p>
+      <p class="page-summary">{fieldNotes.length}개 현장 기록 · {guides.length}개 생활·여행 가이드</p>
       <div class="hero-actions" aria-label="콘텐츠 유형별 이동">
-        {fieldNotes.length > 0 && <a class="primary-link" href="#field-notes">직접 경험 현장 기록</a>}
-        {guides.length > 0 && <a class="secondary-link" href="#guides">생활 가이드</a>}
-        <a class="secondary-link" href="/field-notes">전체 UAE 현장 기록</a>
+        {planningPosts.length > 0 && <a class="primary-link" href="#travel-planning">여행 일정부터 보기</a>}
+        {fieldNotes.length > 0 && <a class="secondary-link" href="#field-notes">직접 경험 현장 기록</a>}
+        <a class="secondary-link" href="#all-guides">전체 생활 가이드</a>
       </div>
     </div>
   </section>
@@ -63,9 +41,30 @@ const communityAndPeople = guides.filter((post) =>
           <p class="eyebrow">CORE LIFE GUIDES</p>
           <h2>아부다비 생활에서 먼저 읽을 핵심 글</h2>
         </div>
-        <p>처음 도착했을 때의 생활 동선과 아부다비·두바이 사이 이동 계획처럼 검색 수요가 분명한 생활 가이드를 먼저 연결합니다.</p>
+        <p>입국, 공항 이동, 대중교통, 도시 간 이동처럼 처음 도착했을 때 바로 필요한 핵심 가이드를 우선 연결합니다.</p>
         <div class="source-links">
           {corePosts.map((post) => <a href={getPublicPath(post.data.permalink)}>{post.data.title}</a>)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {planningPosts.length > 0 && (
+    <section class="section section-muted" id="travel-planning">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">TRAVEL PLANNING</p>
+            <h2>아부다비 일정·지역별 여행 계획</h2>
+          </div>
+          <p>3일·5일 전체 일정과 Yas Island, 가족·여름 실내여행을 별도 가이드로 나눠 필요한 일정만 골라 볼 수 있습니다.</p>
+        </div>
+        <div class="post-grid">
+          {planningPosts.map((post) => <PostCard post={post} />)}
+        </div>
+        <div class="hero-actions">
+          <a class="secondary-link" href="/reading-guide">UAE 여행 읽기 길잡이</a>
+          <a class="secondary-link" href="/2026/08/saadiyat-downtown-planning-guide">Saadiyat 문화 일정 보기</a>
         </div>
       </div>
     </section>
@@ -91,11 +90,11 @@ const communityAndPeople = guides.filter((post) =>
   <section class="section section-muted">
     <div class="container note-panel">
       <p class="eyebrow">SCOPE</p>
-      <h2>경험과 생활 가이드를 구분해 읽습니다</h2>
+      <h2>경험과 현재 여행 정보를 구분해 읽습니다</h2>
       <p>
         장보기와 식사, 계절별 생활 리듬, 이동, 가족 방문객을 맞이하는 동선처럼 한국에서 온 사람이 실제로
-        선택하게 되는 생활의 장면을 다룹니다. 현장 기록은 당시 경험의 범위를 보여 주고, 비자·교육·의료·주거처럼
-        조건이 크게 달라지는 실용 정보는 가이드와 공식 안내에서 다시 확인합니다.
+        선택하게 되는 생활의 장면을 다룹니다. 현장 기록은 당시 경험의 범위를 보여 주고, 입국·교통·운영 시간처럼
+        바뀔 수 있는 정보는 현재 공식 안내와 확인 날짜를 함께 봅니다.
       </p>
       <a class="secondary-link" href="/trip-checklist">여행 준비 체크</a>
       <a class="secondary-link" href="/editorial-policy">작성·수정 원칙</a>
@@ -103,112 +102,17 @@ const communityAndPeople = guides.filter((post) =>
   </section>
 
   {guides.length > 0 && (
-    <section class="section guide-path-section" id="guides">
+    <section class="section" id="all-guides">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow">GUIDE READING PATH</p>
-            <h2>생활 가이드 읽는 순서</h2>
+            <p class="eyebrow">ALL LIFE &amp; TRAVEL GUIDES</p>
+            <h2>아부다비 생활·여행 가이드 전체</h2>
           </div>
-          <p>현장 기록과 분리해, 현재 준비와 생활 판단에 도움이 되는 가이드를 주제별로 이어서 볼 수 있습니다.</p>
-        </div>
-        <div class="guide-path-grid">
-          {firstSteps.length > 0 && (
-            <a class="guide-path-card accent-teal" href="#first-steps">
-              <span>01</span>
-              <h2>도착과 장보기</h2>
-              <p>첫 며칠의 동선과 생활 준비에 필요한 선택을 정리한 가이드입니다.</p>
-            </a>
-          )}
-          {weatherAndMovement.length > 0 && (
-            <a class="guide-path-card accent-date" href="#weather-and-movement">
-              <span>02</span>
-              <h2>계절과 이동</h2>
-              <p>더위와 모래바람, 아부다비와 두바이 사이 이동을 준비할 때 확인할 내용을 봅니다.</p>
-            </a>
-          )}
-          {cityPause.length > 0 && (
-            <a class="guide-path-card accent-clay" href="#city-pause">
-              <span>03</span>
-              <h2>도시의 일과 쉼</h2>
-              <p>생활권과 체류 공간을 고를 때 참고할 현재형 가이드를 모았습니다.</p>
-            </a>
-          )}
-          {communityAndPeople.length > 0 && (
-            <a class="guide-path-card accent-teal" href="#community-and-people">
-              <span>04</span>
-              <h2>공동체와 관계</h2>
-              <p>사람과 정보를 만날 때 확인할 기준을 정리한 가이드입니다.</p>
-            </a>
-          )}
-        </div>
-      </div>
-    </section>
-  )}
-
-  {firstSteps.length > 0 && (
-    <section class="section section-muted" id="first-steps">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">01. FIRST STEPS</p>
-            <h2>도착과 장보기 가이드</h2>
-          </div>
-          <p>체류 초반에 필요한 확인 항목과 생활 동선을 현재 준비 관점에서 정리합니다.</p>
+          <p>새로 추가되는 글이 특정 하드코딩 목록에서 빠지지 않도록 생활 카테고리의 모든 가이드를 자동으로 보여 줍니다.</p>
         </div>
         <div class="post-grid">
-          {firstSteps.map((post) => <PostCard post={post} />)}
-        </div>
-      </div>
-    </section>
-  )}
-
-  {weatherAndMovement.length > 0 && (
-    <section class="section" id="weather-and-movement">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">02. WEATHER &amp; MOVEMENT</p>
-            <h2>계절과 이동 가이드</h2>
-          </div>
-          <p>날씨와 도로 조건은 매일 달라집니다. 글 안의 확인 날짜와 공식 확인 경로를 함께 봐주세요.</p>
-        </div>
-        <div class="post-grid">
-          {weatherAndMovement.map((post) => <PostCard post={post} />)}
-        </div>
-      </div>
-    </section>
-  )}
-
-  {cityPause.length > 0 && (
-    <section class="section section-muted" id="city-pause">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">03. CITY PAUSE</p>
-            <h2>도시에서 일하고 쉬는 가이드</h2>
-          </div>
-          <p>현장 사진 기록과 분리해, 현재 생활권과 체류 공간을 판단할 때 참고할 글만 모았습니다.</p>
-        </div>
-        <div class="post-grid">
-          {cityPause.map((post) => <PostCard post={post} />)}
-        </div>
-      </div>
-    </section>
-  )}
-
-  {communityAndPeople.length > 0 && (
-    <section class="section" id="community-and-people">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">04. COMMUNITY &amp; PEOPLE</p>
-            <h2>공동체와 관계 가이드</h2>
-          </div>
-          <p>생활 정보를 나눌 때 경험담과 공식 확인이 필요한 정보를 구분하는 기준을 정리합니다.</p>
-        </div>
-        <div class="post-grid">
-          {communityAndPeople.map((post) => <PostCard post={post} />)}
+          {guides.map((post) => <PostCard post={post} />)}
         </div>
       </div>
     </section>
