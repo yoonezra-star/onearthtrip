@@ -2,7 +2,7 @@
 title: "UAE 라마단 기간 여행 준비: 운영 시간·식사·방문 예절을 확인하는 순서"
 description: "라마단에 UAE를 방문할 때 여행자가 확인해야 할 최신 공지, 예약, 식사와 문화 공간 방문 기준을 공식 안내 중심으로 정리했습니다."
 pubDate: "2026-04-07T16:00:00+09:00"
-updatedDate: "2026-08-24T10:50:00+09:00"
+updatedDate: "2026-08-25T23:10:00+09:00"
 author: "아부라이프"
 category: "UAE 문화"
 tags: ["라마단", "UAE 문화", "아부다비 여행", "여행 준비"]
@@ -12,6 +12,8 @@ permalink: "/2026/04/ramadan.html"
 라마단은 이슬람력에 따라 시기가 달라지며, UAE의 여행 일정에도 영향을 줄 수 있습니다. 이 시기에 방문한다는 이유만으로 여행이 어려운 것은 아니지만, 운영 시간과 예약, 식사 계획을 평소보다 자주 확인해야 합니다. 이 글은 라마단의 의미를 개인의 체험으로 대신 설명하지 않고, 여행자가 현장에서 존중을 갖고 움직이기 위한 확인 순서를 정리합니다.
 
 가장 먼저 볼 곳은 [UAE 정부 포털의 라마단 안내](https://u.ae/en/information-and-services/public-holidays-and-religious-affairs/ramadan)입니다. 아부다비에 머무른다면 [Visit Abu Dhabi의 라마단 가이드](https://visitabudhabi.ae/en/plan-your-trip/essential-info/guide-to-ramadan-in-abu-dhabi)도 함께 확인하세요. 날짜, 운영 시간, 행사 정보는 해마다 달라질 수 있습니다.
+
+라마단과 UAE 공휴일을 여행 일정 전체에서 함께 보는 방법은 [UAE 공휴일·라마단 여행 계획 가이드](/2026/08/uae-public-holidays-ramadan-travel-planning)에서 이어서 확인할 수 있습니다.
 
 ## 출발 전: 날짜와 도시를 한 번 더 맞춘다
 
@@ -31,9 +33,13 @@ permalink: "/2026/04/ramadan.html"
 
 이프타르처럼 해가 진 뒤의 식사 시간에는 특정 장소가 붐비거나 예약이 필요할 수 있습니다. 인기 장소를 찾는 것보다 동행자와 이동 시간을 고려한 식사 계획을 먼저 세우세요. 예약을 했다면 늦을 때의 연락 방법과 취소 조건도 확인합니다.
 
+아부다비에서 하루 식비와 식사 장소 유형을 함께 계획하려면 [아부다비 음식·식비 허브](/food-guide)를 참고할 수 있습니다.
+
 ## 문화 공간에서는 안내 표지와 직원의 말을 우선한다
 
 모스크와 문화 시설의 복장, 사진, 방문객 동선은 일반 관광지와 다를 수 있습니다. 방문 전 해당 시설의 공식 홈페이지를 열고, 현장에서는 안내 표지와 직원의 말을 우선하세요. 아부다비의 셰이크 자이드 그랜드 모스크는 [공식 사이트](https://www.szgmc.gov.ae/en/)에서 방문 안내를 확인할 수 있습니다.
+
+실제 모스크 방문 준비는 [셰이크 자이드 그랜드 모스크 방문 가이드](/2026/08/sheikh-zayed-grand-mosque-visit-guide), 보다 넓은 문화 공간의 복장·촬영 기준은 [UAE 문화 공간 방문 예절 가이드](/2026/08/uae-culture-etiquette-first-visit)에서 따로 정리했습니다.
 
 사진을 찍을 때는 기도·예배 장면이나 타인의 얼굴을 함부로 촬영하지 않고, 불확실하면 질문합니다. 문화적 존중은 정답을 외우는 일보다 지금 있는 장소의 규칙을 따르는 데서 드러납니다.
 
@@ -47,7 +53,7 @@ permalink: "/2026/04/ramadan.html"
 
 ## 이 글의 확인 기준과 갱신 원칙
 
-이 글은 2026년 8월 24일 기준으로 확인했습니다. 라마단 시기와 시설 운영 정책은 매년·매장별로 달라질 수 있으므로 방문 직전에 반드시 공식 안내를 다시 확인하세요. 수정이 필요한 정보는 [문의 페이지](/contact)로 알려주세요.
+이 글은 2026년 8월 25일 기준으로 확인했습니다. 라마단 시기와 시설 운영 정책은 매년·매장별로 달라질 수 있으므로 방문 직전에 반드시 공식 안내를 다시 확인하세요. 수정이 필요한 정보는 [문의 페이지](/contact)로 알려주세요.
 
 - [UAE Government Portal - Ramadan](https://u.ae/en/information-and-services/public-holidays-and-religious-affairs/ramadan)
 - [Visit Abu Dhabi - Guide to Ramadan](https://visitabudhabi.ae/en/plan-your-trip/essential-info/guide-to-ramadan-in-abu-dhabi)
