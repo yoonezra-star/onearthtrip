@@ -8,6 +8,11 @@ type Props = {
   image?: string;
   canonical?: string;
   pageType?: "website" | "article";
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  authorUrl?: string;
+  section?: string;
+  tags?: string[];
 };
 
 const {
@@ -15,7 +20,12 @@ const {
   description = site.description,
   image,
   canonical = Astro.url.pathname,
-  pageType = "website"
+  pageType = "website",
+  publishedTime,
+  modifiedTime,
+  authorUrl,
+  section,
+  tags = []
 } = Astro.props;
 
 const canonicalPath = canonical
@@ -23,6 +33,8 @@ const canonicalPath = canonical
   .replace(/\.html$/, "");
 const canonicalUrl = new URL(canonicalPath, site.url).toString();
 const imageUrl = image ? new URL(image, site.url).toString() : undefined;
+const publishedTimeIso = publishedTime?.toISOString();
+const modifiedTimeIso = modifiedTime?.toISOString();
 const currentPath = Astro.url.pathname;
 const normalizedCurrentPath = currentPath
   .replace(/\/index\.html$/, "/")
@@ -41,11 +53,30 @@ const normalizedCurrentPath = currentPath
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:locale" content="ko_KR" />
     <meta property="og:type" content={pageType} />
+    <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     {imageUrl && <meta property="og:image" content={imageUrl} />}
+    {pageType === "article" && publishedTimeIso && (
+      <meta property="article:published_time" content={publishedTimeIso} />
+    )}
+    {pageType === "article" && modifiedTimeIso && (
+      <meta property="article:modified_time" content={modifiedTimeIso} />
+    )}
+    {pageType === "article" && authorUrl && (
+      <meta property="article:author" content={authorUrl} />
+    )}
+    {pageType === "article" && section && (
+      <meta property="article:section" content={section} />
+    )}
+    {pageType === "article" && tags.map((tag) => (
+      <meta property="article:tag" content={tag} />
+    ))}
     <meta name="twitter:card" content={imageUrl ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
     <script
       is:inline
       async
@@ -55,6 +86,7 @@ const normalizedCurrentPath = currentPath
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": `${site.url}#website`,
       name: site.name,
       url: site.url,
       inLanguage: site.locale,
