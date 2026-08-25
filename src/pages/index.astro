@@ -19,31 +19,90 @@ const categories = [
   {
     label: "아부다비 한인 생활",
     href: "/life",
-    description: "한국에서 온 뒤 마주하는 날씨, 이동, 생활 적응의 기록",
+    description: "아부다비 날씨·이동·생활 적응과 한인 생활 기록",
     accent: "teal"
   },
   {
     label: "UAE 문화",
     href: "/culture",
-    description: "라마단, 마즐리스, 향, 차와 환대의 언어",
+    description: "라마단·마즐리스·오드 등 UAE 문화와 예절의 맥락",
     accent: "date"
   },
   {
     label: "과거·현재·미래",
     href: "/past-present-future",
-    description: "진주 무역의 기억부터 2071년 비전까지",
+    description: "UAE 도시 변화와 과거·현재·미래를 함께 보는 기록",
     accent: "gold"
   },
   {
     label: "나의 UAE 추억",
     href: "/memory",
-    description: "정보보다 오래 남는 장소와 감정의 기록",
+    description: "직접 경험하고 촬영한 장소와 오래 남은 개인의 기억",
     accent: "clay"
   }
 ].map((item) => ({
   ...item,
   count: posts.filter((post) => post.data.category === item.label).length
 }));
+
+const startHere = [
+  {
+    href: "/trip-checklist",
+    label: "UAE 여행 준비",
+    description: "입국·날씨·이동·문화 공간 방문 전에 확인할 항목을 체크합니다."
+  },
+  {
+    href: "/life",
+    label: "아부다비 생활",
+    description: "날씨, 이동, 생활 적응과 한인 생활 관련 글을 먼저 봅니다."
+  },
+  {
+    href: "/culture",
+    label: "UAE 문화 이해",
+    description: "라마단, 마즐리스, 오드와 현지 예절의 맥락을 읽습니다."
+  },
+  {
+    href: "/field-notes",
+    label: "직접 촬영 현장 기록",
+    description: "작성자가 직접 경험하고 촬영한 사진·영상 기록을 연도별로 봅니다."
+  }
+];
+
+const homeUrl = new URL("/", site.url).toString();
+const heroImageUrl = heroPost?.data.heroImage
+  ? new URL(heroPost.data.heroImage, site.url).toString()
+  : undefined;
+const homePageJson = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${homeUrl}#webpage`,
+  url: homeUrl,
+  name: site.title,
+  description: site.description,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  primaryImageOfPage: heroImageUrl
+    ? { "@type": "ImageObject", url: heroImageUrl }
+    : undefined,
+  about: [
+    { "@type": "Thing", name: "UAE 여행" },
+    { "@type": "Thing", name: "아부다비 생활" },
+    { "@type": "Thing", name: "UAE 문화" },
+    { "@type": "Thing", name: "UAE 현장 기록" }
+  ]
+};
+const hubListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "UAE 여행·생활 핵심 진입점",
+  numberOfItems: startHere.length,
+  itemListElement: startHere.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.label,
+    url: new URL(item.href, site.url).toString()
+  }))
+};
 ---
 
 <BaseLayout title={site.title} description={site.description} image={heroPost?.data.heroImage}>
@@ -51,13 +110,13 @@ const categories = [
     <div class="container home-hero-grid">
       <div class="home-hero-copy">
         <p class="eyebrow">UAE LIFE ARCHIVE</p>
-        <h1>아부다비에서 살아보니 보이는 UAE</h1>
+        <h1>UAE 여행·생활·문화, 아부다비에서 직접 기록합니다</h1>
         <p class="lead">
-          여행자의 체크리스트를 넘어, 오래 머문 사람이 기억하는 아랍에미리트의 문화와
-          장소, 생활의 감각을 기록합니다.
+          아부다비에서 살아보니 보이는 UAE를 여행 준비, 생활 적응, 문화의 맥락,
+          직접 촬영한 현장 기록으로 나눠 정리합니다.
         </p>
         <div class="hero-actions" aria-label="주요 이동">
-          <a class="primary-link" href="#latest">최근 글 보기</a>
+          <a class="primary-link" href="/reading-guide">처음부터 읽기</a>
           <a class="secondary-link" href="/field-notes">현장 기록 보기</a>
           <a class="secondary-link" href="/trip-checklist">여행 준비 체크</a>
         </div>
@@ -101,12 +160,39 @@ const categories = [
     </div>
   </section>
 
+  <section class="section guide-path-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">START HERE</p>
+          <h2>UAE 여행과 생활, 목적별로 바로 보기</h2>
+        </div>
+        <p>처음 방문하는 여행자와 현지 생활 기록을 찾는 독자가 가장 필요한 페이지부터 바로 이동할 수 있습니다.</p>
+      </div>
+      <div class="guide-path-grid">
+        {startHere.map((item, index) => (
+          <a class="guide-path-card" href={item.href}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <h2>{item.label}</h2>
+              <p>{item.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="hero-actions" aria-label="핵심 아카이브 바로가기">
+        <a class="secondary-link" href="/2026/08/uae-personal-photo-archive">2012~2022 개인 사진 아카이브</a>
+        <a class="secondary-link" href="/reading-guide">UAE 읽기 길잡이</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-muted">
     <div class="container">
       <div class="section-head">
         <div>
           <p class="eyebrow">EXPLORE</p>
-          <h2>읽기 좋은 네 갈래</h2>
+          <h2>주제별 UAE 기록</h2>
         </div>
         <p>한인 생활 적응, UAE 문화, 시간의 흐름, 개인의 기억을 분리해 필요한 글로 바로 이동할 수 있습니다.</p>
       </div>
@@ -172,4 +258,6 @@ const categories = [
       <a class="secondary-link" href="/reading-guide">UAE 읽기 길잡이</a>
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(homePageJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(hubListJson)} />
 </BaseLayout>
