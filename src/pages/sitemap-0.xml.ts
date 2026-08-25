@@ -19,6 +19,7 @@ const staticPages = [
   "/travel-costs",
   "/food-guide",
   "/money-guide",
+  "/shopping-guide",
   "/contact",
   "/privacy",
   "/terms"
@@ -61,9 +62,7 @@ export async function GET() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${uniqueUrls
   .map(
-    (url) => `  <url>
-    <loc>${escapeXml(url.loc)}</loc>${url.lastmod ? `\n    <lastmod>${url.lastmod}</lastmod>` : ""}
-  </url>`
+    (url) => `  <url>\n    <loc>${escapeXml(url.loc)}</loc>${url.lastmod ? `\n    <lastmod>${url.lastmod}</lastmod>` : ""}\n  </url>`
   )
   .join("\n")}
 </urlset>`;
