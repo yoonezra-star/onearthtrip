@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
+import PlaceMap from "../components/PlaceMap.astro";
 import { getCoreStoryRank, isCoreStory } from "../data/coreStories";
 import { getSeoMeta } from "../data/seoMeta.mjs";
 import { getPosts } from "../utils/posts";
@@ -143,6 +144,13 @@ const breadcrumbJson = {
         <strong>{post.data.fieldNote.label}</strong>
         <span>{post.data.fieldNote.disclaimer}</span>
       </aside>
+    )}
+    {post.data.map && (
+      <PlaceMap
+        title={post.data.map.title}
+        query={post.data.map.query}
+        address={post.data.map.address}
+      />
     )}
     <div class="article-body">
       <slot />
