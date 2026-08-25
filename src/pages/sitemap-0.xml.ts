@@ -23,6 +23,7 @@ const staticPages = [
   "/connectivity-guide",
   "/travel-apps-guide",
   "/driving-guide",
+  "/intercity-guide",
   "/contact",
   "/privacy",
   "/terms"
