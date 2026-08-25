@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import { getCoreStoryRank, isCoreStory } from "../data/coreStories";
+import { getSeoMeta } from "../data/seoMeta.mjs";
 import { getPosts } from "../utils/posts";
 import { formatDate, getCategoryPath, getPublicPath, getReadingTime } from "../utils/posts";
 import { getHeroImageAlt, getPublicImageSize } from "../utils/images";
@@ -13,7 +14,9 @@ type Props = {
 };
 
 const { post } = Astro.props;
-const title = `${post.data.title} | ${site.name}`;
+const seoMeta = getSeoMeta(post.data.permalink);
+const title = `${seoMeta?.title ?? post.data.title} | ${site.name}`;
+const metaDescription = seoMeta?.description ?? post.data.description;
 const canonical = getPublicPath(post.data.permalink);
 const readingTime = getReadingTime(post.body ?? "");
 const canonicalUrl = new URL(canonical, site.url).toString();
@@ -51,7 +54,7 @@ const articleJson = {
   "@id": `${canonicalUrl}#article`,
   url: canonicalUrl,
   headline: post.data.title,
-  description: post.data.description,
+  description: metaDescription,
   image: heroImageUrl,
   thumbnailUrl: heroImageUrl,
   datePublished: post.data.pubDate.toISOString(),
@@ -98,7 +101,7 @@ const breadcrumbJson = {
 
 <BaseLayout
   title={title}
-  description={post.data.description}
+  description={metaDescription}
   image={post.data.heroImage}
   canonical={canonical}
   pageType="article"
