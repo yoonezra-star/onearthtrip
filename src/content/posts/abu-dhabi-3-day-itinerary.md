@@ -2,7 +2,7 @@
 title: "아부다비 3일 여행 일정: 도심·Saadiyat·Yas를 하루씩 나누는 법"
 description: "아부다비 3일 여행을 도심, Saadiyat 문화 지구, Yas Island 세 축으로 나눠 이동 부담을 줄이는 실용 일정 가이드입니다."
 pubDate: "2026-08-25T14:50:00+09:00"
-updatedDate: "2026-08-25T14:50:00+09:00"
+updatedDate: "2026-08-25T16:28:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["아부다비 3일 여행", "아부다비 일정", "Saadiyat Island", "Yas Island", "아부다비 여행"]
@@ -20,7 +20,15 @@ contentType: "guide"
 
 그랜드 모스크 방문 전에는 [현재 방문 준비 가이드](/2026/08/sheikh-zayed-grand-mosque-visit-guide)를 먼저 확인하세요. Access Pass, 방문 시간, 복장과 촬영 기준은 공식 운영 안내가 우선입니다.
 
-도심에서는 한 장소를 더 넣더라도 숙소와 가까운 곳을 고르는 편이 좋습니다. 첫날부터 Saadiyat나 Yas까지 크게 이동하기보다 도심 산책, 코르니쉬, 식사처럼 이동 부담이 작은 일정으로 마무리하면 다음 날이 편합니다.
+도심 관광지를 더 넣고 싶다면 먼저 [아부다비 도심 관광지 허브](/downtown-attractions)에서 위치를 나눠 보세요. 첫날부터 다섯 곳을 전부 넣기보다 아래처럼 한 묶음만 고르는 편이 현실적입니다.
+
+- **역사 중심**: Qasr Al Hosn + Corniche
+- **서쪽 도심 중심**: Qasr Al Watan + Emirates Palace + 저녁 Corniche
+- **전통문화 중심**: Heritage Village + Corniche
+
+Qasr Al Watan을 고른다면 [현재 방문 가이드](/2026/08/qasr-al-watan-visit-guide), Qasr Al Hosn을 고른다면 [운영시간·전시 가이드](/2026/08/qasr-al-hosn-visit-guide)를 먼저 확인하면 예약 시간과 금요일 운영 차이를 놓치기 어렵습니다.
+
+첫날은 Saadiyat나 Yas까지 크게 이동하기보다 도심 산책과 식사처럼 취소하기 쉬운 일정으로 마무리하면 다음 날이 편합니다.
 
 ## 2일차: Saadiyat Cultural District에 시간을 몰아준다
 
@@ -35,7 +43,9 @@ contentType: "guide"
 - 오후: teamLab Phenomena Abu Dhabi 또는 Natural History Museum Abu Dhabi
 - 저녁: 숙소 복귀 또는 해변·식사
 
-Saadiyat Cultural District 공식 안내는 한 장소당 1~2시간 이상을 잡는 편이 좋다고 설명합니다. 문화 시설을 좋아한다면 이 지역만 이틀로 나누는 편이 오히려 만족도가 높을 수 있습니다.
+어느 시설을 고를지 아직 정하지 않았다면 [아부다비 관광지 허브](/attractions)에서 Downtown·Saadiyat·Yas를 먼저 나누고, Saadiyat의 개별 박물관 가이드를 비교하세요. 이동 자체는 [Saadiyat·도심 이동 계획](/2026/08/saadiyat-downtown-planning-guide)에서 따로 볼 수 있습니다.
+
+문화 시설을 좋아한다면 이 지역만 이틀로 나누는 편이 오히려 만족도가 높을 수 있습니다.
 
 공식 참고: [Visit Abu Dhabi - Saadiyat Cultural District](https://visitabudhabi.ae/en/things-to-do/culture/landmarks-and-architecture/saadiyat-cultural-district-b)
 
@@ -44,6 +54,8 @@ Saadiyat Cultural District 공식 안내는 한 장소당 1~2시간 이상을 �
 셋째 날은 Yas Island에 배정합니다. Yas Island에는 Ferrari World Abu Dhabi, Warner Bros. World Abu Dhabi, SeaWorld Yas Island, Yas Waterworld, Yas Mall, Yas Marina Circuit 등 선택지가 많습니다.
 
 여기서 가장 중요한 원칙은 **테마파크 여러 곳을 동시에 욕심내지 않는 것**입니다. 오전부터 한 테마파크를 충분히 즐기고, 이후 Yas Mall이나 Yas Bay처럼 식사·휴식이 가능한 장소로 옮기는 구성이 편합니다.
+
+공원을 아직 못 골랐다면 [Yas Island 테마파크 선택 가이드](/2026/08/yas-island-theme-park-choice-guide)에서 Ferrari World·Warner Bros. World·SeaWorld·Yas Waterworld를 동행자와 관심사 기준으로 비교하세요. 하루 전체 동선은 [Yas Island 일정·이동 가이드](/2026/08/yas-island-planning-guide)에서 이어서 볼 수 있습니다.
 
 Yas Island 공식 안내에 따르면 섬 안에서는 Yas Express 등 이동 수단을 이용할 수 있습니다. 다만 셔틀 시간표는 바뀔 수 있으므로 당일 공식 페이지를 확인해야 합니다.
 
