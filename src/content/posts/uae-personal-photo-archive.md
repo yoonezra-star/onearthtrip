@@ -6,7 +6,7 @@ updatedDate: "2026-08-25T12:24:00+09:00"
 author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["UAE 사진", "아부다비 사진", "두바이 사진", "개인 사진 아카이브", "현장 기록", "UAE 생활"]
-permalink: "/2026/08/uae-personal-photo-archive"
+permalink: "/2026/08/uae-personal-photo-archive.html"
 heroImage: "/images/actual/abu-dhabi-evening-beach-2012.webp"
 contentType: "guide"
 fieldNote:
