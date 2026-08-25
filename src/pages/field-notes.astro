@@ -31,9 +31,14 @@ const categoryGroups = [...new Set(fieldNotes.map((post) => post.data.category))
   .sort((a, b) => b.count - a.count || a.category.localeCompare(b.category, "ko"));
 const photoRecords = fieldNotes.filter((post) => post.data.heroImage).length;
 const videoRecords = fieldNotes.filter((post) => (post.body ?? "").includes("<video")).length;
+const collectionUrl = new URL("/field-notes", site.url).toString();
+const listId = `${collectionUrl}#item-list`;
+const collectionDescription =
+  "아부다비와 UAE에서 직접 보고 촬영한 생활·문화·여행 기록을 실제 기록 시점 기준으로 모은 사진·영상 아카이브입니다.";
 const listJson = {
   "@context": "https://schema.org",
   "@type": "ItemList",
+  "@id": listId,
   name: "UAE 현장 기록 아카이브",
   numberOfItems: fieldNotes.length,
   itemListElement: fieldNotes.map((post, index) => ({
@@ -43,19 +48,36 @@ const listJson = {
     name: post.data.title
   }))
 };
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${collectionUrl}#webpage`,
+  url: collectionUrl,
+  name: "UAE 현장 기록·사진 아카이브",
+  description: collectionDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Thing", name: "UAE 현장 기록" },
+    { "@type": "Thing", name: "아부다비 사진" },
+    { "@type": "Thing", name: "UAE 생활" },
+    { "@type": "Thing", name: "UAE 문화" }
+  ]
+};
 ---
 
 <BaseLayout
-  title="UAE 현장 기록 아카이브 | On Earth Trip"
-  description="아부다비와 UAE에서 직접 보고 촬영한 생활·문화·여행 기록을 실제 기록 시점 기준으로 모은 사진·영상 아카이브입니다."
+  title="UAE 현장 기록·사진 아카이브 | 아부다비 직접 촬영 | On Earth Trip"
+  description={collectionDescription}
 >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">FIELD NOTE ARCHIVE</p>
-      <h1>UAE 현장 기록 아카이브</h1>
+      <h1>UAE 현장 기록·사진 아카이브</h1>
       <p class="lead">
-        직접 경험한 장소와 생활 장면을 실제 기록 시점 기준으로 모았습니다. 오래된 기록은 현재 정보처럼 포장하지 않고,
-        당시의 날짜와 경험 범위를 함께 표시합니다.
+        아부다비와 UAE에서 직접 경험하고 촬영한 장소와 생활 장면을 실제 기록 시점 기준으로 모았습니다.
+        오래된 기록은 현재 정보처럼 포장하지 않고 당시의 날짜와 경험 범위를 함께 표시합니다.
       </p>
       <div class="hero-actions">
         <a class="primary-link" href="/2026/08/uae-personal-photo-archive">2012~2022 개인 사진 색인 보기</a>
@@ -126,5 +148,6 @@ const listJson = {
       ))}
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
   <script type="application/ld+json" set:html={JSON.stringify(listJson)} />
 </BaseLayout>
