@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { travelAppStoryPermalinks } from "../data/travelAppStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const appPosts = travelAppStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageName = "아부다비 여행 필수 앱·디지털 도구 가이드";
+const pageDescription = "Darbi·Abu Dhabi Taxi·Careem·Uber, 오프라인 지도, AUH Guest·Etihad, 번역·긴급연락까지 아부다비 여행에 필요한 앱을 목적별로 연결한 허브입니다.";
+const pageUrl = new URL("/travel-apps-guide", site.url).toString();
+const listId = `${pageUrl}#item-list`;
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": listId,
+  name: "아부다비 여행 필수 앱 가이드",
+  numberOfItems: appPosts.length,
+  itemListElement: appPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Thing", name: "Darbi" },
+    { "@type": "Thing", name: "Abu Dhabi Taxi" },
+    { "@type": "Thing", name: "Careem" },
+    { "@type": "Thing", name: "Google Maps offline" },
+    { "@type": "Thing", name: "AUH Guest" },
+    { "@type": "Thing", name: "UAE emergency numbers" }
+  ]
+};
+---
+
+<BaseLayout
+  title="아부다비 여행 필수 앱 가이드 | 교통·지도·공항·번역 | On Earth Trip"
+  description={pageDescription}
+  canonical="/travel-apps-guide"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">TRAVEL APPS &amp; DIGITAL TOOLS</p>
+      <h1>아부다비 여행 앱, 많이 설치하기보다 역할을 나눕니다</h1>
+      <p class="lead">교통·택시·지도·공항·번역을 목적별로 나눠 꼭 필요한 앱과 웹페이지만 준비합니다.</p>
+      <p class="page-summary">{appPosts.length}개 여행 앱·디지털 도구 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/abu-dhabi-transport-apps-guide">교통 앱부터 보기</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-offline-map-navigation-guide">오프라인 지도</a>
+        <a class="secondary-link" href="/connectivity-guide">유심·eSIM</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section">
+    <div class="container guide-path-grid">
+      <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-transport-apps-guide">
+        <span>01</span>
+        <h2>교통 앱 역할 구분</h2>
+        <p>Darb·Darbi·Abu Dhabi Taxi·Abu Dhabi Link와 Hafilat 경로를 구분합니다.</p>
+      </a>
+      <a class="guide-path-card accent-clay" href="/2026/08/abu-dhabi-taxi-ride-hailing-app-guide">
+        <span>02</span>
+        <h2>택시·호출차 앱</h2>
+        <p>Abu Dhabi Taxi, Careem, Uber를 공항 픽업과 현장 가격 기준으로 비교합니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/2026/08/abu-dhabi-offline-map-navigation-guide">
+        <span>03</span>
+        <h2>오프라인 지도</h2>
+        <p>Google Maps 지역 저장과 오프라인 길찾기의 한계를 미리 확인합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/zayed-airport-flight-app-guide">
+        <span>04</span>
+        <h2>공항·항공편 확인</h2>
+        <p>AUH Guest, 공항 Arrivals·Departures, Etihad 앱의 역할을 나눕니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/abu-dhabi-translation-emergency-app-guide">
+        <span>05</span>
+        <h2>번역·긴급연락</h2>
+        <p>오프라인 번역과 UAE 999·998·997, AD999를 백업으로 준비합니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">SETUP ORDER</p>
+        <h2>출국 전 로그인하고, 도착 후 필요한 앱만 켭니다</h2>
+      </div>
+      <p>앱 설치보다 중요한 것은 계정 로그인, 결제수단, 오프라인 지도·번역, 숙소 핀을 미리 저장하는 것입니다. 도착 후에는 공항 Wi-Fi와 eSIM을 먼저 연결합니다.</p>
+      <div class="source-links">
+        <a href="/connectivity-guide">유심·eSIM·Wi-Fi</a>
+        <a href="/trip-checklist">UAE 여행 준비 체크리스트</a>
+        <a href="/2026/08/zayed-international-airport-to-abu-dhabi-city">공항→도심 이동</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="app-guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">APP CLUSTER</p>
+          <h2>여행 앱을 목적별로 보기</h2>
+        </div>
+        <p>비공식 추천 목록보다 Abu Dhabi Mobility, 자이드 국제공항, 항공사, Google과 UAE 정부 공식 안내를 우선해 구성했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {appPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
+</BaseLayout>
