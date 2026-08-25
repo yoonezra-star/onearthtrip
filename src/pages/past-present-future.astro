@@ -4,17 +4,41 @@ import PostCard from "../components/PostCard.astro";
 import { getPosts } from "../utils/posts";
 
 const posts = (await getPosts()).filter((post) => post.data.category === "과거·현재·미래");
+const fieldNotes = posts.filter((post) => post.data.contentType === "field-note");
+const guides = posts.filter((post) => post.data.contentType !== "field-note");
 ---
 
-<BaseLayout title="UAE 과거·현재·미래 | On Earth Trip" description="아랍에미리트의 역사, 현재의 도시 풍경, 미래 비전을 함께 읽는 기록입니다.">
+<BaseLayout title="UAE 과거·현재·미래 | On Earth Trip" description="아랍에미리트의 역사, 현재의 도시 풍경, 미래 비전을 현장 기록과 해설 가이드로 구분해 읽는 기록입니다.">
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">PAST PRESENT FUTURE</p>
       <h1>UAE의 과거·현재·미래</h1>
       <p class="lead">진주와 무역의 물길에서 초현대 도시, 그리고 2071년을 향한 국가 비전까지.</p>
-      <p class="page-summary">{posts.length}개의 시간 기록을 모았습니다.</p>
+      <p class="page-summary">{fieldNotes.length}개 현장 기록 · {guides.length}개 시간·전망 가이드</p>
+      <div class="hero-actions" aria-label="콘텐츠 유형별 이동">
+        {fieldNotes.length > 0 && <a class="primary-link" href="#field-notes">직접 본 시대의 장면</a>}
+        {guides.length > 0 && <a class="secondary-link" href="#guides">역사·현재·미래 가이드</a>}
+        <a class="secondary-link" href="/field-notes">전체 UAE 현장 기록</a>
+      </div>
     </div>
   </section>
+
+  {fieldNotes.length > 0 && (
+    <section class="section" id="field-notes">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">FIRST-HAND TIME RECORDS</p>
+            <h2>직접 남긴 시대의 현장 기록</h2>
+          </div>
+          <p>과거 사진이나 당시 경험은 그 시점의 장면으로만 읽습니다. 현재의 도시 상태나 미래 계획과 같은 사실처럼 섞지 않습니다.</p>
+        </div>
+        <div class="post-grid">
+          {fieldNotes.map((post) => <PostCard post={post} />)}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="section section-muted">
     <div class="container source-band">
@@ -27,7 +51,7 @@ const posts = (await getPosts()).filter((post) => post.data.category === "과거
         목표입니다. 각 글에서 관찰 범위와 출처를 밝혀 이미 일어난 일과 앞으로의 계획이 섞이지 않도록 합니다.
       </p>
       <div class="source-links">
-        <a href="/field-notes">촬영 연도별 현장 기록</a>
+        <a href="/field-notes">기록 연도별 현장 기록</a>
         <a href="/reading-guide">콘텐츠 읽는 방법</a>
         <a href="/editorial-policy">작성·수정 원칙</a>
       </div>
@@ -44,9 +68,9 @@ const posts = (await getPosts()).filter((post) => post.data.category === "과거
       </div>
       <div class="guide-path-grid">
         <a class="guide-path-card accent-clay" href="/field-notes">
-          <span>PAST · 촬영일과 기억의 범위</span>
+          <span>PAST · 기록 시점과 기억의 범위</span>
           <h2>과거 기록</h2>
-          <p>직접 찍은 사진과 경험을 당시의 날짜에 묶어 읽습니다. 오래된 장면을 현재 운영 정보로 사용하지 않습니다.</p>
+          <p>직접 찍은 사진과 경험을 당시 기록 시점에 묶어 읽습니다. 오래된 장면을 현재 운영 정보로 사용하지 않습니다.</p>
         </a>
         <a class="guide-path-card accent-teal" href="/trip-checklist">
           <span>PRESENT · 확인일과 공식 출처</span>
@@ -62,17 +86,20 @@ const posts = (await getPosts()).filter((post) => post.data.category === "과거
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">TIME RECORDS</p>
-          <h2>시간을 따라 읽는 UAE 기록</h2>
+  {guides.length > 0 && (
+    <section class="section" id="guides">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">TIME GUIDES</p>
+            <h2>역사·현재·미래를 해석하는 가이드</h2>
+          </div>
+          <p>현장 기록과 분리해, 역사적 맥락과 현재 확인 정보, 발표된 미래 계획을 출처와 시점을 기준으로 읽습니다.</p>
+        </div>
+        <div class="post-grid">
+          {guides.map((post) => <PostCard post={post} />)}
         </div>
       </div>
-      <div class="post-grid">
-        {posts.map((post) => <PostCard post={post} />)}
-      </div>
-    </div>
-  </section>
+    </section>
+  )}
 </BaseLayout>
