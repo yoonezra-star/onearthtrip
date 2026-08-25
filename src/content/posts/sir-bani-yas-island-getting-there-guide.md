@@ -7,6 +7,10 @@ category: "아부다비 한인 생활"
 tags: ["Sir Bani Yas Island", "Jebel Dhanna", "시르바니야스", "Al Dhafra", "아부다비 섬 여행"]
 permalink: "/2026/08/sir-bani-yas-island-getting-there-guide.html"
 contentType: "guide"
+map:
+  title: "Jebel Dhanna Jetty"
+  query: "Jebel Dhanna Jetty, Abu Dhabi, United Arab Emirates"
+  address: "Jebel Dhanna, Al Dhafra, Abu Dhabi, United Arab Emirates"
 ---
 
 Sir Bani Yas Island는 아부다비 도심에서 바로 다리로 들어가는 섬이 아닙니다. **먼저 Al Dhafra 서부지역의 Jebel Dhanna Jetty까지 육로로 이동한 뒤, 섬으로 들어가는 보트 연결을 확인해야 하는 목적지**입니다.
