@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { liwaStoryPermalinks } from "../data/liwaStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const liwaPosts = liwaStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageName = "Al Dhafra·Liwa 이동·사막여행 가이드";
+const pageDescription = "아부다비↔Liwa 시외버스와 렌터카, Liwa Oasis, 사막 운전 안전, Liwa 당일·1박 일정을 한곳에서 연결한 Al Dhafra 서부지역 여행 허브입니다.";
+const pageUrl = new URL("/liwa-guide", site.url).toString();
+const listId = `${pageUrl}#item-list`;
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": listId,
+  name: "Al Dhafra·Liwa 여행 가이드",
+  numberOfItems: liwaPosts.length,
+  itemListElement: liwaPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Place", name: "Al Dhafra" },
+    { "@type": "Place", name: "Liwa Oasis" },
+    { "@type": "Place", name: "Rub' al Khali" },
+    { "@type": "Place", name: "Tel Moreeb" },
+    { "@type": "Thing", name: "Liwa road trip" }
+  ]
+};
+---
+
+<BaseLayout
+  title="Liwa·Al Dhafra 여행 가이드 | 버스·렌터카·사막 일정 | On Earth Trip"
+  description={pageDescription}
+  canonical="/liwa-guide"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">AL DHAFRA · LIWA</p>
+      <h1>Liwa 여행, 사막보다 먼저 거리와 운전 범위를 확인합니다</h1>
+      <p class="lead">아부다비 서쪽 Al Dhafra의 Liwa Oasis는 짧은 도심 일정과 성격이 다릅니다. 시외버스·렌터카·사막 안전·당일과 1박 선택을 먼저 나눠 봅니다.</p>
+      <p class="page-summary">{liwaPosts.length}개 Liwa·Al Dhafra 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/abu-dhabi-liwa-bus-guide">Liwa 버스</a>
+        <a class="secondary-link" href="/2026/08/abu-dhabi-liwa-rental-car-guide">Liwa 렌터카</a>
+        <a class="secondary-link" href="/2026/08/liwa-day-overnight-itinerary">당일·1박 일정</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section">
+    <div class="container guide-path-grid">
+      <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-liwa-bus-guide">
+        <span>01</span>
+        <h2>아부다비에서 Liwa 이동</h2>
+        <p>Al Dhafra 시외버스 요금과 출발 전 확인할 시간표·구매 위치를 봅니다.</p>
+      </a>
+      <a class="guide-path-card accent-clay" href="/2026/08/abu-dhabi-liwa-rental-car-guide">
+        <span>02</span>
+        <h2>렌터카 로드트립</h2>
+        <p>약 2시간대 후반의 장거리 이동과 연료·보험·휴식 계획을 먼저 잡습니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/2026/08/liwa-oasis-visit-guide">
+        <span>03</span>
+        <h2>Liwa Oasis</h2>
+        <p>Empty Quarter 북쪽 가장자리의 오아시스 지역과 붉은 모래언덕을 이해합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/liwa-desert-driving-safety-guide">
+        <span>04</span>
+        <h2>사막 운전 안전</h2>
+        <p>포장도로 여행과 모래언덕 오프로드 주행을 구분하고 렌터카 계약 범위를 확인합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/liwa-day-overnight-itinerary">
+        <span>05</span>
+        <h2>당일 또는 1박</h2>
+        <p>왕복 장거리 운전 피로와 일몰·별 관찰 시간을 고려해 일정 길이를 고릅니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">ROAD TRIP FIRST</p>
+        <h2>Liwa는 관광지 하나가 아니라 넓은 서부지역 여행입니다</h2>
+      </div>
+      <p>Al Dhafra는 사막·해안·섬이 넓게 펼쳐진 지역입니다. Liwa Oasis와 Tel Moreeb을 볼 때도 목적지 간 거리, 연료와 휴식, 해가 진 뒤 운전 부담을 함께 계산해야 합니다.</p>
+      <div class="source-links">
+        <a href="/intercity-guide">도시 간 이동</a>
+        <a href="/driving-guide">렌터카·운전</a>
+        <a href="/travel-apps-guide">지도·교통 앱</a>
+        <a href="/travel-costs">교통비·여행예산</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="liwa-guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">LIWA CLUSTER</p>
+          <h2>Liwa 이동과 사막 여행을 단계별로 보기</h2>
+        </div>
+        <p>Abu Dhabi Mobility와 Experience Abu Dhabi의 최신 공개 정보를 우선하고, 시간표·현장 운영·행사 일정처럼 변할 수 있는 내용은 출발 직전에 다시 확인하도록 구성했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {liwaPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
+</BaseLayout>
