@@ -10,12 +10,15 @@ const downtownPosts = downtownStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
 
+const pageName = "아부다비 도심 관광지 가이드";
+const pageDescription = "Qasr Al Watan, Qasr Al Hosn, Corniche, Emirates Palace, Heritage Village를 같은 도심권 안에서 고르는 아부다비 관광지 허브입니다.";
 const pageUrl = new URL("/downtown-attractions", site.url).toString();
+const listId = `${pageUrl}#item-list`;
 const itemListJson = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "@id": `${pageUrl}#downtown-attractions`,
-  name: "아부다비 도심 관광지 가이드",
+  "@id": listId,
+  name: pageName,
   numberOfItems: downtownPosts.length,
   itemListElement: downtownPosts.map((post, index) => ({
     "@type": "ListItem",
@@ -24,11 +27,28 @@ const itemListJson = {
     url: new URL(getPublicPath(post.data.permalink), site.url).toString()
   }))
 };
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Thing", name: "Downtown Abu Dhabi" },
+    { "@type": "Thing", name: "Qasr Al Watan" },
+    { "@type": "Thing", name: "Qasr Al Hosn" },
+    { "@type": "Thing", name: "Abu Dhabi Corniche" }
+  ]
+};
 ---
 
 <BaseLayout
   title="아부다비 도심 관광지 가이드 | Qasr Al Watan·Corniche | On Earth Trip"
-  description="Qasr Al Watan, Qasr Al Hosn, Corniche, Emirates Palace, Heritage Village를 같은 도심권 안에서 고르는 아부다비 관광지 허브입니다."
+  description={pageDescription}
   canonical="/downtown-attractions"
 >
   <section class="page-hero">
@@ -72,8 +92,13 @@ const itemListJson = {
       <div class="post-grid">
         {downtownPosts.map((post) => <PostCard post={post} />)}
       </div>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/abu-dhabi-5-day-itinerary">5일 일정에 넣기</a>
+        <a class="secondary-link" href="/reading-guide">전체 읽기 길잡이</a>
+      </div>
     </div>
   </section>
 
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
   <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
 </BaseLayout>
