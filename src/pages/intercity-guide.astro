@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { intercityStoryPermalinks } from "../data/intercityStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const intercityPosts = intercityStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageName = "아부다비↔두바이 도시 간 이동 가이드";
+const pageDescription = "E100·E101 시외버스, 택시·호출차, 렌터카, 자이드 국제공항↔두바이, 아부다비 출발 두바이 당일치기를 한곳에서 비교하는 이동 허브입니다.";
+const pageUrl = new URL("/intercity-guide", site.url).toString();
+const listId = `${pageUrl}#item-list`;
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": listId,
+  name: "아부다비 두바이 이동 가이드",
+  numberOfItems: intercityPosts.length,
+  itemListElement: intercityPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Thing", name: "Abu Dhabi to Dubai" },
+    { "@type": "Thing", name: "E100 bus" },
+    { "@type": "Thing", name: "E101 bus" },
+    { "@type": "Thing", name: "Zayed International Airport to Dubai" },
+    { "@type": "Thing", name: "Dubai day trip" }
+  ]
+};
+---
+
+<BaseLayout
+  title="아부다비↔두바이 이동 가이드 | 버스·택시·렌터카 | On Earth Trip"
+  description={pageDescription}
+  canonical="/intercity-guide"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">ABU DHABI ↔ DUBAI</p>
+      <h1>아부다비와 두바이, 이동수단보다 도착 지점부터 고릅니다</h1>
+      <p class="lead">버스 터미널, 공항 셔틀 도착지, 숙소 위치와 귀가시간을 먼저 정한 뒤 버스·택시·렌터카를 비교합니다.</p>
+      <p class="page-summary">{intercityPosts.length}개 도시 간 이동 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/abu-dhabi-dubai-bus-guide">시외버스 비교</a>
+        <a class="secondary-link" href="/2026/08/zayed-airport-dubai-transport-guide">AUH↔두바이</a>
+        <a class="secondary-link" href="/2026/08/dubai-day-trip-from-abu-dhabi-guide">두바이 당일치기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section">
+    <div class="container guide-path-grid">
+      <a class="guide-path-card accent-teal" href="/2026/08/abu-dhabi-dubai-bus-guide">
+        <span>01</span>
+        <h2>E100·E101 버스</h2>
+        <p>Al Ghubaiba·Ibn Battuta 도착지와 RTA 실시간 요금을 확인합니다.</p>
+      </a>
+      <a class="guide-path-card accent-clay" href="/2026/08/abu-dhabi-dubai-taxi-cost-guide">
+        <span>02</span>
+        <h2>택시·호출차 비용</h2>
+        <p>공식 택시 미터와 Careem·Uber 당일 견적을 함께 비교합니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/2026/08/abu-dhabi-dubai-rental-car-guide">
+        <span>03</span>
+        <h2>렌터카 이동</h2>
+        <p>Darb·Salik·주차·연료와 렌터카 회사 정산 수수료까지 봅니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/zayed-airport-dubai-transport-guide">
+        <span>04</span>
+        <h2>AUH ↔ Dubai</h2>
+        <p>Airport Express와 Etihad Shuttle, 공항 택시를 비교합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/dubai-day-trip-from-abu-dhabi-guide">
+        <span>05</span>
+        <h2>두바이 당일치기</h2>
+        <p>한 권역 중심 일정과 귀가 버스·차량 시간을 먼저 고정합니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">CHOOSE BY DESTINATION</p>
+        <h2>두바이에서 어디로 갈지가 이동수단을 결정합니다</h2>
+      </div>
+      <p>Old Dubai라면 Al Ghubaiba, Marina·JBR이라면 Ibn Battuta, Etihad Shuttle 이용자라면 Al Wasl Centre처럼 도착 거점과 첫 목적지를 같이 보세요.</p>
+      <div class="source-links">
+        <a href="/2026/08/abu-dhabi-dubai-weekend-rhythm">두 도시 이동 계획 6가지</a>
+        <a href="/driving-guide">렌터카·운전</a>
+        <a href="/travel-costs">교통비·여행예산</a>
+        <a href="/travel-apps-guide">여행 앱·지도</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="intercity-guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">INTERCITY CLUSTER</p>
+          <h2>도시 간 이동을 상황별로 보기</h2>
+        </div>
+        <p>공식 RTA·Abu Dhabi Mobility·자이드 국제공항·Etihad 안내를 우선하고, 서로 다른 공식 요금 표시는 출발 당일 실시간 화면을 최종 기준으로 보도록 구성했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {intercityPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
+</BaseLayout>
