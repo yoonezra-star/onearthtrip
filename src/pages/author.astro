@@ -4,11 +4,13 @@ import { site } from "../data/site";
 import { getPosts } from "../utils/posts";
 
 const posts = await getPosts();
+const authorUrl = new URL("/author", site.url).toString();
 const profileJson = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${authorUrl}#person`,
   name: site.author,
-  url: new URL("/author", site.url).toString(),
+  url: authorUrl,
   email: site.email,
   jobTitle: "UAE 생활·여행 기록 운영자",
   knowsAbout: ["Abu Dhabi", "United Arab Emirates", "UAE travel planning", "UAE culture"]
