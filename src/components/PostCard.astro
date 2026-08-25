@@ -28,7 +28,7 @@ const mediaLabel = hasVideo ? "사진+영상" : post.data.heroImage ? "사진" :
     <div class="meta">
       <a class="pill" href={getCategoryPath(post.data.category)}>{post.data.category}</a>
       {isFieldNote && <span class="record-type">현장 기록</span>}
-      {isFieldNote && <span class="record-media">{mediaLabel}</span>}
+      {isFieldNote && <span class="record-type">{mediaLabel}</span>}
       <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
     </div>
     <h3><a href={href}>{post.data.title}</a></h3>
