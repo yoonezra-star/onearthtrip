@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { alWathbaStoryPermalinks } from "../data/alWathbaStories";
+import { site } from "../data/site";
+import { getPosts, getPublicPath } from "../utils/posts";
+
+const posts = await getPosts();
+const alWathbaPosts = alWathbaStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const pageName = "Al Wathba 자연·문화·사이클 여행 가이드";
+const pageDescription = "Al Wathba Wetland Reserve와 Fossil Dunes의 현재 폐쇄 상태, Camel Race Track, Cycle Track과 하루 일정을 한곳에서 연결한 아부다비 근교 여행 허브입니다.";
+const pageUrl = new URL("/al-wathba-guide", site.url).toString();
+const listId = `${pageUrl}#item-list`;
+const itemListJson = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": listId,
+  name: "Al Wathba 여행 가이드",
+  numberOfItems: alWathbaPosts.length,
+  itemListElement: alWathbaPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.data.title,
+    url: new URL(getPublicPath(post.data.permalink), site.url).toString()
+  }))
+};
+const collectionJson = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: pageName,
+  description: pageDescription,
+  inLanguage: site.locale,
+  isPartOf: { "@id": `${site.url}#website` },
+  mainEntity: { "@id": listId },
+  about: [
+    { "@type": "Place", name: "Al Wathba" },
+    { "@type": "Place", name: "Al Wathba Wetland Reserve" },
+    { "@type": "Place", name: "Al Wathba Fossil Dunes" },
+    { "@type": "Place", name: "Al Wathba Camel Race Track" },
+    { "@type": "Place", name: "Al Wathba Cycle Track" }
+  ]
+};
+---
+
+<BaseLayout
+  title="Al Wathba 가이드 | 습지·Fossil Dunes·낙타 경주·자전거 | On Earth Trip"
+  description={pageDescription}
+  canonical="/al-wathba-guide"
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">AL WATHBA</p>
+      <h1>Al Wathba는 출발 전에 ‘지금 열려 있는 곳’을 먼저 확인합니다</h1>
+      <p class="lead">습지와 화석 언덕, 낙타 경주와 사막 자전거가 같은 권역에 있지만 운영 방식은 서로 다릅니다. 2026년 현재 상태와 방문 목적을 나눠 계획합니다.</p>
+      <p class="page-summary">{alWathbaPosts.length}개 Al Wathba 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/2026/08/al-wathba-day-trip-guide">하루 일정 보기</a>
+        <a class="secondary-link" href="/2026/08/al-wathba-camel-race-guide">낙타 경주</a>
+        <a class="secondary-link" href="/2026/08/al-wathba-cycle-track-guide">Cycle Track</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section">
+    <div class="container guide-path-grid">
+      <a class="guide-path-card accent-date" href="/2026/08/al-wathba-wetland-reserve-guide">
+        <span>01 · TEMPORARILY CLOSED</span>
+        <h2>Wetland Reserve</h2>
+        <p>플라밍고·250종 이상의 조류와 1.5km·3km 산책로. EAD 공식 페이지에서 재개장 여부를 먼저 확인합니다.</p>
+      </a>
+      <a class="guide-path-card accent-date" href="/2026/08/al-wathba-fossil-dunes-guide">
+        <span>02 · TEMPORARILY CLOSED</span>
+        <h2>Fossil Dunes</h2>
+        <p>7㎢에 1,700개 이상의 화석 언덕. 2026년 현재 개발 공사로 임시 폐쇄 안내가 있습니다.</p>
+      </a>
+      <a class="guide-path-card accent-clay" href="/2026/08/al-wathba-camel-race-guide">
+        <span>03 · CHECK RACE DAY</span>
+        <h2>Camel Race Track</h2>
+        <p>무료 관람이지만 실제 경기 일정이 있는 날과 이른 시간 방문이 핵심입니다.</p>
+      </a>
+      <a class="guide-path-card accent-teal" href="/2026/08/al-wathba-cycle-track-guide">
+        <span>04 · PLAN BY DISTANCE</span>
+        <h2>Cycle Track</h2>
+        <p>8·16·20·22·30km 코스를 체력과 기온에 맞춰 선택합니다.</p>
+      </a>
+      <a class="guide-path-card" href="/2026/08/al-wathba-day-trip-guide">
+        <span>05 · BUILD AROUND STATUS</span>
+        <h2>Al Wathba 하루 일정</h2>
+        <p>보호구역 재개장 여부에 따라 낙타 경주·자전거·자연 방문 순서를 다시 조립합니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">CURRENT STATUS FIRST</p>
+        <h2>오래된 운영시간보다 EAD의 현재 폐쇄 공지를 우선합니다</h2>
+      </div>
+      <p>2026년 8월 25일 확인 기준 Environment Agency – Abu Dhabi는 Wetland Reserve와 Fossil Dunes Reserve를 개발 공사로 추후 공지 시까지 임시 폐쇄한 상태로 안내합니다. 낙타 경주와 Cycle Track은 별도 시설이므로 각각 일정과 이용 조건을 확인합니다.</p>
+      <div class="source-links">
+        <a href="/driving-guide">렌터카·운전</a>
+        <a href="/travel-apps-guide">지도·디지털 도구</a>
+        <a href="/2026/08/abu-dhabi-3-day-itinerary">아부다비 3일 일정</a>
+        <a href="/attractions">관광지 허브</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="al-wathba-guides">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">AL WATHBA CLUSTER</p>
+          <h2>자연·문화·사이클을 운영 상태별로 보기</h2>
+        </div>
+        <p>EAD와 Experience Abu Dhabi의 최신 공개 정보를 우선하고, 폐쇄·경기 일정·현장 운영처럼 바뀌는 내용은 방문 직전에 다시 확인하도록 구성했습니다.</p>
+      </div>
+      <div class="post-grid">
+        {alWathbaPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJson)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJson)} />
+</BaseLayout>
