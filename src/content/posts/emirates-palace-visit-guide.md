@@ -32,6 +32,8 @@ Experience Abu Dhabi는 Emirates Palace의 일부 공개 구역은 무료로 들
 - Emirates Palace 로비·카페 또는 식사
 - 저녁 Corniche 산책
 
+Qasr Al Hosn·Heritage Village까지 포함한 전체 도심권 비교는 [아부다비 도심 관광지 허브](/downtown-attractions)에서 확인할 수 있습니다.
+
 이 구조라면 이동 시간을 줄이면서 도심 서쪽 관광지를 한 번에 볼 수 있습니다.
 
 ## 사진만 찍고 싶다면
