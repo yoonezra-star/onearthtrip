@@ -2,7 +2,7 @@
 title: "아부다비 5일 여행 일정: 문화·도심·Yas·휴식을 나눠 보는 법"
 description: "아부다비 5일 여행을 도심, Saadiyat Cultural District, Yas Island, 휴식 일정으로 나눠 이동과 체력을 함께 관리하는 실용 가이드입니다."
 pubDate: "2026-08-25T14:52:00+09:00"
-updatedDate: "2026-08-25T16:55:00+09:00"
+updatedDate: "2026-08-25T18:44:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["아부다비 5일 여행", "아부다비 일정", "아부다비 가족여행", "Saadiyat Island", "Yas Island"]
@@ -69,6 +69,8 @@ Saadiyat의 현재 이동과 시설 배치는 [Saadiyat·도심 이동 계획](/
 | 3일차 | Saadiyat | 문화 시설 2곳 정도 선택 |
 | 4일차 | Yas Island | 테마파크 1곳을 중심으로 구성 |
 | 5일차 | 자유 일정 | 가족·휴식·재방문 중 하나 선택 |
+
+일정이 정해졌다면 [아부다비 5일 여행 예산](/2026/08/abu-dhabi-5-day-travel-budget)에서 7일 Hafilat 패스와 개별 버스 결제를 비교하고, 필요한 택시 구간만 더해 보세요. 공항·Yas·Saadiyat 구간별 비용은 [교통비·여행예산 허브](/travel-costs)에 정리했습니다.
 
 ## 3일 일정과 5일 일정의 차이
 
