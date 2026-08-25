@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import { site } from "../data/site";
-import { formatDate, getCategoryPath, getPublicPath } from "../utils/posts";
+import { formatDate, getPublicPath } from "../utils/posts";
 import { getPosts } from "../utils/posts";
 
 const posts = await getPosts();
