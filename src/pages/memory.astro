@@ -1,9 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
-import { getPosts } from "../utils/posts";
+import { coreStoryPermalinks } from "../data/coreStories";
+import { getPosts, getPublicPath } from "../utils/posts";
 
 const posts = (await getPosts()).filter((post) => post.data.category === "나의 UAE 추억");
+const corePosts = coreStoryPermalinks
+  .map((permalink) => posts.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 ---
 
 <BaseLayout title="나의 UAE 추억 | On Earth Trip" description="아부다비와 UAE에서 오래 남은 순간, 감정, 장소의 기억을 담은 개인 기록입니다.">
@@ -19,6 +23,22 @@ const posts = (await getPosts()).filter((post) => post.data.category === "나의
       </div>
     </div>
   </section>
+
+  {corePosts.length > 0 && (
+    <section class="section">
+      <div class="container source-band">
+        <div>
+          <p class="eyebrow">CORE PHOTO RECORDS</p>
+          <h2>사진과 영상으로 먼저 볼 대표 기록</h2>
+        </div>
+        <p>개인 사진 아카이브를 중심으로 부르즈 할리파, 사막, 시르바니야스, 아부다비 국립 아쿠아리움처럼 직접 촬영 증거가 분명한 기록을 우선 연결합니다.</p>
+        <div class="source-links">
+          {corePosts.map((post) => <a href={getPublicPath(post.data.permalink)}>{post.data.title}</a>)}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="section section-muted">
     <div class="container note-panel">
       <p class="eyebrow">MEMORY &amp; EVIDENCE</p>
