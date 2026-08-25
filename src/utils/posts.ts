@@ -20,7 +20,12 @@ export function getCategoryPath(category: string) {
 }
 
 export function getPublicPath(path: string) {
-  return path.replace(/\.html$/, "");
+  const normalized = path
+    .replace(/\/index\.html$/, "/")
+    .replace(/\.html$/, "")
+    .replace(/\/$/, "");
+
+  return normalized || "/";
 }
 
 export function getReadingTime(text: string) {
