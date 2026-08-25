@@ -25,6 +25,7 @@ const staticPages = [
   "/driving-guide",
   "/intercity-guide",
   "/al-ain-guide",
+  "/liwa-guide",
   "/contact",
   "/privacy",
   "/terms"
