@@ -18,6 +18,7 @@ const staticPages = [
   "/where-to-stay",
   "/travel-costs",
   "/food-guide",
+  "/money-guide",
   "/contact",
   "/privacy",
   "/terms"
