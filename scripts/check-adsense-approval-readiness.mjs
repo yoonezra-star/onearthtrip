@@ -53,6 +53,27 @@ for (const route of ["/search", "/contact", "/privacy", "/terms", "/about", "/au
   if (!baseLayout.includes(`"${route}"`)) failures.push(`BaseLayout ad-free route missing: ${route}`);
 }
 
+const publisherMatch = baseLayout.match(/client=(ca-pub-\d+)/);
+const publisherId = publisherMatch?.[1] ?? "";
+if (!publisherId) {
+  failures.push("BaseLayout AdSense publisher client id is missing");
+}
+
+const adsTxt = read("public/ads.txt").trim();
+if (!adsTxt) {
+  failures.push("public/ads.txt is empty");
+} else if (publisherId) {
+  const expectedAdsTxt = `google.com, ${publisherId.replace(/^ca-/, "")}, DIRECT, f08c47fec0942fa0`;
+  if (!adsTxt.split(/\r?\n/).some((line) => line.trim() === expectedAdsTxt)) {
+    failures.push(`ads.txt must contain the exact publisher line: ${expectedAdsTxt}`);
+  }
+}
+
+const privacySource = read("src/pages/privacy.astro");
+for (const marker of ["Google AdSense", "쿠키", "유럽경제지역(EEA)", "영국", "스위스"]) {
+  if (!privacySource.includes(marker)) failures.push(`privacy disclosure missing: ${marker}`);
+}
+
 const markdownFiles = fs.readdirSync(postsDir).filter((name) => name.endsWith(".md"));
 let guides = 0;
 let fieldNotes = 0;
@@ -120,4 +141,6 @@ console.log("Author/editorial trust links: present on articles");
 console.log("Search indexing: noindex,follow");
 console.log("Robots + sitemap discovery: configured");
 console.log("Ad-free utility/trust routes: declared");
+console.log(`AdSense publisher consistency: ${publisherId} matches ads.txt`);
+console.log("Privacy advertising/cookie/consent disclosures: present");
 console.log("Final source/build readiness gate passed.\n");
