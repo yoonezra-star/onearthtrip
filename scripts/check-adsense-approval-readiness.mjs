@@ -5,6 +5,7 @@ const root = process.cwd();
 const dist = path.join(root, "dist");
 const postsDir = path.join(root, "src", "content", "posts");
 const failures = [];
+const expectedCanonicalOrigin = "https://www.onearthtrip.com";
 
 function requireFile(relativePath) {
   const full = path.join(root, relativePath);
@@ -27,16 +28,46 @@ const trustPages = [
 ];
 for (const page of trustPages) requireFile(page);
 
+const siteSource = read("src/data/site.ts");
+const siteUrlMatch = siteSource.match(/\burl:\s*["'](https:\/\/[^"']+)["']/);
+const siteUrl = siteUrlMatch?.[1]?.replace(/\/+$/, "") ?? "";
+if (!siteUrl) {
+  failures.push("src/data/site.ts canonical site.url is missing");
+} else if (siteUrl !== expectedCanonicalOrigin) {
+  failures.push(`src/data/site.ts site.url must be ${expectedCanonicalOrigin}, found ${siteUrl}`);
+}
+
+const astroConfig = read("astro.config.mjs");
+const astroSiteMatch = astroConfig.match(/\bsite:\s*["'](https:\/\/[^"']+)["']/);
+const astroSite = astroSiteMatch?.[1]?.replace(/\/+$/, "") ?? "";
+if (!astroSite) {
+  failures.push("astro.config.mjs site origin is missing");
+} else if (astroSite !== expectedCanonicalOrigin) {
+  failures.push(`astro.config.mjs site must be ${expectedCanonicalOrigin}, found ${astroSite}`);
+}
+if (siteUrl && astroSite && siteUrl !== astroSite) {
+  failures.push(`canonical origin mismatch: site.ts=${siteUrl}, astro.config.mjs=${astroSite}`);
+}
+
 const robots = read("public/robots.txt");
 if (!robots.includes("User-agent: *") || !robots.includes("Allow: /")) {
   failures.push("robots.txt must allow normal crawling");
 }
-if (!robots.includes("https://www.onearthtrip.com/sitemap-index.xml")) {
-  failures.push("robots.txt must point to the canonical sitemap index");
+if (!robots.includes(`Sitemap: ${expectedCanonicalOrigin}/sitemap-index.xml`)) {
+  failures.push("robots.txt must point to the canonical www sitemap index");
 }
 
-requireFile("src/pages/sitemap-index.xml.ts");
-requireFile("src/pages/sitemap-0.xml.ts");
+const sitemapIndexSource = read("src/pages/sitemap-index.xml.ts");
+const sitemapSource = read("src/pages/sitemap-0.xml.ts");
+if (!sitemapIndexSource.includes('import { site } from "../data/site"')) {
+  failures.push("sitemap-index.xml.ts must derive its origin from shared site data");
+}
+if (!sitemapIndexSource.includes("${site.url}/sitemap-0.xml")) {
+  failures.push("sitemap-index.xml.ts must build sitemap location from site.url");
+}
+if (!sitemapSource.includes('import { site } from "../data/site"')) {
+  failures.push("sitemap-0.xml.ts must derive URL origins from shared site data");
+}
 
 const searchSource = read("src/pages/search.astro");
 if (!searchSource.includes('robots="noindex,follow"')) {
@@ -51,6 +82,9 @@ for (const marker of ["/author", "/editorial-policy", "content-basis", "field-no
 const baseLayout = read("src/layouts/BaseLayout.astro");
 for (const route of ["/search", "/contact", "/privacy", "/terms", "/about", "/author", "/editorial-policy"]) {
   if (!baseLayout.includes(`"${route}"`)) failures.push(`BaseLayout ad-free route missing: ${route}`);
+}
+if (!baseLayout.includes("new URL(canonicalPath, site.url)")) {
+  failures.push("BaseLayout canonical URLs must derive from shared site.url");
 }
 
 const publisherMatch = baseLayout.match(/client=(ca-pub-\d+)/);
@@ -147,6 +181,7 @@ console.log("Priority guide quality candidates: 0");
 console.log("Trust/legal pages: present");
 console.log("Author/editorial trust links: present on articles");
 console.log("Search indexing: noindex,follow");
+console.log(`Canonical origin consistency: ${expectedCanonicalOrigin} matches site.ts + Astro config + robots + sitemap sources`);
 console.log("Robots + sitemap discovery: configured");
 console.log("Ad-free utility/trust routes: declared");
 console.log(`AdSense publisher consistency: ${publisherId} matches script + account meta + ads.txt`);
