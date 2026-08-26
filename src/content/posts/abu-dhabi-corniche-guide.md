@@ -2,7 +2,7 @@
 title: "아부다비 Corniche 가이드: 해변·산책·자전거·저녁 동선"
 description: "아부다비 Corniche의 해변 구역, 산책로, 자전거, 가족 방문과 도심 관광지 사이 이동 동선을 정리했습니다."
 pubDate: 2026-08-25
-updatedDate: 2026-08-25
+updatedDate: 2026-08-26
 category: "아부다비 한인 생활"
 tags: ["Abu Dhabi Corniche", "Corniche Beach", "아부다비 해변", "아부다비 자전거"]
 permalink: "/2026/08/abu-dhabi-corniche-guide.html"
@@ -43,6 +43,12 @@ Corniche는 하루의 메인 관광지라기보다 도심 문화시설 사이를
 ## 이동 수단
 
 Experience Abu Dhabi 안내는 Corniche 주변에 무료 셔틀 Route B1과 여러 시내버스 노선이 연결된다고 안내합니다. 실제 정류장과 시간표는 변경될 수 있으므로 [아부다비 대중교통 가이드](/2026/08/abu-dhabi-public-transport-guide)와 공식 교통 앱을 함께 확인하는 편이 좋습니다.
+
+## 직접 기록에서는 당시 해안의 분위기만 본다
+
+On Earth Trip에는 [2012년 아부다비 해변의 저녁 직접 촬영 기록](/2012/09/abu-dhabi-evening-beach-2012)이 있습니다. 이 기록은 현재 Corniche Beach의 구역·시설·운영 방식을 설명하는 자료가 아니라, 당시 아부다비 해안과 저녁 풍경을 개인 사진으로 남긴 현장 기록입니다.
+
+현재 방문 계획은 이 가이드와 공식 안내를 기준으로 하고, 오래된 사진은 **장소가 생활 속에서 어떻게 보였는지 확인하는 기록**으로만 함께 봐 주세요.
 
 ## 방문 전 체크리스트
 
