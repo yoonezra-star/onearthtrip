@@ -251,14 +251,28 @@ const adsAllowed = adsAllowedOverride ?? !adFreeUtilityPaths.has(normalizedCurre
       gap: 6px;
     }
 
+    .header-contact {
+      display: none;
+    }
+
     .header-search-form input {
-      width: 86px;
-      padding-inline: 8px;
+      width: 76px;
+      padding-inline: 7px;
     }
 
     .header-search-form button {
-      padding-inline: 8px;
-      font-size: 0.78rem;
+      padding-inline: 7px;
+      font-size: 0.76rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .header-search-form input {
+      width: 62px;
+    }
+
+    .header-search-form button {
+      padding-inline: 6px;
     }
   }
 </style>
