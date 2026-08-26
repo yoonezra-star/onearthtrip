@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import { coreStoryPermalinks } from "../data/coreStories";
-import { getPosts, getPublicPath } from "../utils/posts";
+import { getPosts } from "../utils/posts";
 
 const posts = (await getPosts()).filter((post) => post.data.category === "과거·현재·미래");
 const fieldNotes = posts.filter((post) => post.data.contentType === "field-note");
@@ -10,69 +10,37 @@ const guides = posts.filter((post) => post.data.contentType !== "field-note");
 const corePosts = coreStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const uniquePosts = <T extends (typeof posts)[number]>(items: T[]) =>
+  items.filter((post, index, all) => all.findIndex((item) => item.data.permalink === post.data.permalink) === index);
+
+const featuredGuides = uniquePosts([
+  ...corePosts.filter((post) => post.data.contentType !== "field-note"),
+  ...guides
+]).slice(0, 6);
+const featuredFieldNotes = uniquePosts([
+  ...corePosts.filter((post) => post.data.contentType === "field-note"),
+  ...fieldNotes
+]).slice(0, 6);
 ---
 
-<BaseLayout title="UAE 과거·현재·미래 | On Earth Trip" description="아랍에미리트의 역사, 현재의 도시 풍경, 미래 비전을 현장 기록과 해설 가이드로 구분해 읽는 기록입니다.">
+<BaseLayout
+  title="UAE 과거·현재·미래 | 기록과 현재 정보를 구분해 읽기 | On Earth Trip"
+  description="UAE의 오래된 현장 기록, 현재 확인형 여행·생활 정보, 발표된 미래 계획을 서로 다른 근거로 구분해 읽는 큐레이션 페이지입니다."
+>
   <section class="page-hero">
     <div class="container page-hero-inner">
-      <p class="eyebrow">PAST PRESENT FUTURE</p>
-      <h1>UAE의 과거·현재·미래</h1>
-      <p class="lead">진주와 무역의 물길에서 초현대 도시, 그리고 2071년을 향한 국가 비전까지.</p>
-      <p class="page-summary">{fieldNotes.length}개 현장 기록 · {guides.length}개 시간·전망 가이드</p>
-      <div class="hero-actions" aria-label="콘텐츠 유형별 이동">
-        {fieldNotes.length > 0 && <a class="primary-link" href="#field-notes">직접 본 시대의 장면</a>}
-        {guides.length > 0 && <a class="secondary-link" href="#guides">역사·현재·미래 가이드</a>}
-        <a class="secondary-link" href="/field-notes">전체 UAE 현장 기록</a>
-      </div>
-    </div>
-  </section>
-
-  {corePosts.length > 0 && (
-    <section class="section">
-      <div class="container source-band">
-        <div>
-          <p class="eyebrow">CORE UAE PLANNING</p>
-          <h2>UAE 전체를 볼 때 먼저 읽을 핵심 글</h2>
-        </div>
-        <p>7개 토후국을 한 번에 나열하기보다 여행 목적과 이동 여건에 따라 고르는 계획 가이드를 이 주제의 중심 글로 둡니다.</p>
-        <div class="source-links">
-          {corePosts.map((post) => <a href={getPublicPath(post.data.permalink)}>{post.data.title}</a>)}
-        </div>
-      </div>
-    </section>
-  )}
-
-  {fieldNotes.length > 0 && (
-    <section class="section" id="field-notes">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">FIRST-HAND TIME RECORDS</p>
-            <h2>직접 남긴 시대의 현장 기록</h2>
-          </div>
-          <p>과거 사진이나 당시 경험은 그 시점의 장면으로만 읽습니다. 현재의 도시 상태나 미래 계획과 같은 사실처럼 섞지 않습니다.</p>
-        </div>
-        <div class="post-grid">
-          {fieldNotes.map((post) => <PostCard post={post} />)}
-        </div>
-      </div>
-    </section>
-  )}
-
-  <section class="section section-muted">
-    <div class="container source-band">
-      <div>
-        <p class="eyebrow">HOW TO READ TIME</p>
-        <h2>세 종류의 시간을 같은 사실처럼 다루지 않습니다</h2>
-      </div>
-      <p>
-        오래된 사진은 촬영 당시의 기록이고, 현재 생활 정보는 확인한 날짜까지 유효하며, 미래 비전은 발표된
-        목표입니다. 각 글에서 관찰 범위와 출처를 밝혀 이미 일어난 일과 앞으로의 계획이 섞이지 않도록 합니다.
+      <p class="eyebrow">PAST · PRESENT · FUTURE</p>
+      <h1>UAE의 시간을 같은 사실처럼 섞지 않습니다</h1>
+      <p class="lead">
+        직접 찍은 과거 사진은 그 시점의 기록으로, 현재 여행 정보는 확인 날짜와 공식 출처로, 미래 비전은 발표된 목표로 읽습니다.
+        이 페이지는 전체 글 목록보다 그 세 가지를 구분해 읽는 방법과 대표 기록을 먼저 보여 줍니다.
       </p>
-      <div class="source-links">
-        <a href="/field-notes">기록 연도별 현장 기록</a>
-        <a href="/reading-guide">콘텐츠 읽는 방법</a>
-        <a href="/editorial-policy">작성·수정 원칙</a>
+      <p class="page-summary">{fieldNotes.length}개 현장 기록 · {guides.length}개 역사·현재·미래 가이드</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="/field-notes">연도별 현장 기록 보기</a>
+        <a class="secondary-link" href="/2026/08/uae-personal-photo-archive">2012~2022 개인 사진 색인</a>
+        <a class="secondary-link" href="/editorial-policy">작성·수정 원칙</a>
       </div>
     </div>
   </section>
@@ -82,43 +50,84 @@ const corePosts = coreStoryPermalinks
       <div class="section-head">
         <div>
           <p class="eyebrow">THREE TIME LENSES</p>
-          <h2 id="time-lens-title">시간에 따라 확인 방법도 달라집니다</h2>
+          <h2 id="time-lens-title">과거·현재·미래는 확인 방법이 다릅니다</h2>
         </div>
+        <p>같은 UAE 이야기라도 기록의 종류에 따라 근거와 유효기간이 다릅니다.</p>
       </div>
       <div class="guide-path-grid">
         <a class="guide-path-card accent-clay" href="/field-notes">
-          <span>PAST · 기록 시점과 기억의 범위</span>
-          <h2>과거 기록</h2>
-          <p>직접 찍은 사진과 경험을 당시 기록 시점에 묶어 읽습니다. 오래된 장면을 현재 운영 정보로 사용하지 않습니다.</p>
+          <span>PAST · 촬영일과 경험 범위</span>
+          <h2>직접 남긴 과거 기록</h2>
+          <p>사진·영상과 개인 경험을 실제 기록 시점에 묶어 읽습니다. 당시 장면을 오늘의 운영 정보로 사용하지 않습니다.</p>
         </a>
         <a class="guide-path-card accent-teal" href="/trip-checklist">
           <span>PRESENT · 확인일과 공식 출처</span>
-          <h2>현재 정보</h2>
-          <p>가격, 시간, 절차처럼 바뀌는 정보는 확인 날짜와 공식 안내를 함께 살펴 실제 준비에 활용합니다.</p>
+          <h2>현재 여행·생활 정보</h2>
+          <p>입장, 가격, 교통, 절차처럼 바뀌는 내용은 확인 날짜와 현재 운영 주체의 안내를 함께 봅니다.</p>
         </a>
         <a class="guide-path-card accent-date" href="/editorial-policy">
           <span>FUTURE · 발표와 완성의 구분</span>
-          <h2>미래 전망</h2>
-          <p>국가 비전과 개발 계획은 발표된 목표로 표기하고, 이미 완성된 시설이나 확정된 사실처럼 단정하지 않습니다.</p>
+          <h2>미래 계획과 전망</h2>
+          <p>국가 비전과 개발 계획은 발표된 목표로 표시하고 이미 완성된 시설이나 확정된 결과처럼 단정하지 않습니다.</p>
         </a>
       </div>
     </div>
   </section>
 
-  {guides.length > 0 && (
-    <section class="section" id="guides">
+  {featuredGuides.length > 0 && (
+    <section class="section section-muted">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow">TIME GUIDES</p>
-            <h2>역사·현재·미래를 해석하는 가이드</h2>
+            <p class="eyebrow">CURATED GUIDES</p>
+            <h2>현재 맥락을 이해할 때 먼저 읽을 대표 가이드</h2>
           </div>
-          <p>현장 기록과 분리해, 역사적 맥락과 현재 확인 정보, 발표된 미래 계획을 출처와 시점을 기준으로 읽습니다.</p>
+          <p>전체 글을 한꺼번에 펼치지 않고, 역사·현재·미래를 구분해 읽는 데 도움이 되는 글만 먼저 골랐습니다.</p>
         </div>
         <div class="post-grid">
-          {guides.map((post) => <PostCard post={post} />)}
+          {featuredGuides.map((post) => <PostCard post={post} />)}
         </div>
       </div>
     </section>
   )}
+
+  {featuredFieldNotes.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">FIRST-HAND TIME RECORDS</p>
+            <h2>대표 직접 촬영·경험 기록</h2>
+          </div>
+          <p>게시 시점보다 각 글에 표시된 촬영·경험 시점을 우선해서 읽는 기록입니다. 전체 연도별 목록은 현장 기록 아카이브에서 볼 수 있습니다.</p>
+        </div>
+        <div class="post-grid">
+          {featuredFieldNotes.map((post) => <PostCard post={post} />)}
+        </div>
+        <div class="hero-actions">
+          <a class="primary-link" href="/field-notes">전체 연도별 현장 기록</a>
+          <a class="secondary-link" href="/2026/08/uae-personal-photo-archive">개인 사진·영상 색인</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section section-muted">
+    <div class="container source-band">
+      <div>
+        <p class="eyebrow">EDITORIAL BOUNDARY</p>
+        <h2>오래된 사진, 현재 정보, 미래 목표를 서로 대신 쓰지 않습니다</h2>
+      </div>
+      <p>
+        과거 사진은 당시의 증거이고 현재 이용 정보를 보증하지 않습니다. 현재 정보는 확인 날짜 이후 바뀔 수 있으며,
+        미래 계획은 발표된 목표이지 완성된 사실이 아닙니다. 이 구분이 On Earth Trip의 기록과 실용 가이드를 함께 읽는 기준입니다.
+      </p>
+      <div class="source-links">
+        <a href="/about">사이트 소개</a>
+        <a href="/author">운영자·작성자</a>
+        <a href="/editorial-policy">작성·수정 원칙</a>
+        <a href="/search">사이트 검색</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
