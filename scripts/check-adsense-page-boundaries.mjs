@@ -2,10 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 
 const distDir = path.join(process.cwd(), "dist");
-const adsenseMarkers = [
-  "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-  "ca-pub-6918910185244897"
-];
+const adsenseLoaderMarker = "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+const publisherId = "ca-pub-6918910185244897";
+const accountMetaMarker = `name=\"google-adsense-account\" content=\"${publisherId}\"`;
 
 const adFreeRoutes = [
   "/search",
@@ -34,13 +33,20 @@ function readRoute(route) {
 const violations = [];
 for (const route of adFreeRoutes) {
   const html = readRoute(route);
-  const found = adsenseMarkers.filter((marker) => html.includes(marker));
-  if (found.length > 0) violations.push(`${route}: ${found.join(", ")}`);
+  if (html.includes(adsenseLoaderMarker)) {
+    violations.push(`${route}: AdSense loader script must not be present`);
+  }
+  if (!html.includes(accountMetaMarker)) {
+    violations.push(`${route}: AdSense account verification meta should remain present`);
+  }
 }
 
 const homeHtml = readRoute("/");
-if (!adsenseMarkers.every((marker) => homeHtml.includes(marker))) {
-  violations.push("/: expected AdSense loader/client marker is missing from the main content surface");
+if (!homeHtml.includes(adsenseLoaderMarker)) {
+  violations.push("/: expected AdSense loader is missing from the main content surface");
+}
+if (!homeHtml.includes(accountMetaMarker)) {
+  violations.push("/: expected AdSense account verification meta is missing");
 }
 
 if (violations.length > 0) {
@@ -49,4 +55,4 @@ if (violations.length > 0) {
   process.exit(1);
 }
 
-console.log(`AdSense page-boundary validation passed: ${adFreeRoutes.length} utility/trust pages are ad-free; homepage keeps the site-level loader.`);
+console.log(`AdSense page-boundary validation passed: ${adFreeRoutes.length} utility/trust pages keep account verification meta without loading the ad script; homepage keeps both.`);
