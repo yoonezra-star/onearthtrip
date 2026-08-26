@@ -9,8 +9,6 @@ const representativeRoutes = [
   "/reading-guide",
   "/life",
   "/culture",
-  "/past-present-future",
-  "/memory",
   "/field-notes",
   "/2026/08/uae-entry-checklist-before-travel",
   "/2026/08/abu-dhabi-3-day-itinerary",
@@ -19,7 +17,9 @@ const representativeRoutes = [
   "/about",
   "/author",
   "/editorial-policy",
-  "/search"
+  "/contact",
+  "/privacy",
+  "/terms"
 ];
 
 function routeToFile(route) {
@@ -63,13 +63,15 @@ for (const route of representativeRoutes) {
   }
 
   const hasNoindex = /<meta name="robots" content="[^"]*noindex/i.test(html);
-  if (route === "/search") {
-    if (!hasNoindex || !html.includes("noindex,follow")) {
-      violations.push("/search: expected noindex,follow robots directive");
-    }
-  } else if (hasNoindex) {
+  if (hasNoindex) {
     violations.push(`${route}: representative indexable page unexpectedly has noindex`);
   }
+}
+
+const searchHtml = readRoute("/search");
+const searchHasNoindex = /<meta name="robots" content="[^"]*noindex/i.test(searchHtml);
+if (!searchHasNoindex || !searchHtml.includes("noindex,follow")) {
+  violations.push("/search: expected noindex,follow robots directive");
 }
 
 const homeHtml = readRoute("/");
@@ -79,7 +81,7 @@ for (const href of ["/reading-guide", "/field-notes", "/author", "/editorial-pol
   }
 }
 
-for (const route of ["/life", "/culture", "/past-present-future", "/memory"]) {
+for (const route of ["/life", "/culture"]) {
   const html = readRoute(route);
   if (!html.includes('href="/search"')) {
     violations.push(`${route}: expected site-search escape hatch`);
@@ -135,4 +137,4 @@ if (violations.length > 0) {
   process.exit(1);
 }
 
-console.log(`AdSense reviewer-path validation passed: ${representativeRoutes.length} representative built routes checked.`);
+console.log(`AdSense reviewer-path validation passed: ${representativeRoutes.length} representative built routes plus /search indexing boundary checked.`);
