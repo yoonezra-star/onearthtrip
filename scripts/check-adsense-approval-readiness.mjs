@@ -59,6 +59,14 @@ if (!publisherId) {
   failures.push("BaseLayout AdSense publisher client id is missing");
 }
 
+const accountMetaMatch = baseLayout.match(/google-adsense-account["']\s+content=["'](ca-pub-\d+)/);
+const accountMetaId = accountMetaMatch?.[1] ?? "";
+if (!accountMetaId) {
+  failures.push("BaseLayout google-adsense-account meta is missing");
+} else if (publisherId && accountMetaId !== publisherId) {
+  failures.push(`google-adsense-account meta ${accountMetaId} does not match script publisher ${publisherId}`);
+}
+
 const adsTxt = read("public/ads.txt").trim();
 if (!adsTxt) {
   failures.push("public/ads.txt is empty");
@@ -141,6 +149,6 @@ console.log("Author/editorial trust links: present on articles");
 console.log("Search indexing: noindex,follow");
 console.log("Robots + sitemap discovery: configured");
 console.log("Ad-free utility/trust routes: declared");
-console.log(`AdSense publisher consistency: ${publisherId} matches ads.txt`);
+console.log(`AdSense publisher consistency: ${publisherId} matches script + account meta + ads.txt`);
 console.log("Privacy advertising/cookie/consent disclosures: present");
 console.log("Final source/build readiness gate passed.\n");
