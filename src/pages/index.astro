@@ -53,82 +53,42 @@ const startHere = [
   {
     href: "/trip-checklist",
     label: "UAE 여행 준비",
-    description: "입국·날씨·이동·문화 공간 방문 전에 확인할 항목을 체크합니다."
-  },
-  {
-    href: "/connectivity-guide",
-    label: "유심·eSIM·인터넷",
-    description: "공항 무료 Wi-Fi, 무료 관광객 eSIM, e&·du와 로밍을 도착 순서대로 확인합니다."
-  },
-  {
-    href: "/travel-apps-guide",
-    label: "여행 앱·디지털 도구",
-    description: "Darbi·택시 앱·오프라인 지도·공항·번역·긴급연락 도구를 출국 전에 준비합니다."
-  },
-  {
-    href: "/driving-guide",
-    label: "렌터카·운전·주차",
-    description: "면허·공항 렌터카, Darb 통행료, MAWAQiF 주차와 ADNOC 주유를 확인합니다."
-  },
-  {
-    href: "/intercity-guide",
-    label: "아부다비↔두바이 이동",
-    description: "E100·E101 버스, 택시·호출차, 렌터카와 AUH 공항 셔틀을 비교합니다."
-  },
-  {
-    href: "/al-ain-guide",
-    label: "알아인 이동·당일치기",
-    description: "시외버스·렌터카와 Al Ain Oasis·Jebel Hafeet을 하루 일정으로 연결합니다."
-  },
-  {
-    href: "/where-to-stay",
-    label: "아부다비 숙소 지역 고르기",
-    description: "Corniche·도심, Yas, Saadiyat, 공항권을 이동 동선과 여행 목적별로 비교합니다."
-  },
-  {
-    href: "/travel-costs",
-    label: "교통비·여행예산 계산",
-    description: "공항·Yas·Saadiyat 이동비와 3일·5일 예산을 공식 요금 기준으로 계산합니다."
-  },
-  {
-    href: "/money-guide",
-    label: "환전·결제 준비",
-    description: "AED 환전, 현금·카드, ATM, 팁과 서비스비를 여행 전에 확인합니다."
-  },
-  {
-    href: "/food-guide",
-    label: "음식·식비 계획",
-    description: "하루 식비, Emirati 음식, 쇼핑몰 식사와 가족여행 끼니를 따로 봅니다."
-  },
-  {
-    href: "/shopping-guide",
-    label: "쇼핑·VAT 환급",
-    description: "관광객 VAT 환급, 공항 절차, 쇼핑몰·기념품과 쇼핑 예산을 확인합니다."
+    description: "입국·날씨·통신·이동처럼 출발 전에 확인할 항목을 한 번에 정리합니다."
   },
   {
     href: "/2026/08/abu-dhabi-3-day-itinerary",
     label: "아부다비 일정 짜기",
-    description: "3일·5일 일정과 Yas·Saadiyat·가족여행 동선을 여행 기간에 맞춰 고릅니다."
+    description: "3일 일정에서 시작해 5일 일정과 지역별 동선으로 확장합니다."
   },
   {
     href: "/attractions",
     label: "아부다비 관광지 고르기",
-    description: "도심·Saadiyat·Yas 관광지를 관심사와 동행자에 맞춰 비교합니다."
+    description: "Downtown·Saadiyat·Yas 관광지를 관심사와 동행자에 맞춰 비교합니다."
+  },
+  {
+    href: "/where-to-stay",
+    label: "숙소 지역 고르기",
+    description: "Corniche·Yas·Saadiyat·공항권을 이동 동선과 여행 목적별로 비교합니다."
+  },
+  {
+    href: "/travel-costs",
+    label: "교통비·여행예산",
+    description: "공항·관광지 이동비와 3일·5일 현지 예산을 공식 요금 기준으로 계산합니다."
   },
   {
     href: "/life",
     label: "아부다비 생활",
-    description: "날씨, 이동, 생활 적응과 한인 생활 관련 글을 먼저 봅니다."
+    description: "날씨, 이동, 생활 적응과 현지에서 지내며 알게 된 생활 정보를 봅니다."
   },
   {
     href: "/culture",
     label: "UAE 문화 이해",
-    description: "라마단, 마즐리스, 오드와 현지 예절의 맥락을 읽습니다."
+    description: "라마단, 마즐리스, 오드와 현지 예절을 문화적 맥락과 함께 읽습니다."
   },
   {
     href: "/field-notes",
     label: "직접 촬영 현장 기록",
-    description: "작성자가 직접 경험하고 촬영한 사진·영상 기록을 연도별로 봅니다."
+    description: "작성자가 직접 경험하고 촬영한 사진·영상 기록을 실제 기록 시점별로 봅니다."
   }
 ];
 
@@ -152,20 +112,8 @@ const homePageJson = {
     { "@type": "Thing", name: "UAE 여행" },
     { "@type": "Thing", name: "아부다비 생활" },
     { "@type": "Thing", name: "UAE 문화" },
-    { "@type": "Thing", name: "UAE eSIM" },
-    { "@type": "Thing", name: "아부다비 여행 앱" },
-    { "@type": "Thing", name: "아부다비 렌터카" },
-    { "@type": "Thing", name: "아부다비 두바이 이동" },
-    { "@type": "Thing", name: "알아인 여행" },
-    { "@type": "Thing", name: "Al Ain Oasis" },
-    { "@type": "Thing", name: "아부다비 숙소" },
-    { "@type": "Thing", name: "아부다비 교통비" },
-    { "@type": "Thing", name: "아부다비 여행 예산" },
-    { "@type": "Thing", name: "AED 환전" },
-    { "@type": "Thing", name: "아부다비 식비" },
-    { "@type": "Thing", name: "아부다비 쇼핑" },
-    { "@type": "Thing", name: "UAE VAT refund" },
-    { "@type": "Thing", name: "아부다비 관광지" },
+    { "@type": "Thing", name: "UAE 여행 준비" },
+    { "@type": "Thing", name: "아부다비 관광" },
     { "@type": "Thing", name: "UAE 현장 기록" }
   ]
 };
@@ -195,16 +143,9 @@ const hubListJson = {
         </p>
         <div class="hero-actions" aria-label="주요 이동">
           <a class="primary-link" href="/reading-guide">처음부터 읽기</a>
-          <a class="secondary-link" href="/connectivity-guide">유심·eSIM</a>
-          <a class="secondary-link" href="/travel-apps-guide">여행 앱</a>
-          <a class="secondary-link" href="/driving-guide">렌터카·운전</a>
-          <a class="secondary-link" href="/intercity-guide">두바이 이동</a>
-          <a class="secondary-link" href="/al-ain-guide">알아인 당일치기</a>
-          <a class="secondary-link" href="/where-to-stay">숙소 지역 고르기</a>
-          <a class="secondary-link" href="/travel-costs">여행비용 계산</a>
-          <a class="secondary-link" href="/shopping-guide">쇼핑·VAT 환급</a>
-          <a class="secondary-link" href="/2026/08/abu-dhabi-3-day-itinerary">3일 일정 보기</a>
-          <a class="secondary-link" href="/attractions">관광지 고르기</a>
+          <a class="secondary-link" href="/trip-checklist">여행 준비</a>
+          <a class="secondary-link" href="/2026/08/abu-dhabi-3-day-itinerary">3일 일정</a>
+          <a class="secondary-link" href="/field-notes">직접 촬영 기록</a>
         </div>
       </div>
 
@@ -230,18 +171,24 @@ const hubListJson = {
   </section>
 
   <section class="section trust-band">
-    <div class="container trust-grid" aria-label="사이트 운영 기준">
-      <div>
-        <strong>{posts.length}</strong>
-        <span>개의 UAE 기록</span>
+    <div class="container">
+      <div class="trust-grid" aria-label="사이트 운영 기준">
+        <div>
+          <strong>{posts.length}</strong>
+          <span>개의 UAE 기록</span>
+        </div>
+        <div>
+          <strong>{fieldNotes.length}</strong>
+          <span>개의 직접 경험 현장 기록</span>
+        </div>
+        <div>
+          <strong>경험 + 확인</strong>
+          <span>개인 기록과 공개 자료를 구분해 작성</span>
+        </div>
       </div>
-      <div>
-        <strong>{fieldNotes.length}</strong>
-        <span>개의 직접 경험 현장 기록</span>
-      </div>
-      <div>
-        <strong>경험 + 확인</strong>
-        <span>개인 기록과 공개 자료를 구분해 작성</span>
+      <div class="hero-actions" aria-label="사이트 신뢰 정보">
+        <a class="secondary-link" href="/author">운영자 소개</a>
+        <a class="secondary-link" href="/editorial-policy">작성·수정 원칙</a>
       </div>
     </div>
   </section>
@@ -251,9 +198,9 @@ const hubListJson = {
       <div class="section-head">
         <div>
           <p class="eyebrow">START HERE</p>
-          <h2>UAE 여행과 생활, 목적별로 바로 보기</h2>
+          <h2>UAE 여행과 생활, 8개 핵심 경로부터</h2>
         </div>
-        <p>처음 방문하는 여행자와 현지 생활 기록을 찾는 독자가 가장 필요한 페이지부터 바로 이동할 수 있습니다.</p>
+        <p>세부 통신·앱·운전·환전·음식·쇼핑 가이드는 읽기 길잡이와 사이트 검색에서 이어서 찾을 수 있습니다.</p>
       </div>
       <div class="guide-path-grid">
         {startHere.map((item, index) => (
@@ -268,7 +215,8 @@ const hubListJson = {
       </div>
       <div class="hero-actions" aria-label="핵심 아카이브 바로가기">
         <a class="secondary-link" href="/2026/08/uae-personal-photo-archive">2012~2022 개인 사진 아카이브</a>
-        <a class="secondary-link" href="/reading-guide">UAE 읽기 길잡이</a>
+        <a class="secondary-link" href="/reading-guide">세부 여행 가이드 전체 보기</a>
+        <a class="secondary-link" href="/search">사이트 검색</a>
       </div>
     </div>
   </section>
