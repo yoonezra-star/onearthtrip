@@ -46,6 +46,9 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      - name: Check AdSense reviewer path
+        run: npm run check:review-path
+
       - name: Check AdSense page boundaries
         run: npm run check:adsense-pages
 
