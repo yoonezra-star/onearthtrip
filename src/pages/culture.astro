@@ -10,31 +10,96 @@ const guides = posts.filter((post) => post.data.contentType !== "field-note");
 const corePosts = coreStoryPermalinks
   .map((permalink) => posts.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
+
+const featuredCulturePermalinks = [
+  "/2026/08/uae-culture-etiquette-first-visit.html",
+  "/2026/08/sheikh-zayed-grand-mosque-visit-guide.html",
+  "/2026/08/uae-public-holidays-ramadan-travel-planning.html",
+  "/2026/08/emirati-food-first-timer-guide.html",
+  "/2026/08/qasr-al-hosn-visit-guide.html",
+  "/2026/08/heritage-village-abu-dhabi-guide.html"
+] as const;
+
+const featuredGuides = featuredCulturePermalinks
+  .map((permalink) => guides.find((post) => post.data.permalink === permalink))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const recentFieldNotes = fieldNotes.slice(0, 6);
 ---
 
-<BaseLayout title="UAE 문화 | On Earth Trip" description="라마단, 마즐리스, 대추야자, 향, 차 문화처럼 UAE 생활 속 문화를 경험 기록과 확인 가이드로 나눠 정리합니다.">
+<BaseLayout
+  title="UAE 문화·예절·현장 기록 | On Earth Trip"
+  description="UAE 문화 공간의 방문 예절, 라마단·공휴일, Emirati 음식과 역사 공간을 현재 확인 가이드와 직접 경험 기록으로 구분해 정리합니다."
+>
   <section class="page-hero">
     <div class="container page-hero-inner">
       <p class="eyebrow">UAE CULTURE</p>
-      <h1>UAE 문화</h1>
-      <p class="lead">사람을 대하는 방식, 환대의 언어, 계절의 냄새처럼 문화가 생활이 되는 순간들.</p>
-      <p class="page-summary">{fieldNotes.length}개 현장 기록 · {guides.length}개 문화 가이드</p>
-      <div class="hero-actions" aria-label="콘텐츠 유형별 이동">
-        {fieldNotes.length > 0 && <a class="primary-link" href="#field-notes">직접 본 문화 현장</a>}
-        {guides.length > 0 && <a class="secondary-link" href="#guides">문화 가이드</a>}
-        <a class="secondary-link" href="/field-notes">전체 UAE 현장 기록</a>
+      <h1>UAE 문화·예절·현장 기록</h1>
+      <p class="lead">한 번의 경험을 UAE 문화 전체로 일반화하지 않고, 현재 확인이 필요한 규칙과 개인이 직접 본 장면을 구분해 읽습니다.</p>
+      <p class="page-summary">{guides.length}개 문화 가이드 · {fieldNotes.length}개 직접 경험 기록</p>
+      <div class="hero-actions" aria-label="문화 허브 주요 이동">
+        <a class="primary-link" href="#start-here">문화 이해 4개 경로</a>
+        <a class="secondary-link" href="#featured-guides">대표 문화 가이드</a>
+        {recentFieldNotes.length > 0 && <a class="secondary-link" href="#field-notes">직접 본 문화 현장</a>}
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-path-section" id="start-here">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">START HERE</p>
+          <h2>문화는 목적에 맞는 맥락부터 읽기</h2>
+        </div>
+        <p>예절·종교 일정·음식·역사 공간을 따로 나눠, 지금 방문하거나 이해하려는 주제부터 들어갑니다.</p>
+      </div>
+      <div class="guide-path-grid">
+        <a class="guide-path-card accent-teal" href="/2026/08/uae-culture-etiquette-first-visit">
+          <span>01</span>
+          <h2>방문 예절·모스크</h2>
+          <p>복장·촬영·현장 안내를 읽는 방법과 셰이크 자이드 그랜드 모스크 방문 준비를 확인합니다.</p>
+        </a>
+        <a class="guide-path-card accent-date" href="/2026/08/uae-public-holidays-ramadan-travel-planning">
+          <span>02</span>
+          <h2>라마단·공휴일</h2>
+          <p>종교 일정과 공휴일이 운영시간·식사·관광 동선에 어떤 영향을 주는지 현재 안내 기준으로 봅니다.</p>
+        </a>
+        <a class="guide-path-card accent-date" href="/food-guide">
+          <span>03</span>
+          <h2>음식·환대 문화</h2>
+          <p>Emirati 음식, 대추야자, 커피와 식사 경험을 실용 가이드와 개인 기록으로 나눠 읽습니다.</p>
+        </a>
+        <a class="guide-path-card accent-clay" href="/downtown-attractions">
+          <span>04</span>
+          <h2>역사·문화 공간</h2>
+          <p>Qasr Al Hosn, Heritage Village와 도심 문화 공간을 현재 방문 정보와 역사적 맥락으로 살펴봅니다.</p>
+        </a>
+      </div>
+      <div class="source-band">
+        <div>
+          <p class="eyebrow">RELATED HUBS</p>
+          <h2>문화와 연결된 전문 허브</h2>
+        </div>
+        <div class="source-links">
+          <a href="/food-guide">음식·식비 허브</a>
+          <a href="/shopping-guide">기념품·쇼핑·VAT</a>
+          <a href="/attractions">아부다비 관광지</a>
+          <a href="/field-notes">전체 직접 촬영 기록</a>
+          <a href="/2026/08/uae-personal-photo-archive">개인 사진 아카이브</a>
+          <a href="/editorial-policy">작성·수정 원칙</a>
+        </div>
       </div>
     </div>
   </section>
 
   {corePosts.length > 0 && (
-    <section class="section">
+    <section class="section section-muted">
       <div class="container source-band">
         <div>
           <p class="eyebrow">CORE CULTURE STORIES</p>
           <h2>UAE 문화를 이해할 때 먼저 읽을 핵심 글</h2>
         </div>
-        <p>현재 방문 규칙을 확인하는 문화 가이드와, 셰이크 자이드 그랜드 모스크를 직접 촬영한 현장 기록을 함께 연결합니다.</p>
+        <p>현재 방문 규칙을 확인하는 가이드와 직접 촬영한 기록을 함께 연결하되, 두 종류의 근거를 서로 대신하지 않도록 구분합니다.</p>
         <div class="source-links">
           {corePosts.map((post) => <a href={getPublicPath(post.data.permalink)}>{post.data.title}</a>)}
         </div>
@@ -42,55 +107,54 @@ const corePosts = coreStoryPermalinks
     </section>
   )}
 
-  {fieldNotes.length > 0 && (
-    <section class="section" id="field-notes">
+  {featuredGuides.length > 0 && (
+    <section class="section" id="featured-guides">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">FEATURED CULTURE GUIDES</p>
+            <h2>현재 방문과 이해를 위한 대표 문화 가이드</h2>
+          </div>
+          <p>모든 문화 글을 한 화면에 펼치지 않고, 방문 예절·종교 일정·음식·역사 공간을 대표하는 글만 먼저 보여 줍니다.</p>
+        </div>
+        <div class="post-grid">
+          {featuredGuides.map((post) => <PostCard post={post} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {recentFieldNotes.length > 0 && (
+    <section class="section section-muted" id="field-notes">
       <div class="container">
         <div class="section-head">
           <div>
             <p class="eyebrow">FIRST-HAND CULTURE RECORDS</p>
-            <h2>직접 보고 촬영한 문화 현장 기록</h2>
+            <h2>직접 보고 촬영한 최근 문화 현장 기록</h2>
           </div>
-          <p>한 번의 행사나 방문을 UAE 문화 전체로 일반화하지 않고, 촬영 시점과 확인 가능한 장면의 범위를 함께 남깁니다.</p>
+          <p>개인이 본 장면의 시기·장소·관찰 범위를 밝히고, 한 번의 방문을 UAE 전체 문화의 일반 규칙처럼 설명하지 않습니다.</p>
         </div>
         <div class="post-grid">
-          {fieldNotes.map((post) => <PostCard post={post} />)}
+          {recentFieldNotes.map((post) => <PostCard post={post} />)}
+        </div>
+        <div class="hero-actions">
+          <a class="primary-link" href="/field-notes">전체 직접 촬영 기록 보기</a>
+          <a class="secondary-link" href="/2026/08/uae-personal-photo-archive">연도별 개인 사진 아카이브</a>
         </div>
       </div>
     </section>
   )}
 
-  <section class="section section-muted">
-    <div class="container source-band">
-      <div>
-        <p class="eyebrow">HOW WE RECORD CULTURE</p>
-        <h2>경험 기록과 현재 방문 정보를 구분합니다</h2>
-      </div>
+  <section class="section">
+    <div class="container note-panel">
+      <p class="eyebrow">HOW WE RECORD CULTURE</p>
+      <h2>경험·해석·현재 규칙을 같은 근거로 취급하지 않습니다</h2>
       <p>
-        개인이 경험한 자리와 오래된 사진은 시기·장소·관찰 범위를 함께 밝힙니다. 문화적 의미는 확인 가능한
-        자료와 구분하고, 복장·촬영·입장처럼 달라질 수 있는 규정은 현재 운영 주체의 안내를 우선합니다.
+        오래된 사진과 개인 경험은 당시 장면을 보여 주는 기록입니다. 복장·촬영·입장·운영시간처럼 현재 방문에 영향을 주는
+        정보는 운영 주체의 최신 공식 안내를 우선하고, 문화적 의미를 설명할 때도 개인 경험의 범위를 넘어 일반화하지 않습니다.
       </p>
-      <div class="source-links">
-        <a href="/field-notes">기록 연도별 현장 기록</a>
-        <a href="/2026/08/uae-culture-etiquette-first-visit">문화 공간 방문 준비</a>
-        <a href="/editorial-policy">작성·수정 원칙</a>
-      </div>
+      <a class="secondary-link" href="/editorial-policy">작성·수정 원칙</a>
+      <a class="secondary-link" href="/search">사이트 전체 검색</a>
     </div>
   </section>
-
-  {guides.length > 0 && (
-    <section class="section" id="guides">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">CULTURE GUIDES</p>
-            <h2>현재 방문과 이해를 위한 문화 가이드</h2>
-          </div>
-          <p>현장 사진의 기억과 분리해, 방문 준비와 문화적 맥락을 현재 기준으로 확인할 수 있는 글입니다.</p>
-        </div>
-        <div class="post-grid">
-          {guides.map((post) => <PostCard post={post} />)}
-        </div>
-      </div>
-    </section>
-  )}
 </BaseLayout>
