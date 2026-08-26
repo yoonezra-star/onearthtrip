@@ -2,7 +2,7 @@
 title: "UAE 현지 음식 처음 먹을 때: Machboos·Chebab·Luqaimat 고르는 법"
 description: "UAE 전통 음식이 처음인 여행자를 위해 Machboos, Chebab, Regag, Thareed, Madrooba, Luqaimat의 특징과 주문 순서를 정리했습니다."
 pubDate: "2026-08-25T18:47:00+09:00"
-updatedDate: "2026-08-25T18:47:00+09:00"
+updatedDate: "2026-08-26T14:50:00+09:00"
 author: "아부라이프"
 category: "UAE 문화"
 tags: ["UAE 음식", "Emirati cuisine", "Machboos", "Luqaimat", "아부다비 음식"]
@@ -57,6 +57,12 @@ Luqaimat는 겉은 바삭하고 속은 부드러운 작은 튀김 반죽에 달�
 
 Emirati 음식은 가족·친구와 함께 나누는 식문화와 연결돼 있습니다. 여러 사람이 함께 먹는 여행이라면 한 사람당 하나씩 같은 메뉴를 주문하기보다 서로 다른 메뉴를 조금씩 나누는 방식이 문화적 맥락을 이해하는 데도 도움이 됩니다.
 
+## 직접 기록에서는 대추야자가 일상에 들어오는 장면을 본다
+
+On Earth Trip에는 [UAE 마트에서 대추야자를 처음 비교해 본 직접 경험 기록](/2026/04/dates)이 있습니다. 여러 포장과 식감을 직접 골라 본 개인 기록으로, 특정 품종의 우열이나 영양·건강 효과를 설명하는 구매 가이드는 아닙니다.
+
+공식 음식 정보와 실제 생활 속에서 낯선 음식이 익숙해지는 경험을 분리해서 보면, Emirati 음식 문화를 한쪽 정보만으로 일반화하지 않는 데 도움이 됩니다.
+
 ## 라마단 기간에는 운영시간을 따로 확인한다
 
 라마단과 Eid 기간에는 식당 운영시간과 식사 시간이 평소와 달라질 수 있습니다. 일정이 해당 기간과 겹친다면 [UAE 공휴일·라마단 여행 일정 가이드](/2026/08/uae-public-holidays-ramadan-travel-planning)를 먼저 확인하세요.
@@ -72,3 +78,4 @@ Emirati 음식은 가족·친구와 함께 나누는 식문화와 연결돼 있�
 - [아부다비 음식·식비 허브](/food-guide)
 - [아부다비 하루 식비 계산](/2026/08/abu-dhabi-daily-food-budget)
 - [아부다비 가족여행 식사 계획](/2026/08/abu-dhabi-family-meal-planning-guide)
+- [직접 기록: UAE 마트에서 대추야자를 처음 고른 날](/2026/04/dates)
