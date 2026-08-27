@@ -2,12 +2,12 @@
 title: "아부다비의 12월, 호텔 로비에서 만난 큰 크리스마스 트리: 2012년 생활 사진 기록"
 description: "2012년 12월 아부다비 호텔 로비에서 직접 촬영한 크리스마스 트리와 같은 해 다른 호텔에서 찍은 천장 장식 사진을 바탕으로, 여러 문화가 한 도시의 일상에 겹쳐 있던 순간을 기록합니다."
 pubDate: "2012-12-23T16:00:00+04:00"
-updatedDate: "2026-08-24T23:05:00+09:00"
+updatedDate: "2026-08-27T09:45:00+09:00"
 author: "아부라이프"
 category: "UAE 문화"
 tags: ["아부다비 12월", "크리스마스", "호텔 로비", "2012년 UAE", "UAE 문화", "사진 기록"]
 permalink: "/2012/12/abu-dhabi-christmas-2012.html"
-heroImage: "/images/actual/abu-dhabi-christmas-lobby-2012.webp"
+heroImage: "/images/actual/abu-dhabi-christmas-lobby-2012-mosaic.webp"
 contentType: "field-note"
 fieldNote:
   label: "기록 범위: 2012년 12월 아부다비 호텔 로비의 크리스마스 장식과 2012년 7월 다른 호텔 실내에서 직접 촬영한 개인 기록"
@@ -24,7 +24,7 @@ fieldNote:
 
 아부다비의 12월은 한국의 겨울과 감각이 달랐습니다. 거리에서 두꺼운 외투와 차가운 공기를 먼저 느끼는 대신, 비교적 바깥 활동이 편해진 날씨와 실내 곳곳에 등장한 연말 장식이 달력의 변화를 알려 주었습니다.
 
-![2012년 12월 아부다비 호텔 로비에서 직접 촬영한 큰 크리스마스 트리](/images/actual/abu-dhabi-christmas-lobby-2012.webp)
+![2012년 12월 아부다비 호텔 로비에서 직접 촬영한 큰 크리스마스 트리](/images/actual/abu-dhabi-christmas-lobby-2012-mosaic.webp)
 
 사진 속 트리는 로비의 중심을 거의 채울 만큼 커 보였습니다. 가까이 다가가면 장식 하나하나보다 위로 길게 이어지는 전체 높이가 먼저 눈에 들어왔습니다. 여러 층의 난간과 비교하면서 규모를 가늠하게 됐고, 자연스럽게 고개를 들어 천장 쪽까지 바라보게 됐습니다.
 
