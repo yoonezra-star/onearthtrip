@@ -8,10 +8,10 @@ const publicRoot = resolve(root, "public");
 const publicVideoDir = resolve(publicRoot, "videos", "actual");
 const maxVideoBytes = 25 * 1024 * 1024;
 const minVideoBytes = 100 * 1024;
-const exactDubaiVideo = "media/dubai-fountain-2012-mosaic-v3.mp4";
-const exactDubaiVideoPublicPath = "/videos/actual/dubai-fountain-2012-mosaic-v3.mp4";
-const exactDubaiVideoBytes = 64463666;
-const exactDubaiVideoSha256 = "fbadd3e1b653a83083467f03603c271e76c60f633a6f1f0f79a7307c7b824632";
+const exactDubaiVideo = "public/videos/actual/dubai-fountain-2012-mosaic-v4.mp4";
+const exactDubaiVideoPublicPath = "/videos/actual/dubai-fountain-2012-mosaic-v4.mp4";
+const exactDubaiVideoBytes = 24426606;
+const exactDubaiVideoSha256 = "f1094d954aca3d3488489d2469e21e4a9e5ed8ea1b9475d4e3bf8f3c2dea4d30";
 const issues = [];
 const referencedVideos = new Set();
 

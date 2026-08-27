@@ -2,8 +2,8 @@ const canonicalOrigin = "https://www.onearthtrip.com";
 const apexOrigin = "https://onearthtrip.com";
 const publisherId = "ca-pub-6918910185244897";
 const adsTxtLine = "google.com, pub-6918910185244897, DIRECT, f08c47fec0942fa0";
-const dubaiMosaicVideoPath = "/videos/actual/dubai-fountain-2012-mosaic-v3.mp4";
-const dubaiMosaicVideoBytes = 64463666;
+const dubaiMosaicVideoPath = "/videos/actual/dubai-fountain-2012-mosaic-v4.mp4";
+const dubaiMosaicVideoBytes = 24426606;
 
 const failures = [];
 

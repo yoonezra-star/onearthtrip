@@ -60,7 +60,7 @@ fieldNote:
 
 <figure class="article-media">
   <video controls preload="metadata" playsinline poster="/images/actual/dubai-fountain-video-2012.webp">
-    <source src="/videos/actual/dubai-fountain-2012-mosaic-v3.mp4" type="video/mp4" />
+    <source src="/videos/actual/dubai-fountain-2012-mosaic-v4.mp4" type="video/mp4" />
     이 브라우저에서는 영상을 재생할 수 없습니다.
   </video>
   <figcaption>2012년 3월 24일 두바이에서 직접 촬영한 음악분수 영상. 당시 관람객의 움직임과 현장 소리가 함께 담겨 있습니다.</figcaption>
