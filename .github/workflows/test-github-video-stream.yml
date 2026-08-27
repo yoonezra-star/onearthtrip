@@ -1,0 +1,23 @@
+name: Test GitHub video streaming
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/test-github-video-stream.yml
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test raw GitHub MP4 range response
+        run: |
+          curl -sS -L -D /tmp/headers.txt -o /tmp/chunk.bin \
+            -H 'Range: bytes=0-1023' \
+            'https://raw.githubusercontent.com/yoonezra-star/onearthtrip/main/public/videos/actual/dubai-fountain-2012-mosaic-v3.mp4'
+          cat /tmp/headers.txt
+          echo "chunk-bytes=$(stat -c%s /tmp/chunk.bin)"
+          grep -iE '^(HTTP/|content-type:|content-range:|accept-ranges:|access-control-allow-origin:)' /tmp/headers.txt || true
