@@ -8,7 +8,8 @@ const publicRoot = resolve(root, "public");
 const publicVideoDir = resolve(publicRoot, "videos", "actual");
 const maxVideoBytes = 25 * 1024 * 1024;
 const minVideoBytes = 100 * 1024;
-const exactDubaiVideo = "public/videos/actual/dubai-fountain-2012-mosaic-v3.mp4";
+const exactDubaiVideo = "media/dubai-fountain-2012-mosaic-v3.mp4";
+const exactDubaiVideoPublicPath = "/videos/actual/dubai-fountain-2012-mosaic-v3.mp4";
 const exactDubaiVideoBytes = 64463666;
 const exactDubaiVideoSha256 = "fbadd3e1b653a83083467f03603c271e76c60f633a6f1f0f79a7307c7b824632";
 const issues = [];
@@ -108,7 +109,18 @@ for (const file of sourceFiles) {
         issues.push(`${label}: local article video source must declare type=\"video/mp4\"`);
       }
 
-      const filePath = await requirePublicFile(src, "/videos/", label, "video");
+      let filePath;
+      if (src === exactDubaiVideoPublicPath) {
+        filePath = resolve(root, exactDubaiVideo);
+        try {
+          await stat(filePath);
+        } catch {
+          issues.push(`${label}: missing redirected exact Dubai video source file ${exactDubaiVideo}`);
+          filePath = undefined;
+        }
+      } else {
+        filePath = await requirePublicFile(src, "/videos/", label, "video");
+      }
       if (filePath) referencedVideos.add(filePath);
     }
 
