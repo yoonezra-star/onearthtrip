@@ -34,6 +34,9 @@ jobs:
       - name: Check images
         run: npm run check:images
 
+      - name: Check article media
+        run: npm run check:media
+
       - name: Check core story SEO metadata
         run: npm run check:seo
 
