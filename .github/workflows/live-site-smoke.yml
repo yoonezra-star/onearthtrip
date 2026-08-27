@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - scripts/check-live-site.mjs
+      - scripts/check-christmas-image-live.mjs
       - .github/workflows/live-site-smoke.yml
 
 permissions:
@@ -26,3 +27,6 @@ jobs:
 
       - name: Check live production readiness
         run: node scripts/check-live-site.mjs
+
+      - name: Check corrected Christmas image live
+        run: node scripts/check-christmas-image-live.mjs
