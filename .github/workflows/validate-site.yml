@@ -58,6 +58,9 @@ jobs:
       - name: Check all indexable sitemap pages
         run: npm run check:indexable-pages
 
+      - name: Check indexable crawl graph
+        run: npm run check:crawl-graph
+
       - name: Check AdSense reviewer path
         run: npm run check:review-path
 
