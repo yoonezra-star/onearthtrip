@@ -125,12 +125,19 @@ async function checkText(url, validator, label) {
 
 async function checkVideoAsset(url, label, expectedBytes) {
   try {
+    // Keep this request same-origin: a 3xx here can break browser media seeking/playback.
     const response = await request(url, {
+      redirect: "manual",
       headers: { range: "bytes=0-1023" }
     });
     const contentType = response.headers.get("content-type") ?? "";
     const contentRange = response.headers.get("content-range") ?? "";
     const contentLength = response.headers.get("content-length") ?? "";
+
+    if ([301, 302, 303, 307, 308].includes(response.status)) {
+      fail(`${label}: must be served directly from oneearthtrip.com, got redirect ${response.status}.`);
+      return;
+    }
 
     if (![200, 206].includes(response.status)) {
       fail(`${label}: expected HTTP 200/206, got ${response.status}.`);
@@ -138,8 +145,8 @@ async function checkVideoAsset(url, label, expectedBytes) {
     }
 
     const normalizedType = contentType.toLowerCase();
-    if (!normalizedType.includes("video/mp4") && !normalizedType.includes("application/octet-stream")) {
-      fail(`${label}: expected video/mp4 or application/octet-stream, got ${contentType || "no content-type"}.`);
+    if (!normalizedType.includes("video/mp4")) {
+      fail(`${label}: expected video/mp4, got ${contentType || "no content-type"}.`);
       return;
     }
 
@@ -160,7 +167,7 @@ async function checkVideoAsset(url, label, expectedBytes) {
       return;
     }
 
-    pass(`${label}: live MP4 asset responds correctly (${response.status}, ${totalBytes} bytes).`);
+    pass(`${label}: same-origin MP4 responds correctly (${response.status}, ${totalBytes} bytes).`);
   } catch (error) {
     fail(`${label}: request failed: ${error.message}`);
   }
@@ -284,4 +291,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("\nLive site readiness passed: canonical redirects, production HTML, exact Dubai mosaic video, ads.txt, robots.txt, and sitemaps are consistent.");
+console.log("\nLive site readiness passed: canonical redirects, production HTML, same-origin Dubai mosaic video, ads.txt, robots.txt, and sitemaps are consistent.\n");
