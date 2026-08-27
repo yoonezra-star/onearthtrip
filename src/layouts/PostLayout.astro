@@ -117,7 +117,8 @@ const breadcrumbJson = {
       <div class="meta">
         <a class="pill" href={getCategoryPath(post.data.category)}>{post.data.category}</a>
         {post.data.contentType === "field-note" && <span class="record-type">현장 기록</span>}
-        <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+        <a class="meta-author" href="/author" rel="author">작성 {post.data.author}</a>
+        <span>게시 <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time></span>
         {post.data.updatedDate && (
           <span>수정 {formatDate(post.data.updatedDate)}</span>
         )}
@@ -207,6 +208,16 @@ const breadcrumbJson = {
 </BaseLayout>
 
 <style>
+  .meta-author {
+    color: inherit;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .meta-author:hover {
+    text-decoration: underline;
+  }
+
   .content-basis {
     display: grid;
     gap: 5px;
