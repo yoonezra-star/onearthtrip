@@ -19,8 +19,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify ffmpeg
+      - name: Install ffmpeg
         run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
           ffmpeg -version | head -n 1
           ffprobe -version | head -n 1
 
@@ -34,9 +36,8 @@ jobs:
           test -s "$src"
           before_duration="$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$src")"
 
-          # Privacy edit: the foreground visitor turns toward the camera only in
-          # this short interval. Pixelated blocks follow that head/face region;
-          # the rest of the 2012 recording and its original audio are retained.
+          # Privacy edit based on the face-mosaicked replacement supplied for this recording.
+          # Only the short foreground face/head interval is pixelated; the article and media URL stay unchanged.
           ffmpeg -y -loglevel error -i "$src" \
             -filter_complex "[0:v]split=7[b0][c1][c2][c3][c4][c5][c6];[c1]crop=260:260:400:190,scale=26:26:flags=area,scale=260:260:flags=neighbor[p1];[b0][p1]overlay=400:190:enable='between(t,13.25,13.55)'[b1];[c2]crop=260:260:300:100,scale=26:26:flags=area,scale=260:260:flags=neighbor[p2];[b1][p2]overlay=300:100:enable='between(t,13.55,13.80)'[b2];[c3]crop=270:230:130:80,scale=27:23:flags=area,scale=270:230:flags=neighbor[p3];[b2][p3]overlay=130:80:enable='between(t,13.80,14.15)'[b3];[c4]crop=280:230:100:80,scale=28:23:flags=area,scale=280:230:flags=neighbor[p4];[b3][p4]overlay=100:80:enable='between(t,14.15,14.45)'[b4];[c5]crop=300:240:170:80,scale=30:24:flags=area,scale=300:240:flags=neighbor[p5];[b4][p5]overlay=170:80:enable='between(t,14.45,14.70)'[b5];[c6]crop=280:240:280:100,scale=28:24:flags=area,scale=280:240:flags=neighbor[p6];[b5][p6]overlay=280:100:enable='between(t,14.70,14.90)'[v]" \
             -map "[v]" -map 0:a? \
