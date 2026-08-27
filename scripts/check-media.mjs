@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFile, readdir, stat } from "node:fs/promises";
 import { extname, join, relative, resolve, sep } from "node:path";
 
@@ -7,6 +8,9 @@ const publicRoot = resolve(root, "public");
 const publicVideoDir = resolve(publicRoot, "videos", "actual");
 const maxVideoBytes = 25 * 1024 * 1024;
 const minVideoBytes = 100 * 1024;
+const exactDubaiVideo = "public/videos/actual/dubai-fountain-2012-mosaic-v3.mp4";
+const exactDubaiVideoBytes = 64463666;
+const exactDubaiVideoSha256 = "fbadd3e1b653a83083467f03603c271e76c60f633a6f1f0f79a7307c7b824632";
 const issues = [];
 const referencedVideos = new Set();
 
@@ -119,14 +123,26 @@ for (const file of sourceFiles) {
 
 for (const filePath of referencedVideos) {
   const info = await stat(filePath);
-  if (info.size > maxVideoBytes) {
-    issues.push(`${relative(root, filePath)}: ${(info.size / 1024 / 1024).toFixed(2)} MB exceeds the 25 MB article-video limit`);
+  const relativeVideoPath = relative(root, filePath).split(sep).join("/");
+
+  if (relativeVideoPath === exactDubaiVideo) {
+    if (info.size !== exactDubaiVideoBytes) {
+      issues.push(`${relativeVideoPath}: expected exact user-provided size ${exactDubaiVideoBytes} bytes, got ${info.size}`);
+    } else {
+      const hash = createHash("sha256").update(await readFile(filePath)).digest("hex");
+      if (hash !== exactDubaiVideoSha256) {
+        issues.push(`${relativeVideoPath}: SHA-256 does not match the exact user-provided mosaic video`);
+      }
+    }
+  } else if (info.size > maxVideoBytes) {
+    issues.push(`${relativeVideoPath}: ${(info.size / 1024 / 1024).toFixed(2)} MB exceeds the 25 MB article-video limit`);
   }
+
   if (info.size < minVideoBytes) {
-    issues.push(`${relative(root, filePath)}: video is unexpectedly small (${(info.size / 1024).toFixed(0)} KB)`);
+    issues.push(`${relativeVideoPath}: video is unexpectedly small (${(info.size / 1024).toFixed(0)} KB)`);
   }
   if (extname(filePath).toLowerCase() !== ".mp4") {
-    issues.push(`${relative(root, filePath)}: article videos must be MP4`);
+    issues.push(`${relativeVideoPath}: article videos must be MP4`);
   }
 }
 
@@ -150,4 +166,4 @@ if (issues.length > 0) {
   process.exit(1);
 }
 
-console.log(`Media validation passed: ${referencedVideos.size} first-party article video file(s) checked.`);
+console.log(`Media validation passed: ${referencedVideos.size} first-party article video file(s) checked, including exact Dubai mosaic source verification.`);
