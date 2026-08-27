@@ -99,6 +99,7 @@ for (const route of [
   const html = readRoute(route);
   for (const marker of [
     "공식 정보 확인형 가이드",
+    "정보 기준",
     'href="/author"',
     'href="/editorial-policy"',
     '"@type":"BlogPosting"',
