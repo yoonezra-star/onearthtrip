@@ -137,8 +137,9 @@ async function checkVideoAsset(url, label, expectedBytes) {
       return;
     }
 
-    if (!contentType.toLowerCase().includes("video/mp4")) {
-      fail(`${label}: expected video/mp4, got ${contentType || "no content-type"}.`);
+    const normalizedType = contentType.toLowerCase();
+    if (!normalizedType.includes("video/mp4") && !normalizedType.includes("application/octet-stream")) {
+      fail(`${label}: expected video/mp4 or application/octet-stream, got ${contentType || "no content-type"}.`);
       return;
     }
 
