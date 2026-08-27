@@ -37,6 +37,9 @@ jobs:
       - name: Check article media
         run: npm run check:media
 
+      - name: Check field-note trust
+        run: npm run check:field-notes
+
       - name: Check core story SEO metadata
         run: npm run check:seo
 
