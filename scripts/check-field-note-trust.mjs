@@ -19,11 +19,27 @@ function scalar(frontmatter, name) {
   return match?.[1]?.trim() ?? "";
 }
 
+function unquote(value) {
+  const trimmed = value.trim();
+  if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || (trimmed.startsWith("'") && trimmed.endsWith("'"))) {
+    return trimmed.slice(1, -1).trim();
+  }
+  return trimmed;
+}
+
 function nestedField(frontmatter, parent, child) {
-  const parentMatch = frontmatter.match(new RegExp(`^${parent}:\\s*\\n([\\s\\S]*?)(?=^[A-Za-z][A-Za-z0-9_-]*:|\\Z)`, "m"));
-  if (!parentMatch) return "";
-  const childMatch = parentMatch[1].match(new RegExp(`^\\s{2}${child}:\\s*["']?([^\\n"']+)["']?\\s*$`, "m"));
-  return childMatch?.[1]?.trim() ?? "";
+  const lines = frontmatter.split("\n");
+  const parentIndex = lines.findIndex((line) => line.trim() === `${parent}:` && !/^\s/.test(line));
+  if (parentIndex < 0) return "";
+
+  for (let index = parentIndex + 1; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (line.trim() && !/^\s/.test(line)) break;
+    const match = line.match(new RegExp(`^\\s+${child}:\\s*(.*)$`));
+    if (match) return unquote(match[1]);
+  }
+
+  return "";
 }
 
 for (const file of files) {
