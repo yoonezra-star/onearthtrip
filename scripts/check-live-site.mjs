@@ -2,7 +2,8 @@ const canonicalOrigin = "https://www.onearthtrip.com";
 const apexOrigin = "https://onearthtrip.com";
 const publisherId = "ca-pub-6918910185244897";
 const adsTxtLine = "google.com, pub-6918910185244897, DIRECT, f08c47fec0942fa0";
-const dubaiMosaicVideoPath = "/videos/actual/dubai-fountain-2012-mosaic-v2.mp4";
+const dubaiMosaicVideoPath = "/videos/actual/dubai-fountain-2012-mosaic-v3.mp4";
+const dubaiMosaicVideoBytes = 64463666;
 
 const failures = [];
 
@@ -122,13 +123,14 @@ async function checkText(url, validator, label) {
   }
 }
 
-async function checkVideoAsset(url, label) {
+async function checkVideoAsset(url, label, expectedBytes) {
   try {
     const response = await request(url, {
       headers: { range: "bytes=0-1023" }
     });
     const contentType = response.headers.get("content-type") ?? "";
     const contentRange = response.headers.get("content-range") ?? "";
+    const contentLength = response.headers.get("content-length") ?? "";
 
     if (![200, 206].includes(response.status)) {
       fail(`${label}: expected HTTP 200/206, got ${response.status}.`);
@@ -140,12 +142,24 @@ async function checkVideoAsset(url, label) {
       return;
     }
 
-    if (response.status === 206 && !/^bytes\s+0-\d+\/\d+$/i.test(contentRange)) {
-      fail(`${label}: partial response is missing a valid Content-Range header.`);
+    let totalBytes;
+    if (response.status === 206) {
+      const rangeMatch = contentRange.match(/^bytes\s+0-\d+\/(\d+)$/i);
+      if (!rangeMatch) {
+        fail(`${label}: partial response is missing a valid Content-Range header.`);
+        return;
+      }
+      totalBytes = Number(rangeMatch[1]);
+    } else if (/^\d+$/.test(contentLength)) {
+      totalBytes = Number(contentLength);
+    }
+
+    if (totalBytes !== expectedBytes) {
+      fail(`${label}: expected ${expectedBytes} bytes, got ${totalBytes ?? "unknown"}.`);
       return;
     }
 
-    pass(`${label}: live MP4 asset responds correctly (${response.status}).`);
+    pass(`${label}: live MP4 asset responds correctly (${response.status}, ${totalBytes} bytes).`);
   } catch (error) {
     fail(`${label}: request failed: ${error.message}`);
   }
@@ -208,7 +222,7 @@ await checkHtml(
   `${canonicalOrigin}/2012/12/dubai-burj-khalifa-2012`,
   [
     {
-      description: "cache-busted Dubai fountain mosaic video source",
+      description: "exact Dubai fountain mosaic video source",
       test: (html) => html.includes(`src=\"${dubaiMosaicVideoPath}\"`)
         || html.includes(`src='${dubaiMosaicVideoPath}'`)
     },
@@ -222,7 +236,8 @@ await checkHtml(
 
 await checkVideoAsset(
   `${canonicalOrigin}${dubaiMosaicVideoPath}`,
-  "Dubai fountain mosaic video"
+  "Dubai fountain mosaic video",
+  dubaiMosaicVideoBytes
 );
 
 await checkText(
@@ -268,4 +283,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("\nLive site readiness passed: canonical redirects, production HTML, Dubai mosaic video, ads.txt, robots.txt, and sitemaps are consistent.");
+console.log("\nLive site readiness passed: canonical redirects, production HTML, exact Dubai mosaic video, ads.txt, robots.txt, and sitemaps are consistent.");
