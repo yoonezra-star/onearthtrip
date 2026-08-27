@@ -32,7 +32,7 @@ for (const file of files) {
   const title = field(frontmatter, "title") || file;
   const externalLinks = body.match(/\]\(https:\/\/[^)]+\)/g) ?? [];
   const firstPartyEvidence = body.match(/!\[[^\]]*\]\(\/images\/actual\/[^)]+\)|<video\b[\s\S]*?\/videos\/actual\//gi) ?? [];
-  const isOperational = operationalPattern.test(`${title}\n${body}`);
+  const isOperational = operationalPattern.test(title);
   const hasSourceHeading = sourceHeadingPattern.test(body);
 
   if (isOperational) operationalGuides += 1;
