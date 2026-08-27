@@ -124,6 +124,23 @@ for (const marker of [
   }
 }
 
+const representativeArticleRoutes = [
+  "/2026/08/uae-entry-checklist-before-travel",
+  "/2026/08/abu-dhabi-3-day-itinerary",
+  "/2026/08/sheikh-zayed-grand-mosque-visit-guide",
+  "/2026/04/blog-post_11"
+];
+
+for (const route of representativeArticleRoutes) {
+  const html = readRoute(route);
+  if (!html.includes('rel="author"')) {
+    violations.push(`${route}: expected visible rel=author link in article header metadata`);
+  }
+  if (!html.includes('>작성 ') || !html.includes('>게시 <time')) {
+    violations.push(`${route}: expected explicit author and publication labels in article header metadata`);
+  }
+}
+
 const fieldNotesHtml = readRoute("/field-notes");
 for (const marker of ["CollectionPage", "ItemList", "2012~2022 개인 사진 색인"]) {
   if (!fieldNotesHtml.includes(marker)) {
