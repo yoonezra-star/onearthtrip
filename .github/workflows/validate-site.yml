@@ -37,6 +37,9 @@ jobs:
       - name: Check article media
         run: npm run check:media
 
+      - name: Check media privacy inventory
+        run: npm run check:media-privacy
+
       - name: Check field-note trust
         run: npm run check:field-notes
 
