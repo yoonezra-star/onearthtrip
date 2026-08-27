@@ -147,6 +147,9 @@ const breadcrumbJson = {
           ? "작성자가 직접 방문하거나 촬영한 경험의 범위를 구분해 기록합니다. 현재 운영 정보와 오래된 경험은 섞지 않습니다."
           : "정부·공식 관광기관·시설 운영 주체 등 확인 가능한 자료를 우선하고, 바뀔 수 있는 정보는 수정일과 출처를 함께 관리합니다."}
       </span>
+      {post.data.contentType !== "field-note" && (
+        <span class="content-basis-date">정보 기준 {formatDate(post.data.updatedDate ?? post.data.pubDate)}</span>
+      )}
       <span class="content-basis-links">
         <a href="/author">운영자</a>
         <span aria-hidden="true">·</span>
@@ -233,6 +236,11 @@ const breadcrumbJson = {
 
   .content-basis strong {
     color: var(--text);
+  }
+
+  .content-basis-date {
+    color: var(--text);
+    font-weight: 700;
   }
 
   .content-basis-links {
