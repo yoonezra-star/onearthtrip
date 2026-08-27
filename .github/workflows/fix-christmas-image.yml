@@ -1,0 +1,62 @@
+name: Fix Christmas image
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fix-christmas-image.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Restore original and mosaic only the foreground head
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="public/images/actual/abu-dhabi-christmas-lobby-2012.webp"
+          git show c83076dcd2383098d8272c78d493d1575dcba06b:"$image" > /tmp/christmas-original.webp
+          python - <<'PY'
+          from PIL import Image, ImageDraw
+
+          src = "/tmp/christmas-original.webp"
+          out = "public/images/actual/abu-dhabi-christmas-lobby-2012.webp"
+          img = Image.open(src).convert("RGB")
+          # Pixelate only the seated foreground person's visible head/ear area.
+          box = (798, 770, 1028, 1035)
+          region = img.crop(box)
+          w, h = region.size
+          small = region.resize((max(1, w // 18), max(1, h // 18)), Image.Resampling.BOX)
+          pixelated = small.resize((w, h), Image.Resampling.NEAREST)
+          mask = Image.new("L", (w, h), 0)
+          draw = ImageDraw.Draw(mask)
+          draw.ellipse((0, 0, w - 1, h - 1), fill=255)
+          img.paste(pixelated, box, mask)
+          img.save(out, "WEBP", quality=82, method=6)
+          print("saved", out, img.size)
+          PY
+          file "$image"
+          test "$(stat -c%s "$image")" -gt 100000
+
+      - name: Commit corrected image and remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/fix-christmas-image.yml
+          git add public/images/actual/abu-dhabi-christmas-lobby-2012.webp
+          git commit -m "Fix 2012 Christmas photo mosaic asset"
+          git push origin HEAD:main
