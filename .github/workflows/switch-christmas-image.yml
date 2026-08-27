@@ -1,0 +1,60 @@
+name: Switch Christmas image
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/switch-christmas-image.yml
+
+permissions:
+  contents: write
+
+jobs:
+  switch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Point article to cache-busted mosaic asset
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('src/content/posts/abu-dhabi-christmas-2012.md')
+          text = path.read_text(encoding='utf-8')
+          old = '/images/actual/abu-dhabi-christmas-lobby-2012.webp'
+          new = '/images/actual/abu-dhabi-christmas-lobby-2012-mosaic.webp'
+          if old not in text:
+              raise SystemExit('old Christmas image path not found')
+          text = text.replace(old, new)
+          text = text.replace('updatedDate: "2026-08-24T23:05:00+09:00"', 'updatedDate: "2026-08-27T09:45:00+09:00"')
+          path.write_text(text, encoding='utf-8')
+          print('updated image references:', text.count(new))
+          PY
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate image and build
+        run: |
+          npm run check:images
+          npm run check:links
+          npm run check:seo
+          npm run build
+          npm run check:review-path
+
+      - name: Commit article switch and remove temporary workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/switch-christmas-image.yml
+          git add src/content/posts/abu-dhabi-christmas-2012.md
+          git commit -m "Use corrected 2012 Christmas mosaic photo"
+          git push origin HEAD:main
