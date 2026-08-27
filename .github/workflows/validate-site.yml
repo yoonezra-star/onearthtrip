@@ -40,6 +40,9 @@ jobs:
       - name: Check field-note trust
         run: npm run check:field-notes
 
+      - name: Check guide sources and freshness
+        run: npm run check:guide-sources
+
       - name: Check core story SEO metadata
         run: npm run check:seo
 
