@@ -2,6 +2,7 @@ const canonicalOrigin = "https://www.onearthtrip.com";
 const apexOrigin = "https://onearthtrip.com";
 const publisherId = "ca-pub-6918910185244897";
 const adsTxtLine = "google.com, pub-6918910185244897, DIRECT, f08c47fec0942fa0";
+const dubaiMosaicVideoPath = "/videos/actual/dubai-fountain-2012-mosaic-v2.mp4";
 
 const failures = [];
 
@@ -83,13 +84,15 @@ async function checkHtml(url, checks, label) {
       return;
     }
 
+    let failed = false;
     for (const check of checks) {
       if (!check.test(html)) {
+        failed = true;
         fail(`${label}: missing ${check.description}.`);
       }
     }
 
-    if (!checks.some((check) => !check.test(html))) {
+    if (!failed) {
       pass(`${label}: HTTP 200 and expected production markers found.`);
     }
   } catch (error) {
@@ -114,6 +117,35 @@ async function checkText(url, validator, label) {
     }
 
     pass(`${label}: HTTP 200 and content validated.`);
+  } catch (error) {
+    fail(`${label}: request failed: ${error.message}`);
+  }
+}
+
+async function checkVideoAsset(url, label) {
+  try {
+    const response = await request(url, {
+      headers: { range: "bytes=0-1023" }
+    });
+    const contentType = response.headers.get("content-type") ?? "";
+    const contentRange = response.headers.get("content-range") ?? "";
+
+    if (![200, 206].includes(response.status)) {
+      fail(`${label}: expected HTTP 200/206, got ${response.status}.`);
+      return;
+    }
+
+    if (!contentType.toLowerCase().includes("video/mp4")) {
+      fail(`${label}: expected video/mp4, got ${contentType || "no content-type"}.`);
+      return;
+    }
+
+    if (response.status === 206 && !/^bytes\s+0-\d+\/\d+$/i.test(contentRange)) {
+      fail(`${label}: partial response is missing a valid Content-Range header.`);
+      return;
+    }
+
+    pass(`${label}: live MP4 asset responds correctly (${response.status}).`);
   } catch (error) {
     fail(`${label}: request failed: ${error.message}`);
   }
@@ -172,6 +204,27 @@ await checkHtml(
   "Reading guide"
 );
 
+await checkHtml(
+  `${canonicalOrigin}/2012/12/dubai-burj-khalifa-2012`,
+  [
+    {
+      description: "cache-busted Dubai fountain mosaic video source",
+      test: (html) => html.includes(`src=\"${dubaiMosaicVideoPath}\"`)
+        || html.includes(`src='${dubaiMosaicVideoPath}'`)
+    },
+    {
+      description: "Dubai article canonical URL",
+      test: (html) => html.includes(`${canonicalOrigin}/2012/12/dubai-burj-khalifa-2012`)
+    }
+  ],
+  "Dubai Burj Khalifa field note"
+);
+
+await checkVideoAsset(
+  `${canonicalOrigin}${dubaiMosaicVideoPath}`,
+  "Dubai fountain mosaic video"
+);
+
 await checkText(
   `${canonicalOrigin}/ads.txt`,
   (text) => text.trim() === adsTxtLine ? null : `expected exact ads.txt line: ${adsTxtLine}`,
@@ -215,4 +268,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("\nLive site readiness passed: canonical redirects, production HTML, ads.txt, robots.txt, and sitemaps are consistent.");
+console.log("\nLive site readiness passed: canonical redirects, production HTML, Dubai mosaic video, ads.txt, robots.txt, and sitemaps are consistent.");
