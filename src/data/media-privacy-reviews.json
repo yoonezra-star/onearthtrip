@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "policy": "A status records documented human privacy review only. needs-review is not a safety judgment and does not block deployment by itself.",
+  "media": {
+    "/images/actual/abu-dhabi-beach-mosque-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-christmas-lobby-2012-mosaic.webp": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-27",
+      "note": "Face mosaic correction was manually verified for the article image."
+    },
+    "/images/actual/abu-dhabi-christmas-lobby-2012.webp": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-27",
+      "note": "Byte-identical alias of the manually verified Christmas mosaic image."
+    },
+    "/images/actual/abu-dhabi-cultural-performance-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-evening-beach-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-flame-tree-road.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-flame-tree.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-high-rise-view-2021.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-highway-sunset-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-ballroom-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-bathroom-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-buffet-2019.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-ceiling-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-evening-lights-2019.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-event-room-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-indoor-pool-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-outdoor-pool-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-restaurant-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-hotel-room-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-immersive-exhibit-2021.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-korean-community-space-2015.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-neighborhood-playground-2019.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-rooftop-pool-city-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-shaded-playground-2019.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-water-truck-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-waterfront-night-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/burj-khalifa-day-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/burj-khalifa-night-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/camel-farm.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/desert-dune-pause-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/desert-livestock-enclosure-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/dubai-fountain-video-2012.webp": {
+      "status": "needs-review",
+      "note": "Poster image has no separate documented visual privacy review."
+    },
+    "/images/actual/dune-camel.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/grand-mosque-exterior.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/grand-mosque-floral-window.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/grand-mosque-night.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/grand-mosque-visitor-flow-2012.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/national-aquarium-entrance.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/national-aquarium-reef.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/national-aquarium-sharks.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/sir-bani-yas-road-2021.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/uae-zoo-bird-enclosure-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/uae-zoo-giraffe-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/uae-zoo-zebras-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/yas-island-hotel-district-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/yas-island-morning-view-2014.webp": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    },
+    "/videos/actual/dubai-fountain-2012-mosaic-v4.mp4": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-27",
+      "note": "User-provided mosaicked source was visually sampled; the browser-compatible H.264 file preserves that edited content."
+    },
+    "/videos/actual/sir-bani-yas-coastal-road-2021.mp4": {
+      "status": "needs-review",
+      "note": "No documented visual privacy review yet."
+    }
+  }
+}
