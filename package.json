@@ -16,6 +16,7 @@
     "check:seo": "node scripts/check-seo-meta.mjs",
     "check:sitemap": "node scripts/check-sitemap-static.mjs",
     "check:indexable-pages": "node scripts/check-indexable-pages.mjs",
+    "check:crawl-graph": "node scripts/check-crawl-graph.mjs",
     "audit:adsense": "node scripts/audit-adsense-readiness.mjs",
     "check:adsense-pages": "node scripts/check-adsense-page-boundaries.mjs",
     "check:adsense-ready": "node scripts/check-adsense-approval-readiness.mjs",
