@@ -9,7 +9,8 @@ const actualDirs = [
   join(publicDir, "images", "actual"),
   join(publicDir, "videos", "actual")
 ];
-const allowedStatuses = new Set(["needs-review", "reviewed", "privacy-edited"]);
+const allowedStatuses = new Set(["needs-review", "reviewed", "privacy-edited", "privacy-action-needed"]);
+const allowedPriorities = new Set(["normal", "high"]);
 const failures = [];
 
 function fail(message) {
@@ -85,9 +86,14 @@ for (const mediaPath of manifestPaths) {
   if (typeof entry?.note !== "string" || entry.note.trim().length < 12) {
     fail(`${mediaPath}: privacy manifest note must explain the recorded status`);
   }
-  if (entry?.status === "reviewed" || entry?.status === "privacy-edited") {
+  if (entry?.status !== "needs-review") {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(entry?.reviewedDate ?? "")) {
       fail(`${mediaPath}: ${entry.status} requires reviewedDate in YYYY-MM-DD format`);
+    }
+  }
+  if (entry?.status === "privacy-action-needed") {
+    if (!allowedPriorities.has(entry?.priority)) {
+      fail(`${mediaPath}: privacy-action-needed requires priority=normal or high`);
     }
   }
 }
@@ -131,29 +137,45 @@ if (failures.length > 0) {
 
 const reviewedInventory = manifestPaths.filter((mediaPath) => entries[mediaPath].status === "reviewed");
 const editedInventory = manifestPaths.filter((mediaPath) => entries[mediaPath].status === "privacy-edited");
+const actionInventory = manifestPaths.filter((mediaPath) => entries[mediaPath].status === "privacy-action-needed");
 const fieldNoteNeedsReview = [...fieldNoteRefs.keys()]
   .filter((mediaPath) => entries[mediaPath].status === "needs-review")
   .sort();
-const fieldNoteReviewed = [...fieldNoteRefs.keys()]
-  .filter((mediaPath) => entries[mediaPath].status !== "needs-review")
+const fieldNoteActionNeeded = [...fieldNoteRefs.keys()]
+  .filter((mediaPath) => entries[mediaPath].status === "privacy-action-needed")
+  .sort((a, b) => {
+    const aPriority = entries[a].priority === "high" ? 0 : 1;
+    const bPriority = entries[b].priority === "high" ? 0 : 1;
+    return aPriority - bPriority || a.localeCompare(b);
+  });
+const fieldNoteCleared = [...fieldNoteRefs.keys()]
+  .filter((mediaPath) => entries[mediaPath].status === "reviewed" || entries[mediaPath].status === "privacy-edited")
   .sort();
 
 console.log(
   `Media privacy inventory passed: ${inventoryPaths.length} first-party /actual/ file(s) tracked; ${fieldNoteRefs.size} unique field-note media reference(s).`
 );
 console.log(
-  `Documented review status: ${reviewedInventory.length} reviewed, ${editedInventory.length} privacy-edited; ${fieldNoteNeedsReview.length} field-note media item(s) remain in the advisory review queue.`
+  `Documented review status: ${reviewedInventory.length} reviewed, ${editedInventory.length} privacy-edited, ${actionInventory.length} privacy-action-needed; ${fieldNoteNeedsReview.length} field-note media item(s) remain unreviewed.`
 );
 
-if (fieldNoteReviewed.length > 0) {
-  console.log("Documented field-note privacy reviews:");
-  for (const mediaPath of fieldNoteReviewed) {
+if (fieldNoteCleared.length > 0) {
+  console.log("Cleared or privacy-edited field-note media:");
+  for (const mediaPath of fieldNoteCleared) {
     console.log(`- ${entries[mediaPath].status}: ${mediaPath}`);
   }
 }
 
+if (fieldNoteActionNeeded.length > 0) {
+  console.log("Privacy action queue (manual review completed; does not fail CI):");
+  for (const mediaPath of fieldNoteActionNeeded) {
+    const sources = fieldNoteRefs.get(mediaPath) ?? [];
+    console.log(`- ${entries[mediaPath].priority}: ${mediaPath} <- ${sources.join(", ")}`);
+  }
+}
+
 if (fieldNoteNeedsReview.length > 0) {
-  console.log("Advisory field-note privacy review queue (does not fail CI):");
+  console.log("Unreviewed field-note privacy queue (does not fail CI):");
   for (const mediaPath of fieldNoteNeedsReview) {
     const sources = fieldNoteRefs.get(mediaPath) ?? [];
     console.log(`- ${mediaPath} <- ${sources.join(", ")}`);
