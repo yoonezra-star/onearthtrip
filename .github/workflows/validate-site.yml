@@ -72,3 +72,21 @@ jobs:
 
       - name: Check final AdSense approval readiness
         run: npm run check:adsense-ready
+
+      - name: Upload privacy review candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: privacy-review-candidates
+          if-no-files-found: error
+          retention-days: 1
+          path: |
+            public/images/actual/abu-dhabi-cultural-performance-2012.webp
+            public/images/actual/abu-dhabi-korean-community-space-2015.webp
+            public/images/actual/abu-dhabi-neighborhood-playground-2019.webp
+            public/images/actual/abu-dhabi-shaded-playground-2019.webp
+            public/images/actual/abu-dhabi-hotel-buffet-2019.webp
+            public/images/actual/abu-dhabi-hotel-event-room-2014.webp
+            public/images/actual/abu-dhabi-hotel-outdoor-pool-2014.webp
+            public/images/actual/abu-dhabi-hotel-restaurant-2014.webp
+            public/images/actual/grand-mosque-visitor-flow-2012.webp
+            public/images/actual/national-aquarium-entrance.webp
