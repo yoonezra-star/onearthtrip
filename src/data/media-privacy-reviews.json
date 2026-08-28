@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "policy": "A status records documented human privacy review only. needs-review is not a safety judgment and does not block deployment by itself.",
+  "policy": "A status records documented human privacy review only. needs-review means not yet visually reviewed; reviewed means visually checked with no obvious privacy edit required; privacy-action-needed means visual review found people or context that should be considered for crop or mosaic; privacy-edited means a privacy edit was completed.",
   "media": {
     "/images/actual/abu-dhabi-beach-mosque-2012.webp": {
       "status": "needs-review",
@@ -17,8 +17,9 @@
       "note": "Byte-identical alias of the manually verified Christmas mosaic image."
     },
     "/images/actual/abu-dhabi-cultural-performance-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-28",
+      "note": "Manual visual review: performers are distant within a public performance scene; no clearly identifiable foreground face was observed."
     },
     "/images/actual/abu-dhabi-evening-beach-2012.webp": {
       "status": "needs-review",
@@ -49,8 +50,10 @@
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/abu-dhabi-hotel-buffet-2019.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "privacy-action-needed",
+      "reviewedDate": "2026-08-28",
+      "priority": "normal",
+      "note": "Manual visual review found a background staff member with a visible face; consider crop or mosaic before treating this image as cleared."
     },
     "/images/actual/abu-dhabi-hotel-ceiling-2012.webp": {
       "status": "needs-review",
@@ -61,20 +64,23 @@
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/abu-dhabi-hotel-event-room-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-28",
+      "note": "Manual visual review found an empty event room with no people visible."
     },
     "/images/actual/abu-dhabi-hotel-indoor-pool-2014.webp": {
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/abu-dhabi-hotel-outdoor-pool-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-28",
+      "note": "Manual visual review found only distant swimmers and a seated person viewed from behind; no clear foreground face is visible."
     },
     "/images/actual/abu-dhabi-hotel-restaurant-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-28",
+      "note": "Manual visual review found an empty restaurant interior with no people visible."
     },
     "/images/actual/abu-dhabi-hotel-room-2014.webp": {
       "status": "needs-review",
@@ -85,20 +91,26 @@
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/abu-dhabi-korean-community-space-2015.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "privacy-action-needed",
+      "reviewedDate": "2026-08-28",
+      "priority": "high",
+      "note": "Manual visual review found several community participants in an indoor gathering, including a presenter facing the camera; keep this image in the privacy-action queue before clearance."
     },
     "/images/actual/abu-dhabi-neighborhood-playground-2019.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "privacy-action-needed",
+      "reviewedDate": "2026-08-28",
+      "priority": "high",
+      "note": "Manual visual review found multiple children and adults around the playground equipment; consider crop or mosaic before treating this image as cleared."
     },
     "/images/actual/abu-dhabi-rooftop-pool-city-2014.webp": {
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/abu-dhabi-shaded-playground-2019.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "privacy-action-needed",
+      "reviewedDate": "2026-08-28",
+      "priority": "high",
+      "note": "Manual visual review found children and adults using the shaded playground; keep this image in the privacy-action queue before clearance."
     },
     "/images/actual/abu-dhabi-water-truck-2014.webp": {
       "status": "needs-review",
@@ -149,12 +161,15 @@
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/grand-mosque-visitor-flow-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "privacy-action-needed",
+      "reviewedDate": "2026-08-28",
+      "priority": "high",
+      "note": "Manual visual review found multiple visitors with faces visible at useful detail; consider crop or mosaic before treating this image as cleared."
     },
     "/images/actual/national-aquarium-entrance.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-28",
+      "note": "Manual visual review found no identifiable foreground person; only very distant figures appear near the entrance."
     },
     "/images/actual/national-aquarium-reef.webp": {
       "status": "needs-review",
