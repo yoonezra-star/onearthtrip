@@ -7,7 +7,7 @@ author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["아부다비 가족 생활", "아부다비 놀이터", "동네 공원", "아이와 UAE", "그늘막", "사진 기록"]
 permalink: "/2019/12/abu-dhabi-neighborhood-playground-2019.html"
-heroImage: "/images/actual/abu-dhabi-neighborhood-playground-2019.webp"
+heroImage: "/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp"
 contentType: "field-note"
 fieldNote:
   label: "기록 범위: 2019년 12월 아부다비의 서로 다른 주거지 인근 공원 두 곳에서 직접 촬영한 가족 생활 기록"
@@ -18,7 +18,9 @@ fieldNote:
 
 2019년 12월에 서로 다른 주거지에서 찍은 두 장의 사진에는 유명 관광지가 없습니다. 주거 건물 사이의 잔디, 작은 미끄럼틀, 그늘막과 벤치가 전부입니다. 하지만 당시의 생활을 떠올릴 때는 큰 랜드마크보다 이런 공간이 먼저 생각납니다. 놀이터는 아이가 뛰어노는 장소이면서, 보호자가 햇빛과 그늘을 계산하고 이웃과 짧게 인사하던 생활의 접점이었습니다.
 
-![2019년 12월 아부다비 주거지 인근에서 촬영한 동네 놀이터와 잔디 공간](/images/actual/abu-dhabi-neighborhood-playground-2019.webp)
+사진 속 다른 이용자의 사생활 보호를 위해 식별 가능한 얼굴은 모자이크 처리했습니다.
+
+![2019년 12월 아부다비 주거지 인근에서 촬영한 동네 놀이터와 잔디 공간](/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp)
 
 대표 사진을 다시 보면 놀이기구보다 주변 공간이 더 많이 보입니다. 잔디와 보행 공간, 건물 사이의 빈 자리까지 함께 담겨 있어 놀이터가 독립된 시설이라기보다 주거지 생활 동선 안에 들어와 있던 장소라는 점이 드러납니다. 사진 한 장이 당시의 생활 반경을 설명해 주는 이유입니다.
 
@@ -42,7 +44,7 @@ fieldNote:
 
 며칠 뒤 다른 주거지에서 촬영한 놀이터에는 넓은 천막이 설치돼 있었습니다. 놀이기구 전체를 완전히 가리는 구조는 아니었지만, 보호자가 기다릴 자리와 아이가 잠시 멈출 자리를 고를 때 그늘의 위치가 중요했습니다.
 
-![2019년 12월 아부다비의 다른 주거지에서 촬영한 그늘막 놀이터](/images/actual/abu-dhabi-shaded-playground-2019.webp)
+![2019년 12월 아부다비의 다른 주거지에서 촬영한 그늘막 놀이터](/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp)
 
 두 사진을 나란히 떠올리면 같은 도시의 놀이터라도 공간을 사용하는 방식이 조금 달랐습니다. 열린 공원에서는 해가 낮아지는 시간을 기다리는 일이 더 중요하게 느껴졌고, 그늘막이 있는 곳에서는 그늘이 어디까지 드리워지는지에 따라 머무를 자리가 달라졌습니다. 시설 하나가 단순한 장식이 아니라 실제 동선에 영향을 주는 요소였습니다.
 

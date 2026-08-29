@@ -90,27 +90,9 @@
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
     },
-    "/images/actual/abu-dhabi-korean-community-space-2015.webp": {
-      "status": "privacy-action-needed",
-      "reviewedDate": "2026-08-28",
-      "priority": "high",
-      "note": "Manual visual review found several community participants in an indoor gathering, including a presenter facing the camera; keep this image in the privacy-action queue before clearance."
-    },
-    "/images/actual/abu-dhabi-neighborhood-playground-2019.webp": {
-      "status": "privacy-action-needed",
-      "reviewedDate": "2026-08-28",
-      "priority": "high",
-      "note": "Manual visual review found multiple children and adults around the playground equipment; consider crop or mosaic before treating this image as cleared."
-    },
     "/images/actual/abu-dhabi-rooftop-pool-city-2014.webp": {
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
-    },
-    "/images/actual/abu-dhabi-shaded-playground-2019.webp": {
-      "status": "privacy-action-needed",
-      "reviewedDate": "2026-08-28",
-      "priority": "high",
-      "note": "Manual visual review found children and adults using the shaded playground; keep this image in the privacy-action queue before clearance."
     },
     "/images/actual/abu-dhabi-water-truck-2014.webp": {
       "status": "needs-review",
@@ -160,12 +142,6 @@
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
     },
-    "/images/actual/grand-mosque-visitor-flow-2012.webp": {
-      "status": "privacy-action-needed",
-      "reviewedDate": "2026-08-28",
-      "priority": "high",
-      "note": "Manual visual review found multiple visitors with faces visible at useful detail; consider crop or mosaic before treating this image as cleared."
-    },
     "/images/actual/national-aquarium-entrance.webp": {
       "status": "reviewed",
       "reviewedDate": "2026-08-28",
@@ -211,6 +187,26 @@
     "/videos/actual/sir-bani-yas-coastal-road-2021.mp4": {
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
+    },
+    "/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-29",
+      "note": "Presenter face/head was pixelated after manual visual review; the edited WebP was reopened and visually verified."
+    },
+    "/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-29",
+      "note": "Foreground playground users' identifiable head/face regions were pixelated after manual review; the edited WebP was reopened and visually verified."
+    },
+    "/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-29",
+      "note": "Children/adults in identifiable playground head/face regions were pixelated after manual review; the edited WebP was reopened and visually verified."
+    },
+    "/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-29",
+      "note": "Visitor faces in the central group and right foreground were pixelated after manual review; the edited WebP was reopened and visually verified."
     }
   }
 }
