@@ -19,52 +19,76 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Download verified privacy image package
+      - name: Generate deterministic privacy mosaics
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p /tmp/privacy-images
-          python -m pip install --disable-pip-version-check gdown
-          gdown 'https://drive.google.com/uc?id=1Ob0p7RFe2btfTCPLKg_tMY9iy52y9FUl&export=download' -O /tmp/privacy-images/package.zip
-          echo 'be51bb91c643eeb8f84bdd344bade3e3dfbfd9babd657f39c9a02251c5da07f2  /tmp/privacy-images/package.zip' | sha256sum --check --strict
-          unzip -q /tmp/privacy-images/package.zip -d /tmp/privacy-images/source
-          echo '9b223ec1d3251ea8a84a24416f4ff0f438ab0d73d5c0d5351cc1f4fe7304560b  /tmp/privacy-images/source/abu-dhabi-korean-community-space-2015.webp' | sha256sum --check --strict
-          echo '8e9c2586a56cd738e0c4bfa88a2c77d20a935aa16d0c480eac5b17d62f4e45e2  /tmp/privacy-images/source/abu-dhabi-neighborhood-playground-2019.webp' | sha256sum --check --strict
-          echo '08eef6010aa197ba34d4c7b7ea65d238aac04c9d88445dbe87a1a14413dd50b0  /tmp/privacy-images/source/abu-dhabi-shaded-playground-2019.webp' | sha256sum --check --strict
-          echo 'a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc  /tmp/privacy-images/source/grand-mosque-visitor-flow-2012.webp' | sha256sum --check --strict
+          python -m pip install --disable-pip-version-check 'Pillow==12.3.0'
+          python3 <<'PY'
+          from pathlib import Path
+          from PIL import Image
 
-      - name: Install cache-busted privacy images and update references
+          root = Path('.')
+          actual = root / 'public/images/actual'
+          jobs = {
+              'abu-dhabi-korean-community-space-2015.webp': {
+                  'out': 'abu-dhabi-korean-community-space-2015-mosaic-v2.webp',
+                  'rects': [(620,405,700,505)],
+              },
+              'abu-dhabi-neighborhood-playground-2019.webp': {
+                  'out': 'abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp',
+                  'rects': [(675,375,725,435),(705,350,760,410),(960,315,1015,390),(1035,340,1090,400),(1110,390,1165,455),(915,425,970,490),(1320,330,1375,395)],
+              },
+              'abu-dhabi-shaded-playground-2019.webp': {
+                  'out': 'abu-dhabi-shaded-playground-2019-mosaic-v2.webp',
+                  'rects': [(115,630,180,705),(680,705,805,795),(805,700,865,785),(855,620,925,700),(1120,720,1180,800),(1160,750,1215,825),(1635,700,1705,775),(1700,745,1780,830)],
+              },
+              'grand-mosque-visitor-flow-2012.webp': {
+                  'out': 'grand-mosque-visitor-flow-2012-mosaic-v2.webp',
+                  'rects': [(350,495,1020,650),(1450,405,1600,650)],
+              },
+          }
+
+          for source_name, spec in jobs.items():
+              source = actual / source_name
+              output = actual / spec['out']
+              if not source.is_file():
+                  raise SystemExit(f'privacy source is missing: {source}')
+              image = Image.open(source).convert('RGB')
+              for box in spec['rects']:
+                  region = image.crop(box)
+                  width, height = region.size
+                  small = (max(1, width // 14), max(1, height // 14))
+                  pixelated = region.resize(small, Image.Resampling.BOX).resize((width, height), Image.Resampling.NEAREST)
+                  image.paste(pixelated, box)
+              image.save(output, format='WEBP', quality=86, method=6)
+              with Image.open(output) as check:
+                  check.load()
+                  if check.size != image.size:
+                      raise SystemExit(f'edited image dimension changed unexpectedly: {output}')
+          PY
+
+          echo '9b223ec1d3251ea8a84a24416f4ff0f438ab0d73d5c0d5351cc1f4fe7304560b  public/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp' | sha256sum --check --strict
+          echo '8e9c2586a56cd738e0c4bfa88a2c77d20a935aa16d0c480eac5b17d62f4e45e2  public/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp' | sha256sum --check --strict
+          echo '08eef6010aa197ba34d4c7b7ea65d238aac04c9d88445dbe87a1a14413dd50b0  public/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp' | sha256sum --check --strict
+          echo 'a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc  public/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp' | sha256sum --check --strict
+
+      - name: Replace old assets and update privacy records
         shell: bash
         run: |
           set -euo pipefail
           python3 <<'PY'
           from pathlib import Path
           import json
-          import shutil
 
           root = Path('.')
-          source = Path('/tmp/privacy-images/source')
-          public_actual = root / 'public/images/actual'
-
+          actual = root / 'public/images/actual'
           mapping = {
               '/images/actual/abu-dhabi-korean-community-space-2015.webp': '/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp',
               '/images/actual/abu-dhabi-neighborhood-playground-2019.webp': '/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp',
               '/images/actual/abu-dhabi-shaded-playground-2019.webp': '/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp',
               '/images/actual/grand-mosque-visitor-flow-2012.webp': '/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp',
           }
-
-          source_names = {old: old.rsplit('/', 1)[-1] for old in mapping}
-
-          for old, new in mapping.items():
-              src = source / source_names[old]
-              dest = public_actual / new.rsplit('/', 1)[-1]
-              if not src.is_file():
-                  raise SystemExit(f'missing verified source: {src}')
-              shutil.copyfile(src, dest)
-              old_file = public_actual / old.rsplit('/', 1)[-1]
-              if not old_file.is_file():
-                  raise SystemExit(f'expected old asset is missing: {old_file}')
-              old_file.unlink()
 
           text_suffixes = {'.md', '.astro', '.mjs', '.js', '.ts', '.json', '.yml', '.yaml'}
           for base in [root / 'src', root / 'scripts']:
@@ -129,6 +153,12 @@ jobs:
           manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
           for old in mapping:
+              old_file = actual / old.rsplit('/', 1)[-1]
+              if not old_file.is_file():
+                  raise SystemExit(f'expected old asset is missing: {old_file}')
+              old_file.unlink()
+
+          for old in mapping:
               for base in [root / 'src', root / 'scripts']:
                   for path in base.rglob('*'):
                       if path.is_file() and path.suffix in text_suffixes and old in path.read_text(encoding='utf-8'):
@@ -146,7 +176,7 @@ jobs:
           test ! -e public/images/actual/abu-dhabi-shaded-playground-2019.webp
           test ! -e public/images/actual/grand-mosque-visitor-flow-2012.webp
 
-      - name: Verify edited binary hashes after installation
+      - name: Reverify edited binary hashes
         shell: bash
         run: |
           set -euo pipefail
@@ -154,6 +184,7 @@ jobs:
           echo '8e9c2586a56cd738e0c4bfa88a2c77d20a935aa16d0c480eac5b17d62f4e45e2  public/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp' | sha256sum --check --strict
           echo '08eef6010aa197ba34d4c7b7ea65d238aac04c9d88445dbe87a1a14413dd50b0  public/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp' | sha256sum --check --strict
           echo 'a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc  public/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp' | sha256sum --check --strict
+          sha256sum public/images/actual/*-mosaic-v2.webp
 
       - name: Validate privacy inventory before commit
         run: npm run check:media-privacy
