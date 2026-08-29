@@ -1,0 +1,174 @@
+name: Apply privacy-edited field-note images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/apply-privacy-images.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Download verified privacy image package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/privacy-images
+          curl --fail --location --retry 3 --retry-delay 2 \
+            'https://drive.usercontent.google.com/download?id=1Ob0p7RFe2btfTCPLKg_tMY9iy52y9FUl&export=download&confirm=t' \
+            --output /tmp/privacy-images/package.zip
+          echo 'be51bb91c643eeb8f84bdd344bade3e3dfbfd9babd657f39c9a02251c5da07f2  /tmp/privacy-images/package.zip' | sha256sum --check --strict
+          unzip -q /tmp/privacy-images/package.zip -d /tmp/privacy-images/source
+          echo '9b223ec1d3251ea8a84a24416f4ff0f438ab0d73d5c0d5351cc1f4fe7304560b  /tmp/privacy-images/source/abu-dhabi-korean-community-space-2015.webp' | sha256sum --check --strict
+          echo '8e9c2586a56cd738e0c4bfa88a2c77d20a935aa16d0c480eac5b17d62f4e45e2  /tmp/privacy-images/source/abu-dhabi-neighborhood-playground-2019.webp' | sha256sum --check --strict
+          echo '08eef6010aa197ba34d4c7b7ea65d238aac04c9d88445dbe87a1a14413dd50b0  /tmp/privacy-images/source/abu-dhabi-shaded-playground-2019.webp' | sha256sum --check --strict
+          echo 'a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc  /tmp/privacy-images/source/grand-mosque-visitor-flow-2012.webp' | sha256sum --check --strict
+
+      - name: Install cache-busted privacy images and update references
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+          import json
+          import shutil
+
+          root = Path('.')
+          source = Path('/tmp/privacy-images/source')
+          public_actual = root / 'public/images/actual'
+
+          mapping = {
+              '/images/actual/abu-dhabi-korean-community-space-2015.webp': '/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp',
+              '/images/actual/abu-dhabi-neighborhood-playground-2019.webp': '/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp',
+              '/images/actual/abu-dhabi-shaded-playground-2019.webp': '/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp',
+              '/images/actual/grand-mosque-visitor-flow-2012.webp': '/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp',
+          }
+
+          source_names = {
+              old: old.rsplit('/', 1)[-1]
+              for old in mapping
+          }
+
+          for old, new in mapping.items():
+              src = source / source_names[old]
+              dest = public_actual / new.rsplit('/', 1)[-1]
+              if not src.is_file():
+                  raise SystemExit(f'missing verified source: {src}')
+              shutil.copyfile(src, dest)
+              old_file = public_actual / old.rsplit('/', 1)[-1]
+              if not old_file.is_file():
+                  raise SystemExit(f'expected old asset is missing: {old_file}')
+              old_file.unlink()
+
+          text_suffixes = {'.md', '.astro', '.mjs', '.js', '.ts', '.json', '.yml', '.yaml'}
+          for base in [root / 'src', root / 'scripts']:
+              for path in base.rglob('*'):
+                  if not path.is_file() or path.suffix not in text_suffixes:
+                      continue
+                  text = path.read_text(encoding='utf-8')
+                  updated = text
+                  for old, new in mapping.items():
+                      updated = updated.replace(old, new)
+                  if updated != text:
+                      path.write_text(updated, encoding='utf-8')
+
+          community_path = root / 'src/content/posts/abu-dhabi-korean-community-space-2015.md'
+          community = community_path.read_text(encoding='utf-8')
+          old_para = '또한 사진을 공개할 때는 다른 참석자의 얼굴과 개인 정보가 드러나는지 먼저 확인했습니다. 이 글에서 사용하는 장면은 특정 사람을 알아보기 어렵고, 누구의 참석 여부도 설명하지 않습니다.'
+          new_para = '또한 사진을 공개할 때는 다른 참석자의 얼굴과 개인정보가 드러나는지 먼저 확인했고, 식별 가능성이 있는 얼굴은 모자이크 처리했습니다. 이 글에서는 누구의 참석 여부도 설명하지 않습니다.'
+          if old_para not in community:
+              raise SystemExit('community privacy paragraph marker not found')
+          community = community.replace(old_para, new_para)
+          old_note = '다른 참석자의 얼굴과 개인정보가 드러나지 않는 장면을 골랐으며, 정확한 단체명·장소·행사명은 공개하지 않습니다.'
+          new_note = '다른 참석자의 사생활 보호를 위해 식별 가능한 얼굴은 모자이크 처리했으며, 정확한 단체명·장소·행사명은 공개하지 않습니다.'
+          if old_note not in community:
+              raise SystemExit('community photo note marker not found')
+          community_path.write_text(community.replace(old_note, new_note), encoding='utf-8')
+
+          playground_path = root / 'src/content/posts/abu-dhabi-neighborhood-playground-2019.md'
+          playground = playground_path.read_text(encoding='utf-8')
+          marker = '하지만 당시의 생활을 떠올릴 때는 큰 랜드마크보다 이런 공간이 먼저 생각납니다. 놀이터는 아이가 뛰어노는 장소이면서, 보호자가 햇빛과 그늘을 계산하고 이웃과 짧게 인사하던 생활의 접점이었습니다.\n'
+          addition = marker + '\n사진 속 다른 이용자의 사생활 보호를 위해 식별 가능한 얼굴은 모자이크 처리했습니다.\n'
+          if marker not in playground:
+              raise SystemExit('playground privacy note insertion marker not found')
+          playground_path.write_text(playground.replace(marker, addition, 1), encoding='utf-8')
+
+          mosque_path = root / 'src/content/posts/blog-post_11.md'
+          mosque = mosque_path.read_text(encoding='utf-8')
+          image_line = '![2012년 12월 셰이크 자이드 그랜드 모스크 내부에서 촬영한 방문객 동선과 꽃무늬 벽면](/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp)\n'
+          if image_line not in mosque:
+              raise SystemExit('mosque visitor-flow image marker not found')
+          mosque = mosque.replace(image_line, image_line + '\n사진 속 방문객의 사생활 보호를 위해 식별 가능한 얼굴은 모자이크 처리했습니다.\n', 1)
+          mosque_path.write_text(mosque, encoding='utf-8')
+
+          manifest_path = root / 'src/data/media-privacy-reviews.json'
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          notes = {
+              '/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp': "Presenter face/head was pixelated after manual visual review; the edited WebP was reopened and visually verified.",
+              '/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp': "Foreground playground users' identifiable head/face regions were pixelated after manual review; the edited WebP was reopened and visually verified.",
+              '/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp': "Children/adults in identifiable playground head/face regions were pixelated after manual review; the edited WebP was reopened and visually verified.",
+              '/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp': "Visitor faces in the central group and right foreground were pixelated after manual review; the edited WebP was reopened and visually verified.",
+          }
+          for old, new in mapping.items():
+              entry = manifest['media'].pop(new, None)
+              if entry is None:
+                  entry = manifest['media'].pop(old, None)
+              if entry is None:
+                  raise SystemExit(f'privacy manifest entry missing for {old}')
+              manifest['media'][new] = {
+                  'status': 'privacy-edited',
+                  'reviewedDate': '2026-08-29',
+                  'note': notes[new],
+              }
+          manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          for old in mapping:
+              for base in [root / 'src', root / 'scripts']:
+                  for path in base.rglob('*'):
+                      if path.is_file() and path.suffix in text_suffixes and old in path.read_text(encoding='utf-8'):
+                          raise SystemExit(f'stale old media reference remains: {old} in {path}')
+          PY
+
+          rm .github/workflows/apply-privacy-images.yml
+
+          test -f public/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp
+          test -f public/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp
+          test -f public/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp
+          test -f public/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp
+          test ! -e public/images/actual/abu-dhabi-korean-community-space-2015.webp
+          test ! -e public/images/actual/abu-dhabi-neighborhood-playground-2019.webp
+          test ! -e public/images/actual/abu-dhabi-shaded-playground-2019.webp
+          test ! -e public/images/actual/grand-mosque-visitor-flow-2012.webp
+
+      - name: Verify edited binary hashes after installation
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '9b223ec1d3251ea8a84a24416f4ff0f438ab0d73d5c0d5351cc1f4fe7304560b  public/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp' | sha256sum --check --strict
+          echo '8e9c2586a56cd738e0c4bfa88a2c77d20a935aa16d0c480eac5b17d62f4e45e2  public/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp' | sha256sum --check --strict
+          echo '08eef6010aa197ba34d4c7b7ea65d238aac04c9d88445dbe87a1a14413dd50b0  public/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp' | sha256sum --check --strict
+          echo 'a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc  public/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp' | sha256sum --check --strict
+
+      - name: Validate privacy inventory before commit
+        run: npm run check:media-privacy
+
+      - name: Commit privacy-edited images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git commit -m 'Apply privacy mosaics to high-priority field-note images'
+          git push origin HEAD:main
