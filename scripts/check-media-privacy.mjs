@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFile, readdir, stat } from "node:fs/promises";
 import { join, relative, sep } from "node:path";
 
@@ -11,6 +12,24 @@ const actualDirs = [
 ];
 const allowedStatuses = new Set(["needs-review", "reviewed", "privacy-edited", "privacy-action-needed"]);
 const allowedPriorities = new Set(["normal", "high"]);
+const pinnedPrivacyEdits = new Map([
+  [
+    "/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp",
+    { sha256: "9b223ec1d3251ea8a84a24416f4ff0f438ab0d73d5c0d5351cc1f4fe7304560b", size: 97842 }
+  ],
+  [
+    "/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp",
+    { sha256: "8e9c2586a56cd738e0c4bfa88a2c77d20a935aa16d0c480eac5b17d62f4e45e2", size: 523006 }
+  ],
+  [
+    "/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp",
+    { sha256: "08eef6010aa197ba34d4c7b7ea65d238aac04c9d88445dbe87a1a14413dd50b0", size: 418450 }
+  ],
+  [
+    "/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp",
+    { sha256: "a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc", size: 175536 }
+  ]
+]);
 const failures = [];
 
 function fail(message) {
@@ -47,6 +66,10 @@ function collectActualMediaRefs(text) {
     refs.add(match[0]);
   }
   return refs;
+}
+
+function sha256(buffer) {
+  return createHash("sha256").update(buffer).digest("hex");
 }
 
 let manifest;
@@ -95,6 +118,28 @@ for (const mediaPath of manifestPaths) {
     if (!allowedPriorities.has(entry?.priority)) {
       fail(`${mediaPath}: privacy-action-needed requires priority=normal or high`);
     }
+  }
+}
+
+for (const [mediaPath, expected] of pinnedPrivacyEdits) {
+  const entry = entries[mediaPath];
+  if (entry?.status !== "privacy-edited") {
+    fail(`${mediaPath}: pinned privacy edit must remain status=privacy-edited`);
+    continue;
+  }
+
+  const file = join(publicDir, mediaPath.replace(/^\//, ""));
+  try {
+    const data = await readFile(file);
+    if (data.length !== expected.size) {
+      fail(`${mediaPath}: privacy-edited file size changed (${data.length} != ${expected.size})`);
+    }
+    const digest = sha256(data);
+    if (digest !== expected.sha256) {
+      fail(`${mediaPath}: privacy-edited SHA-256 changed (${digest} != ${expected.sha256})`);
+    }
+  } catch (error) {
+    fail(`${mediaPath}: cannot verify pinned privacy edit (${error.message})`);
   }
 }
 
@@ -158,6 +203,7 @@ console.log(
 console.log(
   `Documented review status: ${reviewedInventory.length} reviewed, ${editedInventory.length} privacy-edited, ${actionInventory.length} privacy-action-needed; ${fieldNoteNeedsReview.length} field-note media item(s) remain unreviewed.`
 );
+console.log(`Pinned privacy-edit integrity: ${pinnedPrivacyEdits.size} manually verified image(s) match expected size and SHA-256.`);
 
 if (fieldNoteCleared.length > 0) {
   console.log("Cleared or privacy-edited field-note media:");
