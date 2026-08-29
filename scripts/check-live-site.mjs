@@ -1,9 +1,37 @@
+import { createHash } from "node:crypto";
+
 const canonicalOrigin = "https://www.onearthtrip.com";
 const apexOrigin = "https://onearthtrip.com";
 const publisherId = "ca-pub-6918910185244897";
 const adsTxtLine = "google.com, pub-6918910185244897, DIRECT, f08c47fec0942fa0";
 const dubaiMosaicVideoPath = "/videos/actual/dubai-fountain-2012-mosaic-v4.mp4";
 const dubaiMosaicVideoBytes = 24426606;
+const privacyMosaicImages = [
+  {
+    path: "/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp",
+    bytes: 97842,
+    sha256: "9b223ec1d3251ea8a84a24416f4ff0f438ab0d73d5c0d5351cc1f4fe7304560b",
+    label: "Korean community privacy mosaic"
+  },
+  {
+    path: "/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp",
+    bytes: 523006,
+    sha256: "8e9c2586a56cd738e0c4bfa88a2c77d20a935aa16d0c480eac5b17d62f4e45e2",
+    label: "Neighborhood playground privacy mosaic"
+  },
+  {
+    path: "/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp",
+    bytes: 418450,
+    sha256: "08eef6010aa197ba34d4c7b7ea65d238aac04c9d88445dbe87a1a14413dd50b0",
+    label: "Shaded playground privacy mosaic"
+  },
+  {
+    path: "/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp",
+    bytes: 175536,
+    sha256: "a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc",
+    label: "Grand Mosque visitor privacy mosaic"
+  }
+];
 
 const failures = [];
 
@@ -173,6 +201,44 @@ async function checkVideoAsset(url, label, expectedBytes) {
   }
 }
 
+async function checkImageAsset(url, label, expectedBytes, expectedSha256) {
+  try {
+    const response = await request(url, { redirect: "manual" });
+    const contentType = response.headers.get("content-type") ?? "";
+
+    if ([301, 302, 303, 307, 308].includes(response.status)) {
+      fail(`${label}: must be served directly from oneearthtrip.com, got redirect ${response.status}.`);
+      return;
+    }
+
+    if (response.status !== 200) {
+      fail(`${label}: expected HTTP 200, got ${response.status}.`);
+      return;
+    }
+
+    if (!contentType.toLowerCase().includes("image/webp")) {
+      fail(`${label}: expected image/webp, got ${contentType || "no content-type"}.`);
+      return;
+    }
+
+    const data = Buffer.from(await response.arrayBuffer());
+    if (data.length !== expectedBytes) {
+      fail(`${label}: expected ${expectedBytes} bytes, got ${data.length}.`);
+      return;
+    }
+
+    const digest = createHash("sha256").update(data).digest("hex");
+    if (digest !== expectedSha256) {
+      fail(`${label}: expected SHA-256 ${expectedSha256}, got ${digest}.`);
+      return;
+    }
+
+    pass(`${label}: live WebP matches expected ${expectedBytes} bytes and SHA-256.`);
+  } catch (error) {
+    fail(`${label}: request failed: ${error.message}`);
+  }
+}
+
 await checkRedirect(
   `${apexOrigin}/`,
   `${canonicalOrigin}/`,
@@ -248,6 +314,76 @@ await checkVideoAsset(
   dubaiMosaicVideoBytes
 );
 
+await checkHtml(
+  `${canonicalOrigin}/2015/03/abu-dhabi-korean-community-space-2015`,
+  [
+    {
+      description: "cache-busted Korean community privacy mosaic",
+      test: (html) => html.includes(privacyMosaicImages[0].path)
+    },
+    {
+      description: "Korean community privacy-edit disclosure",
+      test: (html) => html.includes("식별 가능성이 있는 얼굴은 모자이크 처리했습니다")
+    },
+    {
+      description: "Korean community article canonical URL",
+      test: (html) => html.includes(`${canonicalOrigin}/2015/03/abu-dhabi-korean-community-space-2015`)
+    }
+  ],
+  "Korean community field note"
+);
+
+await checkHtml(
+  `${canonicalOrigin}/2019/12/abu-dhabi-neighborhood-playground-2019`,
+  [
+    {
+      description: "cache-busted neighborhood playground privacy mosaic",
+      test: (html) => html.includes(privacyMosaicImages[1].path)
+    },
+    {
+      description: "cache-busted shaded playground privacy mosaic",
+      test: (html) => html.includes(privacyMosaicImages[2].path)
+    },
+    {
+      description: "playground privacy-edit disclosure",
+      test: (html) => html.includes("식별 가능한 얼굴은 모자이크 처리했습니다")
+    },
+    {
+      description: "playground article canonical URL",
+      test: (html) => html.includes(`${canonicalOrigin}/2019/12/abu-dhabi-neighborhood-playground-2019`)
+    }
+  ],
+  "Neighborhood playground field note"
+);
+
+await checkHtml(
+  `${canonicalOrigin}/2026/04/blog-post_11`,
+  [
+    {
+      description: "cache-busted Grand Mosque visitor privacy mosaic",
+      test: (html) => html.includes(privacyMosaicImages[3].path)
+    },
+    {
+      description: "Grand Mosque visitor privacy-edit disclosure",
+      test: (html) => html.includes("식별 가능한 얼굴은 모자이크 처리했습니다")
+    },
+    {
+      description: "Grand Mosque article canonical URL",
+      test: (html) => html.includes(`${canonicalOrigin}/2026/04/blog-post_11`)
+    }
+  ],
+  "Grand Mosque field note"
+);
+
+for (const image of privacyMosaicImages) {
+  await checkImageAsset(
+    `${canonicalOrigin}${image.path}`,
+    image.label,
+    image.bytes,
+    image.sha256
+  );
+}
+
 await checkText(
   `${canonicalOrigin}/ads.txt`,
   (text) => text.trim() === adsTxtLine ? null : `expected exact ads.txt line: ${adsTxtLine}`,
@@ -291,4 +427,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("\nLive site readiness passed: canonical redirects, production HTML, same-origin Dubai mosaic video, ads.txt, robots.txt, and sitemaps are consistent.\n");
+console.log("\nLive site readiness passed: canonical redirects, production HTML, same-origin privacy-edited media, ads.txt, robots.txt, and sitemaps are consistent.\n");
