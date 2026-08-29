@@ -24,9 +24,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/privacy-images
-          curl --fail --location --retry 3 --retry-delay 2 \
-            'https://drive.usercontent.google.com/download?id=1Ob0p7RFe2btfTCPLKg_tMY9iy52y9FUl&export=download&confirm=t' \
-            --output /tmp/privacy-images/package.zip
+          python -m pip install --disable-pip-version-check gdown
+          gdown 'https://drive.google.com/uc?id=1Ob0p7RFe2btfTCPLKg_tMY9iy52y9FUl&export=download' -O /tmp/privacy-images/package.zip
           echo 'be51bb91c643eeb8f84bdd344bade3e3dfbfd9babd657f39c9a02251c5da07f2  /tmp/privacy-images/package.zip' | sha256sum --check --strict
           unzip -q /tmp/privacy-images/package.zip -d /tmp/privacy-images/source
           echo '9b223ec1d3251ea8a84a24416f4ff0f438ab0d73d5c0d5351cc1f4fe7304560b  /tmp/privacy-images/source/abu-dhabi-korean-community-space-2015.webp' | sha256sum --check --strict
@@ -54,10 +53,7 @@ jobs:
               '/images/actual/grand-mosque-visitor-flow-2012.webp': '/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp',
           }
 
-          source_names = {
-              old: old.rsplit('/', 1)[-1]
-              for old in mapping
-          }
+          source_names = {old: old.rsplit('/', 1)[-1] for old in mapping}
 
           for old, new in mapping.items():
               src = source / source_names[old]
@@ -114,10 +110,10 @@ jobs:
           manifest_path = root / 'src/data/media-privacy-reviews.json'
           manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
           notes = {
-              '/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp': "Presenter face/head was pixelated after manual visual review; the edited WebP was reopened and visually verified.",
+              '/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp': 'Presenter face/head was pixelated after manual visual review; the edited WebP was reopened and visually verified.',
               '/images/actual/abu-dhabi-neighborhood-playground-2019-mosaic-v2.webp': "Foreground playground users' identifiable head/face regions were pixelated after manual review; the edited WebP was reopened and visually verified.",
-              '/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp': "Children/adults in identifiable playground head/face regions were pixelated after manual review; the edited WebP was reopened and visually verified.",
-              '/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp': "Visitor faces in the central group and right foreground were pixelated after manual review; the edited WebP was reopened and visually verified.",
+              '/images/actual/abu-dhabi-shaded-playground-2019-mosaic-v2.webp': 'Children/adults in identifiable playground head/face regions were pixelated after manual review; the edited WebP was reopened and visually verified.',
+              '/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp': 'Visitor faces in the central group and right foreground were pixelated after manual review; the edited WebP was reopened and visually verified.',
           }
           for old, new in mapping.items():
               entry = manifest['media'].pop(new, None)
