@@ -10,6 +10,7 @@
     "dev": "astro dev --host 127.0.0.1",
     "check:links": "node scripts/check-internal-links.mjs",
     "check:images": "node scripts/check-images.mjs",
+    "check:rendered-images": "node scripts/check-rendered-image-performance.mjs",
     "check:media": "node scripts/check-media.mjs",
     "check:media-privacy": "node scripts/check-media-privacy.mjs",
     "check:field-notes": "node scripts/check-field-note-trust.mjs",
