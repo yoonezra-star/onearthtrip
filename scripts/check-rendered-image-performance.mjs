@@ -40,6 +40,8 @@ const postFiles = fs.readdirSync(postsDir).filter((name) => name.endsWith(".md")
 for (const name of postFiles) {
   const sourcePath = path.join(postsDir, name);
   const source = fs.readFileSync(sourcePath, "utf8");
+  if (/^draft:\s*true\s*$/m.test(source)) continue;
+
   const permalink = source.match(/^permalink:\s*["']([^"']+)["']/m)?.[1];
   if (!permalink) continue;
 
@@ -54,7 +56,7 @@ for (const name of postFiles) {
   const route = getPublicPath(permalink);
   const builtFile = routeToBuiltFile(route);
   if (!fs.existsSync(builtFile)) {
-    fail(`${name}: built article is missing at ${path.relative(root, builtFile)}`);
+    fail(`${name}: published article is missing at ${path.relative(root, builtFile)}`);
     continue;
   }
 
@@ -98,5 +100,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Rendered image performance passed: ${imageReferenceCount} unique Markdown image reference(s) across ${articleCount} article(s) render with lazy loading, async decoding, and intrinsic dimensions.`
+  `Rendered image performance passed: ${imageReferenceCount} unique Markdown image reference(s) across ${articleCount} published article(s) render with lazy loading, async decoding, and intrinsic dimensions.`
 );
