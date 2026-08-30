@@ -1,0 +1,44 @@
+name: Final privacy review batch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/privacy-review-final-batch.yml
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Extract Sir Bani Yas video review frames
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/privacy-final/video-frames
+          cp public/images/actual/abu-dhabi-flame-tree-road.webp /tmp/privacy-final/
+          cp public/images/actual/abu-dhabi-flame-tree.webp /tmp/privacy-final/
+          cp public/images/actual/sir-bani-yas-road-2021.webp /tmp/privacy-final/
+          cp public/images/actual/uae-zoo-giraffe-2014.webp /tmp/privacy-final/
+          cp public/images/actual/uae-zoo-zebras-2014.webp /tmp/privacy-final/
+          cp public/images/actual/yas-island-hotel-district-2014.webp /tmp/privacy-final/
+          cp public/images/actual/yas-island-morning-view-2014.webp /tmp/privacy-final/
+          ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 public/videos/actual/sir-bani-yas-coastal-road-2021.mp4 > /tmp/privacy-final/video-duration.txt
+          ffmpeg -hide_banner -loglevel error -i public/videos/actual/sir-bani-yas-coastal-road-2021.mp4 \
+            -vf "fps=1/5,scale=640:-2" -q:v 3 /tmp/privacy-final/video-frames/frame-%03d.jpg
+          printf 'frame_count=' > /tmp/privacy-final/video-frame-count.txt
+          find /tmp/privacy-final/video-frames -type f -name 'frame-*.jpg' | wc -l >> /tmp/privacy-final/video-frame-count.txt
+
+      - name: Upload final privacy review batch
+        uses: actions/upload-artifact@v4
+        with:
+          name: privacy-review-final-batch
+          retention-days: 1
+          if-no-files-found: error
+          path: /tmp/privacy-final
