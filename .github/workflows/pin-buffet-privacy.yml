@@ -1,0 +1,60 @@
+name: Pin buffet privacy edit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/pin-buffet-privacy.yml
+
+permissions:
+  contents: write
+
+jobs:
+  pin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Pin buffet mosaic in repository and live integrity checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+
+          media_check = Path('scripts/check-media-privacy.mjs')
+          text = media_check.read_text(encoding='utf-8')
+          marker = '''  [\n    "/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp",\n    { sha256: "a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc", size: 175536 }\n  ]\n]);'''
+          replacement = '''  [\n    "/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp",\n    { sha256: "a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc", size: 175536 }\n  ],\n  [\n    "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp",\n    { sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f", size: 227500 }\n  ]\n]);'''
+          if marker not in text:
+              raise SystemExit('media privacy pin marker not found')
+          media_check.write_text(text.replace(marker, replacement, 1), encoding='utf-8')
+
+          live_check = Path('scripts/check-live-site.mjs')
+          live = live_check.read_text(encoding='utf-8')
+          marker = '''  {\n    path: "/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp",\n    bytes: 175536,\n    sha256: "a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc",\n    label: "Grand Mosque visitor privacy mosaic"\n  }\n];'''
+          replacement = '''  {\n    path: "/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp",\n    bytes: 175536,\n    sha256: "a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc",\n    label: "Grand Mosque visitor privacy mosaic"\n  },\n  {\n    path: "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp",\n    bytes: 227500,\n    sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f",\n    label: "Hotel buffet privacy mosaic"\n  }\n];'''
+          if marker not in live:
+              raise SystemExit('live privacy image marker not found')
+          live_check.write_text(live.replace(marker, replacement, 1), encoding='utf-8')
+          PY
+
+          rm .github/workflows/pin-buffet-privacy.yml
+          git diff --check
+
+      - name: Verify local privacy checks
+        run: npm run check:media-privacy
+
+      - name: Commit permanent privacy integrity checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Pin buffet privacy mosaic integrity'
+          git push origin HEAD:main
