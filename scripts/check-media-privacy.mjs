@@ -28,6 +28,10 @@ const pinnedPrivacyEdits = new Map([
   [
     "/images/actual/grand-mosque-visitor-flow-2012-mosaic-v2.webp",
     { sha256: "a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc", size: 175536 }
+  ],
+  [
+    "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp",
+    { sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f", size: 227500 }
   ]
 ]);
 const failures = [];

@@ -30,6 +30,12 @@ const privacyMosaicImages = [
     bytes: 175536,
     sha256: "a7ad8d1052807ac57a7fecee41785dde871f44bb2545165d06fcf5946e4bdfdc",
     label: "Grand Mosque visitor privacy mosaic"
+  },
+  {
+    path: "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp",
+    bytes: 227500,
+    sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f",
+    label: "Hotel buffet privacy mosaic"
   }
 ];
 
