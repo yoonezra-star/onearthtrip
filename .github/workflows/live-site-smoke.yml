@@ -7,6 +7,8 @@ on:
     paths:
       - scripts/check-live-site.mjs
       - scripts/check-christmas-image-live.mjs
+      - src/data/media-privacy-reviews.json
+      - public/images/actual/**/*mosaic*.webp
       - .github/workflows/live-site-smoke.yml
 
 permissions:
