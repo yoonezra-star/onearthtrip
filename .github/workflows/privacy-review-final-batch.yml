@@ -36,14 +36,14 @@ jobs:
           cp public/images/actual/yas-island-morning-view-2014.webp /tmp/privacy-final/
           ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 public/videos/actual/sir-bani-yas-coastal-road-2021.mp4 > /tmp/privacy-final/video-duration.txt
           ffmpeg -hide_banner -loglevel error -i public/videos/actual/sir-bani-yas-coastal-road-2021.mp4 \
-            -vf "fps=1/5,scale=640:-2" -q:v 3 /tmp/privacy-final/video-frames/frame-%03d.jpg
+            -vf "fps=1,scale=720:-2" -q:v 3 /tmp/privacy-final/video-frames/frame-%03d.jpg
           printf 'frame_count=' > /tmp/privacy-final/video-frame-count.txt
           find /tmp/privacy-final/video-frames -type f -name 'frame-*.jpg' | wc -l >> /tmp/privacy-final/video-frame-count.txt
 
       - name: Upload final privacy review batch
         uses: actions/upload-artifact@v4
         with:
-          name: privacy-review-final-batch
+          name: privacy-review-final-batch-1fps
           retention-days: 1
           if-no-files-found: error
           path: /tmp/privacy-final
