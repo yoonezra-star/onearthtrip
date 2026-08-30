@@ -22,8 +22,9 @@
       "note": "Manual visual review: performers are distant within a public performance scene; no clearly identifiable foreground face was observed."
     },
     "/images/actual/abu-dhabi-evening-beach-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found beach users only at distant scale with no clearly identifiable face in the image."
     },
     "/images/actual/abu-dhabi-flame-tree-road.webp": {
       "status": "needs-review",
@@ -49,12 +50,6 @@
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
     },
-    "/images/actual/abu-dhabi-hotel-buffet-2019.webp": {
-      "status": "privacy-action-needed",
-      "reviewedDate": "2026-08-28",
-      "priority": "normal",
-      "note": "Manual visual review found a background staff member with a visible face; consider crop or mosaic before treating this image as cleared."
-    },
     "/images/actual/abu-dhabi-hotel-ceiling-2012.webp": {
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
@@ -69,8 +64,9 @@
       "note": "Manual visual review found an empty event room with no people visible."
     },
     "/images/actual/abu-dhabi-hotel-indoor-pool-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found an empty indoor pool area with no people visible."
     },
     "/images/actual/abu-dhabi-hotel-outdoor-pool-2014.webp": {
       "status": "reviewed",
@@ -83,24 +79,28 @@
       "note": "Manual visual review found an empty restaurant interior with no people visible."
     },
     "/images/actual/abu-dhabi-hotel-room-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found an empty hotel room with no people visible."
     },
     "/images/actual/abu-dhabi-immersive-exhibit-2021.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found one visitor viewed from behind; no face or obvious identifying detail is visible."
     },
     "/images/actual/abu-dhabi-rooftop-pool-city-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found an empty rooftop pool area with no people visible."
     },
     "/images/actual/abu-dhabi-water-truck-2014.webp": {
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/abu-dhabi-waterfront-night-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found no identifiable people in the waterfront night scene."
     },
     "/images/actual/burj-khalifa-day-2012.webp": {
       "status": "needs-review",
@@ -111,8 +111,9 @@
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/camel-farm.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found a single person only at very distant scale with no identifiable facial detail."
     },
     "/images/actual/desert-dune-pause-2012.webp": {
       "status": "needs-review",
@@ -148,20 +149,23 @@
       "note": "Manual visual review found no identifiable foreground person; only very distant figures appear near the entrance."
     },
     "/images/actual/national-aquarium-reef.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found aquarium animals and reef scenery with no people visible."
     },
     "/images/actual/national-aquarium-sharks.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found one foreground visitor as a dark rear-facing silhouette; no face is visible."
     },
     "/images/actual/sir-bani-yas-road-2021.webp": {
       "status": "needs-review",
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/uae-zoo-bird-enclosure-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found birds and enclosure structures with no people visible."
     },
     "/images/actual/uae-zoo-giraffe-2014.webp": {
       "status": "needs-review",
@@ -207,6 +211,11 @@
       "status": "privacy-edited",
       "reviewedDate": "2026-08-29",
       "note": "Visitor faces in the central group and right foreground were pixelated after manual review; the edited WebP was reopened and visually verified."
+    },
+    "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-30",
+      "note": "Background staff face was pixelated after manual visual review; the edited WebP was reopened and visually verified."
     }
   }
 }

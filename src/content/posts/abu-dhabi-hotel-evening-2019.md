@@ -7,7 +7,7 @@ author: "아부라이프"
 category: "나의 UAE 추억"
 tags: ["아부다비 호텔", "아부다비 저녁", "호텔 뷔페", "UAE 생활", "사진 기록", "개인 기록"]
 permalink: "/2019/12/abu-dhabi-hotel-evening-2019.html"
-heroImage: "/images/actual/abu-dhabi-hotel-buffet-2019.webp"
+heroImage: "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp"
 contentType: "field-note"
 fieldNote:
   label: "기록 범위: 2019년 12월 14일 아부다비의 한 호텔에서 직접 촬영한 저녁 식당과 야외 풍경 두 장"
@@ -20,7 +20,7 @@ fieldNote:
 
 ## 손님이 오기 전처럼 정돈된 식당
 
-![2019년 12월 아부다비의 한 호텔에서 촬영한 저녁 뷔페 식당과 정돈된 테이블](/images/actual/abu-dhabi-hotel-buffet-2019.webp)
+![2019년 12월 아부다비의 한 호텔에서 촬영한 저녁 뷔페 식당과 정돈된 테이블](/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp)
 
 대표 사진에는 아직 빈 의자가 많습니다. 뷔페의 음식보다 먼저 보이는 것은 반듯하게 맞춰 놓은 식탁과 반복되는 조명입니다. 많은 사람이 오가는 공간인데도 사진을 찍은 순간만큼은 조용했고, 식사를 시작하기 전 잠시 주변을 둘러볼 여유가 있었습니다.
 
