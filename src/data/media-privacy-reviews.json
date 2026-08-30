@@ -2,10 +2,6 @@
   "version": 1,
   "policy": "A status records documented human privacy review only. needs-review means not yet visually reviewed; reviewed means visually checked with no obvious privacy edit required; privacy-action-needed means visual review found people or context that should be considered for crop or mosaic; privacy-edited means a privacy edit was completed.",
   "media": {
-    "/images/actual/abu-dhabi-beach-mosque-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
-    },
     "/images/actual/abu-dhabi-christmas-lobby-2012-mosaic.webp": {
       "status": "privacy-edited",
       "reviewedDate": "2026-08-27",
@@ -35,28 +31,34 @@
       "note": "No documented visual privacy review yet."
     },
     "/images/actual/abu-dhabi-high-rise-view-2021.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found only a high-angle city/pool view; any people are too distant for facial identification."
     },
     "/images/actual/abu-dhabi-highway-sunset-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found a road and sunset scene with no identifiable people visible."
     },
     "/images/actual/abu-dhabi-hotel-ballroom-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found an empty ballroom/event interior with no people visible."
     },
     "/images/actual/abu-dhabi-hotel-bathroom-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found an empty hotel bathroom with no people visible."
     },
     "/images/actual/abu-dhabi-hotel-ceiling-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found an architectural ceiling detail with no people visible."
     },
     "/images/actual/abu-dhabi-hotel-evening-lights-2019.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found one distant rear-facing person; no face or identifying detail is visible."
     },
     "/images/actual/abu-dhabi-hotel-event-room-2014.webp": {
       "status": "reviewed",
@@ -93,22 +95,20 @@
       "reviewedDate": "2026-08-30",
       "note": "Manual visual review found an empty rooftop pool area with no people visible."
     },
-    "/images/actual/abu-dhabi-water-truck-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
-    },
     "/images/actual/abu-dhabi-waterfront-night-2012.webp": {
       "status": "reviewed",
       "reviewedDate": "2026-08-30",
       "note": "Manual visual review found no identifiable people in the waterfront night scene."
     },
     "/images/actual/burj-khalifa-day-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found the Burj Khalifa exterior with no identifiable people visible."
     },
     "/images/actual/burj-khalifa-night-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found the Burj Khalifa night exterior with no identifiable people visible."
     },
     "/images/actual/camel-farm.webp": {
       "status": "reviewed",
@@ -116,32 +116,39 @@
       "note": "Manual visual review found a single person only at very distant scale with no identifiable facial detail."
     },
     "/images/actual/desert-dune-pause-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found one person only at distant scale and viewed from behind; no identifiable face is visible."
     },
     "/images/actual/desert-livestock-enclosure-2012.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found the livestock enclosure scene with no identifiable people visible."
     },
     "/images/actual/dubai-fountain-video-2012.webp": {
-      "status": "needs-review",
-      "note": "Poster image has no separate documented visual privacy review."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found a crowd viewed mainly from behind and in silhouette; no clearly identifiable face is visible in the poster image."
     },
     "/images/actual/dune-camel.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found a camel and desert scene with no people visible."
     },
     "/images/actual/grand-mosque-exterior.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found the distant Grand Mosque exterior with no identifiable people visible."
     },
     "/images/actual/grand-mosque-floral-window.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found an architectural floral-window detail with no people visible."
     },
     "/images/actual/grand-mosque-night.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found visitors only at distant scale in the mosque courtyard; no identifiable face is visible."
     },
     "/images/actual/national-aquarium-entrance.webp": {
       "status": "reviewed",
@@ -216,6 +223,16 @@
       "status": "privacy-edited",
       "reviewedDate": "2026-08-30",
       "note": "Background staff face was pixelated after manual visual review; the edited WebP was reopened and visually verified."
+    },
+    "/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-30",
+      "note": "A child face/head region was pixelated after manual visual review; the edited WebP was reopened and visually verified."
+    },
+    "/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp": {
+      "status": "privacy-edited",
+      "reviewedDate": "2026-08-30",
+      "note": "The clearly readable vehicle license plate was pixelated after manual visual review; the edited WebP was reopened and visually verified."
     }
   }
 }

@@ -32,6 +32,14 @@ const pinnedPrivacyEdits = new Map([
   [
     "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp",
     { sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f", size: 227500 }
+  ],
+  [
+    "/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp",
+    { sha256: "f17b7864d23f05baa4b9dffd6bbad274e7a661b7dc8b8a000f108d11e8a596f5", size: 224292 }
+  ],
+  [
+    "/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp",
+    { sha256: "be20fb5b9df39708b468f22fb85dd4f31323661005c2574d90a3ba49e932d88a", size: 194446 }
   ]
 ]);
 const failures = [];

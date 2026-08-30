@@ -7,7 +7,7 @@ author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["아부다비 한인 생활", "생수 배달", "주거 생활", "2014년 UAE", "생활 사진", "사진 기록"]
 permalink: "/2014/09/abu-dhabi-water-delivery-2014.html"
-heroImage: "/images/actual/abu-dhabi-water-truck-2014.webp"
+heroImage: "/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp"
 contentType: "field-note"
 fieldNote:
   label: "기록 범위: 2014년 아부다비 주거지에서 직접 촬영한 생수 배달 차량과 같은 해 이동 중 촬영한 도로 풍경"
@@ -24,7 +24,9 @@ fieldNote:
 
 처음에는 물이 배달되는 장면 자체가 눈에 들어왔습니다. 시간이 지나면서는 트럭보다 그 뒤에 이어지는 일이 더 중요해졌습니다. 새 물을 들여놓고, 빈 용기를 한쪽에 모아 두고, 며칠 뒤 다시 확인하는 작은 순서가 반복됐습니다.
 
-![2014년 아부다비 주거지에서 직접 촬영한 생수 배달 트럭](/images/actual/abu-dhabi-water-truck-2014.webp)
+![2014년 아부다비 주거지에서 직접 촬영한 생수 배달 트럭](/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp)
+
+차량을 특정할 수 있는 번호판은 사생활 보호를 위해 모자이크 처리했습니다.
 
 사진에는 당시 업체의 상호와 연락처가 보일 수 있습니다. 오래된 사진을 공개할 때 이 부분은 특히 조심해야 합니다. 번호가 사진에 남아 있다고 해서 지금도 같은 업체나 서비스가 운영된다는 뜻은 아닙니다. 그래서 이 글에서는 업체를 찾는 정보가 아니라 2014년의 차량 디자인과 생활 풍경을 보여 주는 자료로만 사용합니다.
 

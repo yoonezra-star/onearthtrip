@@ -36,6 +36,18 @@ const privacyMosaicImages = [
     bytes: 227500,
     sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f",
     label: "Hotel buffet privacy mosaic"
+  },
+  {
+    path: "/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp",
+    bytes: 224292,
+    sha256: "f17b7864d23f05baa4b9dffd6bbad274e7a661b7dc8b8a000f108d11e8a596f5",
+    label: "Beach child privacy mosaic"
+  },
+  {
+    path: "/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp",
+    bytes: 194446,
+    sha256: "be20fb5b9df39708b468f22fb85dd4f31323661005c2574d90a3ba49e932d88a",
+    label: "Water truck plate privacy mosaic"
   }
 ];
 
@@ -379,6 +391,36 @@ await checkHtml(
     }
   ],
   "Grand Mosque field note"
+);
+
+await checkHtml(
+  `${canonicalOrigin}/2012/09/abu-dhabi-evening-beach-2012`,
+  [
+    {
+      description: "cache-busted beach child privacy mosaic",
+      test: (html) => html.includes(privacyMosaicImages[5].path)
+    },
+    {
+      description: "beach child privacy-edit disclosure",
+      test: (html) => html.includes("아이의 사생활 보호를 위해 얼굴을 식별할 수 있는 영역은 모자이크 처리했습니다")
+    }
+  ],
+  "Evening beach field note"
+);
+
+await checkHtml(
+  `${canonicalOrigin}/2014/09/abu-dhabi-water-delivery-2014`,
+  [
+    {
+      description: "cache-busted water truck privacy mosaic",
+      test: (html) => html.includes(privacyMosaicImages[6].path)
+    },
+    {
+      description: "water truck privacy-edit disclosure",
+      test: (html) => html.includes("차량을 특정할 수 있는 번호판은 사생활 보호를 위해 모자이크 처리했습니다")
+    }
+  ],
+  "Water delivery field note"
 );
 
 for (const image of privacyMosaicImages) {
