@@ -23,12 +23,14 @@
       "note": "Manual visual review found beach users only at distant scale with no clearly identifiable face in the image."
     },
     "/images/actual/abu-dhabi-flame-tree-road.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found a tree-lined road scene; vehicles and any distant people are too small for personal identification."
     },
     "/images/actual/abu-dhabi-flame-tree.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found the flowering tree and park setting with no identifiable person or readable vehicle identifier."
     },
     "/images/actual/abu-dhabi-high-rise-view-2021.webp": {
       "status": "reviewed",
@@ -166,8 +168,9 @@
       "note": "Manual visual review found one foreground visitor as a dark rear-facing silhouette; no face is visible."
     },
     "/images/actual/sir-bani-yas-road-2021.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found an empty coastal road and Sir Bani Yas sign with no identifiable people or readable vehicle identifiers."
     },
     "/images/actual/uae-zoo-bird-enclosure-2014.webp": {
       "status": "reviewed",
@@ -175,20 +178,24 @@
       "note": "Manual visual review found birds and enclosure structures with no people visible."
     },
     "/images/actual/uae-zoo-giraffe-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found giraffes and enclosure structures with no people visible."
     },
     "/images/actual/uae-zoo-zebras-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found zebras and enclosure structures with no people visible."
     },
     "/images/actual/yas-island-hotel-district-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found a high-angle hotel-district view; vehicles and any people are too distant for identification and no plate is readable."
     },
     "/images/actual/yas-island-morning-view-2014.webp": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review found a high-angle Yas Island road and hotel view with no identifiable person or readable vehicle identifier."
     },
     "/videos/actual/dubai-fountain-2012-mosaic-v4.mp4": {
       "status": "privacy-edited",
@@ -196,8 +203,9 @@
       "note": "User-provided mosaicked source was visually sampled; the browser-compatible H.264 file preserves that edited content."
     },
     "/videos/actual/sir-bani-yas-coastal-road-2021.mp4": {
-      "status": "needs-review",
-      "note": "No documented visual privacy review yet."
+      "status": "reviewed",
+      "reviewedDate": "2026-08-30",
+      "note": "Manual visual review sampled 56 frames at one-second intervals across the 56.49-second video. No face is visible; one passing vehicle plate is unreadable, and the brief windshield sticker/permit remains blurred and unreadable."
     },
     "/images/actual/abu-dhabi-korean-community-space-2015-mosaic-v2.webp": {
       "status": "privacy-edited",
