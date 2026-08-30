@@ -29,6 +29,9 @@ jobs:
         with:
           node-version: 22
 
+      - name: Wait for production deployment propagation
+        run: sleep 30
+
       - name: Check live production readiness
         run: node scripts/check-live-site.mjs
 
