@@ -58,6 +58,9 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      - name: Check rendered Markdown image performance
+        run: npm run check:rendered-images
+
       - name: Check all indexable sitemap pages
         run: npm run check:indexable-pages
 
