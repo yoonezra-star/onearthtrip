@@ -153,6 +153,8 @@ const postFiles = fs.readdirSync(postsDir).filter((name) => name.endsWith(".md")
 
 for (const name of postFiles) {
   const source = fs.readFileSync(path.join(postsDir, name), "utf8");
+  if (/^draft:\s*true\s*$/m.test(source)) continue;
+
   const permalink = source.match(/^permalink:\s*["']([^"']+)["']/m)?.[1];
   if (!permalink) continue;
 
@@ -192,4 +194,4 @@ for (const name of postFiles) {
   }
 }
 
-console.log(`Rendered image optimization complete: ${modifiedTags} image tag(s) updated across ${modifiedFiles} article file(s).`);
+console.log(`Rendered image optimization complete: ${modifiedTags} image tag(s) updated across ${modifiedFiles} published article file(s).`);
