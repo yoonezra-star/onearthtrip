@@ -1,0 +1,231 @@
+name: Apply third privacy review batch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/apply-privacy-review-batch-3.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Generate deterministic privacy edits
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'Pillow==12.3.0'
+          python3 <<'PY'
+          from pathlib import Path
+          from PIL import Image
+
+          actual = Path('public/images/actual')
+          jobs = {
+              'abu-dhabi-beach-mosque-2012.webp': {
+                  'out': 'abu-dhabi-beach-mosque-2012-mosaic-v2.webp',
+                  'size': (1600, 1200),
+                  'rects': [(1215, 690, 1290, 770)],
+              },
+              'abu-dhabi-water-truck-2014.webp': {
+                  'out': 'abu-dhabi-water-truck-2014-mosaic-v2.webp',
+                  'size': (1600, 1200),
+                  'rects': [(525, 750, 620, 840)],
+              },
+          }
+
+          for source_name, spec in jobs.items():
+              source = actual / source_name
+              output = actual / spec['out']
+              if not source.is_file():
+                  raise SystemExit(f'missing privacy source: {source}')
+              image = Image.open(source).convert('RGB')
+              if image.size != spec['size']:
+                  raise SystemExit(f'unexpected image dimensions for {source}: {image.size}')
+              for box in spec['rects']:
+                  region = image.crop(box)
+                  width, height = region.size
+                  small = (max(1, width // 14), max(1, height // 14))
+                  pixelated = region.resize(small, Image.Resampling.BOX).resize((width, height), Image.Resampling.NEAREST)
+                  image.paste(pixelated, box)
+              image.save(output, format='WEBP', quality=86, method=6)
+              with Image.open(output) as check:
+                  check.load()
+                  if check.size != spec['size']:
+                      raise SystemExit(f'edited dimensions changed for {output}: {check.size}')
+          PY
+
+          echo 'f17b7864d23f05baa4b9dffd6bbad274e7a661b7dc8b8a000f108d11e8a596f5  public/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp' | sha256sum --check --strict
+          test "$(stat -c%s public/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp)" = '224292'
+          echo 'be20fb5b9df39708b468f22fb85dd4f31323661005c2574d90a3ba49e932d88a  public/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp' | sha256sum --check --strict
+          test "$(stat -c%s public/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp)" = '194446'
+
+      - name: Update field notes, review inventory, and integrity gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+          import json
+
+          root = Path('.')
+          manifest_path = root / 'src/data/media-privacy-reviews.json'
+          mapping = {
+              '/images/actual/abu-dhabi-beach-mosque-2012.webp': '/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp',
+              '/images/actual/abu-dhabi-water-truck-2014.webp': '/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp',
+          }
+          text_suffixes = {'.md', '.astro', '.mjs', '.js', '.ts', '.json'}
+
+          # Replace article/source references, but leave the privacy manifest for structured handling below.
+          for base in [root / 'src', root / 'scripts']:
+              for path in base.rglob('*'):
+                  if not path.is_file() or path.suffix not in text_suffixes or path == manifest_path:
+                      continue
+                  text = path.read_text(encoding='utf-8')
+                  updated = text
+                  for old, new in mapping.items():
+                      updated = updated.replace(old, new)
+                  if updated != text:
+                      path.write_text(updated, encoding='utf-8')
+
+          beach_path = root / 'src/content/posts/abu-dhabi-evening-beach-2012.md'
+          beach = beach_path.read_text(encoding='utf-8')
+          beach_line = '![2012년 3월 아부다비 해변에서 바다 건너 셰이크 자이드 그랜드 모스크 방향을 촬영한 풍경](/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp)\n'
+          beach_note = '\n사진에 포함된 아이의 사생활 보호를 위해 얼굴을 식별할 수 있는 영역은 모자이크 처리했습니다.\n'
+          if beach_line not in beach:
+              raise SystemExit('beach image marker not found')
+          if '아이의 사생활 보호를 위해 얼굴을 식별할 수 있는 영역은 모자이크 처리했습니다' not in beach:
+              beach = beach.replace(beach_line, beach_line + beach_note, 1)
+          beach_path.write_text(beach, encoding='utf-8')
+
+          water_path = root / 'src/content/posts/abu-dhabi-water-delivery-2014.md'
+          water = water_path.read_text(encoding='utf-8')
+          water_line = '![2014년 아부다비 주거지에서 직접 촬영한 생수 배달 트럭](/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp)\n'
+          water_note = '\n차량을 특정할 수 있는 번호판은 사생활 보호를 위해 모자이크 처리했습니다.\n'
+          if water_line not in water:
+              raise SystemExit('water-truck image marker not found')
+          if '차량을 특정할 수 있는 번호판은 사생활 보호를 위해 모자이크 처리했습니다' not in water:
+              water = water.replace(water_line, water_line + water_note, 1)
+          water_path.write_text(water, encoding='utf-8')
+
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          media = manifest['media']
+          edited_notes = {
+              '/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp': 'A child face/head region was pixelated after manual visual review; the edited WebP was reopened and visually verified.',
+              '/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp': 'The clearly readable vehicle license plate was pixelated after manual visual review; the edited WebP was reopened and visually verified.',
+          }
+          for old, new in mapping.items():
+              prior = media.pop(new, None)
+              if prior is None:
+                  prior = media.pop(old, None)
+              if prior is None:
+                  raise SystemExit(f'privacy manifest entry missing for {old}')
+              media[new] = {
+                  'status': 'privacy-edited',
+                  'reviewedDate': '2026-08-30',
+                  'note': edited_notes[new],
+              }
+
+          reviewed = {
+              '/images/actual/abu-dhabi-high-rise-view-2021.webp': 'Manual visual review found only a high-angle city/pool view; any people are too distant for facial identification.',
+              '/images/actual/abu-dhabi-highway-sunset-2014.webp': 'Manual visual review found a road and sunset scene with no identifiable people visible.',
+              '/images/actual/abu-dhabi-hotel-ballroom-2014.webp': 'Manual visual review found an empty ballroom/event interior with no people visible.',
+              '/images/actual/abu-dhabi-hotel-bathroom-2014.webp': 'Manual visual review found an empty hotel bathroom with no people visible.',
+              '/images/actual/abu-dhabi-hotel-ceiling-2012.webp': 'Manual visual review found an architectural ceiling detail with no people visible.',
+              '/images/actual/abu-dhabi-hotel-evening-lights-2019.webp': 'Manual visual review found one distant rear-facing person; no face or identifying detail is visible.',
+              '/images/actual/burj-khalifa-day-2012.webp': 'Manual visual review found the Burj Khalifa exterior with no identifiable people visible.',
+              '/images/actual/burj-khalifa-night-2012.webp': 'Manual visual review found the Burj Khalifa night exterior with no identifiable people visible.',
+              '/images/actual/dubai-fountain-video-2012.webp': 'Manual visual review found a crowd viewed mainly from behind and in silhouette; no clearly identifiable face is visible in the poster image.',
+              '/images/actual/desert-dune-pause-2012.webp': 'Manual visual review found one person only at distant scale and viewed from behind; no identifiable face is visible.',
+              '/images/actual/desert-livestock-enclosure-2012.webp': 'Manual visual review found the livestock enclosure scene with no identifiable people visible.',
+              '/images/actual/dune-camel.webp': 'Manual visual review found a camel and desert scene with no people visible.',
+              '/images/actual/grand-mosque-exterior.webp': 'Manual visual review found the distant Grand Mosque exterior with no identifiable people visible.',
+              '/images/actual/grand-mosque-floral-window.webp': 'Manual visual review found an architectural floral-window detail with no people visible.',
+              '/images/actual/grand-mosque-night.webp': 'Manual visual review found visitors only at distant scale in the mosque courtyard; no identifiable face is visible.',
+          }
+          for path, note in reviewed.items():
+              if path not in media:
+                  raise SystemExit(f'privacy manifest entry missing for {path}')
+              media[path] = {
+                  'status': 'reviewed',
+                  'reviewedDate': '2026-08-30',
+                  'note': note,
+              }
+          manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          privacy_script = root / 'scripts/check-media-privacy.mjs'
+          privacy_text = privacy_script.read_text(encoding='utf-8')
+          pin_marker = '''  [\n    "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp",\n    { sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f", size: 227500 }\n  ]\n]);'''
+          pin_replacement = '''  [\n    "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp",\n    { sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f", size: 227500 }\n  ],\n  [\n    "/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp",\n    { sha256: "f17b7864d23f05baa4b9dffd6bbad274e7a661b7dc8b8a000f108d11e8a596f5", size: 224292 }\n  ],\n  [\n    "/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp",\n    { sha256: "be20fb5b9df39708b468f22fb85dd4f31323661005c2574d90a3ba49e932d88a", size: 194446 }\n  ]\n]);'''
+          if '/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp' not in privacy_text:
+              if pin_marker not in privacy_text:
+                  raise SystemExit('privacy pin insertion marker not found')
+              privacy_text = privacy_text.replace(pin_marker, pin_replacement, 1)
+          privacy_script.write_text(privacy_text, encoding='utf-8')
+
+          live_script = root / 'scripts/check-live-site.mjs'
+          live = live_script.read_text(encoding='utf-8')
+          image_marker = '''  {\n    path: "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp",\n    bytes: 227500,\n    sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f",\n    label: "Hotel buffet privacy mosaic"\n  }\n];'''
+          image_replacement = '''  {\n    path: "/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp",\n    bytes: 227500,\n    sha256: "60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f",\n    label: "Hotel buffet privacy mosaic"\n  },\n  {\n    path: "/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp",\n    bytes: 224292,\n    sha256: "f17b7864d23f05baa4b9dffd6bbad274e7a661b7dc8b8a000f108d11e8a596f5",\n    label: "Beach child privacy mosaic"\n  },\n  {\n    path: "/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp",\n    bytes: 194446,\n    sha256: "be20fb5b9df39708b468f22fb85dd4f31323661005c2574d90a3ba49e932d88a",\n    label: "Water truck plate privacy mosaic"\n  }\n];'''
+          if '/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp' not in live:
+              if image_marker not in live:
+                  raise SystemExit('live privacy image insertion marker not found')
+              live = live.replace(image_marker, image_replacement, 1)
+
+          loop_marker = '''for (const image of privacyMosaicImages) {\n  await checkImageAsset('''
+          page_checks = '''await checkHtml(\n  `${canonicalOrigin}/2012/09/abu-dhabi-evening-beach-2012`,\n  [\n    {\n      description: "cache-busted beach child privacy mosaic",\n      test: (html) => html.includes(privacyMosaicImages[5].path)\n    },\n    {\n      description: "beach child privacy-edit disclosure",\n      test: (html) => html.includes("아이의 사생활 보호를 위해 얼굴을 식별할 수 있는 영역은 모자이크 처리했습니다")\n    }\n  ],\n  "Evening beach field note"\n);\n\nawait checkHtml(\n  `${canonicalOrigin}/2014/09/abu-dhabi-water-delivery-2014`,\n  [\n    {\n      description: "cache-busted water truck privacy mosaic",\n      test: (html) => html.includes(privacyMosaicImages[6].path)\n    },\n    {\n      description: "water truck privacy-edit disclosure",\n      test: (html) => html.includes("차량을 특정할 수 있는 번호판은 사생활 보호를 위해 모자이크 처리했습니다")\n    }\n  ],\n  "Water delivery field note"\n);\n\n'''
+          if 'Evening beach field note' not in live:
+              if loop_marker not in live:
+                  raise SystemExit('live page-check insertion marker not found')
+              live = live.replace(loop_marker, page_checks + loop_marker, 1)
+          live_script.write_text(live, encoding='utf-8')
+
+          for old in mapping:
+              old_file = root / 'public' / old.lstrip('/')
+              if not old_file.is_file():
+                  raise SystemExit(f'expected old privacy asset missing: {old_file}')
+              old_file.unlink()
+
+          for old in mapping:
+              for base in [root / 'src', root / 'scripts']:
+                  for path in base.rglob('*'):
+                      if path.is_file() and path.suffix in text_suffixes and old in path.read_text(encoding='utf-8'):
+                          raise SystemExit(f'stale old media reference remains: {old} in {path}')
+          PY
+
+          rm -f .github/workflows/privacy-review-batch-3.yml
+          rm .github/workflows/apply-privacy-review-batch-3.yml
+
+          test -f public/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp
+          test -f public/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp
+          test ! -e public/images/actual/abu-dhabi-beach-mosque-2012.webp
+          test ! -e public/images/actual/abu-dhabi-water-truck-2014.webp
+
+      - name: Reverify privacy-edit binary hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo 'f17b7864d23f05baa4b9dffd6bbad274e7a661b7dc8b8a000f108d11e8a596f5  public/images/actual/abu-dhabi-beach-mosque-2012-mosaic-v2.webp' | sha256sum --check --strict
+          echo 'be20fb5b9df39708b468f22fb85dd4f31323661005c2574d90a3ba49e932d88a  public/images/actual/abu-dhabi-water-truck-2014-mosaic-v2.webp' | sha256sum --check --strict
+
+      - name: Validate privacy inventory before commit
+        run: npm run check:media-privacy
+
+      - name: Commit third privacy review batch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git commit -m 'Complete third field-note privacy review batch'
+          git push origin HEAD:main
