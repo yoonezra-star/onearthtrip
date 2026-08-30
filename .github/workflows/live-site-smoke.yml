@@ -8,6 +8,8 @@ on:
       - scripts/check-live-site.mjs
       - scripts/check-christmas-image-live.mjs
       - src/data/media-privacy-reviews.json
+      - src/content/posts/abu-dhabi-evening-beach-2012.md
+      - src/content/posts/abu-dhabi-water-delivery-2014.md
       - public/images/actual/**/*mosaic*.webp
       - .github/workflows/live-site-smoke.yml
 
