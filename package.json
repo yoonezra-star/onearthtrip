@@ -23,7 +23,7 @@
     "check:adsense-pages": "node scripts/check-adsense-page-boundaries.mjs",
     "check:adsense-ready": "node scripts/check-adsense-approval-readiness.mjs",
     "check:review-path": "node scripts/check-adsense-review-path.mjs",
-    "build": "astro build",
+    "build": "astro build && node scripts/optimize-rendered-images.mjs",
     "preview": "astro preview --host 127.0.0.1"
   },
   "dependencies": {
