@@ -114,7 +114,7 @@ jobs:
 
           manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
-          old_file = root / old.lstrip('/')
+          old_file = root / 'public' / old.lstrip('/')
           if not old_file.is_file():
               raise SystemExit(f'expected old buffet asset missing: {old_file}')
           old_file.unlink()
