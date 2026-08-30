@@ -1,0 +1,146 @@
+name: Apply second privacy review batch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/apply-buffet-privacy.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Generate and verify buffet privacy mosaic
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'Pillow==12.3.0'
+          python3 <<'PY'
+          from pathlib import Path
+          from PIL import Image
+
+          src = Path('public/images/actual/abu-dhabi-hotel-buffet-2019.webp')
+          out = Path('public/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp')
+          if not src.is_file():
+              raise SystemExit(f'missing source image: {src}')
+
+          image = Image.open(src).convert('RGB')
+          if image.size != (1800, 1350):
+              raise SystemExit(f'unexpected buffet image dimensions: {image.size}')
+
+          box = (305, 615, 370, 690)
+          region = image.crop(box)
+          width, height = region.size
+          small = (max(1, width // 14), max(1, height // 14))
+          pixelated = region.resize(small, Image.Resampling.BOX).resize((width, height), Image.Resampling.NEAREST)
+          image.paste(pixelated, box)
+          image.save(out, format='WEBP', quality=86, method=6)
+
+          with Image.open(out) as check:
+              check.load()
+              if check.size != (1800, 1350):
+                  raise SystemExit(f'edited buffet image dimensions changed: {check.size}')
+          PY
+
+          echo '60db4cac9338db14b56b3d12a0f1c4b8d371944b9a3cab0aabf3bd15e4734f6f  public/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp' | sha256sum --check --strict
+          test "$(stat -c%s public/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp)" = '227500'
+
+      - name: Update references and manual privacy review records
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+          import json
+
+          root = Path('.')
+          old = '/images/actual/abu-dhabi-hotel-buffet-2019.webp'
+          new = '/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp'
+          text_suffixes = {'.md', '.astro', '.mjs', '.js', '.ts', '.json', '.yml', '.yaml'}
+
+          for base in [root / 'src', root / 'scripts']:
+              for path in base.rglob('*'):
+                  if not path.is_file() or path.suffix not in text_suffixes:
+                      continue
+                  text = path.read_text(encoding='utf-8')
+                  if old in text:
+                      path.write_text(text.replace(old, new), encoding='utf-8')
+
+          manifest_path = root / 'src/data/media-privacy-reviews.json'
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          media = manifest['media']
+
+          prior = media.pop(new, None)
+          if prior is None:
+              prior = media.pop(old, None)
+          if prior is None:
+              raise SystemExit('buffet privacy manifest entry missing')
+          media[new] = {
+              'status': 'privacy-edited',
+              'reviewedDate': '2026-08-30',
+              'note': 'Background staff face was pixelated after manual visual review; the edited WebP was reopened and visually verified.'
+          }
+
+          reviewed = {
+              '/images/actual/abu-dhabi-hotel-indoor-pool-2014.webp': 'Manual visual review found an empty indoor pool area with no people visible.',
+              '/images/actual/abu-dhabi-hotel-room-2014.webp': 'Manual visual review found an empty hotel room with no people visible.',
+              '/images/actual/abu-dhabi-immersive-exhibit-2021.webp': 'Manual visual review found one visitor viewed from behind; no face or obvious identifying detail is visible.',
+              '/images/actual/abu-dhabi-rooftop-pool-city-2014.webp': 'Manual visual review found an empty rooftop pool area with no people visible.',
+              '/images/actual/abu-dhabi-evening-beach-2012.webp': 'Manual visual review found beach users only at distant scale with no clearly identifiable face in the image.',
+              '/images/actual/abu-dhabi-waterfront-night-2012.webp': 'Manual visual review found no identifiable people in the waterfront night scene.',
+              '/images/actual/national-aquarium-reef.webp': 'Manual visual review found aquarium animals and reef scenery with no people visible.',
+              '/images/actual/national-aquarium-sharks.webp': 'Manual visual review found one foreground visitor as a dark rear-facing silhouette; no face is visible.',
+              '/images/actual/camel-farm.webp': 'Manual visual review found a single person only at very distant scale with no identifiable facial detail.',
+              '/images/actual/uae-zoo-bird-enclosure-2014.webp': 'Manual visual review found birds and enclosure structures with no people visible.'
+          }
+
+          for path, note in reviewed.items():
+              if path not in media:
+                  raise SystemExit(f'privacy manifest entry missing for {path}')
+              media[path] = {
+                  'status': 'reviewed',
+                  'reviewedDate': '2026-08-30',
+                  'note': note
+              }
+
+          manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          old_file = root / old.lstrip('/')
+          if not old_file.is_file():
+              raise SystemExit(f'expected old buffet asset missing: {old_file}')
+          old_file.unlink()
+
+          for base in [root / 'src', root / 'scripts']:
+              for path in base.rglob('*'):
+                  if path.is_file() and path.suffix in text_suffixes and old in path.read_text(encoding='utf-8'):
+                      raise SystemExit(f'stale buffet path remains in {path}')
+          PY
+
+          rm -f .github/workflows/privacy-review-batch-2.yml
+          rm .github/workflows/apply-buffet-privacy.yml
+
+          test -f public/images/actual/abu-dhabi-hotel-buffet-2019-mosaic-v2.webp
+          test ! -e public/images/actual/abu-dhabi-hotel-buffet-2019.webp
+
+      - name: Validate media privacy inventory
+        run: npm run check:media-privacy
+
+      - name: Commit second privacy review batch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git commit -m 'Complete second field-note privacy review batch'
+          git push origin HEAD:main
