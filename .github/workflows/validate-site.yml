@@ -67,6 +67,9 @@ jobs:
       - name: Check rendered LCP image priority
         run: npm run check:image-priority
 
+      - name: Check mobile UX safeguards
+        run: npm run check:mobile-ux
+
       - name: Check all indexable sitemap pages
         run: npm run check:indexable-pages
 
