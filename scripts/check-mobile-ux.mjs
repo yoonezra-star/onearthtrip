@@ -20,7 +20,8 @@ function read(file, label) {
 }
 
 function selectorHas(css, selector, property, valuePattern) {
-  const blocks = [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)];
+  const cleanCss = css.replace(/\/\*[\s\S]*?\*\//g, "");
+  const blocks = [...cleanCss.matchAll(/([^{}]+)\{([^{}]*)\}/g)];
   return blocks.some((match) => {
     const selectors = match[1]
       .split(",")
@@ -87,7 +88,7 @@ const htmlChecks = [
   [/<meta\s+name="viewport"\s+content="width=device-width, initial-scale=1"\s*\/?>/i, "responsive viewport meta"],
   [/<nav\s+class="nav"\s+aria-label="주요 메뉴">/i, "labelled primary navigation"],
   [/<form\s+class="header-search-form"\s+role="search"[^>]*>/i, "semantic header search"],
-  [/<input[^>]+type="search"[^>]+name="q"[^>]*>/i, "search input"],
+  [/<input\b(?=[^>]*\btype="search")(?=[^>]*\bname="q")[^>]*>/i, "search input"],
   [/<button\s+type="submit">검색<\/button>/i, "search submit button"],
   [/<a\s+class="skip-link"\s+href="#content">/i, "skip link"]
 ];
