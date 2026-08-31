@@ -6,10 +6,12 @@ on:
     branches: [main]
     paths:
       - scripts/check-live-site.mjs
+      - scripts/check-live-cache-policy.mjs
       - scripts/check-christmas-image-live.mjs
       - src/data/media-privacy-reviews.json
       - src/content/posts/abu-dhabi-evening-beach-2012.md
       - src/content/posts/abu-dhabi-water-delivery-2014.md
+      - public/_headers
       - public/images/actual/**/*mosaic*.webp
       - .github/workflows/live-site-smoke.yml
 
@@ -34,6 +36,9 @@ jobs:
 
       - name: Check live production readiness
         run: node scripts/check-live-site.mjs
+
+      - name: Check live static cache policy
+        run: node scripts/check-live-cache-policy.mjs
 
       - name: Check corrected Christmas image live
         run: node scripts/check-christmas-image-live.mjs
