@@ -34,6 +34,9 @@ jobs:
       - name: Check images
         run: npm run check:images
 
+      - name: Check static cache policy
+        run: npm run check:cache-policy
+
       - name: Check article media
         run: npm run check:media
 
