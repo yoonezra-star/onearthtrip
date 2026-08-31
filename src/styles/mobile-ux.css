@@ -1,0 +1,93 @@
+/* Mobile interaction and overflow safeguards layered after global.css. */
+
+.brand,
+.nav a,
+.header-contact,
+.header-search-form input,
+.header-search-form button,
+.read-more,
+.reset-button {
+  min-height: 44px;
+}
+
+.brand,
+.nav a,
+.read-more {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav {
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-inline: 14px;
+}
+
+.nav a {
+  flex: 0 0 auto;
+}
+
+.header-search-form input {
+  min-width: 0;
+}
+
+.header-search-form button {
+  min-width: 48px;
+}
+
+.read-more {
+  padding-block: 8px;
+}
+
+.checklist-group label {
+  min-height: 44px;
+}
+
+.page-summary,
+.tool-progress {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body table {
+  display: block;
+}
+
+.article-body code {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .footer-links a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-inner > *,
+  .header-actions,
+  .header-search-form,
+  .brand,
+  .brand-copy {
+    min-width: 0;
+  }
+
+  .header-search-form input {
+    width: min(80px, 24vw);
+  }
+
+  .brand-copy strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
