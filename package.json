@@ -30,6 +30,6 @@
     "preview": "astro preview --host 127.0.0.1"
   },
   "dependencies": {
-    "astro": "7.2.4"
+    "astro": "7.3.3"
   }
 }
