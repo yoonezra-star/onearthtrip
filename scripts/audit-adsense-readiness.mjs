@@ -5,7 +5,7 @@ const postsDir = path.join(process.cwd(), "src", "content", "posts");
 const files = fs.readdirSync(postsDir).filter((name) => name.endsWith(".md"));
 
 function parseFrontmatter(source) {
-  const match = source.match(/^---\n([\s\S]*?)\n---\n?/);
+  const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   if (!match) return { frontmatter: "", body: source };
   return { frontmatter: match[1], body: source.slice(match[0].length) };
 }

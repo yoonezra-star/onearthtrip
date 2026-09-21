@@ -9,7 +9,7 @@ let fieldNotes = 0;
 let fieldNotesWithActualMedia = 0;
 
 function splitPost(source) {
-  const match = source.match(/^---\n([\s\S]*?)\n---\n?/);
+  const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   if (!match) return { frontmatter: "", body: source };
   return { frontmatter: match[1], body: source.slice(match[0].length) };
 }
@@ -28,7 +28,7 @@ function unquote(value) {
 }
 
 function nestedField(frontmatter, parent, child) {
-  const lines = frontmatter.split("\n");
+  const lines = frontmatter.split(/\r?\n/);
   const parentIndex = lines.findIndex((line) => line.trim() === `${parent}:` && !/^\s/.test(line));
   if (parentIndex < 0) return "";
 

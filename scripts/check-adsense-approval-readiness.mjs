@@ -122,7 +122,7 @@ let fieldNotes = 0;
 const weakGuides = [];
 for (const file of markdownFiles) {
   const source = fs.readFileSync(path.join(postsDir, file), "utf8");
-  const fmMatch = source.match(/^---\n([\s\S]*?)\n---\n?/);
+  const fmMatch = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   const frontmatter = fmMatch?.[1] ?? "";
   const body = fmMatch ? source.slice(fmMatch[0].length) : source;
   const isFieldNote = /^contentType:\s*["']?field-note["']?\s*$/m.test(frontmatter);

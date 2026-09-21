@@ -9,7 +9,7 @@ let operationalGuides = 0;
 let sourceSections = 0;
 
 function parseFrontmatter(source) {
-  const match = source.match(/^---\n([\s\S]*?)\n---\n?/);
+  const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   if (!match) return { frontmatter: "", body: source };
   return { frontmatter: match[1], body: source.slice(match[0].length) };
 }
