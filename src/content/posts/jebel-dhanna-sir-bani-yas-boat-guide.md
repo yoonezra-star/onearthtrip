@@ -2,6 +2,7 @@
 title: "Jebel Dhanna에서 Sir Bani Yas 보트 타기: 제티·예약·시간 계획"
 description: "Jebel Dhanna Jetty에서 Sir Bani Yas Island로 이동할 때 보트 예약, 차량 주차, 도착시간과 당일 방문 시 확인할 조건을 정리했습니다."
 pubDate: "2026-08-25T22:33:00+09:00"
+updatedDate: "2026-09-25T22:35:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Jebel Dhanna Jetty", "Sir Bani Yas ferry", "Sir Bani Yas boat", "Al Dhafra", "시르바니야스 보트"]
@@ -11,7 +12,7 @@ contentType: "guide"
 
 Sir Bani Yas Island 여행에서 가장 헷갈리기 쉬운 부분이 **Jebel Dhanna에 도착한 뒤 어떤 배를 타는지**입니다. 이 구간은 일반 대중교통 페리처럼 아무 시간에 표를 사서 타는 방식으로 생각하지 않는 편이 안전합니다.
 
-2026년 8월 25일 기준 Experience Abu Dhabi는 Anantara 숙박객에게 Jebel Dhanna와 Sir Bani Yas Island 사이 **무료 water taxi를 하루 4~5회 제공**하며, 24시간 전에 예약하고 호텔에 확인하도록 안내합니다.
+2026년 9월 25일 기준 Experience Abu Dhabi는 Anantara 숙박객에게 Jebel Dhanna와 Sir Bani Yas Island 사이 **무료 water taxi를 하루 4~5회 제공**하며, 24시간 전에 예약하고 호텔에 확인하도록 안내합니다.
 
 ## 숙박객은 호텔 예약과 보트 시간을 같이 봅니다
 
@@ -23,6 +24,20 @@ Sir Bani Yas Island 여행에서 가장 헷갈리기 쉬운 부분이 **Jebel Dh
 4. 귀국일 섬에서 나오는 보트 시간
 
 보트 시간을 놓치면 다음 연결까지 기다려야 할 수 있어, 아부다비 도심에서 출발할 때부터 여유시간을 잡는 것이 좋습니다.
+
+## 제티 출발 전 최종 확인표
+
+Jebel Dhanna에 도착한 뒤 처음 알게 되는 조건은 되돌리기 어렵습니다. 출발 전에 예약 담당자에게 아래 항목을 한 번에 확인하세요.
+
+| 확인 항목 | 확인할 내용 | 확인되지 않으면 |
+| --- | --- | --- |
+| 탑승 자격 | 리조트 숙박·day pass 예약 상태 | 제티로 출발하지 않고 운영팀에 재확인 |
+| 출항 시간 | 본토 도착 목표시각과 보트 시간 | 다음 가능한 보트와 대체 일정 문의 |
+| 차량 처리 | 본토 주차 위치와 귀중품 보관 | 차량에 남길 짐을 줄이기 |
+| 귀환편 | 섬에서 본토로 나오는 시간 | 당일 귀가·다음 숙박 연결 확인 |
+| 연락 수단 | 호텔·액티비티 팀의 전화 또는 메시지 | 예약 화면과 연락처를 오프라인 저장 |
+
+보트 시간만 저장하지 말고 **예약자 이름, 인원, 제티 위치, 왕복 보트**를 한 화면에 캡처해 두면 현장에서 설명하기 쉽습니다.
 
 [Sir Bani Yas Island 가는 법](/2026/08/sir-bani-yas-island-getting-there-guide)에서는 아부다비 도심에서 Jebel Dhanna까지 전체 이동 흐름을 따로 정리했습니다.
 
