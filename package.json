@@ -17,6 +17,7 @@
     "check:media": "node scripts/check-media.mjs",
     "check:media-privacy": "node scripts/check-media-privacy.mjs",
     "check:field-notes": "node scripts/check-field-note-trust.mjs",
+    "inventory:content": "node scripts/inventory-content.mjs",
     "check:guide-sources": "node scripts/check-guide-sources.mjs",
     "check:seo": "node scripts/check-seo-meta.mjs",
     "check:sitemap": "node scripts/check-sitemap-static.mjs",
