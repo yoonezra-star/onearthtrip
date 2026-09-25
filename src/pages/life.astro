@@ -24,6 +24,9 @@ const featuredGuides = featuredLifePermalinks
   .map((permalink) => guides.find((post) => post.data.permalink === permalink))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const recentFieldNotes = fieldNotes.slice(0, 6);
+const koreanCommunityNote = posts.find(
+  (post) => post.data.permalink === "/2015/03/abu-dhabi-korean-community-space-2015.html"
+);
 ---
 
 <BaseLayout
@@ -147,6 +150,27 @@ const recentFieldNotes = fieldNotes.slice(0, 6);
         <div class="hero-actions">
           <a class="primary-link" href="/field-notes">전체 직접 촬영 기록 보기</a>
           <a class="secondary-link" href="/2026/08/uae-personal-photo-archive">2012~2022 개인 사진 아카이브</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {koreanCommunityNote && (
+    <section class="section" aria-labelledby="community-memory-title">
+      <div class="container source-band">
+        <div>
+          <p class="eyebrow">KOREAN COMMUNITY MEMORY</p>
+          <h2 id="community-memory-title">아부다비 한인 생활은 장소보다 관계의 기록이기도 합니다</h2>
+          <p>
+            현재의 교통·숙소 정보와 과거의 한인 생활 기억은 같은 종류의 자료가 아닙니다. 이 사이트는 공식 확인이 필요한 현재 정보와,
+            운영자가 직접 촬영하고 경험한 당시의 공동체 기록을 분리해 보여 줍니다.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a class="primary-link" href={getPublicPath(koreanCommunityNote.data.permalink)}>
+            2015년 한인 모임 공간 기록 읽기
+          </a>
+          <a class="secondary-link" href="/memory">UAE 추억 기록 전체 보기</a>
         </div>
       </div>
     </section>
