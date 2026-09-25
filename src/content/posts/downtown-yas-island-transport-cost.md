@@ -2,7 +2,7 @@
 title: "아부다비 도심에서 Yas Island 교통비: 버스·택시·셔틀 비교"
 description: "아부다비 도심에서 Yas Island까지 버스, 택시, Yas Express와 Abu Dhabi Link 비용을 현재 공식 요금 기준으로 비교했습니다."
 pubDate: "2026-08-25T18:32:00+09:00"
-updatedDate: "2026-08-25T18:32:00+09:00"
+updatedDate: "2026-09-25T17:35:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Yas Island 교통비", "아부다비 택시비", "Yas Express", "Abu Dhabi Link", "아부다비 버스"]
@@ -12,7 +12,7 @@ contentType: "guide"
 
 아부다비 도심과 Yas Island를 오갈 때는 **도심↔Yas 구간과 Yas 섬 내부 이동을 따로 계산**하는 것이 좋습니다. 섬에 도착한 뒤에는 무료 Yas Express나 AED 2 Abu Dhabi Link를 활용할 수 있기 때문입니다.
 
-이 글은 **2026년 8월 25일 공식 안내 확인 기준**입니다.
+이 글은 **2026년 9월 25일 공식 안내 확인 기준**입니다.
 
 ## 시내버스는 최대 AED 5까지 계산한다
 
@@ -46,6 +46,17 @@ Yas Island 공식 안내는 Yas Express를 주요 호텔·테마파크·관광�
 Yas에서 하루를 보내는 동선은 [Yas Island 여행 계획](/2026/08/yas-island-planning-guide), 어떤 공원을 선택할지는 [Yas Island 테마파크 선택 가이드](/2026/08/yas-island-theme-park-choice-guide)에서 확인하세요.
 
 숙소 자체를 Yas에 잡을지 고민한다면 [Yas Island 숙소 지역 가이드](/2026/08/yas-island-where-to-stay-guide)도 함께 비교하면 됩니다.
+
+## Yas 일정의 교통비는 두 구간으로 나눕니다
+
+| 이동 구간 | 가장 먼저 볼 선택지 | 이런 경우에 적합 |
+| --- | --- | --- |
+| 아부다비 도심 → Yas Island | 버스·택시·렌터카 | 인원수, 테마파크 예약시간, 짐을 함께 비교 |
+| Yas Island 안 호텔 → 테마파크 | Yas Express | 무료 셔틀 시간표가 일정과 맞을 때 |
+| Yas Island 안의 짧은 이동 | Abu Dhabi Link | 앱 호출과 Hafilat AED 2 결제가 가능한 경우 |
+| 늦은 귀가·아이 동반 | 택시 | 셔틀 종료·대기시간보다 귀가 확실성이 중요할 때 |
+
+테마파크 입장시간을 맞추는 날에는 가장 싼 수단보다 **첫 도착시각과 귀환 가능성**을 먼저 봅니다. 반대로 Yas에서 하루 종일 머문다면 도심 왕복 횟수를 줄이는 것이 전체 교통비를 낮추는 방법입니다.
 
 ## 공식 정보
 

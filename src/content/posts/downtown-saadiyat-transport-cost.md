@@ -2,7 +2,7 @@
 title: "아부다비 도심에서 Saadiyat 교통비: 버스·택시 비용 계산법"
 description: "아부다비 도심에서 Saadiyat Island까지 버스와 택시 비용을 현재 공식 요금 기준으로 비교하고 섬 내부 이동비까지 정리했습니다."
 pubDate: "2026-08-25T18:34:00+09:00"
-updatedDate: "2026-08-25T18:34:00+09:00"
+updatedDate: "2026-09-25T17:35:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Saadiyat 교통비", "아부다비 택시비", "Abu Dhabi Link", "아부다비 버스", "Saadiyat Island"]
@@ -12,7 +12,7 @@ contentType: "guide"
 
 아부다비 도심과 Saadiyat Island를 오갈 때는 박물관 한 곳만 볼지, 하루 종일 Cultural District에 머물지에 따라 교통비 선택이 달라집니다. **한 번 왕복할 날과 여러 번 이동할 날을 구분**하는 것이 핵심입니다.
 
-이 글은 **2026년 8월 25일 공식 안내 확인 기준**입니다.
+이 글은 **2026년 9월 25일 공식 안내 확인 기준**입니다.
 
 ## 버스는 Standard Service 요금을 적용한다
 
@@ -44,6 +44,17 @@ Saadiyat Cultural District에서 하루에 여러 시설을 볼 계획이라면 
 시설 선택은 [아부다비 관광지 허브](/attractions), 실제 지역 동선은 [Saadiyat·도심 이동 계획](/2026/08/saadiyat-downtown-planning-guide)에서 확인하세요.
 
 Saadiyat에 숙박하는 방식과 도심 숙박을 비교하려면 [Saadiyat Island 숙소 지역 가이드](/2026/08/saadiyat-island-where-to-stay-guide)와 [아부다비 숙소 지역 허브](/where-to-stay)를 함께 보면 됩니다.
+
+## 목적지 수에 따라 이동수단을 고릅니다
+
+| 일정 | 우선 선택 | 비용을 계산하는 기준 |
+| --- | --- | --- |
+| 박물관 한 곳만 방문 | 버스 또는 택시 | 혼자면 버스, 여러 명이면 택시를 인원수로 나누기 |
+| Saadiyat 안에서 두 곳 이상 방문 | 버스 + Abu Dhabi Link | 도심 왕복과 섬 내부 이동을 분리하기 |
+| 가족·유모차·짐이 많은 날 | 택시 | 환승·대기시간을 줄이는 비용까지 고려 |
+| 도심과 Saadiyat을 여러 번 오가는 날 | 숙소 위치 재검토 | 매번 왕복하지 않도록 지역별로 하루를 묶기 |
+
+Saadiyat의 교통비는 도심에서 섬으로 들어가는 비용만 계산하면 실제와 달라집니다. 박물관 사이 이동, 식사 장소, 귀환 시각까지 한 줄로 적은 뒤 버스·Link·택시를 조합하세요.
 
 ## 공식 정보
 
