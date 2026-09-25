@@ -2,7 +2,7 @@
 title: "아부다비 Darb 통행료 가이드: 시간·AED 4 요금·렌터카 체크"
 description: "아부다비 Darb 통행료의 일반 피크시간 요금과 2026년 추가된 Al Qurm·Ghantoot 24시간 게이트, 렌터카 정산 체크사항을 정리했습니다."
 pubDate: "2026-08-25T21:26:00+09:00"
-updatedDate: "2026-08-25T21:26:00+09:00"
+updatedDate: "2026-09-25T17:10:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Darb", "아부다비 통행료", "아부다비 운전", "렌터카", "Al Qurm", "Ghantoot"]
@@ -12,7 +12,7 @@ contentType: "guide"
 
 아부다비에서 운전할 때 **Darb**는 도로 길찾기 앱이 아니라 유료도로 통행료 시스템입니다. 특히 2026년에는 새 게이트가 추가돼 모든 게이트를 같은 시간제로 이해하면 안 됩니다.
 
-이 글은 2026년 8월 25일 Abu Dhabi Mobility의 공식 Darb 요금 페이지와 2026년 신규 게이트 공지를 함께 확인해 정리했습니다.
+이 글은 2026년 9월 25일 Abu Dhabi Mobility의 공식 Darb 요금 페이지와 2026년 신규 게이트 공지를 함께 확인해 정리했습니다.
 
 ## 일반 Darb 요금 안내는 피크시간 AED 4다
 
@@ -48,6 +48,17 @@ Abu Dhabi Mobility의 현재 Darb 요금 안내에 따르면 일반적으로 차
 
 렌터카 이용 준비 전체는 [UAE 렌터카 운전 준비 가이드](/2026/08/abu-dhabi-driving-rental-car-guide)에서 먼저 확인할 수 있습니다.
 
+## 운전 전 통과 게이트를 먼저 확인합니다
+
+| 경로 상황 | 요금 판단 | 준비할 것 |
+| --- | --- | --- |
+| 기존 일반 Darb 게이트 | 평일 07:00~09:00·15:00~19:00에 AED 4/회 | 출발·귀가 시각을 피크시간과 비교 |
+| Al Qurm·Ghantoot 신규 게이트 | 24시간·주 7일, AED 4/회 | 경로가 어느 게이트를 지나는지 확인 |
+| 일요일·공식 공휴일의 일반 게이트 | 공식 안내상 일반 시간제 요금 면제 | 신규 게이트 예외 여부를 별도 확인 |
+| 렌터카 이용 | 회사별 청구 시점·관리비가 다름 | 인수 때 Darb 정산 조건을 서면으로 확인 |
+
+지도에서 목적지만 확인하면 통행료를 놓칠 수 있습니다. 출발 전에 경로의 게이트 이름을 확인하고, 운전비에 통행료·주차비를 함께 넣어야 실제 비용이 보입니다.
+
 ## Darb와 Darbi를 혼동하지 않는다
 
 이름이 비슷하지만 역할은 다릅니다.
@@ -69,4 +80,4 @@ Abu Dhabi Mobility의 현재 Darb 요금 안내에 따르면 일반적으로 차
 - [Abu Dhabi Mobility: Two New Darb Toll Gates](https://admobility.gov.ae/en/news/itc-announces-two-new-gates-to-the-darb-toll-gate)
 - [Abu Dhabi Mobility: Darb](https://admobility.gov.ae/en/darb/)
 
-**확인일: 2026년 8월 25일.** 게이트 운영시간과 요금 정책은 바뀔 수 있으므로 운전 전 Abu Dhabi Mobility의 최신 공지를 다시 확인하세요.
+**확인일: 2026년 9월 25일.** 게이트 운영시간과 요금 정책은 바뀔 수 있으므로 운전 전 Abu Dhabi Mobility의 최신 공지를 다시 확인하세요.
