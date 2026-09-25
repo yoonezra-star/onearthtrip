@@ -3,6 +3,7 @@ title: "아부다비에서 Liwa 버스 가이드: 요금·시간표 확인·현�
 description: "아부다비에서 Liwa·Al Dhafra로 가는 시외버스의 현재 공식 요금, 시간표 확인 방법과 도착 후 현지 이동을 정리했습니다."
 pubDate: "2026-08-25T22:14:00+09:00"
 author: "아부라이프"
+updatedDate: "2026-09-25T16:50:00+09:00"
 category: "아부다비 한인 생활"
 tags: ["Liwa bus", "Al Dhafra bus", "아부다비 리와", "UAE 시외버스", "Liwa Oasis"]
 permalink: "/2026/08/abu-dhabi-liwa-bus-guide.html"
@@ -11,7 +12,7 @@ contentType: "guide"
 
 아부다비에서 Liwa를 대중교통으로 가려면 먼저 **도심 버스와 Al Dhafra 시외버스를 같은 요금 체계로 생각하지 않는 것**이 중요합니다. Liwa는 아부다비 서쪽의 넓은 Al Dhafra 지역에 있어, 도심 관광처럼 짧은 구간을 여러 번 이동하는 방식과 다릅니다.
 
-이 글은 2026년 8월 25일 기준 [Abu Dhabi Mobility의 Inter City Services](https://admobility.gov.ae/en/inter-city-services)를 확인해 작성했습니다. 시간표와 판매 방식은 바뀔 수 있으므로 출발 전 공식 페이지나 고객센터에서 마지막으로 확인하세요.
+이 글은 2026년 9월 25일 기준 [Abu Dhabi Mobility의 Inter City Services](https://admobility.gov.ae/en/inter-city-services)를 확인해 작성했습니다. 시간표와 판매 방식은 바뀔 수 있으므로 출발 전 공식 페이지나 고객센터에서 마지막으로 확인하세요.
 
 ## 현재 Al Dhafra 시외버스 요금
 
@@ -58,3 +59,13 @@ Experience Abu Dhabi의 Liwa 숙박 안내는 아부다비에서 Liwa까지 차�
 - [Al Dhafra·Liwa 여행 허브](/liwa-guide)
 
 Liwa는 이동 자체가 여행의 큰 부분을 차지합니다. 버스를 선택했다면 요금보다 **출발편·도착 정류장·귀가편** 세 가지를 먼저 고정하세요.
+
+## 버스 일정은 목적지 수가 아니라 귀가 여유로 결정합니다
+
+| 계획 | 버스가 맞는 조건 | 줄여야 할 것 |
+| --- | --- | --- |
+| Liwa 당일치기 | 한 지역에 머물고 귀가편을 먼저 확보 | 여러 오아시스와 Tel Moreeb 동시 방문 |
+| Liwa 1박 | 숙소가 정류장·첫 목적지와 연결되고 다음 날 귀가 | 도착 당일 무리한 사막 이동 |
+| Al Dhafra 여러 지역 | 환승·현지 차량이 이미 예약됨 | 즉흥적으로 해안·섬까지 추가 |
+
+버스 요금이 낮아 보여도 Liwa 도착 후 차량이 필요하면 총비용과 대기시간이 달라집니다. 출발 전 지도에 정류장, 숙소, 첫 목적지, 귀가 출발점을 차례로 표시하고 하나라도 연결되지 않으면 렌터카나 운영 투어와 다시 비교하세요.

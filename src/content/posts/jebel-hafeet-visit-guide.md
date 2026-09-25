@@ -2,7 +2,7 @@
 title: "Jebel Hafeet 방문 가이드: 1,249m 전망·드라이브·일몰 동선"
 description: "알아인 Jebel Hafeet의 높이, 차량 접근, 일출·일몰 전망과 Al Ain Oasis를 함께 묶는 당일치기 동선을 정리했습니다."
 pubDate: "2026-08-25T21:56:00+09:00"
-updatedDate: "2026-08-25T21:56:00+09:00"
+updatedDate: "2026-09-25T16:50:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Jebel Hafeet", "Jebel Hafit", "알아인", "알아인 드라이브", "UAE 자연"]
@@ -12,7 +12,7 @@ contentType: "guide"
 
 Jebel Hafeet은 알아인 당일치기를 ‘도심 문화유산 산책’에서 ‘산악 전망 드라이브’로 확장해 주는 장소입니다. Experience Abu Dhabi는 이 산을 **해발 1,249m**, 아부다비에서 가장 높은 산이자 UAE에서 두 번째로 높은 산으로 소개합니다.
 
-이 글은 2026년 8월 25일 기준 [Experience Abu Dhabi의 Jebel Hafit 공식 안내](https://visitabudhabi.ae/en/things-to-do/nature-and-wildlife/natural-wonders/jebel-hafit)를 확인해 작성했습니다. 산악도로·기상·현장 접근 조건은 달라질 수 있으므로 출발 전 최신 상황을 다시 확인하세요.
+이 글은 2026년 9월 25일 기준 [Experience Abu Dhabi의 Jebel Hafit 공식 안내](https://visitabudhabi.ae/en/things-to-do/nature-and-wildlife/natural-wonders/jebel-hafit)를 확인해 작성했습니다. 산악도로·기상·현장 접근 조건은 달라질 수 있으므로 출발 전 최신 상황을 다시 확인하세요.
 
 ## 정상 방향은 차량으로 접근할 수 있습니다
 
@@ -47,6 +47,19 @@ Jebel Hafeet 산 자체와 Jebel Hafit Desert Park를 같은 장소로 생각하
 알아인에서 아부다비까지 공식 관광 안내상 차량으로 약 90분이 걸리는 거리입니다. Jebel Hafeet을 하루 마지막 장소로 잡을 때는 ‘일몰 시각 + 하산 + 약 90분 귀가’ 구조를 기준으로 일정을 짜는 편이 안전합니다.
 
 전체 하루 구성은 [아부다비 출발 알아인 당일치기 일정](/2026/08/al-ain-day-trip-from-abu-dhabi-guide)과 [알아인 허브](/al-ain-guide)에 정리했습니다.
+
+## 전망 시간을 정할 때 함께 보는 항목
+
+정상 도착 시각만 정하면 계획이 완성되지 않습니다. 아래 네 항목을 한 줄로 적어 보면 일몰 일정이 무리한지 바로 드러납니다.
+
+| 우선순위 | 확인할 것 | 판단 기준 |
+| --- | --- | --- |
+| 1 | 시야와 날씨 | 흐림·먼지 가능성이 있으면 전망 시간을 고정하지 않기 |
+| 2 | 정상 체류시간 | 사진만 볼지, 산 아래 공원까지 갈지 분리하기 |
+| 3 | 하산 시각 | 어두워진 뒤 산길 운전 가능 여부 확인 |
+| 4 | 아부다비 귀가 | 약 90분 이동에 휴식과 교통 여유를 더하기 |
+
+버스 이용자는 정상 방문을 별도 택시·투어 일정으로 계산하고, 렌터카 이용자는 전망보다 귀가 피로를 먼저 봅니다. 이것이 오아시스 중심 일정과 Jebel Hafeet 중심 일정을 구분하는 기준입니다.
 
 ## 확인한 공식 자료
 
