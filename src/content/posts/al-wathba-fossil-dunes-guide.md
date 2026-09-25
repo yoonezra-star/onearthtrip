@@ -40,6 +40,17 @@ EAD 공식 페이지는 기존 입장료를 **무료**로 안내합니다. 다�
 
 Al Wathba 지역에서 현재 여행 계획을 짤 때는 [낙타 경주](/2026/08/al-wathba-camel-race-guide), [사이클 트랙](/2026/08/al-wathba-cycle-track-guide)처럼 별도 시설을 기준으로 대안을 마련할 수 있습니다.
 
+## 폐쇄 기간에는 이렇게 대체합니다
+
+| 원래 목적 | 현재 선택 | 계획할 때의 주의점 |
+| --- | --- | --- |
+| 사막 지질 경관 보기 | 재개장 전까지 방문 보류 | 입구까지 가서 관람할 수 있다고 가정하지 않기 |
+| Al Wathba 야외활동 | Cycle Track | 코스 거리와 기온을 먼저 선택 |
+| UAE 전통문화 경험 | Camel Race Track | 실제 경기 일정이 있는지 확인 |
+| 자연 보호구역 방문 | Wetland Reserve도 별도 확인 | 한 곳의 재개장을 다른 곳에 적용하지 않기 |
+
+폐쇄 중인 장소를 억지로 주변 일정에 끼우면 이동시간만 늘어납니다. 재개장 공지가 나올 때까지는 운영 중인 별도 시설을 중심으로 일정을 짜고, 이후 EAD 공식 페이지에서 입장·산책로·프로그램을 다시 확인하세요.
+
 ## 확인한 공식 자료
 
 - [Environment Agency – Abu Dhabi: Al Wathba Fossil Dunes](https://www.ead.gov.ae/en/Experience-Green-Abu-Dhabi/Places-To-Go/Al-Wathba-Fossil-Dunes)

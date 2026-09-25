@@ -44,6 +44,17 @@ Al Wathba Wetland Reserve와 [Al Wathba Fossil Dunes](/2026/08/al-wathba-fossil-
 
 따라서 두 곳을 묶은 일정은 재개장 확인 전에는 확정하지 않는 편이 안전합니다. 현재 가능한 Al Wathba 활동은 [낙타 경주 가이드](/2026/08/al-wathba-camel-race-guide)와 [사이클 트랙 가이드](/2026/08/al-wathba-cycle-track-guide)를 별도로 확인하세요.
 
+## 재개장 후에도 방문 목적을 먼저 고릅니다
+
+| 목적 | 선택 기준 | 준비할 것 |
+| --- | --- | --- |
+| 플라밍고·조류 관찰 | 가을·봄 계절성과 개방 상태 확인 | 쌍안경, 물, 한낮을 피한 시간대 |
+| 짧은 자연 산책 | 1.5km 코스부터 검토 | 그늘·휴식·화장실 등 현장 시설 확인 |
+| 긴 산책과 사진 | 3km 코스와 기온 확인 | 모자·자외선 차단·귀환 시간 |
+| Fossil Dunes까지 연결 | 두 보호구역 모두 개방된 경우만 | 각각의 공식 공지와 이동거리 확인 |
+
+재개장하더라도 플라밍고 수와 편의시설은 계절·관리 상태에 따라 달라질 수 있습니다. 예전 후기의 사진이나 운영시간보다 EAD의 최신 공지를 일정의 기준으로 삼으세요.
+
 ## 확인한 공식 자료
 
 - [Environment Agency – Abu Dhabi: Al Wathba Wetland Reserve](https://www.ead.gov.ae/en/Experience-Green-Abu-Dhabi/Places-To-Go/Al-Wathba-Wetland-Reserve)
