@@ -7,7 +7,9 @@ author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["아부다비 공항 교통비", "자이드 국제공항", "아부다비 택시비", "Hafilat", "아부다비 버스"]
 permalink: "/2026/08/abu-dhabi-airport-city-transport-cost.html"
+canonical: "/2026/08/zayed-international-airport-to-abu-dhabi-city.html"
 contentType: "guide"
+indexable: false
 ---
 
 자이드 국제공항에서 아부다비 시내로 이동할 때 비용 차이는 **버스와 택시에서 가장 크게 벌어집니다.** 공항 도착 직후에는 피곤해서 택시를 고르기 쉽지만, 숙소 위치와 짐의 양을 먼저 보면 불필요한 지출을 줄일 수 있습니다.

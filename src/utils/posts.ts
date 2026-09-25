@@ -1,7 +1,7 @@
 import { getCollection } from "astro:content";
 
 export async function getPosts() {
-  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  const posts = await getCollection("posts", ({ data }) => !data.draft && data.indexable);
   return posts.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
   );

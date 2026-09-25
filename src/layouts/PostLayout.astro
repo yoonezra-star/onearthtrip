@@ -18,7 +18,10 @@ const { post } = Astro.props;
 const seoMeta = getSeoMeta(post.data.permalink);
 const title = `${seoMeta?.title ?? post.data.title} | ${site.name}`;
 const metaDescription = seoMeta?.description ?? post.data.description;
-const canonical = getPublicPath(post.data.permalink);
+const canonical = getPublicPath(post.data.canonical ?? post.data.permalink);
+const robots = post.data.indexable
+  ? undefined
+  : "noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
 const readingTime = getReadingTime(post.body ?? "");
 const canonicalUrl = new URL(canonical, site.url).toString();
 const heroImageUrl = post.data.heroImage
@@ -111,6 +114,7 @@ const breadcrumbJson = {
   authorUrl={authorUrl}
   section={post.data.category}
   tags={post.data.tags}
+  robots={robots}
 >
   <article class="article">
     <header class="article-header">

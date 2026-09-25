@@ -7,7 +7,9 @@ author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["아부다비 공항 Wi-Fi", "UAE 로밍", "자이드 국제공항 인터넷", "UAE eSIM", "아부다비 여행"]
 permalink: "/2026/08/abu-dhabi-airport-wifi-roaming-guide.html"
+canonical: "/2026/08/zayed-airport-tourist-sim-esim-guide.html"
 contentType: "guide"
+indexable: false
 ---
 
 해외 도착 직후 가장 곤란한 상황은 **로밍도 안 되고 eSIM도 활성화되지 않는 경우**입니다. 자이드 국제공항에서는 공항 무료 Wi-Fi를 첫 번째 백업으로 잡고, 그다음 기존 한국 통신사 로밍이나 UAE 관광객 eSIM을 연결하는 순서가 안전합니다.

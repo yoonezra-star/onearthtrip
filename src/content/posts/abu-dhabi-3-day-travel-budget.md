@@ -56,7 +56,7 @@ Abu Dhabi Mobility의 현재 7일 Public Transport Pass는 AED 35이며 Anonymou
 - 도심 → Saadiyat Island
 - 늦은 밤 또는 짐이 많은 이동
 
-각 구간은 [공항→도심 교통비](/2026/08/abu-dhabi-airport-city-transport-cost), [도심↔Yas 교통비](/2026/08/downtown-yas-island-transport-cost), [도심↔Saadiyat 교통비](/2026/08/downtown-saadiyat-transport-cost)에서 따로 계산할 수 있습니다.
+각 구간은 [자이드 국제공항→아부다비 도심 이동](/2026/08/zayed-international-airport-to-abu-dhabi-city), [도심↔Yas 교통비](/2026/08/downtown-yas-island-transport-cost), [도심↔Saadiyat 교통비](/2026/08/downtown-saadiyat-transport-cost)에서 따로 계산할 수 있습니다.
 
 ## 관광지 비용은 일정 확정 뒤 더한다
 

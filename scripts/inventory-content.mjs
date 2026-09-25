@@ -25,6 +25,7 @@ function parsePost(source, file) {
     category: field("category"),
     type: field("contentType") || "guide",
     draft: /^draft:\s*true\s*$/m.test(frontmatter),
+    indexable: !/^indexable:\s*false\s*$/m.test(frontmatter),
     chars: visibleText.length,
     h2: (body.match(/^##\s+/gm) ?? []).length,
     internal: (body.match(/\]\(\/(?!\/)[^)]+\)/g) ?? []).length,
@@ -50,6 +51,7 @@ const topicGroups = {
 };
 
 const publicRows = rows.filter((row) => !row.draft);
+const indexableRows = publicRows.filter((row) => row.indexable);
 const guides = publicRows.filter((row) => row.type !== "field-note");
 const fieldNotes = publicRows.filter((row) => row.type === "field-note");
 const compact = publicRows.filter((row) => row.chars < 1800);
@@ -57,6 +59,7 @@ const weakExperience = guides.filter((row) => row.media === 0 && row.external > 
 
 console.log("=== On Earth Trip content inventory ===");
 console.log(`Public posts: ${publicRows.length} / guides: ${guides.length} / field notes: ${fieldNotes.length}`);
+console.log(`Indexable posts: ${indexableRows.length} / intentionally consolidated: ${publicRows.length - indexableRows.length}`);
 console.log(`Draft posts: ${rows.filter((row) => row.draft).length}`);
 console.log(`Compact public posts under 1,800 chars: ${compact.length}`);
 console.log(`Guides with external sources but no first-party media: ${weakExperience.length}`);

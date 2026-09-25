@@ -12,6 +12,7 @@ const posts = defineCollection({
     category: z.string(),
     tags: z.array(z.string()).default([]),
     permalink: z.string(),
+    canonical: z.string().optional(),
     heroImage: z.string().optional(),
     contentType: z.enum(["guide", "field-note"]).default("guide"),
     fieldNote: z.object({
@@ -23,7 +24,8 @@ const posts = defineCollection({
       query: z.string(),
       address: z.string().optional()
     }).optional(),
-    draft: z.boolean().default(false)
+    draft: z.boolean().default(false),
+    indexable: z.boolean().default(true)
   })
 });
 
