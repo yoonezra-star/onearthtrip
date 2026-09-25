@@ -2,6 +2,7 @@
 title: "Sir Bani Yas Island 가는 법: 아부다비에서 Jebel Dhanna Jetty까지"
 description: "아부다비에서 Sir Bani Yas Island로 갈 때 차량·버스·보트 이동을 어떻게 연결하는지, Jebel Dhanna Jetty와 예약 조건을 현재 공식 안내 기준으로 정리했습니다."
 pubDate: "2026-08-25T22:31:00+09:00"
+updatedDate: "2026-09-25T21:10:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Sir Bani Yas Island", "Jebel Dhanna", "시르바니야스", "Al Dhafra", "아부다비 섬 여행"]
@@ -15,7 +16,7 @@ map:
 
 Sir Bani Yas Island는 아부다비 도심에서 바로 다리로 들어가는 섬이 아닙니다. **먼저 Al Dhafra 서부지역의 Jebel Dhanna Jetty까지 육로로 이동한 뒤, 섬으로 들어가는 보트 연결을 확인해야 하는 목적지**입니다.
 
-2026년 8월 25일 기준 Experience Abu Dhabi는 아부다비에서 Sir Bani Yas 방면 육로 이동을 약 250km·3시간 정도로 안내합니다. 실제 시간은 출발 위치와 교통 상황, 중간 휴식에 따라 달라질 수 있습니다.
+2026년 9월 25일 기준 Experience Abu Dhabi는 아부다비에서 Sir Bani Yas 방면 육로 이동을 약 250km·3시간 정도로 안내합니다. 실제 시간은 출발 위치와 교통 상황, 중간 휴식에 따라 달라질 수 있습니다.
 
 ## 가장 단순한 흐름은 도심 → E11 → Jebel Dhanna Jetty입니다
 
@@ -36,6 +37,27 @@ Experience Abu Dhabi는 아부다비 버스 네트워크를 이용해 Sir Bani Y
 Sir Bani Yas는 숙박·액티비티·day pass 등 예약 조건에 따라 접근 방식이 달라집니다. Experience Abu Dhabi는 Arabian Wildlife Park day pass를 Anantara activities team을 통해 문의할 수 있으며, **availability에 따라 가능하고 day visit은 사전예약이 필요하다**고 안내합니다.
 
 따라서 당일 아침 Jebel Dhanna에 도착해 현장에서 바로 섬에 들어갈 수 있다고 가정하지 않는 것이 좋습니다.
+
+## 숙박·당일 방문에 따라 이동 흐름이 달라집니다
+
+같은 섬 여행이라도 예약 형태에 따라 제티에서 확인할 항목이 다릅니다.
+
+| 여행 형태 | 기본 이동 흐름 | 먼저 고정할 것 |
+| --- | --- | --- |
+| 리조트 숙박 | Jebel Dhanna 도착 → 예약한 water taxi → 숙소 체크인 | 보트 시간과 늦은 도착 대응 |
+| 당일 방문·day pass | 이용 가능 여부 확인 → 지정 보트·입장 시간에 맞춰 이동 | day pass availability와 귀환편 |
+| 대중교통 이용 | 시외버스 → 제티 주변 최종 이동 → 예약 보트 | 마지막 육상 구간과 환승 여유 |
+| 자가·렌터카 | 제티까지 운전 → 본토 주차 → 보트 탑승 | 주차 위치와 차량에 둘 짐 |
+
+## Jebel Dhanna 출발 전 체크리스트
+
+- 숙소 또는 액티비티 팀에 보트 예약이 확정됐는지 확인
+- 예약 시간보다 여유 있게 제티 도착 시각 설정
+- 본토 마지막 주유 지점과 휴식 지점 확인
+- 동승자 여권·예약 정보·연락 가능한 휴대전화 준비
+- 섬에서 돌아오는 보트 시간까지 함께 저장
+
+보트가 늦어지면 육로로 대체할 수 있는 구조가 아니므로, **섬으로 들어가는 시간보다 돌아오는 연결편까지 한 번에 확인**하는 것이 핵심입니다.
 
 ## 차량을 가져가도 섬 안까지 그대로 운전하는 구조는 아닙니다
 
