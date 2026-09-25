@@ -2,6 +2,7 @@
 title: "Al Wathba Fossil Dunes 가이드: 현재 폐쇄·1,700개 화석 언덕·산책로"
 description: "Al Wathba Fossil Dunes Reserve의 2026년 현재 임시 폐쇄 상태, 1,700개 이상의 화석 언덕, 3km 산책로와 재개장 전 확인사항을 정리했습니다."
 pubDate: "2026-08-25T22:45:00+09:00"
+updatedDate: "2026-09-25T16:00:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Al Wathba Fossil Dunes", "알 와트바 화석 언덕", "아부다비 사막", "Al Wathba", "Fossil Dunes"]
@@ -11,7 +12,7 @@ contentType: "guide"
 
 Al Wathba Fossil Dunes Reserve는 아부다비 동쪽 사막에 형성된 독특한 화석 언덕 지형을 보는 곳입니다. 사진만 보고 바로 출발하기 전에 **현재 운영 상태부터 확인해야 하는 명소**이기도 합니다.
 
-2026년 8월 25일 Environment Agency – Abu Dhabi(EAD) 공식 페이지에는 Al Wathba Fossil Dunes Reserve가 시설 개발을 위해 **추후 공지 시까지 임시 폐쇄**된 것으로 안내됩니다.
+2026년 9월 25일 Environment Agency – Abu Dhabi(EAD) 공식 페이지 재확인 결과, Al Wathba Fossil Dunes Reserve는 시설 개발을 위해 **추후 공지 시까지 임시 폐쇄**된 것으로 안내됩니다.
 
 예전 운영시간이나 야간 조명 후기를 기준으로 일정을 확정하지 말고, 방문 직전에 EAD 공식 페이지에서 재개장 여부를 확인하세요.
 

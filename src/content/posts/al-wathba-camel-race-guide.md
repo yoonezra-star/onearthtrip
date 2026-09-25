@@ -2,6 +2,7 @@
 title: "Al Wathba Camel Race Track 가이드: 무료 관람·이른 시간·시즌 확인"
 description: "아부다비 Al Wathba Camel Race Track의 위치, 무료 관람, 이른 시간 방문과 경기 일정 확인 방법을 정리했습니다."
 pubDate: "2026-08-25T22:46:00+09:00"
+updatedDate: "2026-09-25T16:00:00+09:00"
 author: "아부라이프"
 category: "UAE 문화"
 tags: ["Al Wathba Camel Race Track", "아부다비 낙타 경주", "camel racing", "Al Wathba", "UAE 전통문화"]
@@ -37,7 +38,7 @@ Experience Abu Dhabi 공식 안내는 이 경주장을 아부다비에서 동쪽
 
 ## Wetland·Fossil Dunes는 현재 별도 확인
 
-Al Wathba라는 이름 때문에 [Wetland Reserve](/2026/08/al-wathba-wetland-reserve-guide)와 [Fossil Dunes](/2026/08/al-wathba-fossil-dunes-guide)를 자동으로 묶기 쉽습니다. 하지만 2026년 8월 25일 현재 두 보호구역은 EAD 공식 페이지에서 임시 폐쇄로 안내됩니다.
+Al Wathba라는 이름 때문에 [Wetland Reserve](/2026/08/al-wathba-wetland-reserve-guide)와 [Fossil Dunes](/2026/08/al-wathba-fossil-dunes-guide)를 자동으로 묶기 쉽습니다. 하지만 2026년 9월 25일 재확인 기준 두 보호구역은 EAD 공식 페이지에서 임시 폐쇄로 안내됩니다.
 
 Camel Race Track 방문 가능 여부와 보호구역 개방 여부는 서로 별개로 확인해야 합니다.
 

@@ -2,6 +2,7 @@
 title: "Al Wathba Wetland Reserve 가이드: 현재 폐쇄 여부·플라밍고·산책로"
 description: "Al Wathba Wetland Reserve의 2026년 현재 임시 폐쇄 상태, 플라밍고·조류 관찰, 1.5km·3km 산책로와 방문 전 확인사항을 정리했습니다."
 pubDate: "2026-08-25T22:44:00+09:00"
+updatedDate: "2026-09-25T16:00:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Al Wathba Wetland Reserve", "알 와트바 습지", "아부다비 플라밍고", "아부다비 자연", "Al Wathba"]
@@ -11,7 +12,7 @@ contentType: "guide"
 
 Al Wathba Wetland Reserve는 아부다비 사막권에서 플라밍고와 습지 생태계를 가까이 볼 수 있는 대표 자연 보호구역입니다. 다만 방문 계획에서 가장 먼저 확인할 것은 **현재 개방 여부**입니다.
 
-2026년 8월 25일 Environment Agency – Abu Dhabi(EAD) 공식 페이지를 확인한 결과, Al Wathba Wetland Reserve는 시설 개발을 위해 **추후 공지 시까지 임시 폐쇄** 상태로 안내되고 있습니다.
+2026년 9월 25일 Environment Agency – Abu Dhabi(EAD) 공식 페이지 재확인 결과, Al Wathba Wetland Reserve는 시설 개발을 위해 **추후 공지 시까지 임시 폐쇄** 상태로 안내되고 있습니다.
 
 따라서 예전 후기의 운영시간만 보고 출발하지 말고, 방문 당일 EAD 공식 페이지에서 재개장 여부를 먼저 확인하세요.
 
@@ -39,7 +40,7 @@ EAD는 이곳을 가능한 한 자연 상태로 유지하는 보호구역으로 
 
 ## Fossil Dunes와 같은 날 묶기 전 두 곳 모두 상태 확인
 
-Al Wathba Wetland Reserve와 [Al Wathba Fossil Dunes](/2026/08/al-wathba-fossil-dunes-guide)는 같은 Al Wathba 권역이라 함께 검색되는 경우가 많습니다. 그러나 2026년 8월 25일 기준으로 두 보호구역 모두 EAD 공식 페이지에서 임시 폐쇄 상태로 안내됩니다.
+Al Wathba Wetland Reserve와 [Al Wathba Fossil Dunes](/2026/08/al-wathba-fossil-dunes-guide)는 같은 Al Wathba 권역이라 함께 검색되는 경우가 많습니다. 그러나 2026년 9월 25일 기준으로 두 보호구역 모두 EAD 공식 페이지에서 임시 폐쇄 상태로 안내됩니다.
 
 따라서 두 곳을 묶은 일정은 재개장 확인 전에는 확정하지 않는 편이 안전합니다. 현재 가능한 Al Wathba 활동은 [낙타 경주 가이드](/2026/08/al-wathba-camel-race-guide)와 [사이클 트랙 가이드](/2026/08/al-wathba-cycle-track-guide)를 별도로 확인하세요.
 

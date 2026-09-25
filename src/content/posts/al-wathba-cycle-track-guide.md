@@ -2,6 +2,7 @@
 title: "Al Wathba Cycle Track 가이드: 8·16·20·22·30km 코스와 일출 라이딩"
 description: "Al Wathba Cycle Track의 8·16·20·22·30km 코스, 조명 트랙, 일출·일몰 라이딩과 Camel Race Track 주변 동선을 정리했습니다."
 pubDate: "2026-08-25T22:47:00+09:00"
+updatedDate: "2026-09-25T16:00:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Al Wathba Cycle Track", "아부다비 자전거", "Al Wathba", "UAE cycling", "사막 자전거"]
@@ -41,7 +42,7 @@ Al Wathba Cycle Track은 [Al Wathba Camel Race Track](/2026/08/al-wathba-camel-r
 
 ## 보호구역과는 운영 상태가 별개
 
-2026년 8월 25일 현재 [Al Wathba Wetland Reserve](/2026/08/al-wathba-wetland-reserve-guide)와 [Fossil Dunes Reserve](/2026/08/al-wathba-fossil-dunes-guide)는 EAD 공식 페이지상 임시 폐쇄 상태입니다.
+2026년 9월 25일 재확인 기준 [Al Wathba Wetland Reserve](/2026/08/al-wathba-wetland-reserve-guide)와 [Fossil Dunes Reserve](/2026/08/al-wathba-fossil-dunes-guide)는 EAD 공식 페이지상 임시 폐쇄 상태입니다.
 
 Cycle Track 방문 계획이 가능하더라도 보호구역까지 자동으로 같은 일정에 넣지 말고 각각 최신 운영 상태를 확인하세요.
 

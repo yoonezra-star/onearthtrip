@@ -2,6 +2,7 @@
 title: "Al Wathba 하루 일정 가이드: 보호구역 폐쇄 시 대안까지"
 description: "Al Wathba Wetland·Fossil Dunes의 현재 폐쇄 여부를 확인하고 Camel Race Track·Cycle Track을 포함해 하루 일정을 짜는 방법을 정리했습니다."
 pubDate: "2026-08-25T22:48:00+09:00"
+updatedDate: "2026-09-25T16:00:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["Al Wathba day trip", "알 와트바 당일치기", "아부다비 근교", "Al Wathba", "아부다비 사막"]
@@ -11,9 +12,18 @@ contentType: "guide"
 
 Al Wathba는 아부다비 도심에서 멀지 않지만, 한 장소만 보고 가는 지역은 아닙니다. Wetland Reserve, Fossil Dunes, Camel Race Track, Cycle Track처럼 성격이 다른 장소가 흩어져 있어 **운영 상태와 시간대를 먼저 확인한 뒤 하루 일정을 조립**하는 편이 좋습니다.
 
-2026년 8월 25일 현재 가장 중요한 변수는 [Wetland Reserve](/2026/08/al-wathba-wetland-reserve-guide)와 [Fossil Dunes Reserve](/2026/08/al-wathba-fossil-dunes-guide)가 EAD 공식 페이지에서 **추후 공지 시까지 임시 폐쇄** 상태라는 점입니다.
+2026년 9월 25일 공식 페이지 재확인 기준 가장 중요한 변수는 [Wetland Reserve](/2026/08/al-wathba-wetland-reserve-guide)와 [Fossil Dunes Reserve](/2026/08/al-wathba-fossil-dunes-guide)가 EAD 공식 페이지에서 **추후 공지 시까지 임시 폐쇄** 상태라는 점입니다.
 
 따라서 지금은 두 보호구역을 필수 코스로 넣는 일정이 아니라, 재개장 여부에 따라 바뀌는 일정으로 생각해야 합니다.
+
+| 장소 | 2026년 9월 25일 확인 상태 | 일정에 넣는 기준 |
+| --- | --- | --- |
+| Wetland Reserve | 개발을 위해 임시 폐쇄 | EAD 재개장 공지 후 조류·산책 일정으로 검토 |
+| Fossil Dunes | 개발을 위해 임시 폐쇄 | EAD 재개장 공지 후 지질 경관 일정으로 검토 |
+| Camel Race Track | 별도 시설 | 경기 일정이 있는 이른 시간에 방문 |
+| Cycle Track | 별도 시설 | 8·16·20·22·30km 중 체력과 기온에 맞춰 선택 |
+
+이 표처럼 Al Wathba라는 지역명만으로 운영 상태를 묶지 않는 것이 중요합니다. 보호구역의 폐쇄 공지와 별도 시설의 이용 조건은 각각 확인해야 합니다.
 
 ## 현재 기준: 이른 아침 Camel Race 또는 Cycle Track 중심
 
