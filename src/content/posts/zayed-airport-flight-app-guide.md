@@ -2,7 +2,7 @@
 title: "자이드 국제공항 앱·항공편 확인 가이드: AUH Guest·Etihad"
 description: "자이드 국제공항 AUH Guest 앱, 공항 도착·출발 현황, Etihad 앱의 체크인·탑승권·실시간 알림을 여행 순서대로 정리했습니다."
 pubDate: "2026-08-25T20:12:00+09:00"
-updatedDate: "2026-08-25T20:12:00+09:00"
+updatedDate: "2026-09-25T17:55:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["자이드 국제공항", "AUH Guest", "Etihad 앱", "항공편 확인", "아부다비 공항"]
@@ -12,7 +12,7 @@ contentType: "guide"
 
 아부다비 여행에서 공항 관련 앱은 많이 설치할 필요가 없습니다. **공항 전체 정보는 AUH Guest와 자이드 국제공항 공식 웹사이트**, Etihad 이용객은 **Etihad 앱**을 추가로 쓰는 방식이면 대부분의 상황을 커버할 수 있습니다.
 
-이 글은 2026년 8월 25일 Zayed International Airport와 Etihad Airways의 공식 안내를 기준으로 정리했습니다.
+이 글은 2026년 9월 25일 Zayed International Airport와 Etihad Airways의 공식 안내를 기준으로 정리했습니다.
 
 ## AUH Guest 앱과 공항 웹사이트는 공항 정보 확인용이다
 
@@ -56,6 +56,26 @@ Etihad 공식 안내에 따르면 Etihad 앱에서는 항공편 예약·추적, 
 
 픽업하는 가족이나 지인이 있다면 항공사 앱의 예정 도착시간만 보지 말고 공항 공식 Arrivals 페이지도 함께 확인하는 편이 좋습니다. 도착 상태와 실제 공항 운영 정보는 마지막에 공항 공식 화면을 기준으로 확인하세요.
 
+## 출발 단계별로 앱을 나눠 씁니다
+
+| 시점 | 확인 도구 | 확인할 내용 |
+| --- | --- | --- |
+| 예약 직후 | 항공사 앱·예약 페이지 | 예약번호, 여권정보, 수하물·좌석 |
+| 출발 전날 | 항공사 앱 + 공항 Departures | 체크인, 터미널, 지연·변경 여부 |
+| 공항 이동 중 | 공항 공식 항공편 상태 | 출발편 상태와 예상 시간 |
+| 픽업·도착 대기 | 공항 Arrivals | 실제 도착 상태와 도착편 변경 |
+
+앱을 많이 설치하는 것보다 역할을 분리하는 편이 중요합니다. 공항 자체 정보는 AUH Guest·공식 웹사이트, 내 예약과 탑승권은 해당 항공사 앱을 기준으로 보세요.
+
+## 인터넷이 없어도 꺼내 볼 정보
+
+출발 전 아래 네 항목은 화면 캡처나 지갑 앱에 별도로 저장합니다.
+
+- 탑승권 QR 코드
+- 예약번호와 항공편명
+- 숙소 영문 주소
+- 공항 픽업 장소 또는 렌터카 인수 위치
+
 ### 공식 확인 출처
 
 - [Zayed International Airport: AUH Guest App](https://www.zayedinternationalairport.ae/en/downloadmobileapp)
@@ -63,4 +83,4 @@ Etihad 공식 안내에 따르면 Etihad 앱에서는 항공편 예약·추적, 
 - [Zayed International Airport: Departures](https://www.zayedinternationalairport.ae/en/flights-and-check-in/flight-status/departures)
 - [Etihad Airways: Mobile Apps](https://www.etihad.com/en/help/mobile-apps)
 
-**확인일: 2026년 8월 25일.** 항공편 상태와 탑승구는 바뀔 수 있으므로 출발 당일 항공사와 공항 공식 정보를 모두 확인하세요.
+**확인일: 2026년 9월 25일.** 항공편 상태와 탑승구는 바뀔 수 있으므로 출발 당일 항공사와 공항 공식 정보를 모두 확인하세요.
