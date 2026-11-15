@@ -86,7 +86,7 @@ contentType: "guide"
 
 숙소 Wi-Fi에 연결한 뒤 휴대전화의 모바일 데이터 사용량을 보면 자신이 하루에 어느 정도를 쓰는지 대략적인 감을 잡을 수 있습니다. 이후 남은 여행이 2일인지 7일인지에 따라 유료 Visitor Line, Tourist eSIM, 한국 통신사 로밍 중에서 다시 비교하면 됩니다.
 
-무료 옵션의 현재 조건은 [UAE 무료 관광객 eSIM 가이드](/2026/08/uae-free-tourist-esim-guide), 통신사 선택은 [e& vs du 관광객 유심·eSIM 비교](/2026/08/etisalat-du-tourist-sim-comparison)에서 확인할 수 있습니다.
+무료 옵션의 현재 조건은 [UAE 무료 관광객 eSIM 가이드](/2026/08/zayed-airport-tourist-sim-esim-guide), 통신사 선택은 [e& vs du 관광객 유심·eSIM 비교](/2026/08/zayed-airport-tourist-sim-esim-guide)에서 확인할 수 있습니다.
 
 ## 데이터를 아끼는 설정은 출국 전에 해둡니다
 

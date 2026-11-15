@@ -8,6 +8,8 @@ category: "아부다비 한인 생활"
 tags: ["e& vs du", "UAE 유심 비교", "UAE eSIM", "관광객 SIM", "아부다비 통신사"]
 permalink: "/2026/08/etisalat-du-tourist-sim-comparison.html"
 contentType: "guide"
+indexable: false
+canonical: "/2026/08/zayed-airport-tourist-sim-esim-guide.html"
 ---
 
 UAE 여행용 유심을 찾으면 가장 먼저 보게 되는 통신사는 **e& UAE와 du**입니다. 단순히 어느 회사가 더 좋다고 정하기보다, 여행 기간과 휴대전화 형태에 맞춰 무료 데이터와 유료 연장 조건을 비교하는 편이 실용적입니다.
@@ -50,7 +52,7 @@ du는 무료 Tourist eSIM과 함께 7일·14일·28일 유료 관광객 번들�
 
 도심, 공항, Yas Island, Saadiyat 같은 주요 관광 지역에서는 두 통신사 모두 이용 대상이지만, 특정 호텔 객실·지하 공간·외곽 도로에서의 체감 품질은 위치와 기기에 따라 달라질 수 있습니다. 이 글에서는 검증되지 않은 ‘1등 통신사’를 정하지 않습니다.
 
-첫날 연결이 목적이라면 [UAE 무료 관광객 eSIM 가이드](/2026/08/uae-free-tourist-esim-guide), 공항 도착 직후 순서는 [자이드 국제공항 유심·eSIM 가이드](/2026/08/zayed-airport-tourist-sim-esim-guide)를 함께 보세요.
+첫날 연결이 목적이라면 [UAE 무료 관광객 eSIM 가이드](/2026/08/zayed-airport-tourist-sim-esim-guide), 공항 도착 직후 순서는 [자이드 국제공항 유심·eSIM 가이드](/2026/08/zayed-airport-tourist-sim-esim-guide)를 함께 보세요.
 
 ## 여행기간과 휴대전화에 맞춰 선택합니다
 

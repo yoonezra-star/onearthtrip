@@ -8,6 +8,8 @@ category: "아부다비 한인 생활"
 tags: ["UAE 무료 eSIM", "관광객 eSIM", "e& Visitor Line", "du Tourist eSIM", "UAE 데이터"]
 permalink: "/2026/08/uae-free-tourist-esim-guide.html"
 contentType: "guide"
+indexable: false
+canonical: "/2026/08/zayed-airport-tourist-sim-esim-guide.html"
 ---
 
 UAE에 도착하면 유료 요금제를 바로 결제하지 않아도 **24시간 무료 데이터를 먼저 쓸 수 있는 관광객 eSIM 옵션**이 있습니다. 도착 당일 숙소 이동과 지도 사용 정도라면 이 무료 구간만으로도 첫날 연결 문제를 크게 줄일 수 있습니다.
@@ -89,7 +91,7 @@ iPhone이나 듀얼 SIM Android 기기에서는 두 회선을 동시에 켜둘 �
 - 통화·문자가 필요한지
 - 숙소와 이동 지역에서의 사용 계획
 
-통신사별 현재 유료 옵션을 함께 비교하려면 [e& vs du 관광객 유심·eSIM 비교](/2026/08/etisalat-du-tourist-sim-comparison)를 보세요.
+통신사별 현재 유료 옵션을 함께 비교하려면 [e& vs du 관광객 유심·eSIM 비교](/2026/08/zayed-airport-tourist-sim-esim-guide)를 보세요.
 
 ## 무료 기간이 끝난 뒤 바로 결제할 필요는 없습니다
 
