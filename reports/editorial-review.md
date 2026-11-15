@@ -9,17 +9,14 @@ Posts: 128; public indexable: 118.
 
 | Article A | Article B | Jaccard overlap |
 | --- | --- | --- |
-| abu-dhabi-3-day-itinerary.md | abu-dhabi-5-day-itinerary.md | 34.1% |
 | downtown-saadiyat-transport-cost.md | downtown-yas-island-transport-cost.md | 24.9% |
 | abu-dhabi-where-to-stay-area-guide.md | saadiyat-island-where-to-stay-guide.md | 24.3% |
 | uae-tourist-vat-refund-guide.md | zayed-airport-vat-refund-guide.md | 24.0% |
 | jebel-dhanna-sir-bani-yas-boat-guide.md | sir-bani-yas-island-getting-there-guide.md | 23.3% |
 | abu-dhabi-family-summer-indoor-itinerary.md | saadiyat-downtown-planning-guide.md | 23.1% |
 | abu-dhabi-where-to-stay-area-guide.md | corniche-downtown-where-to-stay-guide.md | 22.6% |
-| abu-dhabi-3-day-itinerary.md | abu-dhabi-family-summer-indoor-itinerary.md | 22.3% |
 | saadiyat-island-where-to-stay-guide.md | yas-island-where-to-stay-guide.md | 22.2% |
 | abu-dhabi-where-to-stay-area-guide.md | yas-island-where-to-stay-guide.md | 22.2% |
-| abu-dhabi-5-day-itinerary.md | abu-dhabi-family-summer-indoor-itinerary.md | 22.2% |
 | natural-history-museum-abu-dhabi-guide.md | zayed-national-museum-visit-guide.md | 22.1% |
 | abu-dhabi-cash-card-payment-guide.md | aed-exchange-guide.md | 22.0% |
 | louvre-abu-dhabi-visit-guide.md | natural-history-museum-abu-dhabi-guide.md | 21.6% |
@@ -35,10 +32,13 @@ Posts: 128; public indexable: 118.
 | al-ain-day-trip-from-abu-dhabi-guide.md | al-ain-oasis-visit-guide.md | 20.5% |
 | sir-bani-yas-island-overnight-itinerary.md | sir-bani-yas-wildlife-safari-guide.md | 20.4% |
 | abu-dhabi-driving-rental-car-guide.md | zayed-airport-car-rental-guide.md | 20.4% |
-| abu-dhabi-3-day-itinerary.md | abu-dhabi-where-to-stay-area-guide.md | 20.4% |
-| abu-dhabi-5-day-itinerary.md | abu-dhabi-where-to-stay-area-guide.md | 20.4% |
 | aed-exchange-guide.md | zayed-airport-exchange-atm-guide.md | 20.3% |
-| abu-dhabi-3-day-itinerary.md | saadiyat-downtown-planning-guide.md | 20.2% |
+| abu-dhabi-al-ain-rental-car-guide.md | jebel-hafeet-visit-guide.md | 20.0% |
+| al-wathba-camel-race-guide.md | al-wathba-day-trip-guide.md | 19.9% |
+| abu-dhabi-taxi-ride-hailing-app-guide.md | zayed-international-airport-to-abu-dhabi-city.md | 19.4% |
+| al-wathba-day-trip-guide.md | al-wathba-wetland-reserve-guide.md | 19.4% |
+| abu-dhabi-al-ain-bus-guide.md | al-ain-day-trip-from-abu-dhabi-guide.md | 19.3% |
+| yas-island-where-to-stay-guide.md | zayed-airport-nearby-where-to-stay-guide.md | 19.3% |
 
 ## Every Article
 
@@ -47,9 +47,9 @@ Posts: 128; public indexable: 118.
 | 300.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
 | 50.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
 | abra-1.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
-| abu-dhabi-3-day-itinerary.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
+| abu-dhabi-3-day-itinerary.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | abu-dhabi-3-day-travel-budget.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
-| abu-dhabi-5-day-itinerary.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
+| abu-dhabi-5-day-itinerary.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | abu-dhabi-5-day-travel-budget.md | Existing consolidation: verify target and redirect | no | 2026-09-26 |
 | abu-dhabi-adnoc-fueling-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-airport-city-transport-cost.md | Existing consolidation: verify target and redirect | no | 2026-08-25 |
