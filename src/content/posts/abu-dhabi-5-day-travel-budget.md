@@ -8,6 +8,8 @@ category: "아부다비 한인 생활"
 tags: ["아부다비 5일 여행 예산", "아부다비 여행비용", "아부다비 교통비", "Hafilat 7일 패스", "아부다비 여행"]
 permalink: "/2026/08/abu-dhabi-5-day-travel-budget.html"
 contentType: "guide"
+indexable: false
+canonical: "/2026/08/abu-dhabi-3-day-travel-budget.html"
 ---
 
 아부다비에서 5일을 머문다면 교통비 계산 방식이 3일 여행보다 달라질 수 있습니다. 버스 이용 횟수가 늘어날수록 **1회씩 결제하는 방식과 7일 패스를 비교할 가치가 커지기 때문**입니다.
