@@ -9,7 +9,6 @@ Posts: 128; public indexable: 118.
 
 | Article A | Article B | Jaccard overlap |
 | --- | --- | --- |
-| uae-tourist-vat-refund-guide.md | zayed-airport-vat-refund-guide.md | 24.0% |
 | jebel-dhanna-sir-bani-yas-boat-guide.md | sir-bani-yas-island-getting-there-guide.md | 23.3% |
 | abu-dhabi-family-summer-indoor-itinerary.md | saadiyat-downtown-planning-guide.md | 23.1% |
 | downtown-saadiyat-transport-cost.md | downtown-yas-island-transport-cost.md | 22.8% |
@@ -39,6 +38,7 @@ Posts: 128; public indexable: 118.
 | liwa-day-overnight-itinerary.md | liwa-oasis-visit-guide.md | 19.2% |
 | abu-dhabi-3-day-itinerary.md | abu-dhabi-family-summer-indoor-itinerary.md | 19.1% |
 | al-dhafra-coast-sir-bani-yas-guide.md | sir-bani-yas-island-overnight-itinerary.md | 19.1% |
+| abu-dhabi-cash-card-payment-guide.md | zayed-airport-exchange-atm-guide.md | 19.0% |
 
 ## Every Article
 
@@ -156,7 +156,7 @@ Posts: 128; public indexable: 118.
 | uae-personal-photo-archive.md | Review unique answer, overlap and current sources | yes | 2026-08-25 |
 | uae-public-holidays-ramadan-travel-planning.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
 | uae-seven-emirates-slow-travel.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
-| uae-tourist-vat-refund-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
+| uae-tourist-vat-refund-guide.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | uae-zoo-afternoon-2014.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-25 |
 | uaq-uae.md | Draft: keep unpublished pending review | yes | 2026-07-15 |
 | yas-island-morning-2014.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-24 |
@@ -169,7 +169,7 @@ Posts: 128; public indexable: 118.
 | zayed-airport-flight-app-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | zayed-airport-nearby-where-to-stay-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | zayed-airport-tourist-sim-esim-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
-| zayed-airport-vat-refund-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
+| zayed-airport-vat-refund-guide.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | zayed-international-airport-to-abu-dhabi-city.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | zayed-national-museum-visit-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 
