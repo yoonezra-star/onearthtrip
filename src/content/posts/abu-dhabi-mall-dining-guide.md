@@ -87,5 +87,5 @@ Visit Abu Dhabi는 Yas Mall 등에서도 Emirati cuisine을 경험할 수 있는
 ### 같이 보기
 
 - [아부다비 음식·식비 허브](/food-guide)
-- [아부다비 저렴하게 먹는 법](/2026/08/abu-dhabi-budget-eating-guide)
+- [아부다비 식비 예산과 절약법](/2026/08/abu-dhabi-daily-food-budget)
 - [아부다비 가족여행 식사 계획](/2026/08/abu-dhabi-family-meal-planning-guide)

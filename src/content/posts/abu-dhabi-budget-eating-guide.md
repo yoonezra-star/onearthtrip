@@ -8,6 +8,8 @@ category: "아부다비 한인 생활"
 tags: ["아부다비 저렴한 식사", "아부다비 식비 절약", "아부다비 여행 예산", "UAE 음식"]
 permalink: "/2026/08/abu-dhabi-budget-eating-guide.html"
 contentType: "guide"
+indexable: false
+canonical: "/2026/08/abu-dhabi-daily-food-budget.html"
 ---
 
 아부다비 식비를 줄이려면 매 끼니 최저가만 찾기보다 **비싼 식사 횟수를 줄이고 나머지 끼니를 안정적으로 관리하는 방식**이 실용적입니다. 여행 중 한두 번은 분위기 있는 식당을 넣고, 나머지는 쇼핑몰·캐주얼 식당·테이크아웃·슈퍼마켓을 조합하면 식비 변동을 줄일 수 있습니다.

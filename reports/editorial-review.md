@@ -3,7 +3,7 @@
 Generated from repository content. Similarity is token overlap, not a quality score or an AdSense prediction.
 All dispositions below are review candidates, not completed manual decisions. Media presence does not prove ownership or first-hand experience.
 
-Posts: 128; public indexable: 119.
+Posts: 128; public indexable: 118.
 
 ## Highest Text Overlap
 
@@ -13,7 +13,6 @@ Posts: 128; public indexable: 119.
 | downtown-saadiyat-transport-cost.md | downtown-yas-island-transport-cost.md | 24.9% |
 | abu-dhabi-where-to-stay-area-guide.md | saadiyat-island-where-to-stay-guide.md | 24.3% |
 | uae-tourist-vat-refund-guide.md | zayed-airport-vat-refund-guide.md | 24.0% |
-| abu-dhabi-budget-eating-guide.md | abu-dhabi-daily-food-budget.md | 23.9% |
 | jebel-dhanna-sir-bani-yas-boat-guide.md | sir-bani-yas-island-getting-there-guide.md | 23.3% |
 | abu-dhabi-family-summer-indoor-itinerary.md | saadiyat-downtown-planning-guide.md | 23.1% |
 | abu-dhabi-where-to-stay-area-guide.md | corniche-downtown-where-to-stay-guide.md | 22.6% |
@@ -39,6 +38,7 @@ Posts: 128; public indexable: 119.
 | abu-dhabi-3-day-itinerary.md | abu-dhabi-where-to-stay-area-guide.md | 20.4% |
 | abu-dhabi-5-day-itinerary.md | abu-dhabi-where-to-stay-area-guide.md | 20.4% |
 | aed-exchange-guide.md | zayed-airport-exchange-atm-guide.md | 20.3% |
+| abu-dhabi-3-day-itinerary.md | saadiyat-downtown-planning-guide.md | 20.2% |
 
 ## Every Article
 
@@ -57,12 +57,12 @@ Posts: 128; public indexable: 119.
 | abu-dhabi-al-ain-bus-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-al-ain-rental-car-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-atm-withdrawal-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
-| abu-dhabi-budget-eating-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
+| abu-dhabi-budget-eating-guide.md | Existing consolidation: verify target and redirect | no | 2026-08-25 |
 | abu-dhabi-cash-card-payment-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-christmas-2012.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-27 |
 | abu-dhabi-corniche-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-cultural-performance-2012.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-25 |
-| abu-dhabi-daily-food-budget.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
+| abu-dhabi-daily-food-budget.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | abu-dhabi-darb-toll-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-driving-rental-car-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-dubai-bus-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
