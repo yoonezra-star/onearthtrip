@@ -9,10 +9,10 @@ Posts: 128; public indexable: 118.
 
 | Article A | Article B | Jaccard overlap |
 | --- | --- | --- |
-| downtown-saadiyat-transport-cost.md | downtown-yas-island-transport-cost.md | 24.9% |
 | uae-tourist-vat-refund-guide.md | zayed-airport-vat-refund-guide.md | 24.0% |
 | jebel-dhanna-sir-bani-yas-boat-guide.md | sir-bani-yas-island-getting-there-guide.md | 23.3% |
 | abu-dhabi-family-summer-indoor-itinerary.md | saadiyat-downtown-planning-guide.md | 23.1% |
+| downtown-saadiyat-transport-cost.md | downtown-yas-island-transport-cost.md | 22.8% |
 | natural-history-museum-abu-dhabi-guide.md | zayed-national-museum-visit-guide.md | 22.1% |
 | abu-dhabi-cash-card-payment-guide.md | aed-exchange-guide.md | 22.0% |
 | louvre-abu-dhabi-visit-guide.md | natural-history-museum-abu-dhabi-guide.md | 21.6% |
@@ -114,8 +114,8 @@ Posts: 128; public indexable: 118.
 | blog-post_19.md | Draft: keep unpublished pending review | yes | 2026-07-15 |
 | corniche-downtown-where-to-stay-guide.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | dates.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
-| downtown-saadiyat-transport-cost.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
-| downtown-yas-island-transport-cost.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
+| downtown-saadiyat-transport-cost.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
+| downtown-yas-island-transport-cost.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | dubai-burj-khalifa-2012.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-25 |
 | dubai-day-trip-from-abu-dhabi-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
 | dune-bashing.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-24 |
