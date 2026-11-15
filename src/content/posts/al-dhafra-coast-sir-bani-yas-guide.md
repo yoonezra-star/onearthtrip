@@ -25,7 +25,7 @@ Sir Bani Yas로 들어가는 여행자는 본토의 Jebel Dhanna Jetty를 이용
 
 즉 Jebel Dhanna는 별도 도심 관광지라기보다 **섬 여행으로 넘어가는 교통 거점**의 성격이 강합니다.
 
-보트 연결은 [Jebel Dhanna에서 Sir Bani Yas 보트 타기](/2026/08/jebel-dhanna-sir-bani-yas-boat-guide)에서 따로 정리했습니다.
+보트 연결은 [Sir Bani Yas 이동·왕복 보트 통합 가이드](/2026/08/sir-bani-yas-island-getting-there-guide)에서 확인할 수 있습니다.
 
 ## Sir Bani Yas는 자연·야생동물·역사를 함께 보는 섬입니다
 

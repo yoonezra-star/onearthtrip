@@ -8,6 +8,8 @@ category: "아부다비 한인 생활"
 tags: ["Jebel Dhanna Jetty", "Sir Bani Yas ferry", "Sir Bani Yas boat", "Al Dhafra", "시르바니야스 보트"]
 permalink: "/2026/08/jebel-dhanna-sir-bani-yas-boat-guide.html"
 contentType: "guide"
+indexable: false
+canonical: "/2026/08/sir-bani-yas-island-getting-there-guide.html"
 ---
 
 Sir Bani Yas Island 여행에서 가장 헷갈리기 쉬운 부분이 **Jebel Dhanna에 도착한 뒤 어떤 배를 타는지**입니다. 이 구간은 일반 대중교통 페리처럼 아무 시간에 표를 사서 타는 방식으로 생각하지 않는 편이 안전합니다.

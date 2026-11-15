@@ -3,13 +3,12 @@
 Generated from repository content. Similarity is token overlap, not a quality score or an AdSense prediction.
 All dispositions below are review candidates, not completed manual decisions. Media presence does not prove ownership or first-hand experience.
 
-Posts: 128; public indexable: 118.
+Posts: 128; public indexable: 117.
 
 ## Highest Text Overlap
 
 | Article A | Article B | Jaccard overlap |
 | --- | --- | --- |
-| jebel-dhanna-sir-bani-yas-boat-guide.md | sir-bani-yas-island-getting-there-guide.md | 23.3% |
 | abu-dhabi-family-summer-indoor-itinerary.md | saadiyat-downtown-planning-guide.md | 23.1% |
 | downtown-saadiyat-transport-cost.md | downtown-yas-island-transport-cost.md | 22.8% |
 | natural-history-museum-abu-dhabi-guide.md | zayed-national-museum-visit-guide.md | 22.1% |
@@ -23,9 +22,9 @@ Posts: 128; public indexable: 118.
 | abu-dhabi-atm-withdrawal-guide.md | abu-dhabi-cash-card-payment-guide.md | 20.9% |
 | louvre-abu-dhabi-visit-guide.md | teamlab-phenomena-abu-dhabi-guide.md | 20.9% |
 | abu-dhabi-summer-routine.md | uae-seven-emirates-slow-travel.md | 20.7% |
+| sir-bani-yas-island-overnight-itinerary.md | sir-bani-yas-wildlife-safari-guide.md | 20.7% |
 | abu-dhabi-atm-withdrawal-guide.md | zayed-airport-exchange-atm-guide.md | 20.5% |
 | al-ain-day-trip-from-abu-dhabi-guide.md | al-ain-oasis-visit-guide.md | 20.5% |
-| sir-bani-yas-island-overnight-itinerary.md | sir-bani-yas-wildlife-safari-guide.md | 20.4% |
 | abu-dhabi-driving-rental-car-guide.md | zayed-airport-car-rental-guide.md | 20.4% |
 | aed-exchange-guide.md | zayed-airport-exchange-atm-guide.md | 20.3% |
 | abu-dhabi-al-ain-rental-car-guide.md | jebel-hafeet-visit-guide.md | 20.0% |
@@ -37,8 +36,9 @@ Posts: 128; public indexable: 118.
 | al-wathba-fossil-dunes-guide.md | al-wathba-wetland-reserve-guide.md | 19.2% |
 | liwa-day-overnight-itinerary.md | liwa-oasis-visit-guide.md | 19.2% |
 | abu-dhabi-3-day-itinerary.md | abu-dhabi-family-summer-indoor-itinerary.md | 19.1% |
-| al-dhafra-coast-sir-bani-yas-guide.md | sir-bani-yas-island-overnight-itinerary.md | 19.1% |
+| al-dhafra-coast-sir-bani-yas-guide.md | sir-bani-yas-island-overnight-itinerary.md | 19.0% |
 | abu-dhabi-cash-card-payment-guide.md | zayed-airport-exchange-atm-guide.md | 19.0% |
+| abu-dhabi-where-to-stay-area-guide.md | corniche-downtown-where-to-stay-guide.md | 19.0% |
 
 ## Every Article
 
@@ -125,7 +125,7 @@ Posts: 128; public indexable: 118.
 | fujairah-uae.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
 | global-village.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
 | heritage-village-abu-dhabi-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
-| jebel-dhanna-sir-bani-yas-boat-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
+| jebel-dhanna-sir-bani-yas-boat-guide.md | Existing consolidation: verify target and redirect | no | 2026-09-25 |
 | jebel-hafeet-visit-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | jebel-jais-uae.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
 | liwa-day-overnight-itinerary.md | Review unique answer, overlap and current sources | no | 2026-09-28 |
@@ -145,7 +145,7 @@ Posts: 128; public indexable: 118.
 | sharjah.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
 | sheikh-zayed-grand-mosque-visit-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
 | sir-bani-yas-coastal-road-2021.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-25 |
-| sir-bani-yas-island-getting-there-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
+| sir-bani-yas-island-getting-there-guide.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | sir-bani-yas-island-overnight-itinerary.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
 | sir-bani-yas-wildlife-safari-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
 | szr-12.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |

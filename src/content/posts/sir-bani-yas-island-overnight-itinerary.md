@@ -17,7 +17,7 @@ Sir Bani Yas Island는 아부다비 도심에서 왕복 이동만으로도 시�
 
 아침에 도심을 출발해 E11을 따라 서쪽으로 이동합니다. 장거리 주행이므로 출발 전 연료와 타이어, 휴식 계획을 확인하세요.
 
-전체 이동 구조는 [Sir Bani Yas Island 가는 법](/2026/08/sir-bani-yas-island-getting-there-guide), 제티에서 섬으로 들어가는 과정은 [Jebel Dhanna 보트 가이드](/2026/08/jebel-dhanna-sir-bani-yas-boat-guide)에서 확인할 수 있습니다.
+전체 이동과 승선 과정은 [Sir Bani Yas 이동·왕복 보트 통합 가이드](/2026/08/sir-bani-yas-island-getting-there-guide)에서 확인할 수 있습니다.
 
 보트 출항시간이 정해져 있다면 도심 출발시간은 보트에서 역산하는 것이 좋습니다.
 

@@ -25,7 +25,7 @@ Anantara 숙박객은 리조트 activity team을 통해 nature and wildlife driv
 
 공식 관광 안내는 day visit은 사전예약이 필요하고, 보트 이동이 포함될 수 있다고 설명합니다. 따라서 현장 도착 후 즉흥적으로 사파리만 구매할 수 있다고 생각하지 않는 것이 좋습니다.
 
-전체 이동은 [Sir Bani Yas Island 가는 법](/2026/08/sir-bani-yas-island-getting-there-guide)과 [Jebel Dhanna 보트 가이드](/2026/08/jebel-dhanna-sir-bani-yas-boat-guide)에서 확인할 수 있습니다.
+전체 이동은 [Sir Bani Yas 이동·왕복 보트 통합 가이드](/2026/08/sir-bani-yas-island-getting-there-guide)에서 확인할 수 있습니다.
 
 ## wildlife drive는 보통 섬 일정의 중심에 둡니다
 
