@@ -10,18 +10,15 @@ Posts: 128; public indexable: 117.
 | Article A | Article B | Jaccard overlap |
 | --- | --- | --- |
 | downtown-saadiyat-transport-cost.md | downtown-yas-island-transport-cost.md | 22.8% |
-| abu-dhabi-cash-card-payment-guide.md | aed-exchange-guide.md | 22.0% |
 | abu-dhabi-al-ain-bus-guide.md | abu-dhabi-liwa-bus-guide.md | 21.4% |
 | ramadan.md | uae-culture-etiquette-first-visit.md | 21.4% |
 | abu-dhabi-where-to-stay-area-guide.md | saadiyat-island-where-to-stay-guide.md | 21.1% |
-| abu-dhabi-atm-withdrawal-guide.md | abu-dhabi-cash-card-payment-guide.md | 20.9% |
 | abu-dhabi-summer-routine.md | uae-seven-emirates-slow-travel.md | 20.7% |
 | sir-bani-yas-island-overnight-itinerary.md | sir-bani-yas-wildlife-safari-guide.md | 20.7% |
-| abu-dhabi-atm-withdrawal-guide.md | zayed-airport-exchange-atm-guide.md | 20.5% |
 | al-ain-day-trip-from-abu-dhabi-guide.md | al-ain-oasis-visit-guide.md | 20.5% |
 | abu-dhabi-driving-rental-car-guide.md | zayed-airport-car-rental-guide.md | 20.4% |
-| aed-exchange-guide.md | zayed-airport-exchange-atm-guide.md | 20.3% |
 | natural-history-museum-abu-dhabi-guide.md | zayed-national-museum-visit-guide.md | 20.3% |
+| abu-dhabi-atm-withdrawal-guide.md | abu-dhabi-cash-card-payment-guide.md | 20.2% |
 | abu-dhabi-al-ain-rental-car-guide.md | jebel-hafeet-visit-guide.md | 20.0% |
 | al-wathba-camel-race-guide.md | al-wathba-day-trip-guide.md | 19.9% |
 | abu-dhabi-where-to-stay-area-guide.md | yas-island-where-to-stay-guide.md | 19.7% |
@@ -33,12 +30,15 @@ Posts: 128; public indexable: 117.
 | al-wathba-fossil-dunes-guide.md | al-wathba-wetland-reserve-guide.md | 19.2% |
 | liwa-day-overnight-itinerary.md | liwa-oasis-visit-guide.md | 19.2% |
 | al-dhafra-coast-sir-bani-yas-guide.md | sir-bani-yas-island-overnight-itinerary.md | 19.0% |
-| abu-dhabi-cash-card-payment-guide.md | zayed-airport-exchange-atm-guide.md | 19.0% |
 | abu-dhabi-family-summer-indoor-itinerary.md | yas-island-planning-guide.md | 19.0% |
 | abu-dhabi-where-to-stay-area-guide.md | corniche-downtown-where-to-stay-guide.md | 19.0% |
 | louvre-abu-dhabi-visit-guide.md | teamlab-phenomena-abu-dhabi-guide.md | 18.7% |
 | abu-dhabi-3-day-itinerary.md | abu-dhabi-family-summer-indoor-itinerary.md | 18.7% |
 | al-wathba-day-trip-guide.md | al-wathba-fossil-dunes-guide.md | 18.6% |
+| abu-dhabi-liwa-rental-car-guide.md | liwa-day-overnight-itinerary.md | 18.6% |
+| saadiyat-island-where-to-stay-guide.md | yas-island-where-to-stay-guide.md | 18.6% |
+| abu-dhabi-liwa-rental-car-guide.md | liwa-desert-driving-safety-guide.md | 18.6% |
+| abu-dhabi-summer-routine.md | ramadan.md | 18.5% |
 
 ## Every Article
 
@@ -56,9 +56,9 @@ Posts: 128; public indexable: 117.
 | abu-dhabi-airport-wifi-roaming-guide.md | Existing consolidation: verify target and redirect | no | 2026-08-25 |
 | abu-dhabi-al-ain-bus-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-al-ain-rental-car-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
-| abu-dhabi-atm-withdrawal-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
+| abu-dhabi-atm-withdrawal-guide.md | Review unique answer, overlap and current sources | no | 2026-11-16 |
 | abu-dhabi-budget-eating-guide.md | Existing consolidation: verify target and redirect | no | 2026-08-25 |
-| abu-dhabi-cash-card-payment-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
+| abu-dhabi-cash-card-payment-guide.md | Review unique answer, overlap and current sources | no | 2026-11-16 |
 | abu-dhabi-christmas-2012.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-27 |
 | abu-dhabi-corniche-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-cultural-performance-2012.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-25 |
@@ -97,7 +97,7 @@ Posts: 128; public indexable: 117.
 | abu-dhabi-travel-data-usage-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
 | abu-dhabi-water-delivery-2014.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-24 |
 | abu-dhabi-where-to-stay-area-guide.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
-| aed-exchange-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
+| aed-exchange-guide.md | Review unique answer, overlap and current sources | no | 2026-11-16 |
 | ajman-karak-tea-1.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
 | al-ain-day-trip-from-abu-dhabi-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
 | al-ain-oasis-visit-guide.md | Review unique answer, overlap and current sources | no | 2026-09-28 |

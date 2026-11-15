@@ -2,7 +2,7 @@
 title: "아부다비 현금·카드 결제 가이드: 여행자는 얼마만큼 현금을 들고 다닐까"
 description: "아부다비에서 카드가 얼마나 통용되는지, 소액 현금이 필요한 상황과 결제 전 확인할 점을 공식 관광 안내 기준으로 정리했습니다."
 pubDate: "2026-08-25T18:48:00+09:00"
-updatedDate: "2026-09-25T18:15:00+09:00"
+updatedDate: "2026-11-16T00:00:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["아부다비 카드 결제", "UAE 현금", "아부다비 여행 경비", "AED", "아부다비 결제"]
@@ -12,7 +12,7 @@ contentType: "guide"
 
 아부다비 여행에서 현금을 많이 들고 다녀야 할지 고민된다면 결론부터 말해 **카드를 기본으로 쓰고, 작은 지출과 비상 상황을 위한 소액 AED 현금을 함께 준비하는 방식**이 가장 단순합니다.
 
-이 글은 2026년 8월 25일 기준 Experience Abu Dhabi와 UAE 공식 안내를 확인해 작성했습니다. 카드사의 해외결제 수수료와 환율 정책은 카드별로 다르므로 출국 전 본인 카드사 조건도 함께 확인하세요.
+2026년 11월 16일 Visa의 해외 결제·DCC 안내를 확인해 결제 통화 설명을 보강했습니다. 매장 결제 수단에 관한 기존 관광 자료는 2026년 8월 25일 확인 기준입니다. 개별 카드의 수수료·환율·차단 설정은 발급사에서 확인하세요.
 
 ## 주요 호텔·식당·쇼핑몰은 카드 결제가 일반적입니다
 
@@ -76,13 +76,19 @@ Yas Island 테마파크나 대형 쇼핑몰 중심 일정이라면 카드 비중
 - 서로 다른 카드 두 장을 분리 보관하고, 해외용 응급 연락처를 메모합니다.
 - 출금이 필요하면 ATM 수수료·한도·카드사 수수료를 모두 확인합니다.
 
-## AED는 미국 달러에 고정 환율로 연결돼 있습니다
+## 결제 화면에 AED와 KRW가 함께 보일 때
 
-UAE 정부 공식 자료에 따르면 UAE dirham은 미국 달러에 고정돼 있으며 기준은 **USD 1 = AED 3.6725**입니다.
+DCC는 매장이나 ATM이 현지 금액을 카드 소지자의 통화로 환산해 청구하는 선택지입니다. Visa는 현지통화 결제가 비용을 줄이는 데 도움이 될 수 있다고 안내하지만, **AED를 선택했다고 카드사의 해외 이용 수수료까지 없어지는 것은 아닙니다.**
 
-다만 한국 원화에서 AED로 실제 환전할 때 받는 금액은 환전소·카드사·은행의 스프레드와 수수료 때문에 단순 기준환율과 달라질 수 있습니다.
+승인 전 통화·원금·환율·추가 비용을 읽고 본인이 선택하세요. 원화 표시가 익숙하다는 이유만으로 유리한 조건이라고 생각하지 않습니다. 필요한 정보가 없거나 통화 선택을 강요받으면 Visa는 환전 제안을 거절하고 발급사에 알리도록 안내합니다.
 
-환전 방법 자체는 [AED 환전 가이드](/2026/08/aed-exchange-guide)에서 따로 정리했습니다.
+| 확인 시점 | 확인할 것 |
+| --- | --- |
+| 승인 전 | AED 또는 KRW 중 실제 승인 통화와 금액 |
+| 승인 후 | 영수증의 통화가 선택과 일치하는지 |
+| 청구 후 | 발급사 적용 환율·수수료와 최종 청구액 |
+
+승인 알림과 최종 청구액이 다르면 바로 중복 결제라고 단정하지 말고 거래 상태를 확인합니다. 결제 실패 메시지가 나왔는데 알림이 온 경우에는 같은 금액을 반복 승인하기 전에 매장과 발급사에서 처리 상태를 확인하세요. 환전 자체는 [AED 환전 가이드](/2026/08/aed-exchange-guide)에 분리했습니다.
 
 ## 여행비용은 현금·카드보다 항목별로 먼저 나눕니다
 
@@ -102,3 +108,5 @@ UAE 정부 공식 자료에 따르면 UAE dirham은 미국 달러에 고정돼 �
 - [Experience Abu Dhabi - Money](https://visitabudhabi.ae/en/plan-your-trip/essential-info/money)
 - [Experience Abu Dhabi - Essential information](https://visitabudhabi.ae/en/plan-your-trip/essential-info)
 - [UAE Government - Fact sheet](https://u.ae/en/about-the-uae/fact-sheet)
+- [Visa - Dynamic Currency Conversion](https://www.visa.com/en-us/personal/travel/dynamic-currency-conversion)
+- [Visa - Travel Cards and Foreign Transactions](https://www.visa.com/en-us/personal/travel/travel-cards-and-foreign-transactions)

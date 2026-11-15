@@ -2,7 +2,7 @@
 title: "아부다비 ATM 출금 가이드: 해외카드로 AED 뽑기 전 확인할 것"
 description: "아부다비 ATM 위치, 해외카드 출금 전 확인할 수수료·카드 설정·보안 항목을 공식 관광·금융 안내 기준으로 정리했습니다."
 pubDate: "2026-08-25T18:51:00+09:00"
-updatedDate: "2026-09-25T17:10:00+09:00"
+updatedDate: "2026-11-16T00:00:00+09:00"
 author: "아부라이프"
 category: "아부다비 한인 생활"
 tags: ["아부다비 ATM", "UAE ATM 출금", "AED 현금", "해외카드 출금", "아부다비 여행"]
@@ -12,7 +12,7 @@ contentType: "guide"
 
 아부다비에서 현금이 추가로 필요할 때는 ATM을 쉽게 찾을 수 있습니다. 다만 **ATM이 있다는 것과 해외카드 출금 비용이 저렴하다는 것은 다른 문제**라서, 인출 전 카드사 조건과 ATM 승인 화면을 확인하는 것이 중요합니다.
 
-이 글은 2026년 9월 25일 기준 Experience Abu Dhabi와 UAE Central Bank 공개 안내를 참고해 작성했습니다.
+기존 장소·보안 자료는 2026년 9월 25일 확인 기준이며, 2026년 11월 16일 Visa·Mastercard의 공개 안내를 참고해 비용 구분과 문제 발생 시 확인 절차를 보강했습니다. 특정 ATM의 현재 수수료나 인출 성공을 보장하는 안내는 아닙니다.
 
 ## ATM은 공항·쇼핑몰·슈퍼마켓 등에서 찾기 쉽습니다
 
@@ -82,9 +82,21 @@ UAE Central Bank의 소비자보호 기준은 금융기관 ATM에 PIN 보호장�
 | 소액 현금만 필요 | 필요한 며칠치만 출금 | 건별 수수료와 최소 출금액 |
 | 카드 결제가 계속 가능한 일정 | 출금 보류 또는 최소 금액 | 카드 백업과 비상금 |
 | 시장·소규모 매장이 많은 일정 | 작은 단위 현금 준비 | 지폐 단위와 보관 장소 |
-| 카드 오류·분실 상황 | 안전한 장소에서 추가 출금 | 카드사 연락처와 출금 알림 |
+| 카드 분실·회수되지 않음 | 해당 카드 잠금과 발급사 문의 우선 | 안전하게 보관한 다른 결제수단 사용 |
 
 ATM의 환율 선택 화면이 이해되지 않으면 서둘러 승인하지 말고, 다른 ATM이나 환전소 조건과 비교하세요. 출금 뒤에는 거래 알림과 영수증을 남겨 여행 경비 기록에 반영하는 것이 좋습니다.
+
+## 인출 비용을 세 부분으로 나누기
+
+ATM 운영기관의 이용료, 카드 발급사의 해외 인출 비용, 통화 환산 비용은 별도일 수 있습니다. 화면에 이용료가 0이라고 표시돼도 발급사 비용까지 무료라는 뜻은 아닙니다. 신용카드 현금 인출은 현금서비스·이자 조건이 적용되는지 사전에 확인하세요.
+
+건당 고정비가 AED 20이라고 **가정**하면 AED 100을 세 번 인출할 때 고정비는 AED 60, AED 300 한 번이면 AED 20입니다. 이는 실제 현지 수수료가 아니며 비율 수수료·환산 비용은 제외한 산술 예시입니다. 인출 횟수를 줄이는 이점과 현금 보관 위험을 함께 고려합니다.
+
+## 현금이 안 나왔는데 출금 알림이 왔다면
+
+같은 거래를 여러 번 반복하기 전에 거래 상태를 확인합니다. ATM 운영은행·기기 번호·위치·현지 시각·요청 금액·영수증을 기록하고 운영기관과 카드 발급사의 공식 연락처로 문의하세요. 자동 반환이나 환불 날짜를 임의로 단정하지 않습니다.
+
+카드가 반환되지 않으면 발급사 앱에서 잠금 가능 여부를 확인하고 공식 지원을 요청합니다. 현장에 붙은 출처 불명 전화번호나 낯선 사람에게 PIN·OTP를 알려주지 않습니다. 기기 사진을 남겨도 카드번호·계좌 잔액 등 민감한 정보는 공개하지 마세요.
 
 ## 환전과 ATM은 하나만 고를 필요가 없습니다
 
@@ -96,3 +108,5 @@ AED의 기준환율과 환전소 선택은 [AED 환전 가이드](/2026/08/aed-e
 
 - [Experience Abu Dhabi - Money](https://visitabudhabi.ae/en/plan-your-trip/essential-info/money)
 - [Central Bank of the UAE - Consumer Protection Standards](https://www.centralbank.ae/media/5crd24gm/cp-standards-pdf.pdf)
+- [Visa - Travel Cards and Foreign Transactions](https://www.visa.com/en-us/personal/travel/travel-cards-and-foreign-transactions)
+- [Mastercard - Frequently Asked Questions](https://www.mastercard.com/global/en/personal/get-support/frequently-asked-questions.html)
