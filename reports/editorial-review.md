@@ -9,13 +9,11 @@ Posts: 128; public indexable: 117.
 
 | Article A | Article B | Jaccard overlap |
 | --- | --- | --- |
-| abu-dhabi-family-summer-indoor-itinerary.md | saadiyat-downtown-planning-guide.md | 23.1% |
 | downtown-saadiyat-transport-cost.md | downtown-yas-island-transport-cost.md | 22.8% |
 | natural-history-museum-abu-dhabi-guide.md | zayed-national-museum-visit-guide.md | 22.1% |
 | abu-dhabi-cash-card-payment-guide.md | aed-exchange-guide.md | 22.0% |
 | louvre-abu-dhabi-visit-guide.md | natural-history-museum-abu-dhabi-guide.md | 21.6% |
 | abu-dhabi-al-ain-bus-guide.md | abu-dhabi-liwa-bus-guide.md | 21.4% |
-| abu-dhabi-family-summer-indoor-itinerary.md | yas-island-planning-guide.md | 21.4% |
 | ramadan.md | uae-culture-etiquette-first-visit.md | 21.4% |
 | louvre-abu-dhabi-visit-guide.md | zayed-national-museum-visit-guide.md | 21.1% |
 | abu-dhabi-where-to-stay-area-guide.md | saadiyat-island-where-to-stay-guide.md | 21.1% |
@@ -30,15 +28,17 @@ Posts: 128; public indexable: 117.
 | abu-dhabi-al-ain-rental-car-guide.md | jebel-hafeet-visit-guide.md | 20.0% |
 | al-wathba-camel-race-guide.md | al-wathba-day-trip-guide.md | 19.9% |
 | abu-dhabi-where-to-stay-area-guide.md | yas-island-where-to-stay-guide.md | 19.7% |
+| abu-dhabi-3-day-itinerary.md | saadiyat-downtown-planning-guide.md | 19.5% |
 | abu-dhabi-taxi-ride-hailing-app-guide.md | zayed-international-airport-to-abu-dhabi-city.md | 19.4% |
 | al-wathba-day-trip-guide.md | al-wathba-wetland-reserve-guide.md | 19.4% |
 | abu-dhabi-al-ain-bus-guide.md | al-ain-day-trip-from-abu-dhabi-guide.md | 19.3% |
 | al-wathba-fossil-dunes-guide.md | al-wathba-wetland-reserve-guide.md | 19.2% |
 | liwa-day-overnight-itinerary.md | liwa-oasis-visit-guide.md | 19.2% |
-| abu-dhabi-3-day-itinerary.md | abu-dhabi-family-summer-indoor-itinerary.md | 19.1% |
 | al-dhafra-coast-sir-bani-yas-guide.md | sir-bani-yas-island-overnight-itinerary.md | 19.0% |
 | abu-dhabi-cash-card-payment-guide.md | zayed-airport-exchange-atm-guide.md | 19.0% |
+| abu-dhabi-family-summer-indoor-itinerary.md | yas-island-planning-guide.md | 19.0% |
 | abu-dhabi-where-to-stay-area-guide.md | corniche-downtown-where-to-stay-guide.md | 19.0% |
+| abu-dhabi-3-day-itinerary.md | abu-dhabi-family-summer-indoor-itinerary.md | 18.7% |
 
 ## Every Article
 
@@ -71,7 +71,7 @@ Posts: 128; public indexable: 117.
 | abu-dhabi-dubai-weekend-rhythm.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
 | abu-dhabi-evening-beach-2012.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-24 |
 | abu-dhabi-family-meal-planning-guide.md | Review unique answer, overlap and current sources | no | 2026-09-26 |
-| abu-dhabi-family-summer-indoor-itinerary.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
+| abu-dhabi-family-summer-indoor-itinerary.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | abu-dhabi-first-30-days.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | abu-dhabi-flame-tree-street.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-24 |
 | abu-dhabi-hotel-evening-2019.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-24 |
@@ -139,7 +139,7 @@ Posts: 128; public indexable: 117.
 | qasr-al-watan-visit-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
 | rak.md | Draft: keep unpublished pending review | yes | 2026-07-15 |
 | ramadan.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
-| saadiyat-downtown-planning-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
+| saadiyat-downtown-planning-guide.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | saadiyat-island-where-to-stay-guide.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | shamal.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
 | sharjah.md | Verify first-hand scope, captions and factual claims | no | 2026-08-24 |
@@ -160,7 +160,7 @@ Posts: 128; public indexable: 117.
 | uae-zoo-afternoon-2014.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-25 |
 | uaq-uae.md | Draft: keep unpublished pending review | yes | 2026-07-15 |
 | yas-island-morning-2014.md | Verify first-hand scope, captions and factual claims | yes | 2026-08-24 |
-| yas-island-planning-guide.md | Review unique answer, overlap and current sources | no | 2026-08-26 |
+| yas-island-planning-guide.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | yas-island-theme-park-choice-guide.md | Review unique answer, overlap and current sources | no | 2026-08-25 |
 | yas-island-where-to-stay-guide.md | Review unique answer, overlap and current sources | no | 2026-11-15 |
 | zayed-airport-car-rental-guide.md | Review unique answer, overlap and current sources | no | 2026-09-25 |
