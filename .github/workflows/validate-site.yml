@@ -76,6 +76,9 @@ jobs:
       - name: Check indexable crawl graph
         run: npm run check:crawl-graph
 
+      - name: Check consolidated articles
+        run: npm run check:consolidated
+
       - name: Check AdSense reviewer path
         run: npm run check:review-path
 
