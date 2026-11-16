@@ -36,6 +36,13 @@ function selectorHas(css, selector, property, valuePattern) {
 const layout = read(layoutPath, "BaseLayout");
 const css = read(mobileCssPath, "mobile UX stylesheet");
 const home = read(homePath, "built homepage");
+const life = read(path.join(root, "src", "pages", "life.astro"), "life page");
+if (!selectorHas(life, ".source-links a", "min-height", "44px")) {
+  fail("life page guide lists must keep a 44px minimum touch height");
+}
+if (!/@media\s*\(max-width:\s*640px\)[\s\S]*?\.source-links\s*\{[^}]*display:\s*grid/s.test(life)) {
+  fail("life page guide lists must stack on narrow screens");
+}
 
 if (!layout.includes('import "../styles/mobile-ux.css";')) {
   fail("BaseLayout must import mobile-ux.css after global.css");
