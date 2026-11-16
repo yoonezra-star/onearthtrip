@@ -143,7 +143,7 @@ const recentFieldNotes = fieldNotes.slice(0, 6);
           <p>전체 글을 나열하는 대신 도착, 이동, 일정, 숙소와 인터넷처럼 자주 필요한 대표 가이드만 먼저 보여 줍니다.</p>
         </div>
         <div class="post-grid">
-          {featuredGuides.map((post) => <PostCard post={post} />)}
+          {featuredGuides.map((post) => <PostCard post={post} showPlaceholder={false} />)}
         </div>
       </div>
     </section>
@@ -160,7 +160,7 @@ const recentFieldNotes = fieldNotes.slice(0, 6);
           <p>사진과 당시 경험을 바탕으로 한 기록입니다. 현재 규정이나 시설 안내와 섞지 않고 각 글의 기록 시점과 범위를 따로 표시합니다.</p>
         </div>
         <div class="post-grid">
-          {recentFieldNotes.map((post) => <PostCard post={post} />)}
+          {recentFieldNotes.map((post) => <PostCard post={post} showPlaceholder={false} />)}
         </div>
         <div class="hero-actions">
           <a class="primary-link" href="/field-notes">전체 직접 촬영 기록 보기</a>

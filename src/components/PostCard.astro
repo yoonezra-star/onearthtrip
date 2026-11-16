@@ -5,9 +5,10 @@ import { getHeroImageAlt, getPublicImageSize } from "../utils/images";
 
 type Props = {
   post: CollectionEntry<"posts">;
+  showPlaceholder?: boolean;
 };
 
-const { post } = Astro.props;
+const { post, showPlaceholder = true } = Astro.props;
 const href = getPublicPath(post.data.permalink);
 const isFieldNote = post.data.contentType === "field-note";
 const hasVideo = (post.body ?? "").includes("<video");
@@ -31,7 +32,7 @@ const heroImageAlt = post.data.heroImage
       />
     </a>
   )}
-  {!post.data.heroImage && (
+  {!post.data.heroImage && showPlaceholder && (
     <a class="post-card-placeholder" href={href} aria-label={`${post.data.title} 읽기`}>
       <span>{post.data.category}</span>
     </a>
